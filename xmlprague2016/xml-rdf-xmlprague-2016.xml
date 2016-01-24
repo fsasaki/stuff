@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<article xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>From XML to RDF step by step: Approaches for Leveraging XML Workflows with Linked Data</title>
+        <author>
+            <personname>
+                <firstname>Marta</firstname>
+                <surname>Borriello</surname>
+            </personname>
+            <email>marta.borriello@vistatec.com</email>
+            <affiliation>
+               <orgname>Vistatec</orgname>
+            </affiliation>
+        </author>
+        <author>
+            <personname>
+                <firstname>Christian</firstname>
+                <surname>Dirschl</surname>
+            </personname>
+            <email>cdirschl@wolterskluwer.de</email>
+            <uri>https://de.linkedin.com/in/christiandirschl</uri>
+            <personblurb><para>Christian is responsible for the content structures, metadata, taxonomies, and thesauri within Wolters Kluwer Germany. He manages text mining and automatic topical classification projects.
+                He also represents Wolters Kluwer Germany in international projects like LOD2, ALIGNED or WDAqua. Christian has worked with Wolters Kluwer Germany since 2001. Before that, he worked as an international IT consultant in several software companies.
+                Christian has a Master of Arts degree in Information Science from the University of Regensburg. He is based in Munich, Germany.</para></personblurb>
+            <affiliation>
+                <orgname>Wolters Kluwer Germany</orgname>
+            </affiliation>
+        </author>
+        <author>
+            <personname>
+                <firstname>Axel</firstname>
+                <surname>Polleres</surname>
+            </personname>
+            <email>axel.polleres@wu.ac.at</email>
+            <uri>http://www.polleres.net/</uri>
+            <personblurb>
+                <para><emphasis role="underline">Axel Polleres</emphasis> joined the<link
+                        xlink:href="http://www.wu.ac.at/infobiz/"/><link
+                        xlink:href="http://www.wu.ac.at/infobiz/">Institute of Information
+                        Business</link> of<link xlink:href="http://www.wu.ac.at/"/><link
+                        xlink:href="http://www.wu.ac.at/">Vienna University of Economics and
+                        Business (WU Wien)</link> in Sept 2013 as a full professor in the area of
+                    "Data and Knowledge Engineering". He obtained his Ph.D. and habilitation
+                        from<link xlink:href="http://www.tuwien.ac.at"/><link
+                        xlink:href="http://www.tuwien.ac.at">Vienna University of Technology</link>
+                    and worked at<link xlink:href="http://www.uibk.ac.at"/><link
+                        xlink:href="http://www.uibk.ac.at">University of Innsbruck</link>,
+                        Austria,<link xlink:href="http://www.urjc.es"/><link
+                        xlink:href="http://www.urjc.es">Universidad Rey Juan Carlos</link>, Madrid,
+                    Spain, the<link xlink:href="http://www.deri.ie"/><link
+                        xlink:href="http://www.deri.ie">Digital Enterprise Research Institute
+                        (DERI)</link> at the<link xlink:href="http://www.nuigalway.ie"/><link
+                        xlink:href="http://www.nuigalway.ie">National University of Ireland,
+                        Galway</link>, and for<link
+                        xlink:href="http://www.siemens.com/corporate-technology/"/><link
+                        xlink:href="http://www.siemens.com/corporate-technology/">Siemens AG's
+                        Corporate Technology Research</link> division before joining WU Wien. His
+                    research focuses on querying and reasoning about ontologies, rules languages,
+                    logic programming, Semantic Web technologies, Web services, knowledge
+                    management, Linked Open Data, configuration technologies and their applications.
+                    He has worked in several European and national research projects in these areas.
+                    Axel has published more than 100 articles in journals, books, and conference and
+                    workshop contributions and co-organised several international conferences and
+                    workshops in the areas of logic programming, Semantic Web, data management, Web
+                    services and related topics and acts as editorial board member for<link
+                        xlink:href="http://www.journals.elsevier.com/journal-of-web-semantics/editorial-board/"
+                        /><link
+                        xlink:href="http://www.journals.elsevier.com/journal-of-web-semantics/editorial-board/"
+                        >JWS</link> and <link xlink:href="http://www.semantic-web-journal.net/"
+                        >SWJ</link>. Moreover, he actively contributed to international
+                    standardisation efforts within the<link xlink:href="http://www.w3.org"/><link
+                        xlink:href="http://www.w3.org">World Wide Web Consortium (W3C)</link> where
+                    he co-chaired the<link xlink:href="http://www.w3.org/2009/sparql/wiki/Main_Page"
+                        /><link xlink:href="http://www.w3.org/2009/sparql/wiki/Main_Page">W3C
+                        SPARQL</link> working group. </para>
+            </personblurb>
+        </author>
+        <author>
+            <personname>
+                <firstname>Phil</firstname>
+                <surname>Ritchie</surname>
+            </personname>
+            <email>philr@vistatec.ie</email>
+            <uri>https://ie.linkedin.com/in/phil-ritchie-2613831</uri>
+            <uri>http://blog.phil-ritchie.net/idiomatic-prose</uri>
+            <personblurb>
+                <para>Phil Ritchie is Chief Technology Officer at Vistatec where he directs all
+                    Language Technology and Research and Development activities. He has a Bachelor
+                    of Science Degree and 20 years of industry experience at senior management and
+                    director levels. Phil is a frequent speaker at industry conferences and events.
+                    He is a founding Industrial Partner of the ADAPT Center and serves as Chairman
+                    of its Industrial Advisory Board. Phil has been a partner in European Union
+                    funded 7th Framework Programmes and is a member of the W3C and several of its
+                    communities including the Multilingual Web - Language Technologies and Linked
+                    Data for Language Technologies. Phil is the lead architect of the open source
+                    Ocelot XLIFF Editor.</para>
+            </personblurb>
+        </author>
+        <author>
+            <personname>
+                <firstname>Frank</firstname>
+                <surname>Salliau</surname>
+            </personname>
+            <email>frank.salliau@ugent.be</email>
+            <personblurb>
+                <para>Frank Salliau has a master degree in electronics engineering but has mostly
+                    worked in software development. In the late 90's he became involved in
+                    development of web applications and e-learning. He has been working in the book
+                    profession since 2009, as e-Manager for the Flemish book federation organisation
+                    Boek.be. In this position he was involved in several ICT projects within the
+                    book profession, such as the development of the books-in-print database DANTE
+                    (Meta4Books) and Knooppunt, the distribution platform for digital educational
+                    content. In September 2014 he started working as senior researcher with
+                    iMinds/MMLab at the University of Ghent where he is involved in several
+                    publisher related projects, such as FREME, Publisher of the Future, Edutab and
+                    TISP.</para>
+            </personblurb>
+        </author>
+        <author>
+            <personname>
+                <firstname>Felix</firstname>
+                <surname>Sasaki</surname>
+            </personname>
+            <email>felix.sasaki@dfki.de</email>
+            <uri>http://www.w3.org/People/fsasaki/</uri>
+            <personblurb>
+                <para>Felix Sasaki joined the W3C in 2005 to work in the Internationalization
+                    Activity until March 2009. In 2012 he rejoined the W3C team as a fellow on
+                    behalf of DFKI (<link xlink:href="http://www.dfki.de">German Research Center for
+                        Artificial Intelligence</link>). He was co-chair of the<link
+                        xlink:href="http://www.w3.org/International/multilingualweb/lt/"/><link
+                        xlink:href="http://www.w3.org/International/multilingualweb/lt/"
+                        >MultilingualWeb-LT Working Group</link> and co-editor of the<link
+                        xlink:href="http://www.w3.org/TR/its20/"/><link
+                        xlink:href="http://www.w3.org/TR/its20/">Internationalization Tag Set (ITS)
+                        2.0 specification</link>. He is currently engaged in the<link
+                        xlink:href="http://lider-project.eu/"/><link
+                        xlink:href="http://lider-project.eu/">LIDER</link> and<link
+                        xlink:href="http://www.freme-project.eu"/><link
+                        xlink:href="http://www.freme-project.eu">FREME</link> projects. His main
+                    field of interest is the application of Web technologies for representation and
+                    processing of multilingual information. For more information see<link
+                        xlink:href="http://www.linkedin.com/pub/felix-sasaki/4/4b0/295"/><link
+                        xlink:href="http://www.linkedin.com/pub/felix-sasaki/4/4b0/295"
+                        >LinkedIn</link></para>
+            </personblurb>
+        </author>
+        <author>
+            <personname>
+                <firstname>Giannis</firstname>
+                <surname>Stoitsis</surname>
+            </personname>
+            <email>stoitsis@agroknow.com</email>
+            <personblurb>
+                <para><emphasis role="bold">Giannis Stoitsis</emphasis> is a partner and the Chief
+                    Operations Officer (COO) of <link xlink:href="http://www.agroknow.com/"
+                        >Agroknow</link>. He has received a Diploma in Electrical and Computer
+                    Engineering from the Aristotle University of Thessaloniki in 2002, and a MSc.
+                    and a Ph.D. degree in Biomedical Engineering from the University of Patras and
+                    National Technical University of Athens in 2004 and 2007, respectively. Giannis
+                    is an expert in developing and delivering technologies a) for data sharing, b)
+                    for data aggregation and c) for managing, discovering and visualizing data to
+                    support research and decision making in the agricultural and food sector. He has
+                    worked in several EU-funded, National and International initiatives that are
+                    related to the design and set up of data management, data processing and data
+                    sharing solutions. He is often invited to help organizations interested in
+                    setting up platforms and services based on open data and open source
+                    technologies such as the Food and Agricultural Organization of United Nations
+                    (FAO), the Land Portal, the Institute of Development Studies (IDS), the Michigan
+                    State University (MSU) and UNESCO. Giannis is also actively involved in global
+                    open data initiatives such as the <link xlink:href="http://godan.info/">Global
+                        Open Data in Agriculture and Nutrition (GODAN)</link> and the <link
+                        xlink:href="https://odi.ellak.gr/">Open Data Institute Athens
+                    Node</link>.</para>
+            </personblurb>
+        </author>
+    </info>
+    <sect1 xml:id="s1">
+        <title>Introduction</title>
+        <sect2 xml:id="s1-1">
+        <title>Motivation</title>
+        <para>There have been many discussions about benefits and drawbacks of XML vs. RDF. In practice more and more XML and linked data technologies are being used together. This leads to opportunities and uncertainties: for years companies have invested heavily in XML workflows. They are not willing to throw them away for the benefits of linked data.</para>
+        <para>In XML workflows XML content is</para>
+        <itemizedlist>
+            <listitem>
+                <para>Generated, from scratch or based on existing content; </para>	
+            </listitem>
+            <listitem><para>processed, e.g.: validated, queried, transformed; and</para></listitem>
+            <listitem><para>stored in various forms, e.g.: as XML, in a different format (e.g. PDF / HTML output); and</para></listitem>
+            <listitem><para>potentially input to other XML or non-XML workflows.</para></listitem>
+        </itemizedlist>
+        <para>Each part of the workflow may include huge amounts of XML data. This can be XML files themselves, but also additional related items like: XSLT or XSL-FO stylesheets for transformation or printing, XQuery based queries, or XML Schema / DTD / Relax NG schemata for validation etc.</para>
+        
+        <para>For many potential users of linked data, giving up these workflows is not an option. Also, changing even a small part of the workflow may lead to high costs. Imagine one element <code>linkedDataStorage</code> added to an imaginary XML document:</para>
+        <example xml:id="ex1">
+            <title>XML document with linked data embedded in an element</title>
+            <programlisting>
+&lt;myData>
+ &lt;head>...&lt;/head>
+ &lt;body>
+ <emphasis role="bold">&lt;linkedDataStorage>...&lt;/linkedDataStorage></emphasis> ...
+ &lt;/body>
+&lt;/myData>
+</programlisting>
+        </example>
+        <para>Adding this element to an XML element may break various aspects of the workflow,
+            like:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Validation: the underlying schema does not understand the new element.</para>
+            </listitem>
+            <listitem>
+                <para> Transformation: a transformation may expect a certain element as the first
+                        child element of body. If <code>linkedDataStorage</code> is the first child,
+                        the transformation would fail.</para>
+            </listitem>
+        </itemizedlist>
+            <para>One may argue that good XML schema will leave space for expansion using lax validated parts or by accepting attributes from other namespaces, for example. Nevertheless, in practice we have to work with a lot of existing XML Schemas, related tooling and workflows. So creating extension points and deploying lax validation may not be an option in real life.</para>
+        <para>Whereas the strict validation against schemas on the one hand is in the XML world
+            often seen as a feature of the toolchain, on the other hand, such adding of elements and
+            schemaless integration of different (parts of) datasets is actually one of the main
+            “selling points of RDF”. However, note that on the contrary, even in the RDF world,
+            users are starting to demand tools for stricter schema validation, which has recently
+            lead to the foundation of a respective working group around RDF Data Shapes in
+            W3C.<footnote><para>See <link xlink:href="http://www.w3.org/2014/data-shapes/"
+                            >http://www.w3.org/2014/data-shapes/</link>.</para></footnote> So, overall there seems to be lots to learn for
+            both sides from each other.</para>
+        <para>This paper wants to help with XML and RDF integration to foster incremental adoption
+                of linked data, without the need to get rid of existing XML workflows. We are
+                discussing  various integration approaches. They all have benefits and drawbacks.
+                The reader needs to be careful in deciding which approach to choose.</para>
+        </sect2>
+        <sect2  xml:id="s1-2">
+            <title>The Relation to RDF Chimera</title>
+            <para>In her keynote at XML Prague 2012 and a subsequent blog post, Jeni Tennison
+                discussed <link xlink:href="http://www.jenitennison.com/2012/06/30/rdf-chimera.html"
+                    >RDF chimera</link>. She is arguing that for representing RDF, syntaxes like
+                RDF/XML or JSON or JSON-LD should be seen as a means to achieve something - a road,
+                but not a destination. An example is a query to an RDF data store, and the outcome
+                is represented in an HTML page.</para>
+            <para> The goal of our paper is different. We assume that there is existing content that
+                benefits from <emphasis role="italic">data integration</emphasis> with linked data -
+                without turning the content into a linked data model. Let’s look at an example:
+                imagine we have the sentence <code>Berlin is the capital of Germany!</code>. There
+                are many linked data sources like <link xlink:href="http://dbpedia.org/about"
+                    >DBpedia</link> that contain information about <code>Berlin</code>; it would add
+                an enormous value to existing content (or content creation workflows) if such
+                information could be taken into account. This does not mean - like in the case of
+                RDF chimera - to give up the XML based workflows, but to provide means for the data
+                integration. In this view we can see the linked data process as a type of
+                enrichment, hence we call the process <emphasis role="italic">enriching XML
+                    content</emphasis> with linked data based information.</para>
+        </sect2>
+        <sect2  xml:id="s1-3">
+            <title>Background: The FREME Project</title>
+            <para>FREME<footnote><para>See the FREME project homepage at <link
+                xlink:href="http://freme-project.eu/">http://freme-project.eu/</link> for more
+                information.</para></footnote> is an European project funded under the H2020
+                Framework Programme. FREME is providing a set of
+                interfaces (APIs and GUIs) for multilingual and semantic enrichment of digital
+                content. The project started in February 2015, will last for two years and
+                encompasses eight partners. The partners provide technology from the realm of
+                language and data processing, business cases from various domains, and expertise in
+                business modeling. This expertise is of specific importance since both language and
+                linked data technologies are not yet widely adopted. The challenge of XML
+                re-engineering for the sake of linked data processing is one hindrance that needs to
+                be overcome to achieve more adoption.</para>
+            <para>FREME provides six e-Services for processing of digital content:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>e-Internationalisation based on the Internationalisation Tag Set (ITS)
+                        Version 2.0.</para>
+                </listitem>
+                <listitem>
+                    <para>e-Link based on the Natural Language Processing Interchange Format (NIF)
+                        and linked (open) data sources.</para>
+                </listitem>
+                <listitem>
+                    <para>e-Entity based on entity recognition software and existing linked entity
+                        datasets.</para>
+                </listitem>
+                <listitem>
+                    <para>e-Terminology based on cloud terminology services for terminology
+                        management and terminology annotation web service to annotate terminology in
+                        ITS 2.0 enriched content.</para>
+                </listitem>
+                <listitem>
+                    <para>e-Translation based on cloud machine translation services for building
+                        custom machine translation systems.</para>
+                </listitem>
+                <listitem>
+                    <para>e-Publishing based on cloud content authoring environment (for example
+                        e-books, technical documentation, marketing materials etc.) and its export
+                        for publishing in Electronic Publication (EPUB3) format.</para>
+                </listitem>
+            </itemizedlist>
+            <para>This paper will not provide details about the services - examples and more
+                information on FREME can be found at <link
+                    xlink:href="http://api.freme-project.eu/doc/current/"
+                    >http://api.freme-project.eu/doc/current/</link></para>
+            <para> All e-services have in common that XML content is a potential input and output
+                format: via FREME, XML content can be enriched with additional information, to add
+                value to the content. But FREME is only one example: many other linked data projects
+                involve companies working with linked data content. </para>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="s2">
+        <title>Business Case Motivation Examples</title>
+        <sect2  xml:id="s2-1"><title>The Case of Agro-Know and Wolters Kluwer - Linked Data in XML Publishing Workflows</title>
+            <para>Agro-Know is data oriented company that helps organisations to manage, organise
+                and open their agricultural and food information. One of the main activities of
+                Agro-Know is the aggregation of bibliographic references from diverse sources to
+                support online search services like <link xlink:href="http://agris.fao.org/"
+                    >AGRIS</link> of the Food and Agricultural Organisation of the United Nations.
+                Agro-Know is doing so by aggregating metadata records from data providers such as
+                journals, small publishers, universities, research centers, libraries and national
+                aggregators. The metadata aggregation workflow of Agro-Know includes parts for
+                metadata analysis, harvesting, filtering, transformation, enrichment, indexing and
+                publishing. The main goal of applying the different steps of the workflow is to end
+                up with a well formated and complete metadata record that is compatible to the
+                metadata standard for agricultural sciences, namely <link
+                    xlink:href="http://www.fao.org/docrep/008/ae909e/ae909e00.HTM">AGRIS AP</link>.
+                The majority of the metadata records that are collected are in XML following several
+                metadata formats such as DC, AGRIS AP, DOAJ, MODS, MARC 21 etc. The processed
+                metadata records are published in AGRIS AP, JSON and RDF.</para>
+            <para>Within such metadata aggregation workflow, Agro-Know is facing several challenges
+                related to the enrichment of the metadata records. One such example is
+                non-structured information about authors that in many cases is not following an
+                authority file and includes additional information in the same XML tag like
+                affiliation, email and location. This information cannot be automatically
+                transformed to structured information and remaining in the tag, it reduces the
+                quality of provided filtering options in the search functionality of the online
+                service. In addition to that, since an authority file is not used on the data
+                provider side, this results in an ambiguity problem as the same author may appear
+                with many different variations of the name. Another problem is the absence of
+                subject terms in the metadata records from a multilingual vocabulary such as <link
+                    xlink:href="http://aims.fao.org/vest-registry/vocabularies/agrovoc-multilingual-agricultural-thesaurus"
+                    >AGROVOC</link>, that consists of more than 32.000 terms available in 23
+                languages. Including AGROVOC terms in the metadata records can semantically enhance
+                the information and can enable better discovering services at the front end
+                application. </para>
+            <para>To solve such problems, Agro-Know is using the FREME e-services in order to
+                improve a) the online services that are offered to the end users and b) the
+                semantics of the metadata records that is provided to other stakeholders of this
+                data value chain, such as publishers. The main goal will be to add the structured
+                information in the XML records by keeping the level of intervention at a minimum
+                level in order to eliminate the revisions required in the existing workflows.
+                Examples of how an XML part referring to authors can be enriched using FREME
+                e-services is presented in the table below. In this case, including the <link
+                    xlink:href="http://orcid.org/">ORCID</link> identifier may help in
+                disambiguation but also in the enrichment of the information as we can show to the
+                end user of the online service additional valuable information directly retrieved
+                from ORCID. </para>
+            <informaltable>
+                <tgroup cols="2">
+                    <colspec colnum="1" colname="col1" align="left" colwidth="1*"/>
+                    <colspec colnum="2" colname="col2" align="left" colwidth="1.76*"/>
+                    <tbody>
+                        <row>
+                            <entry><emphasis role="bold">Before FREME</emphasis></entry>
+                            <entry><emphasis role="bold">Result of deploying
+                                FREME</emphasis></entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <programlisting>&lt;dc:creator&gt;
+&lt;ags:creatorPersonal&gt;
+Stoitsis, Giannis,
+Agroknow
+&lt;/ags:creatorPersonal&gt;
+&lt;/dc:creator&gt;</programlisting>
+                            </entry>
+                            <entry>
+                                <programlisting>&lt;dc:creator&gt;
+&lt;ags:creatorPersonal&gt;Stoitsis,
+Giannis&lt;/ags:creatorPersonal&gt;
+<emphasis role="bold">&lt;nameIdentifier schemeURI=
+"http://orcid.org/"
+ nameIdentifierScheme=
+"ORCID"&gt;0000-0003-3347-8265
+&lt;/nameIdentifier&gt;
+&lt;affiliation&gt;Agroknow&lt;/affiliation&gt;</emphasis>
+&lt;/dc:creator&gt;</programlisting>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <programlisting>&lt;dc:subject&gt;
+&lt;ags:subjectClassification
+scheme="ags:ASC"&gt;
+&lt;![CDATA[J10]]&gt;
+&lt;/ags:subjectClassification&gt;
+&lt;/dc:subject&gt;</programlisting>
+                            </entry>
+                            <entry>
+                                <programlisting>&lt;dc:subject
+<emphasis role="bold">freme-enrichment=
+"http://aims.fao.org/aos/agrovoc/c_426
+ http://aims.fao.org/aos/agrovoc/c_24135
+ http://aims.fao.org/aos/agrovoc/c_4644
+ http://aims.fao.org/aos/agrovoc/c_7178"&gt;</emphasis>
+&lt;ags:subjectClassification scheme=
+ "ags:ASC"&gt;&lt;![CDATA[J10]]&gt;
+&lt;/ags:subjectClassification&gt;
+&lt;/dc:subject&gt;</programlisting>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </informaltable>
+            <para>Wolters Kluwer is a global information service provider with businesses mainly in
+                the legal, tax, health and financial market. The fundamental transformation process
+                from folio to digital and service offerings that is currently disrupting the whole
+                industry requires also more efficient and streamlined production processes. In the
+                last ten years, the industry has very much focused on XML based publishing
+                workflows, where all relevant information resides as metadata within the documents,
+                which are structured according to proprietary DTDs or XML schemas. The industry is
+                slowly starting to adapt linked data principles, because they offer the required
+                flexibility, scalability and information interoperability that XML or also
+                relational database models do not offer. As a first step, metadata is extracted from
+                the documents and stored in parallel in graph databases. Already this step requires
+                a major shift in technology as well as business culture, because the focus and
+                added-value moves away from pure content to data and information.</para>
+            <para>Wolters Kluwer Health is customer of Agro-know and has integrated its XML delivery
+                channel for enriched scientific references mainly in the area of agriculture.
+                Agro-know is offering more and more added value services using linked data
+                principles and in this course reduces the traditional XML-based delivery pipeline
+                step by step in order to stimulate usage of the superior channels. This change
+                causes major challenges at the customer’s side. Semantic Web technology and
+                standards are not yet common solutions in publishing. Therefore technical
+                infrastructure as well as skills have to be developed in order to get things even
+                started. This requires a certain transition period, where the old delivery channel
+                remains stable and the customer can prepare the changes.</para>
+            <para> In such a scenario, Wolters Kluwer recommends that the source provider enables
+                the customer to locally keep his old production workflow in place as long as it is
+                needed. This could be achieved e.g. by making the conversion script available as
+                open source. In addition, a proper documentation about the differences from old to
+                new is also vital for success. Ideally, a direct communication flow between vendor
+                and customer would help to lower concerns and accelerate uptake of the new
+                process.</para></sect2>
+        <sect2  xml:id="s2-2">
+            <title>The Case of Vistatec - Linked Data in XML Localization Workflows</title>
+            <para>Vistatec is a leading provider of digital content translation and locale
+                adaptation services for international businesses. These businesses use a variety of
+                Vistatec multilingual services to publish a range of content types including:
+                corporate communications; marketing collateral; e-commerce catalogues; and product,
+                travel destination, and leisure experience descriptions. </para>
+            <para>Vistatec's production processes are highly automated and based on XML standards
+                for systems integration, process component interoperability and the capture and use
+                of metadata.</para>
+            <para>The localization process, content types and end consumers of the content all
+                benefit greatly from FREME semantic enrichment and entity discovery and linking
+                e-services.</para>
+            <para>The successful adoption of technology hinges upon the ease of use. Vistatec has
+                adapted its open source <link
+                    xlink:href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=xliff"
+                    >XLIFF</link> editor, <link
+                    xlink:href="http://open.vistatec.com/ocelot/index.php?title=Main_Page"
+                    >Ocelot</link>, to consume FREME e-services in a transparent and optimal way
+                using configurable pipelines.</para>
+            <para> The table below summarizes the steps of a typical localization workflow and the
+                benefits that can be realized through the use of FREME e-services:</para>
+            <informaltable>
+                <tgroup cols="3">
+                    <colspec colnum="1" colname="col1" align="left"/>
+                    <colspec colnum="2" colname="col2" align="left"/>
+                    <colspec colnum="3" colname="col3" align="left"/>
+                    <tbody>
+                        <row>
+                            <entry><emphasis role="bold">Process Step</emphasis></entry>
+                            <entry><emphasis role="bold">FREME e-service</emphasis></entry>
+                            <entry><emphasis role="bold">Benefit</emphasis></entry>
+                        </row>
+                        <row>
+                            <entry>Conversion of native document to Extensible Localization
+                                Interchange File Format</entry>
+                            <entry>e-Internationalization</entry>
+                            <entry>Define translatable portions of the document.</entry>
+                        </row>
+                        <row>
+                            <entry>Translation</entry>
+                            <entry>e-Terminology and e-Entity</entry>
+                            <entry>These services help linguists to identify and use appropriate
+                                translations suitable for the subject domain.</entry>
+                        </row>
+                        <row>
+                            <entry>Semantic enrichment</entry>
+                            <entry>e-Link</entry>
+                            <entry>Suggest information resources which relate to the subject matter
+                                of the content.</entry>
+                        </row>
+                        <row>
+                            <entry>Content publication</entry>
+                            <entry>e-Pub</entry>
+                            <entry>Incorporation of markup for entity definitions and hyperlinks to
+                                information resources which relate closely to the subject matter of
+                                the content.</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </informaltable>
+            <para>A tutorial from the FREME documentation<footnote><para>See <link
+                            xlink:href="http://api.freme-project.eu/doc/0.4/tutorials/spot-entities-in-xliff.html"
+                            >http://api.freme-project.eu/doc/0.4/tutorials/spot-entities-in-xliff.html</link></para></footnote> shows how
+                XLIFF can be processed via FREME e-Services. We process the following XLIFF element,
+                using the example sentence from a previous section:</para>
+            <programlisting>&lt;source&gt;Berlin is the capital of Germany!&lt;/source&gt;</programlisting>
+            <para>The e-Entity service identifies <code>Berlin</code> as a named entity with a
+                certain type and a unique URI. The result of the process is not stored in XML, but
+                as a linked data representation including <emphasis role="bold">offsets</emphasis>
+                that point to the string content. The URI </para>
+            <programlisting>&lt;http://freme-project.eu/#char=25,32&gt; </programlisting>
+            <para>identifies the entity, offsets and entity related information. A complete linked
+                data representation, using the turtle syntax, looks as follows.</para>
+            <example xml:id="ex-2">
+                <title>Linked data representation using offsets for pointing to existing XML content</title>
+<programlisting>&lt;http://freme-project.eu/#char=25,32> ...
+(1) nif:anchorOf          "Germany"^^xsd:string ;
+(2) nif:beginIndex        "25"^^xsd:int ;
+(3) nif:endIndex          "32"^^xsd:int ; ...
+(4) itsrdf:taClassRef     &lt;http://nerd.eurecom.fr/ontology#Location>;
+(5) itsrdf:taIdentRef     &lt;http://dbpedia.org/resource/Germany>.</programlisting>
+            </example>
+            <para>The linked data statements expressed in above representation are:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>The annotation is (1) anchored in the string Germany.</para>
+                </listitem>
+                <listitem>
+                    <para>The annotation (2) starts at character 25 and (3) ends at character
+                        32.</para>
+                </listitem>
+                <listitem>
+                    <para>The annotation is related to (4) the class URI
+                        http://nerd.eurecom.fr/ontology#Location.</para>
+                </listitem>
+                <listitem>
+                    <para>The entity is (5) uniquely identified with the URI
+                        http://dbpedia.org/resource/Germany. </para>
+                </listitem>
+            </itemizedlist>
+            <para>The example should make clear why we are not looking at a data conversion task
+                (like in the discussion on RDF chimera), but at a data integration task. We don’t
+                aim at changing the XLIFF source element, but at relating it to the information
+                provided via the linked data representations. The data integration approaches
+                discussed in <xref linkend="s3"/> are ways to achieve this goal.</para>
+            
+        </sect2>
+        <sect2  xml:id="s2-3">
+            <title>The Case of iMinds - Linked Data in Book Metadata</title>
+            <para>iMinds, Flanders’ digital research hub, conducts research on book publishing in
+                close collaboration with the Flemish publishing industry. An important aspect in
+                book publishing is book metadata. As the volume in published books increases, and as
+                the book industry becomes more and more digital, book metadata also becomes
+                increasingly important: book publishers want their books to be found on retail
+                sites. Correct and rich metadata is a prerequisite for online
+                discoverability.</para>
+            <para>Within the publishing value chain, stakeholders have since long agreed to use a
+                standard format for book metadata: ONIX for Books<footnote><para>See <link xlink:href="http://www.editeur.org/83/Overview/"
+                    >http://www.editeur.org/83/Overview/</link></para></footnote>.
+                This XML-based standard has been adopted worldwide and is used by publishers to
+                communicate book product information in a consistent way in electronic form.</para>
+            <para>ONIX for Books is developed and maintained by EditEUR<footnote><para>See <link xlink:href="http://www.editeur.org/"
+                >http://www.editeur.org/</link>.</para></footnote>, the international group coordinating development of the standards
+                infrastructure for electronic commerce in the book, e-book and serials sectors. The
+                ONIX for Books standard and corresponding workflow are solidly embedded in the
+                publishing retail chain, from publisher to distributor to retailer. Migrating to
+                other technologies, e.g. using linked data, requires a substantial investment which
+                stakeholders in this industry are very reluctant to make. </para>
+            <para>We do not recommend to substitute this standard with a fully fledged linked data
+                approach. However, we find there are cases where linked data can be beneficial as
+                enrichment of existing ONIX metadata. The example below shows a possible usage of
+                linked data in ONIX.</para>
+            <para><emphasis role="bold">Author information as linked data</emphasis>: An ONIX file typically contains information about the author(s) of a book. These
+                are called contributors (other types of contributors are illustrators, translators
+                etc.).</para>
+            <para>Below you can find a block of metadata with information about the author of a
+                book, Jonathan Franzen. A possible enrichment with linked data might be to insert
+                the link to the authority record about Jonathan Franzen on viaf.org, via the Entity
+                tag. Please note that these tags are not valid within the current ONIX schema and
+                are used here merely as an example of a possible enrichment.</para>
+            <para>This enrichment may prove useful in several ways:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>disambiguation of the author (using the VIAF identifier); and</para>
+                </listitem>
+                <listitem>
+                    <para>providing a link to more information on the author.</para>
+                </listitem>
+            </itemizedlist>
+            <example xml:id="ex-3"><title>A potential approach for embedding linked data identifiers into ONIX</title><programlisting>&lt;Contributor>
+ &lt;NameIdentifier>
+  &lt;NameIDType>
+   &lt;IDTypeName>Meta4Books ContributorID&lt;/IDTypeName>
+   &lt;IDValue>65097&lt;/IDValue>
+  &lt;/NameIDType>
+ &lt;/NameIdentifier>
+ &lt;ContributorRole>A01&lt;/ContributorRole>
+ &lt;SequenceNumber>1&lt;/SequenceNumber>
+ &lt;NamesBeforeKey>Jonathan&lt;/NamesBeforeKey>
+ &lt;KeyNames>Franzen&lt;/KeyNames>
+ <emphasis role="bold">&lt;Entity>    
+  &lt;URI>http://viaf.org/viaf/84489381/&lt;/URI>
+ &lt;/Entity></emphasis>
+&lt;/Contributor></programlisting></example>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="s3">
+        <title>Approaches for Linked Data Integration in XML Workflows</title>
+        <para>The following approaches are a non exhaustive list. The aim is to provide examples
+            that are currently in use and show their benefits and drawbacks. The examples are
+            anchored in the business cases described in <xref linkend="s2" 
+            />. The structure of the approach description is always
+            as follows:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Name the example;</para>
+            </listitem>
+            <listitem>
+                <para>Explain what actually happens with some XML code snippets; and</para>
+            </listitem>
+            <listitem>
+                <para>Explain drawbacks and benefits, both from a linked data and an XML processing
+                    point of view.</para>
+            </listitem>
+        </itemizedlist>
+        <sect2 xml:id="s3-1">
+            <title>Approach 1: Convert XML to Linked Data</title>
+            <para><emphasis role="bold">What actually happens:</emphasis> XML is converted into
+                linked data. The XML content itself is not touched, but an additional set of data,
+                i.e. a linked data representation is created.</para>
+            <programlisting>&lt;xs:element name="lingualityType">
+ &lt;xs:simpleType>
+  &lt;xs:restriction base="xs:string">
+   &lt;xs:enumeration value="monolingual"/>
+   &lt;xs:enumeration value="bilingual"/>
+   &lt;xs:enumeration value="multilingual"/>
+ &lt;/xs:restriction>
+&lt;/xs:simpleType>
+&lt;/xs:element></programlisting>
+            <para>During the mapping of XML to linked data several decisions have to be taken.
+                Sometimes information is being lost. A real example is the mapping of META-SHARE to
+                linked data<footnote><para>See <link
+                    xlink:href="http://www.lrec-conf.org/proceedings/lrec2014/pdf/664_Paper.pdf"
+                    >http://www.lrec-conf.org/proceedings/lrec2014/pdf/664_Paper.pdf</link> for more
+                    details on the META-SHARE case and on how the conversion from XML to linked data was
+                    achieved.</para></footnote>. META-SHARE provides metadata for
+                describing linguistic resources.</para>
+            <para>Using this element could look like this, expressing that a resource is
+                multilingual, e.g. a multilingual dictionary:</para>
+            <programlisting>&lt;lingualityType&gt;multilingual&lt;/lingualityType&gt;</programlisting>
+            
+            <para>A linked data model that represents this data type could look as follows:</para>
+            <example xml:id="ex-4"><title>Linked data model that represents parts of the META-SHARE schema</title><programlisting>### Class
+ms:linguality
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain ms:Resource ;
+    rdfs:range ms:Linguality .
+### Property
+ms:Linguality 
+    rdf:type owl:Class .
+#### Instances
+ms:monolingual a ms:Linguality.
+ms:bilingual a ms:Linguality.
+ms:multilingual a ms:Linguality.</programlisting></example>
+            <para>This statement expresses the same information like in the XML representation: a
+                given resource, e.g. a dictionary, is multilingual. </para>
+            <para><emphasis role="bold">What are the benefits:</emphasis> The benefit of this
+                approach is that existing XML workflows don’t need to be changed at all. The linked
+                data representation is just an additional publication channel for the information.
+                In this sense, the approach is similar to the RDF chimera discussion. It is however
+                still different, since the conversion from XML to RDF involves RDF focused data
+                modeling and aims at integration with further linked data sources. </para>
+            <para>The additional RDF representation can be integrated with other linked resources
+                without influencing the XML workflow. This is what actually is being done with the
+                META-SHARE case: via the LingHub portal<footnote><para>See <link
+                    xlink:href="http://linghub.lider-project.eu/"
+                    >http://linghub.lider-project.eu/</link>.</para></footnote>, META-SHARE
+                and other types of metadata for linguistic resources is converted to RDF and being
+                made available. A user then can process integrated, multiple linked data sources
+                without even knowing that there is an XML representation available. </para>
+            <para><emphasis role="bold">What are the drawbacks:</emphasis> The approach requires a
+                completely new tool chain, aiming at linked data integration based on XML (or other
+                format based) data sources. The existing setup, e.g. used to analyze the XML
+                structures with XQuery or to transform it via XSLT, cannot be used. A query like
+                “Give me all linguistic resources that are multilingual” can be executed via XPath
+                easily in the XML representation. In standard XQuery there is no bridge to SPARQL.
+                However, work has been done to create this bridge, see <xref linkend="s5"/>. </para>
+            <para>Another drawback of this approach is that it is not always possible to convert XML
+                completely into RDF - in particular, RDF has no facility for representing mixed
+                content, an essential part of processing textual, human language content. A takeaway
+                of <xref linkend="s1-2"/> is that data should always be in the format that best fits
+                its representation, and URIs can serve as a bridge between formats. The usage of
+                URIs for bridging between RDF and XML is discussed in <xref linkend="s3-5"/>.</para>
+        </sect2>
+        <sect2 xml:id="s3-2">
+            <title>Approach 2: Embedd Linked Data into XML via Structured Markup</title>
+            <para><emphasis role="bold">What actually happens: </emphasis>linked data is embedded
+                into HTML. Various syntaxes can be used, e.g. JSON-LD, RDFa, or microdata. This
+                approach is deployed e.g. in <link xlink:href="http://schema.org/"
+                >schema.org</link>; see the schema.org homepage for various markup examples.</para>
+            <para>We take again the sentence <code>Berlin is the capital of Germany</code> from a
+                previous section. The integration of information from Wikipedia with the string
+                    <code>Berlin</code> can be achieved as follows: </para>
+            <programlisting>&lt;a itemscope itemtype="http://schema.org/Place" itemprop="url"
+ href="https://en.wikipedia.org/wiki/Berlin"&gt;Berlin&lt;/a&gt;</programlisting>
+            <para>With this approach search engines will interpret the
+                link <code>https://en.wikipedia.org/wiki/Berlin</code> as a machine readable link to integrate additional information about the place
+                Berlin, taken from Wikipedia as a data source. The item being the source of data
+                integration is identified as being of type place via the URI
+                    <code>http://schema.org/Place</code>. </para>
+            <para><emphasis role="bold">What are the benefits: </emphasis>the approach works well in
+                situation in which the hooks for data integration can be embedded into XML or HTML
+                content. The search engine optimization scenario via schema.org is the prototypical
+                case for doing this. The embedding may also be done in a dedicated markup part for
+                metadata using the JSON-LD or other linked data syntaxes, without changing the text
+                content; see for details <xref linkend="s3-4"/>.</para>
+            <para><emphasis role="bold">What are the drawbacks: </emphasis>RDFa and Microdata
+                changes the content and includes new markup. That may not be an option for XML tool
+                chains that don’t “understand” the new markup, e.g. lead to validation errors.
+                JSON-LD or turtle may have the same issues: where should a tool store this data in
+                the XML structure if no general metadata location is available?</para>
+        </sect2>
+        <sect2 xml:id="s3-3"><title>Approach 3: Anchor Linked Data in XML Attributes</title>
+            <para><emphasis role="bold">What actually happens: </emphasis>an identifier is embedded
+                in the XML structure. This identifier serves as a bridge between the XML and RDF
+                structures. The below example uses the <code>its:taClassRef</code> attribute to
+                store the identifier.</para>
+            <programlisting>&lt;source ...>
+ &lt;mrk ...<emphasis role="bold">its:taIdentRef</emphasis>="http://dbpedia.org/resource/Berlin">
+  Berlin&lt;/mrk> is the capital of Germany!&lt;/source></programlisting>
+            <para>The data integration task, i.e. fetching additional information from linked data
+                sources about <code>Berlin</code>, can be executed relying on this information. The
+                outcome may then be stored directly in the XML source. Below we assume that the
+                population was fetched using the DBpedia information.</para>
+            <programlisting>&lt;source ...>
+ &lt;mrk ...its:taIdentRef="http://dbpedia.org/resource/Berlin">
+  Berlin&lt;/mrk> <emphasis role="bold">(population: 3517424)</emphasis>...&lt;/source></programlisting>
+            <para>For different purposes, separate linked data queries could be set up. They rely on
+                the same identifier <code>http://dbpedia.org/resource/Berlin</code>.</para>
+            <para><emphasis role="bold">What are the benefits: </emphasis>using an XML attribute
+                that is already available in the format in question means that no new types of
+                markup is needed. That is, existing XML toolchains can stay as is, including
+                validation or transformation processes.</para>
+            <para><emphasis role="bold">What are the drawbacks: </emphasis>the data integration is
+                postponed. The completed integration, if needed, needs to choose one of the other
+                approaches discussed in this paper. Also, the data integration does not leave a
+                trace. Further processing steps in the (XML) toolchain cannot identify that the
+                string <code>(population: 3517424)</code> is a result of a data integration
+                process.</para></sect2>
+        <sect2 xml:id="s3-4"><title>Approach 4: Embed Linked Data in Metadata Sections of XML Files</title>
+            <para><emphasis role="bold">What actually happens: </emphasis>many XML vocabularies have
+                metadata sections that may contain arbitrary content. This is also true for XLIFF
+                discussed in <xref linkend="s2-2"/>. The outcome of the linked data processing could
+                be stored in such a section.</para>
+            <para><emphasis role="bold">What are the benefits:</emphasis> Compared to <xref
+                    linkend="s3-2"/>, the size of the content itself is not growing with additional, linked data
+                related markup. </para>
+            <para><emphasis role="bold">What are the drawbacks:</emphasis> There is no per se
+                relation to the content. Like in <xref linkend="ex-2"/>, one may create pointers to the XML content, here using character offsets.
+                But the pointers may be fragile, if one thinks e.g. of reformatting, insertion or
+                deletion of content or markup. In addition, some linked data syntaxes may interfere
+                with XML validation or well formedness constraints.</para></sect2>
+        <sect2 xml:id="s3-5"><title>Approach 5: Anchor Linked Data via Annotations in XML Content</title>
+            <para><emphasis role="bold">What actually happens: </emphasis>A generalized approach of
+                    <xref linkend="s3-3"/>
+                means that linked data is stored separately from XML structures and that there is a
+                reference from linked data to the XML content in question. In <xref
+                    linkend="s2-2"/>, we were using character offsets. The <link
+                    xlink:href="http://www.w3.org/TR/2015/WD-annotation-model-20151015/">W3C Web
+                    Annotation Data Model</link> allows to realize such anchoring. Character offsets
+                are just one way of anchoring the annotation. One can also use XPath expressions,
+                see the following example.</para>
+            <example xml:id="ex-5"><title>Anchoring annotations in XML via the Web annotation data model</title>
+                <programlisting>{  "id": "http://example.com/myannotations/a1",
+ "type": "Annotation",
+ "target": { "type": "SpecificResource",
+  "source": "http://example.com/myfile.xml",
+  "selector": { "type": "FragmentSelector",
+   "conformsTo": "http://www.w3.org/TR/xpath/",
+   "value": "/xlf:unit[1]/xlf:segment[1]/xlf:source/xlf:mrk[1]" },
+  "itsrdf:taIdentRef": "http://dbpedia.org/resource/Berlin",
+  "itsrdf:taClassRef": "http://schema.org/Place",
+  "http://dbpedia.org/property/population" : "3517424"  } }</programlisting>
+            </example>
+            <para>The XPath expression in above linked data representation (which uses the JSON-LD
+                syntax) selects the XLIFF mrk element from the example in <xref linkend="s3-3"/>. </para>
+            <para><emphasis role="bold">What are the benefits:</emphasis> In addition to the
+                approach 3, here we are able to add the linked data information in the separate
+                annotation, e.g. the population of Berlin; there is no need to change the content
+                itself. If needed for certain applications, we can use this annotation approach to
+                generate others. URIs pointing to the content are an important aspect of such format
+                conversions. THe forehand mentioned ITS 2.0 specification shows an example of 1)
+                generating <link xlink:href="http://www.w3.org/TR/its20/#conversion-to-nif">linked
+                    data annotations anchored in XML content</link>, and 2) <link
+                    xlink:href="https://www.w3.org/TR/its20/#nif-backconversion">integrating the
+                        separate annotations into the markup content</link>. The forehand described FREME framework deploys this approach in its ITS enabled <link xlink:href="http://api.freme-project.eu/doc/0.4/knowledge-base/eInternationalization.html">e-Internationalisation</link>.</para>
+            <para><emphasis role="bold">What are the drawbacks:</emphasis> the resolution of linked
+                data information potentially can be computationally expensive, see e.g. lot’s of
+                XPath expressions to compute for annotations. Also, if the source content changes,
+                the anchoring mechanism may not work anymore. Some mechanisms are more robust (e.g.
+                XPath expressions), some may be more precise (e.g. the character offset based
+                anchoring). </para>
+        </sect2>
+    </sect1>
+    <sect1 xml:id="s4"><title>Relating Business Cases and Integration Approaches</title>
+        <para>The following table relates the three business cases and the various integration
+            approaches.</para>
+        <informaltable>
+            <tgroup cols="3">
+                <colspec colnum="1" colname="col1" align="left"/>
+                <colspec colnum="2" colname="col2" align="left"/>
+                <colspec colnum="3" colname="col3" align="left"/>
+                <tbody>
+                    <row>
+                        <entry><emphasis role="bold">Business case</emphasis></entry>
+                        <entry><emphasis role="bold">Integration approaches being
+                                considered</emphasis></entry>
+                        <entry><emphasis role="bold">Actual current or experimental
+                                praxis</emphasis></entry>
+                    </row>
+                    <row>
+                        <entry><link  linkend="s2-1">Linked data in XML publishing
+                            workflows</link></entry>
+                        <entry>Approach 1: convert XML into linked data</entry>
+                        <entry>XML workflow kept, linked data conversion scripts to be made
+                            available </entry>
+                    </row>
+                    <row>
+                        <entry><link linkend="s2-2">Linked data in XML localization
+                            workflows</link></entry>
+                        <entry>Approach 3: anchor linked data in XML attributes; Approach 4: embed
+                            linked data in metadata sections of XML files</entry>
+                        <entry>No established practice in localisation industry</entry>
+                    </row>
+                    <row>
+                        <entry><link linkend="s2-3">Linked data in book metadata</link></entry>
+                        <entry>Approach 4: embed linked data in metadata sections of XML
+                            files</entry>
+                        <entry>No established practice in localisation industry</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+        <para>It becomes obvious that industries take different approaches towards linked data
+            integration. This can be explained with availability of native linked data tooling,
+            knowledge about its usage, and complexity and potential costs of adapting existing XML
+            workflows.</para></sect1>
+    <sect1 xml:id="s5"><title>Routes to bridge between RDF and XML</title>
+        <para>As for <emphasis role="bold">Approach 1</emphasis> (converting XML into linked data),
+            in fact existing XML transformation tools like XSLT and XQuery could be used out of the
+            box with the caveat that the result is mostly tied to the RDF/XML representation, that
+            has various disadvantages, foremost verbosity. More "modern" RDF serializations like
+            Turtle or JSON-LD cannot be created out of the box by XML tools straightforwardly, plus
+            additional filtering of querying on the resulting RDF triples needs to be encoded
+            directly into the XML toolchain, which might be easier solvable in the RDF world itself,
+            e.g. using SPARQL. Likewise, as for <emphasis role="bold">Approach 2</emphasis>, we have
+            already identified, that the XML toolchain is not tailored to process and consume RDF or
+            similar meta-data formats natively. We face the same problem in <emphasis role="bold"
+                >Approaches 3-5</emphasis>, where RDF-like sources are just linked out of XML
+            content, without the necessary toolchain tightly coupled to XML tools that could process
+            the RDF content natively.</para>
+        <para>So, there is certainly a gap to bridge here in terms of tooling, but recently, that
+            partially seems to change: there are academic approaches to encode SPARQL into XML
+            processors, such as encoding SPARQL to XSLT or XQuery, cf. e.g. Fischer et al. (2011)
+            and Groppe et al. (2008). Plus there are actually some XML processors like SAXON start supporting SPARQL
+            natively, cf. <link
+                xlink:href="https://developer.marklogic.com/learn/semantics-exercises/sparql-and-xquery"
+                >https://developer.marklogic.com/learn/semantics-exercises/sparql-and-xquery</link>.</para>
+        <para>Alternatively, given that SPARQL actually can produce XML or JSON (among others) as
+            output format<footnote><para>See <link
+                xlink:href="http://www.w3.org/TR/sparql11-overview/#sparql11-results"
+                >http://www.w3.org/TR/sparql11-overview/#sparql11-results</link> for details.</para></footnote>, it is possible to directly consume the
+            results of SPARQL queries in XML tools, however more complex use cases need some
+            scripting around this, plus intermediate results for an overall transformation need to
+            be stored and processed separately, ending up in a heterogeneous toolchain, comprising
+            XML tools, SPARQL processors and potentially even another scripting language on top. </para>
+        <para>Additionally, there are new “hybrid” but integrated toolchains arising that try to
+            combine the two worlds of XML and RDF in a “best-of-both-worlds” approach: most
+            prominently, we’d like to mention as an example here the XSPARQL project<footnote><para>See <link xlink:href="http://xsparql.sourceforge.net"
+                >http://xsparql.sourceforge.net</link> for details.</para></footnote>, that aims at integrating SPARQL into XQuery in a compilation
+            approach: that is, queries on RDF data or to a remote SPARQL endpoint serving Linked
+            Data can be embedded into an XQuery. For instance, the following query transforms
+            geographic RDF data queried from the file <link
+                xlink:href="http://nunolopes.org/foaf.rdf">http://nunolopes.org/foaf.rdf</link> into
+            a KML file: </para>
+        <programlisting>prefix foaf: &lt;http://xmlns.com/foaf/0.1/>
+prefix geo: &lt;http://www.w3.org/2003/01/geo/wgs84_pos#> 
+
+&lt;kml xmlns="http://www.opengis.net/kml/2.2">{
+ <emphasis role="bold">for $name $long $lat from &lt;http://nunolopes.org/foaf.rdf>
+ where { $person a foaf:Person; foaf:name $name;
+         foaf:based_near [ a geo:Point;
+         geo:long $long; 
+         geo:lat $lat ] }</emphasis> 
+ return &lt;Placemark>
+  &lt;name>{fn:concat("Location of ", $name)}&lt;/name>
+   &lt;Point>
+    &lt;coordinates>{fn:concat($long, ",", $lat, ",0")}&lt;/coordinates>
+   &lt;/Point>
+ &lt;/Placemark> }
+&lt;/kml></programlisting>
+        <para>The boldface part of the above query is actually SPARQL syntax embedded into XQuery.
+            An XSPARQL compiler translates this query to a native XQuery that delegates these query
+            parts to a native SPARQL query processor. More details on this approach can be found in
+            Bischof et al. (2012).</para>
+        <para>Note that also the other way, i.e. transforming XML data into RDF is supported in this
+            approach, by allowing SPARQL’s CONSTRUCT clauses in the return claus of an XQuery, as
+            shown in the following short example, which transforms XML data from Open Streetmap to
+            RDF:</para><programlisting>prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+prefix geo: &lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt;
+prefix kml: &lt;http://earth.google.com/kml/2.0&gt;
+let $loc := "WU Wien" for $place in doc
+  (fn:concat("http://nominatim.openstreetmap.org/search?q=",
+    fn:encode-for-uri($loc),
+    "&amp;amp;format=xml"))
+let $geo := fn:tokenize($place//place[1]/@boundingbox, ",")
+<emphasis role="bold">construct { &lt;http://www.polleres.net/foaf.rdf#me&gt;
+foaf:based_near [ geo:lat {$geo[1]}; geo:long {$geo[3]} ] }</emphasis></programlisting>
+        <para>More recently, XSPARQL has been extended to cover the recent SPARQL1.1 specification,
+            plus support for JSON as input and output format (by internally representing JSON in a
+            canonical XML representation have been added, cf. Dell’Aglio et al. (2014).</para>
+        <para>While XSPARQL, which has actually started as a W3C member submission in 2009<footnote><para>See <link xlink:href="http://www.w3.org/Submission/2009/01/"
+            >http://www.w3.org/Submission/2009/01/</link>.</para></footnote>, is just one possible route, the authors believe that joint
+            efforts in standardization bodies to bridge the gaps between RDF and XML in order to
+            enable such transformations and integrated tooling in a standard way should be further
+            pursued.</para></sect1>
+    <sect1 xml:id="s-6">
+        <title>Conclusion</title>
+        <para>This paper discussed the motivation for integrating RDF and XML. We looked at various
+            business case scenarios that can benefit from this integration. We then discussed
+            several approaches to realize the integration. Finally, we looked into technical
+            solutions that integrate the actual XML and RDF technology stacks.</para>
+        <para>A reviewer of this paper suggested consider XProc for integrating RDF and XML
+            workflows. <link xlink:href="https://www.w3.org/TR/xproc20/">XProc 2.0</link> will have the
+            ability to pass information other than XML data between steps; it would be possible to
+            pass RDF data between XProc steps and have filtering and processing steps for that RDF
+            data. This would allow processing of XML data with XML tools (XSLT, XQuery), while
+            tracking and also processing RDF data with e.g. SPARQL or XSPARQL. This approach sounds
+            promising but has not been explored in this paper, so we leave it to future work.</para>
+        <para>A next steps could be to discuss the integration approaches in a broader community,
+            e.g. in a dedicated forum like a W3C community group. This could also help to move the
+            forehand described XML - RDF standardization work forward. Such standardization has been
+            discussed in the past. It is the hope of the authors of this paper that it brings new
+            insights to this discussion, with the real-life needs from actual applications who more
+            and more are in need of the integration.</para>
+    </sect1>
+    <sect1 xml:id="s-ack">
+        <title>Acknowledgments</title>
+        <para>The creation of this paper was supported by the FREME project under the Horizon 2020 Framework Programme of the European Commission, Grant Agreement Number 644771.</para>
+    </sect1>
+    <bibliography xml:id="sec-references">
+        <bibliomixed>Bischof, S., S. Decker, T. Krennwallner, N. Lopes and A. Polleres. <title>Mapping between RDF and XML with XSPARQL.</title> Journal on Data Semantics (JoDS), 1(3):147-185, 2012.</bibliomixed>
+        <bibliomixed>Dell'Aglio, D., A. Polleres, N. Lopes and S. Bischof. <title>Querying the web of data with XSPARQL 1.1.</title> In ISWC2014 Developers Workshop, volume 1268 of CEUR Workshop Proceedings. CEUR-WS.org, October 2014.</bibliomixed>
+        <bibliomixed>Fischer, P., D. Florescu, M. Kaufmann and D. Kossmann D (2011). <title>Translating SPARQL and SQL to XQuery.</title> In: Proceedings of XML Prague’11, pp 81–98.</bibliomixed>
+        <bibliomixed>Groppe S., J. Groppe, V. Linnemann, D. Kukulenz, N. Hoeller, C. Reinke (2008). <title>Embedding SPARQL into XQuery/XSLT.</title> In: SAC’08.  ACM, New York, pp 2271–2278.</bibliomixed>
+    </bibliography>
+</article>
