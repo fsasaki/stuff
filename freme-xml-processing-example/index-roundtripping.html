@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="utf-8">
+
+	<title>Enriching TEI content with FREME</title>
+	<script
+	src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/Saxon-CE_1.1/Saxonce/Saxonce.nocache.js"></script>
+	<script type="text/javascript">
+            var fremeApiUrl = "http://api-dev.freme-project.eu/current";
+            //for dev version : http://api-dev.freme-project.eu/current
+            //for latest stable version: http://api.freme-project.eu/current
+	</script>
+	<script>
+            function runSaxon() {
+                //Example TEI input is taken from http://mariage.uvic.ca/anth_doc.xml?id=la_femme_battant
+                var proc = Saxon.newXSLT20Processor();
+                var xslSource = Saxon.requestXML("lib/tei-processing/tei2temp-html.xsl");
+                var content = $('#content').val();
+                var xmlSource = Saxon.parseXML(content);
+                proc.importStylesheet(xslSource);
+                var fragment = proc.transformToFragment(xmlSource, document);
+                return Saxon.serializeXML(fragment);
+            }
+            ;
+            var sendFreme = function () {
+                var selectedLanguage = $("input[name=language]:checked").val();
+                var selectedDataset = $("input[name=dataset]:checked").val();
+                var content = runSaxon();
+                var requestURL = fremeApiUrl + "/e-entity/freme-ner/documents?language=" + selectedLanguage + "&dataset=" + selectedDataset;
+                $.ajax({
+                    type: 'POST',
+                    url: requestURL,
+                    data: content,
+                    headers: {
+                        'Accept': 'text/html',
+                        'Content-Type': 'text/html'
+                    }
+                })
+                        .done(function (result1) {
+                            console.log("success" + result1.toString());
+                            $("#out").empty().append(result1);
+                            console.log("transform back start");
+                            var proc = Saxon.newXSLT20Processor();
+                            var xslSource = Saxon.requestXML("lib/tei-processing/temp2tei.xsl");
+                            var xmlSource = Saxon.parseXML($('#content').val());
+                            proc.importStylesheet(xslSource);
+                            var fragment = proc.transformToFragment(xmlSource, document);
+                            var tempstring = Saxon.serializeXML(fragment);
+                            var tempstring2 = tempstring.replace(/</g, "&lt;");
+                            $("#output2").empty().append(tempstring2);
+                        })
+                        .fail(function (data) {
+                            console.log("error");
+                            error(data);
+                            $("#out").empty().append("Search request failed");
+                        });
+            };
+	</script>
+    </head>
+    <body>
+
+	<h1>TEI Processing with FREME</h1>
+	<h2 id="background">Background</h2>
+	<p>This examples shows how to process TEI content with FREME.</p>
+	<h2 id="more-infos">More information</h2>
+	<p>For more information visit the <a target="_blank" href="http://api-dev.freme-project.eu/doc/api-doc/full.html">FREME API documentation</a>, <a target="_blank" href="https://github.com/freme-project/">FREME on GitHub</a> or the <a target="_blank" href="http://freme-project.eu/">FREME homepage</a>.</p>
+	<h2 id="try-it-out">Try it out</h2>
+	<p>In the form below enter a TEI document (or use this <a href="http://mariage.uvic.ca/anth_doc.xml?id=la_femme_battant">example</a>) and click on the bottom <q>Call FREME e-Entity</q>. Also, adapt the language and the data set used for enrichment to your needs.</p>
+	<form name="input">
+	    <p>Set the language of the input:</p>
+	    <input type="radio" name="language" value="en" checked>English<input type="radio" name="language" value="de">German<input type="radio" name="language" value="nl">Dutch<input type="radio" name="language" value="fr">French<input type="radio" name="language" value="it">Italien<input type="radio" name="language" value="es">Spanish<br>
+	    <p>Set the data set to be used for enrichment:</p>
+	    <input type="radio" name="dataset" value="dbpedia" checked><a target="_blank" href="http://dbpedia.org/">DBpedia</a><input type="radio" name="dataset" value="onld"><a target="_blank" href="http://www.lib.ncsu.edu/ld/onld/">ONLD</a><input type="radio" name="dataset" value="geopolitical"><a target="_blank" href="http://www.fao.org/countryprofiles/geoinfo/en/">Geopolitical ontology</a><input type="radio" name="dataset" value="viaf"><a target="_blank" href="http://viaf.org/">VIAF</a><input type="radio" name="dataset" value="orcid"><a target="_blank" href="http://orcid.org/">ORCID</a><br>
+	    <textarea rows="4" cols="50" name="content"  id="content"></textarea>
+	</form>
+	<button onclick="sendFreme();">Call FREME e-Entity with TEI content</button>
+	<button onclick="$('#out').empty().append('Output');
+                $('#output2').empty();">Refresh output</button>
+	<p>Output appears here:</p>
+	<div id="out" style="display: none;">Output</div>
+	<form name="output">
+	    <textarea rows="4" cols="50" name="output2"  id="output2"></textarea>
+	</form>
+    </body>
+</html>
