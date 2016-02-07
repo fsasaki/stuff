@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:exist="http://exist.sourceforge.net/NS/exist"
+    version="5.0" xml:id="la_femme_battant">
+    <teiHeader xmlns="http://www.tei-c.org/ns/1.0">
+        <fileDesc>
+            <titleStmt>
+                <title>From XML to RDF step by step: Approaches for Leveraging XML Workflows with
+                    Linked Data</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Published for XML Prague</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Made by the FREME proejct</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <p>We very much welcome you in the city of Prague, the home of XML!</p>
+        </body>
+    </text>
+</TEI>

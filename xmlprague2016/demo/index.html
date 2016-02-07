@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="utf-8">
+
+	<title>From XML to RDF Step by Step - Do it yourself</title>
+	<script
+	src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/Saxon-CE_1.1/Saxonce/Saxonce.nocache.js"></script>
+	<script type="text/javascript">
+            var fremeApiUrl = "http://api-dev.freme-project.eu/current";
+            //for dev version : http://api-dev.freme-project.eu/current
+            //for latest stable version: http://api.freme-project.eu/current
+	</script>
+	<script>
+            function xmlInput2Html(doctype) {
+
+                var xslSourcePath = "";
+                switch (doctype) {
+                    case "1" :
+                        xslSourcePath = "lib/tei-processing/tei2temp-html.xsl";
+                        break;
+                    case "2" :
+                        xslSourcePath = "lib/docbook-processing/docbook2temp-html.xsl";
+                }
+                ;
+                console.log("xsl in path final: " + xslSourcePath);
+                var proc = Saxon.newXSLT20Processor();
+                var xslSource = Saxon.requestXML(xslSourcePath);
+                var content = $('#content').val();
+                var xmlSource = Saxon.parseXML(content);
+                proc.importStylesheet(xslSource);
+                var fragment = proc.transformToFragment(xmlSource, document);
+                console.log("HTML version:" + Saxon.serializeXML(fragment));
+                return Saxon.serializeXML(fragment);
+            }
+            ;
+            var sendFreme = function () {
+                var selectedLanguage = $("#language").find(":selected").val();
+                var selectedDataset = $("#dataset").find(":selected").val();
+                var doctype = $("#doctype").find(":selected").val();
+                var approach = $('#approach').find(":selected").val();
+                var stylesheetchoice = "doctype:" + doctype + "approach:" + approach;
+                console.log("approach:" + approach);
+                console.log("doctype: " + doctype);
+                console.log("language: " + selectedLanguage);
+                console.log("dataset: " + selectedDataset);
+                var content = xmlInput2Html(doctype);
+                var requestURL = fremeApiUrl + "/e-entity/freme-ner/documents?language=" + selectedLanguage + "&dataset=" + selectedDataset;
+                if (approach === "2" || approach === "3" || approach === "5") {
+                    $.ajax({
+                        type: 'POST',
+                        url: requestURL,
+                        data: content,
+                        headers: {
+                            'Accept': 'text/html',
+                            'Content-Type': 'text/html'
+                        }
+                    })
+                            .done(function (result1) {
+                                //console.log("success" + result1.toString());
+                                $("#out").empty().append(result1);
+                                console.log("transform back start");
+                                var xslSourcePath = "";
+                                console.log("stylesheetchoice: " + stylesheetchoice);
+                                switch (stylesheetchoice) {
+                                    case "doctype:1approach:2" :
+                                        xslSourcePath = "lib/tei-processing/temp2tei-approach-2.xsl";
+                                        break;
+                                    case "doctype:1approach:3" :
+                                        xslSourcePath = "lib/tei-processing/temp2tei-approach-3.xsl";
+                                        break;
+                                    case "doctype:2approach:2" :
+                                        xslSourcePath = "lib/docbook-processing/temp2docbook-approach-2.xsl";
+                                        break;
+                                    case "doctype:2approach:3" :
+                                        xslSourcePath = "lib/docbook-processing/temp2docbook-approach-3.xsl";
+					break;
+                                    case "doctype:1approach:5" :
+                                        xslSourcePath = "lib/tei-processing/temp2tei-approach-2.xsl";
+                                        break;
+                                    case "doctype:2approach:5" :
+                                        xslSourcePath = "lib/docbook-processing/temp2docbook-approach-2.xsl";
+                                }
+                                ;
+                                console.log("approach 2,3,5 path" + xslSourcePath);
+                                var proc = Saxon.newXSLT20Processor();
+                                var xslSource = Saxon.requestXML(xslSourcePath);
+                                var xmlSource = Saxon.parseXML($('#content').val());
+                                proc.importStylesheet(xslSource);
+                                var fragment = proc.transformToFragment(xmlSource, document);
+                                var tempstring = Saxon.serializeXML(fragment);
+				console.log("approach:" + approach);
+                                if (approach === "2" || approach === "3") {
+                                    var tempstring2 = tempstring.replace(/</g, "&lt;");
+                                    $("#output2").empty().append(tempstring2);
+                                } else if (approach === "5") {
+				    console.log("running approach 5");
+				    $("#output2").empty();
+                                    var proc5 = Saxon.newXSLT20Processor();
+                                    var xslSourcePath5 = "";
+                                    switch (stylesheetchoice) {
+                                        case "doctype:1approach:5" :
+                                            xslSourcePath5 = "lib/tei-processing/temp2tei-approach-5.xsl";
+					    break;
+                                        case "doctype:2approach:5" :
+                                            xslSourcePath5 = "lib/docbook-processing/temp2docbook-approach-5.xsl";
+                                    }
+				    console.log("approach 5 path:" + xslSourcePath5);
+                                    var xslSource5 = Saxon.requestXML(xslSourcePath5);
+                                    proc5.importStylesheet(xslSource5);
+                                    var xmlSource5 = Saxon.parseXML(tempstring);
+                                    var fragment5 = proc5.transformToFragment(xmlSource5, document);
+                                    var tempstring5 = Saxon.serializeXML(fragment5);
+                                    var tempstring52 = tempstring5.replace(/</g, "&lt;");
+                                    $("#output2").empty().append(tempstring52);
+                                }
+                            })
+                            .fail(function (data) {
+                                console.log("error");
+                                error(data);
+                                $("#out").empty().append("Search request failed");
+                            });
+                } else {
+                    $.ajax({
+                        type: 'POST',
+                        url: requestURL,
+                        data: content,
+                        headers: {
+                            'Accept': 'text/turtle',
+                            'Content-Type': 'text/html'
+                        }
+                    })
+                            .done(function (result1) {
+                                var tempstring2 = result1.replace(/</g, "&lt;");
+                                if (approach === "1") {
+                                    $("#output2").empty().append(tempstring2);
+                                } else if (approach === "4") {
+                                    var xslSourcePath = "";
+                                    //console.log("approach 4 output" +  tempstring2);
+                                    $("#out").empty().append(tempstring2);
+                                    switch (stylesheetchoice) {
+                                        case "doctype:1approach:4" :
+                                            xslSourcePath = xslSourcePath + "lib/tei-processing/temp2tei-approach-4.xsl";
+                                            break;
+                                        case "doctype:2approach:4" :
+                                            xslSourcePath = xslSourcePath + "lib/docbook-processing/temp2docbook-approach-4.xsl";
+                                    }
+                                    ;
+                                    console.log("xsl source for approach 4: " + xslSourcePath);
+                                    var proc = Saxon.newXSLT20Processor();
+                                    proc.setParameter(null, "rdfoutput", tempstring2);
+                                    var xslSource = Saxon.requestXML(xslSourcePath);
+                                    var xmlSource = Saxon.parseXML($('#content').val());
+                                    proc.importStylesheet(xslSource);
+                                    console.log("parameter rdfoutput " + proc.getParameter(null, "rdfoutput"));
+                                    var fragment = proc.transformToFragment(xmlSource, document);
+                                    var tempstring = Saxon.serializeXML(fragment);
+                                    var tempstring2 = tempstring.replace(/</g, "&lt;");
+                                    $("#output2").empty().append(tempstring2);
+                                }
+                                ;
+                            })
+                            .fail(function (data) {
+                                console.log("error");
+                                error(data);
+                                $("#out").empty().append("Search request failed");
+                            });
+                }
+                ;
+                ;
+            };
+	</script>
+	<style>
+	    textarea.input { color: green;
+			     float: left;
+			     width: 45%;
+			     margin-left: 10px;
+			     margin-top: 10px;
+			     padding: 5px;
+			     border: 1px solid black;
+	    }
+	    textarea.output { color: blue;
+			      float: right;
+			      width: 45%;
+			      margin-right: 10px;
+			      margin-top: 10px;
+			      padding: 5px;
+			      border: 1px solid black;
+	    }
+	</style>
+    </head>
+    <body>
+	<h1>From XML to RDF Step by Step - Do it yourself</h1>
+	<h2 id="background">Background</h2>
+	<p>This examples shows how to process XML content with FREME.</p>
+	<h2 id="more-infos">More information</h2>
+	<p>For more information visit the <a target="_blank" href="http://api-dev.freme-project.eu/doc/api-doc/full.html">FREME API documentation</a>, <a target="_blank" href="https://github.com/freme-project/">FREME on GitHub</a> or the <a target="_blank" href="http://freme-project.eu/">FREME homepage</a>.</p>
+	<h2 id="try-it-out">Try it out</h2>
+	<p>In the left form below enter a Docbook 5.0 document and click on the bottom <q>Call FREME e-Entity</q>. Also, adapt the language and the data set used for enrichment to your needs.</p>
+	<button onclick="sendFreme();">Call FREME e-Entity with XML content</button>
+	<button onclick="$('#out').empty().append('Output');
+                $('#output2').empty();">Refresh output</button>
+	<form name="input">
+	    <p>Set the document type of the input: <select name="doctype" id="doctype"><option value="1">TEI</option><option value="2" selected>DocBook</option></select></p>
+	    <p>Set the language of the input: <select name="language" id="language"><option value="en" selected>English</option><option value="de">German</option><option value="nl">Dutch</option><option value="fr">French</option><option value="it">Italien</option><option value="es">Spanish</option></select></p>
+	    <p>Set the data set to be used for enrichment: <select name="dataset" id="dataset"><option value="dbpedia" selected>DBpedia</option><option value="onld">ONLD</option><option value="geopolitical">Geopolitical ontology</option><option value="viaf">VIAF</option><option value="orcid">ORCID</option></select></p>
+	    <p>Set the output type: <select name="approach" id="approach"><option value="1">1. Convert XML to linked data</option><option value="2">2. Embedd Linked Data into XML via Structured Markup</option><option value="3">3. Anchor Linked Data in XML Attributes</option><option value="4">4. Embed Linked Data in Metadata Sections of XML Files</option><option value="5">5. Anchor Linked Data via Annotations in XML Content</option></select></p>
+	    <textarea rows="15" cols="50" name="content"  id="content" class="input"></textarea>
+	</form>
+	<div id="out" style="display: none;">Output</div>
+	<form name="output">
+	    <textarea rows="15" cols="50" name="output2"  id="output2" class="output"></textarea>
+	</form>
+    </body>
+</html>

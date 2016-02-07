@@ -1,0 +1,135 @@
+<article xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>From XML to RDF step by step: Approaches for Leveraging XML Workflows with Linked Data</title>
+    </info>
+    <sect1 xml:id="s1">
+        <title>Introduction</title>
+        <sect2 xml:id="s1-1">
+        <title>Motivation</title>
+        <para>There have been many discussions about benefits and drawbacks of XML vs. RDF. In practice more and more XML and linked data technologies are being used together. This leads to opportunities and uncertainties: for years companies have invested heavily in XML workflows. They are not willing to throw them away for the benefits of linked data.</para>
+        <para>In XML workflows XML content is</para>
+        <itemizedlist>
+            <listitem>
+                <para>Generated, from scratch or based on existing content; </para>	
+            </listitem>
+            <listitem><para>processed, e.g.: validated, queried, transformed; and</para></listitem>
+            <listitem><para>stored in various forms, e.g.: as XML, in a different format (e.g. PDF / HTML output); and</para></listitem>
+            <listitem><para>potentially input to other XML or non-XML workflows.</para></listitem>
+        </itemizedlist>
+        <para>Each part of the workflow may include huge amounts of XML data. This can be XML files themselves, but also additional related items like: XSLT or XSL-FO stylesheets for transformation or printing, XQuery based queries, or XML Schema / DTD / Relax NG schemata for validation etc.</para>
+        
+        <para>For many potential users of linked data, giving up these workflows is not an option. Also, changing even a small part of the workflow may lead to high costs. Imagine one element <code>linkedDataStorage</code> added to an imaginary XML document:</para>
+        <example xml:id="ex1">
+            <title>XML document with linked data embedded in an element</title>
+            <programlisting><![CDATA[
+&lt;myData>
+ &lt;head>...&lt;/head>
+ &lt;body>
+ <emphasis role="bold">&lt;linkedDataStorage>...&lt;/linkedDataStorage></emphasis> ...
+ &lt;/body>
+&lt;/myData>]]>
+</programlisting>
+        </example>
+        <para>Adding this element to an XML element may break various aspects of the workflow,
+            like:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Validation: the underlying schema does not understand the new element.</para>
+            </listitem>
+            <listitem>
+                <para> Transformation: a transformation may expect a certain element as the first
+                        child element of body. If <code>linkedDataStorage</code> is the first child,
+                        the transformation would fail.</para>
+            </listitem>
+        </itemizedlist>
+            <para>One may argue that good XML schema will leave space for expansion using lax validated parts or by accepting attributes from other namespaces, for example. Nevertheless, in practice we have to work with a lot of existing XML Schemas, related tooling and workflows. So creating extension points and deploying lax validation may not be an option in real life.</para>
+        <para>Whereas the strict validation against schemas on the one hand is in the XML world
+            often seen as a feature of the toolchain, on the other hand, such adding of elements and
+            schemaless integration of different (parts of) datasets is actually one of the main
+            “selling points of RDF”. However, note that on the contrary, even in the RDF world,
+            users are starting to demand tools for stricter schema validation, which has recently
+            lead to the foundation of a respective working group around RDF Data Shapes in
+            W3C.<footnote><para>See <link xlink:href="http://www.w3.org/2014/data-shapes/"
+                            >http://www.w3.org/2014/data-shapes/</link>.</para></footnote> So, overall there seems to be lots to learn for
+            both sides from each other.</para>
+        <para>This paper wants to help with XML and RDF integration to foster incremental adoption
+                of linked data, without the need to get rid of existing XML workflows. We are
+                discussing  various integration approaches. They all have benefits and drawbacks.
+                The reader needs to be careful in deciding which approach to choose.</para>
+        </sect2>
+        <sect2  xml:id="s1-2">
+            <title>The Relation to RDF Chimera</title>
+            <para>In her keynote at XML Prague 2012 and a subsequent blog post, Jeni Tennison
+                discussed <link xlink:href="http://www.jenitennison.com/2012/06/30/rdf-chimera.html"
+                    >RDF chimera</link>. She is arguing that for representing RDF, syntaxes like
+                RDF/XML or JSON or JSON-LD should be seen as a means to achieve something - a road,
+                but not a destination. An example is a query to an RDF data store, and the outcome
+                is represented in an HTML page.</para>
+            <para> The goal of our paper is different. We assume that there is existing content that
+                benefits from <emphasis role="italic">data integration</emphasis> with linked data -
+                without turning the content into a linked data model. Let’s look at an example:
+                imagine we have the sentence <code>Berlin is the capital of Germany!</code>. There
+                are many linked data sources like <link xlink:href="http://dbpedia.org/about"
+                    >DBpedia</link> that contain information about <code>Berlin</code>; it would add
+                an enormous value to existing content (or content creation workflows) if such
+                information could be taken into account. This does not mean - like in the case of
+                RDF chimera - to give up the XML based workflows, but to provide means for the data
+                integration. In this view we can see the linked data process as a type of
+                enrichment, hence we call the process <emphasis role="italic">enriching XML
+                    content</emphasis> with linked data based information.</para>
+        </sect2>
+        <sect2  xml:id="s1-3">
+            <title>Background: The FREME Project</title>
+            <para>FREME<footnote><para>See the FREME project homepage at <link
+                xlink:href="http://freme-project.eu/">http://freme-project.eu/</link> for more
+                information.</para></footnote> is an European project funded under the H2020
+                Framework Programme. FREME is providing a set of
+                interfaces (APIs and GUIs) for multilingual and semantic enrichment of digital
+                content. The project started in February 2015, will last for two years and
+                encompasses eight partners. The partners provide technology from the realm of
+                language and data processing, business cases from various domains, and expertise in
+                business modeling. This expertise is of specific importance since both language and
+                linked data technologies are not yet widely adopted. The challenge of XML
+                re-engineering for the sake of linked data processing is one hindrance that needs to
+                be overcome to achieve more adoption.</para>
+            <para>FREME provides six e-Services for processing of digital content:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>e-Internationalisation based on the Internationalisation Tag Set (ITS)
+                        Version 2.0.</para>
+                </listitem>
+                <listitem>
+                    <para>e-Link based on the Natural Language Processing Interchange Format (NIF)
+                        and linked (open) data sources.</para>
+                </listitem>
+                <listitem>
+                    <para>e-Entity based on entity recognition software and existing linked entity
+                        datasets.</para>
+                </listitem>
+                <listitem>
+                    <para>e-Terminology based on cloud terminology services for terminology
+                        management and terminology annotation web service to annotate terminology in
+                        ITS 2.0 enriched content.</para>
+                </listitem>
+                <listitem>
+                    <para>e-Translation based on cloud machine translation services for building
+                        custom machine translation systems.</para>
+                </listitem>
+                <listitem>
+                    <para>e-Publishing based on cloud content authoring environment (for example
+                        e-books, technical documentation, marketing materials etc.) and its export
+                        for publishing in Electronic Publication (EPUB3) format.</para>
+                </listitem>
+            </itemizedlist>
+            <para>This paper will not provide details about the services - examples and more
+                information on FREME can be found at <link
+                    xlink:href="http://api.freme-project.eu/doc/current/"
+                    >http://api.freme-project.eu/doc/current/</link></para>
+            <para> All e-services have in common that XML content is a potential input and output
+                format: via FREME, XML content can be enriched with additional information, to add
+                value to the content. But FREME is only one example: many other linked data projects
+                involve companies working with linked data content. </para>
+        </sect2>
+    </sect1>
+</article>
