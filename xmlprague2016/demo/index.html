@@ -75,7 +75,7 @@
                                         break;
                                     case "doctype:2approach:3" :
                                         xslSourcePath = "lib/docbook-processing/temp2docbook-approach-3.xsl";
-					break;
+                                        break;
                                     case "doctype:1approach:5" :
                                         xslSourcePath = "lib/tei-processing/temp2tei-approach-2.xsl";
                                         break;
@@ -90,23 +90,23 @@
                                 proc.importStylesheet(xslSource);
                                 var fragment = proc.transformToFragment(xmlSource, document);
                                 var tempstring = Saxon.serializeXML(fragment);
-				console.log("approach:" + approach);
+                                console.log("approach:" + approach);
                                 if (approach === "2" || approach === "3") {
                                     var tempstring2 = tempstring.replace(/</g, "&lt;");
                                     $("#output2").empty().append(tempstring2);
                                 } else if (approach === "5") {
-				    console.log("running approach 5");
-				    $("#output2").empty();
+                                    console.log("running approach 5");
+                                    $("#output2").empty();
                                     var proc5 = Saxon.newXSLT20Processor();
                                     var xslSourcePath5 = "";
                                     switch (stylesheetchoice) {
                                         case "doctype:1approach:5" :
                                             xslSourcePath5 = "lib/tei-processing/temp2tei-approach-5.xsl";
-					    break;
+                                            break;
                                         case "doctype:2approach:5" :
                                             xslSourcePath5 = "lib/docbook-processing/temp2docbook-approach-5.xsl";
                                     }
-				    console.log("approach 5 path:" + xslSourcePath5);
+                                    console.log("approach 5 path:" + xslSourcePath5);
                                     var xslSource5 = Saxon.requestXML(xslSourcePath5);
                                     proc5.importStylesheet(xslSource5);
                                     var xmlSource5 = Saxon.parseXML(tempstring);
@@ -193,7 +193,7 @@
     <body>
 	<h1>From XML to RDF Step by Step - Do it yourself</h1>
 	<h2 id="background">Background</h2>
-	<p>This examples shows how to process XML content with FREME.</p>
+	<p>This examples shows how to process XML content with FREME. For background to the XML and RDF processing options, see the related <a href="http://fsasaki.github.io/stuff/xmlprague2016/sasaki-et-al-xmlprague-2016.html">XML Prague 2016 paper</a>.</p>
 	<h2 id="more-infos">More information</h2>
 	<p>For more information visit the <a target="_blank" href="http://api-dev.freme-project.eu/doc/api-doc/full.html">FREME API documentation</a>, <a target="_blank" href="https://github.com/freme-project/">FREME on GitHub</a> or the <a target="_blank" href="http://freme-project.eu/">FREME homepage</a>.</p>
 	<h2 id="try-it-out">Try it out</h2>
