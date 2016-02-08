@@ -13,10 +13,29 @@
             //for latest stable version: http://api.freme-project.eu/current
 	</script>
 	<script>
-            function xmlInput2Html(doctype) {
-
-                var xslSourcePath = "";
-                switch (doctype) {
+            function xsltTransform(xslSourcePath, xmlString, params) {
+                console.log("xsl in path: " + xslSourcePath);
+                var proc = Saxon.newXSLT20Processor();
+		if(params){
+		$.each(params, function(index, item) {
+		   console.log("ns:" + item.ns + "name:" + item.name);
+		   proc.setParameter(item.ns, item.name, item.value);
+		});};
+                var xslSource = Saxon.requestXML(xslSourcePath);
+                var xmlSource = Saxon.parseXML(xmlString);
+                proc.importStylesheet(xslSource);
+                var fragment = proc.transformToFragment(xmlSource, document);
+                console.log("transformed version:" + Saxon.serializeXML(fragment));
+                return Saxon.serializeXML(fragment);
+            }
+            ;
+            var sendFreme = function () {
+		var xslSourcePath = "";
+		//var params = [{ "ns" : null, "name" : "tbd", "value" : "tbd"}]; 
+                var selectedLanguage = $("#language").find(":selected").val();
+                var selectedDataset = $("#dataset").find(":selected").val();
+                var doctype = $("#doctype").find(":selected").val();
+		 switch (doctype) {
                     case "1" :
                         xslSourcePath = "lib/tei-processing/tei2temp-html.xsl";
                         break;
@@ -24,36 +43,21 @@
                         xslSourcePath = "lib/docbook-processing/docbook2temp-html.xsl";
                 }
                 ;
-                console.log("xsl in path final: " + xslSourcePath);
-                var proc = Saxon.newXSLT20Processor();
-                var xslSource = Saxon.requestXML(xslSourcePath);
-                var content = $('#content').val();
-                var xmlSource = Saxon.parseXML(content);
-                proc.importStylesheet(xslSource);
-                var fragment = proc.transformToFragment(xmlSource, document);
-                console.log("HTML version:" + Saxon.serializeXML(fragment));
-                return Saxon.serializeXML(fragment);
-            }
-            ;
-            var sendFreme = function () {
-                var selectedLanguage = $("#language").find(":selected").val();
-                var selectedDataset = $("#dataset").find(":selected").val();
-                var doctype = $("#doctype").find(":selected").val();
                 var approach = $('#approach').find(":selected").val();
+		var sourceContent = $('#content').val();
                 var stylesheetchoice = "doctype:" + doctype + "approach:" + approach;
                 console.log("approach:" + approach);
                 console.log("doctype: " + doctype);
                 console.log("language: " + selectedLanguage);
                 console.log("dataset: " + selectedDataset);
-                var content = xmlInput2Html(doctype);
+                var requestBody = xsltTransform(xslSourcePath,sourceContent);
                 var requestURL = fremeApiUrl + "/e-entity/freme-ner/documents?language=" + selectedLanguage + "&dataset=" + selectedDataset;
                 if (approach === "2" || approach === "3" || approach === "5") {
                     $.ajax({
                         type: 'POST',
                         url: requestURL,
-                        data: content,
-                        headers: {
-                            'Accept': 'text/html',
+                        data: requestBody,
+                        headers: {                            'Accept': 'text/html',
                             'Content-Type': 'text/html'
                         }
                     })
@@ -61,7 +65,6 @@
                                 //console.log("success" + result1.toString());
                                 $("#out").empty().append(result1);
                                 console.log("transform back start");
-                                var xslSourcePath = "";
                                 console.log("stylesheetchoice: " + stylesheetchoice);
                                 switch (stylesheetchoice) {
                                     case "doctype:1approach:2" :
@@ -84,12 +87,7 @@
                                 }
                                 ;
                                 console.log("approach 2,3,5 path" + xslSourcePath);
-                                var proc = Saxon.newXSLT20Processor();
-                                var xslSource = Saxon.requestXML(xslSourcePath);
-                                var xmlSource = Saxon.parseXML($('#content').val());
-                                proc.importStylesheet(xslSource);
-                                var fragment = proc.transformToFragment(xmlSource, document);
-                                var tempstring = Saxon.serializeXML(fragment);
+				var tempstring = xsltTransform(xslSourcePath, sourceContent, []);
                                 console.log("approach:" + approach);
                                 if (approach === "2" || approach === "3") {
                                     var tempstring2 = tempstring.replace(/</g, "&lt;");
@@ -97,21 +95,15 @@
                                 } else if (approach === "5") {
                                     console.log("running approach 5");
                                     $("#output2").empty();
-                                    var proc5 = Saxon.newXSLT20Processor();
-                                    var xslSourcePath5 = "";
                                     switch (stylesheetchoice) {
                                         case "doctype:1approach:5" :
-                                            xslSourcePath5 = "lib/tei-processing/temp2tei-approach-5.xsl";
+                                            xslSourcePath = "lib/tei-processing/temp2tei-approach-5.xsl";
                                             break;
                                         case "doctype:2approach:5" :
-                                            xslSourcePath5 = "lib/docbook-processing/temp2docbook-approach-5.xsl";
+                                            xslSourcePath = "lib/docbook-processing/temp2docbook-approach-5.xsl";
                                     }
-                                    console.log("approach 5 path:" + xslSourcePath5);
-                                    var xslSource5 = Saxon.requestXML(xslSourcePath5);
-                                    proc5.importStylesheet(xslSource5);
-                                    var xmlSource5 = Saxon.parseXML(tempstring);
-                                    var fragment5 = proc5.transformToFragment(xmlSource5, document);
-                                    var tempstring5 = Saxon.serializeXML(fragment5);
+                                    console.log("approach 5 path:" + xslSourcePath);
+				    var tempstring5 = xsltTransform(xslSourcePath, tempstring, []);
                                     var tempstring52 = tempstring5.replace(/</g, "&lt;");
                                     $("#output2").empty().append(tempstring52);
                                 }
@@ -125,7 +117,7 @@
                     $.ajax({
                         type: 'POST',
                         url: requestURL,
-                        data: content,
+                        data: sourceContent,
                         headers: {
                             'Accept': 'text/turtle',
                             'Content-Type': 'text/html'
@@ -136,26 +128,18 @@
                                 if (approach === "1") {
                                     $("#output2").empty().append(tempstring2);
                                 } else if (approach === "4") {
-                                    var xslSourcePath = "";
                                     //console.log("approach 4 output" +  tempstring2);
                                     $("#out").empty().append(tempstring2);
                                     switch (stylesheetchoice) {
                                         case "doctype:1approach:4" :
-                                            xslSourcePath = xslSourcePath + "lib/tei-processing/temp2tei-approach-4.xsl";
+                                            xslSourcePath = "lib/tei-processing/temp2tei-approach-4.xsl";
                                             break;
                                         case "doctype:2approach:4" :
-                                            xslSourcePath = xslSourcePath + "lib/docbook-processing/temp2docbook-approach-4.xsl";
+                                            xslSourcePath = "lib/docbook-processing/temp2docbook-approach-4.xsl";
                                     }
                                     ;
                                     console.log("xsl source for approach 4: " + xslSourcePath);
-                                    var proc = Saxon.newXSLT20Processor();
-                                    proc.setParameter(null, "rdfoutput", tempstring2);
-                                    var xslSource = Saxon.requestXML(xslSourcePath);
-                                    var xmlSource = Saxon.parseXML($('#content').val());
-                                    proc.importStylesheet(xslSource);
-                                    console.log("parameter rdfoutput " + proc.getParameter(null, "rdfoutput"));
-                                    var fragment = proc.transformToFragment(xmlSource, document);
-                                    var tempstring = Saxon.serializeXML(fragment);
+				    var tempstring = xsltTransform(xslSourcePath, sourceContent, [{"ns" : null, "name" : "rdfoutput", "value" : tempstring2}]);
                                     var tempstring2 = tempstring.replace(/</g, "&lt;");
                                     $("#output2").empty().append(tempstring2);
                                 }
@@ -240,9 +224,6 @@ Data&lt;/title>
 &lt;/sourceDesc>&lt;/fileDesc>&lt;/teiHeader>&lt;text>&lt;body>
 &lt;p>We very much welcome you in the city of Prague, a home of XML!&lt;/p>
 &lt;/body>&lt;/text>&lt;/TEI>
-	</div>
-	<div id="tei-sample" style="display: none;">
-
 	</div>
     </body>
 </html>
