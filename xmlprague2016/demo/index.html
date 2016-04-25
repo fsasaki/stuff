@@ -8,7 +8,7 @@
 	src="lib/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/Saxon-CE_1.1/Saxonce/Saxonce.nocache.js"></script>
 	<script type="text/javascript">
-            var fremeApiUrl = "http://api-dev.freme-project.eu/current";
+            var fremeApiUrl = "http://api.freme-project.eu/0.5";
             //for dev version : http://api-dev.freme-project.eu/current
             //for latest stable version: http://api.freme-project.eu/current
 	</script>
@@ -194,7 +194,7 @@
 	<form name="input">
 	    <p>Set the document type of the input: <select name="doctype" id="doctype"><option value="1">TEI</option><option value="2" selected>DocBook</option></select></p>
 	    <p>Set the language of the input: <select name="language" id="language"><option value="en" selected>English</option><option value="de">German</option><option value="nl">Dutch</option><option value="fr">French</option><option value="it">Italien</option><option value="es">Spanish</option></select></p>
-	    <p>Set the data set to be used for enrichment: <select name="dataset" id="dataset"><option value="dbpedia" selected>DBpedia</option><option value="onld">ONLD</option><option value="geopolitical">Geopolitical ontology</option><option value="viaf">VIAF</option><option value="orcid">ORCID</option></select></p>
+	    <p>Set the data set to be used for enrichment: <select name="dataset" id="dataset"><option value="dbpedia" selected>DBpedia</option><option value="onld">ONLD</option><option value="geopolitical">Geopolitical ontology</option><option value="viaf">VIAF</option><option value="orcid">ORCID</option></select></p> 
 	    <p>Set the output type: <select name="approach" id="approach"><option value="1">1. Convert XML to linked data</option><option value="2">2. Embedd Linked Data into XML via Structured Markup</option><option value="3">3. Anchor Linked Data in XML Attributes</option><option value="4">4. Embed Linked Data in Metadata Sections of XML Files</option><option value="5">5. Anchor Linked Data via Annotations in XML Content</option></select></p>
 	    <textarea rows="15" cols="50" name="content"  id="content" class="input"></textarea>
 	</form>
