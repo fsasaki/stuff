@@ -6,6 +6,7 @@
 	<title>DKT Webannotation Demo</title>
 	<script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<script type="text/javascript">
             var sendDKT = function () {
                 var content = $('#content').val();
@@ -30,13 +31,31 @@
                                 data: nifInput,
                                 headers:
                                         {
-                                           'Accept': 'application/json+ld',
-                                           'Content-Type': 'text/turtle'
+                                            'Accept': 'application/json+ld',
+                                            'Content-Type': 'text/turtle'
                                         }
                             }).done(function (result2) {
                                 console.log("success");
-                                var tempstring = JSON.stringify(result2, null, 4); 
-                                $("#output2").empty().append(tempstring);
+                                $("#output2").empty();
+                                var tempstring = JSON.stringify(result2, null, 4);
+                                var anno = result2["@graph"];
+                                $.each(result2['@graph'], function (index, element1) {
+                                    if (element1['meanDateEnd']) {
+                                        $("#output2").append("<p>Mean dates<br>Start: " + element1.meanDateStart + "<br>End: " + element1.meanDateEnd + "</p>");
+                                    }
+                                    ;
+
+                                });
+                                $.each(result2['@graph'], function (index, element1) {
+
+                                    if (element1['intervalFinishes']) {
+                                        $("#output2").append("<p>Interval found<br>Start: " + element1.intervalStarts + "<br>End: " + element1.intervalFinishes + "</p>");
+                                    }
+                                    ;
+                                });
+                                ;
+                                $("#output2").append(tempstring);
+                                $("#output2").show("blind", {to: {width: 280, height: 185}}, 2000);
                             })
                                     //var tempstring = result.replace(/</g, "&lt;");
                                     //$("#output2").empty().append(tempstring);
@@ -61,18 +80,29 @@
 	    *.output { width: 100%; }
 	</style>    
     </head>
-    <body>
+    <body onload='$("#output2").hide();'>
 	<h1>DKT Webannotation Demo</h1>
 	<form name="input">
 	    <p>Enter text with time related expressions:</p>
-	    <textarea rows="4" cols="50" name="content"  id="content"  class="input">We will start in 2014 and will be finished in 2016.</textarea>
+	    <textarea rows="4" cols="50" name="content"  id="content"  class="input">1937 
+
+With his ranks swelled by Italian troops and Spanish colonial soldiers from Morocco, Franco made another attempt to capture Madrid in January and February 1937 , but again failed.
+On 21 February the League of Nations Non-Intervention Committee ban on foreign national "volunteers" went into effect. The large city of Málaga was taken on 8 February . On 7 March , the German Condor Legion equipped with Heinkel He 51 biplanes arrived in Spain; on 26 April the Legion Bombed the town of Guernica, killing hundreds. Two days later , Franco's army overran the town.
+After the fall of Guernica, the Republican government began to fight back with increasing effectiveness. In July , they made a move to recapture Segovia, forcing Franco to pull troops away from the Madrid front to halt their advance. Mola, Franco's second-in-command, was killed on 3 June , and in early July , despite the fall of Bilbao in June , the government launched a strong counter-offensive in the Madrid area, which the Nationalists repulsed with difficulty. The clash was called "Battle of Brunete" after a town in the province of Madrid.
+Franco invaded Aragón in August and then took the city of Santander. With the surrender of the Republican army in the Basque territory and after two months of bitter fighting in Asturias (Gijón finally fell in late October ) Franco had effectively won in the north. At the end of November , with Franco's troops closing in on Valencia, the government had to move again, this time to Barcelona.</textarea>
+	    <!-- 1937 
+
+With his ranks swelled by Italian troops and Spanish colonial soldiers from Morocco, Franco made another attempt to capture Madrid in January and February 1937 , but again failed.
+On 21 February the League of Nations Non-Intervention Committee ban on foreign national "volunteers" went into effect. The large city of Málaga was taken on 8 February . On 7 March , the German Condor Legion equipped with Heinkel He 51 biplanes arrived in Spain; on 26 April the Legion Bombed the town of Guernica, killing hundreds. Two days later , Franco's army overran the town.
+After the fall of Guernica, the Republican government began to fight back with increasing effectiveness. In July , they made a move to recapture Segovia, forcing Franco to pull troops away from the Madrid front to halt their advance. Mola, Franco's second-in-command, was killed on 3 June , and in early July , despite the fall of Bilbao in June , the government launched a strong counter-offensive in the Madrid area, which the Nationalists repulsed with difficulty. The clash was called "Battle of Brunete" after a town in the province of Madrid.
+Franco invaded Aragón in August and then took the city of Santander. With the surrender of the Republican army in the Basque territory and after two months of bitter fighting in Asturias (Gijón finally fell in late October ) Franco had effectively won in the north. At the end of November , with Franco's troops closing in on Valencia, the government had to move again, this time to Barcelona.-->
 	</form>
 	<button onclick="sendDKT();">Call DKT Service</button>
-	<button onclick="$('#output2').empty().append('');">Refresh output</button>
+	<button onclick="$('#output2').empty().append('');
+                $('#output2').hide();">Refresh output</button>
 	<p>Output appears here:</p>
-	<div id="out">Output</div>
-	<form name="output">
-	    <textarea rows="15" cols="50" name="output2"  id="output2" class="output"></textarea>
-	</form>
+	<div id="output">
+	    <pre id="output2" class="output"></pre>
+	</div>
     </body>
 </html>
