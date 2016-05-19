@@ -1,0 +1,1181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xsi:noNamespaceSchemaLocation="http://qt21.eu/downloads/annotations.xsd">
+   <annotGrp source="qtleap" id="i_2011-1" original_id="2011-1">
+      <src xml:lang="en">Go to System Preferences &gt; Desktop &amp; Screen Saver and change the settings.</src>
+      <targets xml:lang="de">
+         <target row_number="1" engine="null">
+            <targetSeg>Wie kann ich den Bildschirmschoner unter MAC abschalten?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A"><issue id="x63955" type="Mistranslation"   >Gehen Sie zu</issue> Systemeinstellungen > <issue id="x63956" type="Untranslated"   >Desktop &amp; Screen Saver</issue> und die Einstellungen <issue id="x63957" type="Word order"   >ändern</issue>.</annotatedTarget>
+               <annotatedTarget annotator="B"><issue id="x63966" type="Mistranslation"   ><issue id="x63967" type="Part of speech"   >Sprung zu</issue></issue> Systemeinstellungen > Arbeitsumgebung &amp; Bildschirmschoner und ändern Sie die Einstellungen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2024-2" original_id="2024-2">
+      <src xml:lang="en">Click and drag the file onto the Trash icon on the Dock. Alternatively, you can select the file and press Command-Delete.</src>
+      <targets xml:lang="de">
+         <target row_number="2" engine="null">
+            <targetSeg>Ich weiß nicht, wie ich eine Datei auf dem MAC löschen kann.</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken und ziehen Sie die Datei auf das Schundicon auf dem andocken. Alternativ können Sie die Datei aus und drücken Kommandofenster löschen.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken und ziehen Sie die Datei auf den Papierkorb Symbol im Dock. Alternativ können Sie die Datei auswählen und drücken Befehls-Streichen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2035-1" original_id="2035-1">
+      <src xml:lang="en">Close all programs running on the computer and try again. Alternatively, load the computer into Safe Mode and delete the files.</src>
+      <targets xml:lang="de">
+         <target row_number="3" engine="null">
+            <targetSeg>Ich kann eine Datei nicht löschen, weil sie von Windows verwendet wird</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Schließen Sie alle Programme, die nochmals auf dem Computer und Versuch laufen. Alternativ, laden Sie die Computer in Safe Mode und die Dateien löschen.</annotatedTarget>
+               <annotatedTarget annotator="B">Schließen Sie alle Programme, die es erneut auf dem Rechner und versuchen Sie es erneut. Laden Sie wahlweise den Rechner in sicheren Modus und löschen Sie die Dateien."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2036-1" original_id="2036-1">
+      <src xml:lang="en">Users should not simply press the power button or restart the computer while Windows is still running unless there is an issue with the computer.</src>
+      <targets xml:lang="de">
+         <target row_number="4" engine="null">
+            <targetSeg>Ist es sicher, den PC auszuschalten ohne ihn herunterzufahren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Nutzer sollten nicht einfach <issue id="x63968" type="Mistranslation"   ><issue id="x63969" type="Word order"   >drücken</issue> Sie</issue> die <issue id="x63970" type="Untranslated"   >Power</issue>-Taste oder <issue id="x63971" type="Tense/aspect/mood"   ><issue id="x63972" type="Word order"   >starten</issue> Sie</issue> den Rechner neu, während Windows <issue id="x63973" type="Addition"   >ist</issue> immer noch läuft, es sei denn, es gibt ein Problem mit dem Computer.</annotatedTarget>
+               <annotatedTarget annotator="B">Benutzer sollten einfach nicht auf die <issue id="x63974" type="Mistranslation"   >Netzanschaltungsschaltfläche</issue> drücken oder den Rechner <issue id="x63975" type="Addition"   >nicht</issue> neu starten, während Windows noch läuft, solange <issue id="x63976" type="Incorrect function word"   >er</issue> <issue id="x63977" type="Mistranslation"   >eine Frage</issue> mit dem Rechner gibt."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2037-2" original_id="2037-2">
+      <src xml:lang="en">Double click the recycle bin icon on your desktop. Select the files you wish to recover, right click and choose restore.</src>
+      <targets xml:lang="de">
+         <target row_number="5" engine="null">
+            <targetSeg>Wie kann ich eine Datei aus dem Papierkorb wiederherstellen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Doppelklicken Sie auf den <issue id="x66624" type="Mistranslation"   >Kastenicon</issue> in Ihrer Arbeitsumgebung <issue id="x66625" type="Word order"   ><issue id="x66626" type="Part of speech"   >wiederverwerten</issue></issue>. Wählen Sie die Dateien, die Sie <issue id="x66627" type="Mistranslation"   >wiedergewinnen</issue> möchten, <issue id="x66628" type="Mistranslation"   >rechts klicken</issue> und <issue id="x66629" type="Spelling"   >wiederherstellen</issue> wählen.</annotatedTarget>
+               <annotatedTarget annotator="B"><issue id="x66630" type="Part of speech"   >Doppelklick</issue> der <issue id="x66631" type="Mistranslation"   >Kastenicon</issue> auf Ihrem Desktop <issue id="x66632" type="Word order"   >wiederverwerten</issue>. Wählen Sie die Dateien, <issue id="x66633" type="Mistranslation"   ><issue id="x66634" type="Grammar"   >die Sie wünschen, sich zu erholen</issue></issue>, mit der rechten Maustaste und wählen Sie <issue id="x66635" type="Mistranslation"   >wieder</issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2040-2" original_id="2040-2">
+      <src xml:lang="en">No spaces are allowed in an e-mail address. However, names can be broken up using a period.</src>
+      <targets xml:lang="de">
+         <target row_number="6" engine="null">
+            <targetSeg>Sind Leerzeichen in E-Mail Adressen erlaubt?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A"><issue id="x66636" type="Incorrect function word"   >Keine</issue> Leerzeichen <issue id="x66637" type="Tense/aspect/mood"   >werden</issue> in einer E-Mail-Adresse<issue id="x66638" type="Missing function word"   > </issue>erlaubt. Es können jedoch Namen mithilfe <issue id="x66639" type="Mistranslation"   >eines Zeitraums</issue> <issue id="x66640" type="Mistranslation"   >abgebrochen werden</issue>.</annotatedTarget>
+               <annotatedTarget annotator="B"><issue id="x66641" type="Incorrect function word"   >Keine</issue> Leerzeichen sind<issue id="x66642" type="Missing function word"   > </issue>erlaubt in einer E-Mail-Adresse. Namen <issue id="x66643" type="Mistranslation"   >durchbrochen</issue> werden <issue id="x66644" type="Agreement"   >kann</issue>, <issue id="x66645" type="Word order"   >aber</issue> mit <issue id="x66646" type="Mistranslation"   >einem Zeitraum</issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2043-1" original_id="2043-1">
+      <src xml:lang="en">Go to the website of the manufacturers and search for the model of you printer. You will able to locate the corresponding drivers.</src>
+      <targets xml:lang="de">
+         <target row_number="7" engine="null">
+            <targetSeg>Ich meinen Drucker-Installations-CD verloren, wie kann ich meinen Drucker installieren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Auf der Website der Hersteller und Suche nach dem Modell von Ihnen Drucker. Sie können die entsprechenden Treiber.</annotatedTarget>
+               <annotatedTarget annotator="B">Gehen Sie zur Website <issue id="x66647" type="Agreement"   >der Hersteller</issue> und suchen Sie nach dem Modell von <issue id="x66648" type="Incorrect function word"   >Ihnen</issue> Drucker. <issue id="x66649" type="Mistranslation"   >Sie können, wechselt </issue>die entsprechenden Treiber zu suchen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2046-1" original_id="2046-1">
+      <src xml:lang="en">Right-click My Computer. Then Properties &gt; Computer Name. If you wish to change the name or workgroup, click the Change button.</src>
+      <targets xml:lang="de">
+         <target row_number="8" engine="null">
+            <targetSeg>Wie kann ich den Namen meines Computers ändern?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie mit der rechten Maustaste Version verwenden.Mit. Dann Eigenschaften > Computer Name. Wenn Sie den Namen oder workgroup verändern wollen, klicken Sie die Änderungs-Schaltfläche an.</annotatedTarget>
+               <annotatedTarget annotator="B">Recht-Klick Mein Computer. Dann Eigenschaften > Rechner-Name. Wenn Sie den Namen oder workgroup ändern wollen, klicken Sie die Schaltfläche ändern."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2049-2" original_id="2049-2">
+      <src xml:lang="en">Formatting the hard disk will almost always remove any type of virus. However, if you have a backup of the disk, this may contain the virus.</src>
+      <targets xml:lang="de">
+         <target row_number="9" engine="null">
+            <targetSeg>Wenn ich meine Festplatte lösche oder formatiere, entfernt das einen Virus?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Die Festplatte zu formatieren wird fast immer <issue id="x66650" type="Incorrect function word"   >einen</issue> Art von Virus entfernen. Wenn Sie <issue id="x66651" type="Agreement"   >einen</issue> Sicherung von der Festplatte besitzen, kann <issue id="x66652" type="Incorrect function word"   >dies</issue> jedoch das Virus enthalten.</annotatedTarget>
+               <annotatedTarget annotator="B"><issue id="x66653" type="Missing function word"   > </issue>Formatierung der Festplatte wird fast immer jede Art von Virus entfernen. Wenn Sie jedoch ein Backup der Festplatte haben, <issue id="x66654" type="Incorrect function word"   ><issue id="x66655" type="Word order"   >dies</issue> </issue>kann das Virus enthalten."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2050-1" original_id="2050-1">
+      <src xml:lang="en">Go to Tools and then choose 'Delete browsing history..', you can then choose to delete your Internet cookies.</src>
+      <targets xml:lang="de">
+         <target row_number="10" engine="null">
+            <targetSeg>Wie lösche ich Internet Cookies?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A"><issue id="x66656" type="Mistranslation"   >Gehen Sie zu</issue> <issue id="x66661" type="Untranslated"   >Tools</issue> und wählen Sie dann <issue id="x66657" type="Mistranslation"   >Browsingchronik</issue> <issue id="x66658" type="Part of speech"   >Löschen</issue>.., <issue id="x66659" type="Word order"   >können</issue> Sie dann <issue id="x66660" type="Mistranslation"   >vorziehen</issue>, Ihre Internet-Cookies zu löschen.</annotatedTarget>
+               <annotatedTarget annotator="B"><issue id="x66662" type="Mistranslation"   >Sprung zu</issue> Extras und wählen Sie dann Browserverlauf löschen,..<issue id="x66663" type="Typography"   >,</issue> Sie können dann<issue id="x66664" type="Omission"   > </issue>Ihre Internet-Cookies löschen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2066-2" original_id="2066-2">
+      <src xml:lang="en">Swipe in from the left edge, and with your finger still on the screen, move it back toward the left edge.</src>
+      <targets xml:lang="de">
+         <target row_number="11" engine="null">
+            <targetSeg>Wie kann ich mit dem Touch in Windows 8, eine Liste der zuletzt verwendeten Anwendungen einsehen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Drücken Sie in vom linken Rand und mit Ihrem Finger noch auf dem Bildschirm, stellen Sie es an den linken Rand zurück.</annotatedTarget>
+               <annotatedTarget annotator="B">Swipe in vom linken Rand, und noch immer mit dem Finger auf dem Bildschirm, sie zurück in Richtung der linken Rand."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2081-2" original_id="2081-2">
+      <src xml:lang="en">Navigate to Settings &gt; FaceTime. Turn FaceTime on if needed. Sign in with your Apple ID. From the Home screen, open the FaceTime app. Sign in with your Apple ID.</src>
+      <targets xml:lang="de">
+         <target row_number="12" engine="null">
+            <targetSeg>Wie kann ich FaceTime auf dem iPad aktivieren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wechseln Sie zu Einstellungen > FaceTime. Schalten Sie FaceTime bei Bedarf ein. Melden Sie sich mit Ihrem Apple-ID <issue id="x66665" type="Mistranslation"   >ein</issue>. Öffnen Sie im persönlichen Bildschirm das FaceTime <issue id="x66666" type="Mistranslation"   >app</issue>. Melden Sie sich mit Ihrem Apple-ID <issue id="x66667" type="Mistranslation"   >ein</issue>.</annotatedTarget>
+               <annotatedTarget annotator="B">Wechseln Sie <issue id="x66668" type="Incorrect function word"   >in den</issue> Einstellungen > FaceTime. <issue id="x66669" type="Mistranslation"   >Tourner auf </issue>FaceTime, wenn nötig. Melden Sie sich <issue id="x66670" type="Incorrect function word"   >in</issue> Ihrem Apple ID<issue id="x66671" type="Mistranslation"   > </issue>. Von der <issue id="x66672" type="Mistranslation"   >Home- Bildschirm</issue>, öffnen Sie die FaceTime <issue id="x66673" type="Mistranslation"   >app</issue>. Melden Sie sich <issue id="x66674" type="Incorrect function word"   >in</issue> Ihrem Apple ID<issue id="x66675" type="Omission"   > </issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2094-1" original_id="2094-1">
+      <src xml:lang="en">An Apple ID is a user name and password you use to access all the Apple services.</src>
+      <targets xml:lang="de">
+         <target row_number="13" engine="null">
+            <targetSeg>Was ist ein Apple ID?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Ein Apple-ID ist ein Benutzername und Passwort<issue id="x66676" type="Missing function word"   > </issue>Sie nutzen, um auf alle Apple Dienstleistungen<issue id="x66677" type="Omission"   > </issue>.</annotatedTarget>
+               <annotatedTarget annotator="B">Ein Apple-ID ist ein Benutzername und Kennwort, <issue id="x66678" type="Agreement"   >das</issue> Sie verwenden, um auf alle Apple-Dienste<issue id="x66679" type="Missing function word"   > </issue>zugreifen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2105-2" original_id="2105-2">
+      <src xml:lang="en">iWork for Mac was designed to take advantage of Mac hardware and OS X to provide the best experience on the desktop, while iWork for iCloud was designed to provide the best experience on the web.</src>
+      <targets xml:lang="de">
+         <target row_number="14" engine="null">
+            <targetSeg>Was ist der Unterschied zwischen der iWork-Apps für Mac und iWork für iCloud Beta?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">IWork für Mac wurde konstruiert, um von Mac-Hardware und os X auszunutzen, um für die beste Erfahrung auf dem Schreibtisch anbieten, während iWork für icloud konstruiert wurde, um für die beste Erfahrung im Internet zur Verfügung zu stellen.</annotatedTarget>
+               <annotatedTarget annotator="B">IWork für Mac wurde entwickelt, um nutzen Hardware und Mac OS X, die besten Erfahrungen auf dem Desktop, während iWork für icloud wurde entwickelt, um die besten Erfahrungen über das Internet."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2108-2" original_id="2108-2">
+      <src xml:lang="en"> No. iTunes only sends the same stream to multiple AirPort Express units.</src>
+      <targets xml:lang="de">
+         <target row_number="15" engine="null">
+            <targetSeg>Kann iTunes verschiedene AirPlay-Streams an verschiedene AirPort Express-Stationen senden?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A"><issue id="x66680" type="Mistranslation"   >Nr. </issue>iTunes <issue id="x66681" type="Mistranslation"   >versetzt</issue> nur den gleichen Datenstrom <issue id="x66682" type="Missing function word"   ><issue id="x66683" type="Agreement"   >mehreren</issue></issue> <issue id="x66684" type="Mistranslation"   >Flughafen-explizit-</issue>Einheiten.</annotatedTarget>
+               <annotatedTarget annotator="B"><issue id="x66685" type="Mistranslation"   >Nr.</issue> iTunes nur sendet die gleichen <issue id="x66686" type="Mistranslation"   >Stream</issue> auf mehrere AirPort <issue id="x66687" type="Spelling"   >Express Einheiten</issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2141-2" original_id="2141-2">
+      <src xml:lang="en">The website has to be written in such a way detecting what kind of device is opened from and on the base of this what interface to show.</src>
+      <targets xml:lang="de">
+         <target row_number="16" engine="null">
+            <targetSeg>Wie kann ich meine Website für den mobilen Einsatz konvertieren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Die Website muss in solchen einer Weise, die alle Art von Gerät erkannt, die durch geöffnet wird, und auf die Basis des geschrieben werden welche Schnittstelle angezeigt.</annotatedTarget>
+               <annotatedTarget annotator="B">Die Website muss in einer solchen Weise geschrieben werden, welche Art von Gerät ist von und auf der Basis dieses, was Schnittstelle zu zeigen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2154-1" original_id="2154-1">
+      <src xml:lang="en">Just right click on the Skype name, then select block this person.</src>
+      <targets xml:lang="de">
+         <target row_number="17" engine="null">
+            <targetSeg>Wie jemand dauerhaft auf Skype blockieren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A"><issue id="x66688" type="Incorrect function word"   >Nur</issue> mit der rechten Maustaste auf die Skype-Name<issue id="x66689" type="Omission"   > </issue>, dann wählen Sie diese Person<issue id="x66690" type="Omission"   > </issue>.</annotatedTarget>
+               <annotatedTarget annotator="B">Einfach rechts<issue id="x66691" type="Missing function word"   > </issue>den Skype-Namen klicken, <issue id="x66692" type="Mistranslation"   >wählen dann aus diese Person Sie</issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2161-2" original_id="2161-2">
+      <src xml:lang="en">Right click on the file and open the properties tab, from the acess drop down menu select read-only.</src>
+      <targets xml:lang="de">
+         <target row_number="18" engine="null">
+            <targetSeg>Wie mache ich es, dass Dokumente in Libre Office nur gelesen werden?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie rechts und den Eigenschaftstab öffnen, des Acess-Sturz Menü gedrückt wählen Sie schreibgeschützt.</annotatedTarget>
+               <annotatedTarget annotator="B">Richtig die Datei anklicken und den Eigenschaftstab aufmachen, vom Acess-Sturz Menü hinunter auserlesen schreibgeschützt."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2177-1" original_id="2177-1">
+      <src xml:lang="en">Using the laptop while it's charging should not cause any problems at all. </src>
+      <targets xml:lang="de">
+         <target row_number="19" engine="null">
+            <targetSeg>Ist es schlimme ein Spiel auf dem Laptop zu spielen, während dieser auflädt.</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Mit dem Laptop während seiner <issue id="x66693" type="Mistranslation"   >Erhebung</issue><issue id="x66694" type="Omission"   > </issue>dürfte keine Probleme<issue id="x66695" type="Omission"   > </issue>.</annotatedTarget>
+               <annotatedTarget annotator="B">Den Laptop <issue id="x66696" type="Word order"   >benutzen</issue>, während seine Ladung überhaupt keine Probleme hervorrufen <issue id="x66697" type="Mistranslation"   ><issue id="x66698" type="Word order"   >können soll</issue></issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2195-1" original_id="2195-1">
+      <src xml:lang="en">They can see how much data you use and the address your VPN connects to but not what the data is.</src>
+      <targets xml:lang="de">
+         <target row_number="20" engine="null">
+            <targetSeg>Sieht ISP meine Datennutzung wenn ich ein VPN nutze?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Sie <issue id="x66699" type="Word order"   >sehen</issue> können, wie viel Daten, die Sie verwenden und die Adresse <issue id="x66700" type="Mistranslation"   >Ihrer VPN-verbindet</issue>, aber nicht das, was die Daten <issue id="x66701" type="Agreement"   >ist</issue>.</annotatedTarget>
+               <annotatedTarget annotator="B">Sie können sehen, wie viel Daten, die Sie nutzen, und die Adresse, mit der Ihr VPN <issue id="x66702" type="Agreement"   >verbinden</issue> <issue id="x66703" type="Addition"   >wollen</issue>, aber nicht<issue id="x66704" type="Grammar"   > </issue>was die Daten sind."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2212-2" original_id="2212-2">
+      <src xml:lang="en">They don't have the same connectors on them, so they are not compatible.</src>
+      <targets xml:lang="de">
+         <target row_number="21" engine="null">
+            <targetSeg>Sind IDE und SATA kompatibel?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Sie haben die gleichen Verbinder <issue id="x66705" type="Word order"   >nicht</issue> <issue id="x66706" type="Mistranslation"   >auf</issue>, <issue id="x66707" type="Mistranslation"   >so</issue> sind sie nicht kompatibel.</annotatedTarget>
+               <annotatedTarget annotator="B">Sie haben nicht die gleichen Steckverbindern <issue id="x66708" type="Mistranslation"   >auf sie</issue>, so dass sie <issue id="x66709" type="Word order"   >sind</issue> nicht kompatibel."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2213-1" original_id="2213-1">
+      <src xml:lang="en">If the connectors are the same type yes. You would have to look at the hard drives specifications.</src>
+      <targets xml:lang="de">
+         <target row_number="22" engine="null">
+            <targetSeg>Kann ich meine alte Festplatte in einem anderen Laptop nutzen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wenn die Steckverbindern sind die gleichen Typs ja. Sie müssten sich die harten Laufwerkespezifikationen anschauen.</annotatedTarget>
+               <annotatedTarget annotator="B">Wenn die Verbinder der gleiche Art Ja sind. Sie viel die Festplatte Laufwerkespezifikationen surfen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2218-2" original_id="2218-2">
+      <src xml:lang="en">Use a notebook cooler pad.</src>
+      <targets xml:lang="de">
+         <target row_number="23" engine="null">
+            <targetSeg>Ist das ein guter Weg meinen Laptop während Spielens kühl zu halten?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Verwenden Sie einen Notebookkühlerpolster.</annotatedTarget>
+               <annotatedTarget annotator="B">Ein Notebook kühler verwenden."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2225-1" original_id="2225-1">
+      <src xml:lang="en">Viber is a mobile application that allows you to make phone calls and send text messages to all other Viber users.</src>
+      <targets xml:lang="de">
+         <target row_number="24" engine="null">
+            <targetSeg>Was ist Viber?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Viber ist eine mobile Anwendung, die Sie zu telefonieren und SMS versenden für alle anderen Viber Nutzer.</annotatedTarget>
+               <annotatedTarget annotator="B">Viber ist eine mobile Anwendung, die es Ihnen ermöglicht, Anrufe zu öffnen und allen anderen Viber-Nutzern Textnachrichten zu senden."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2257-1" original_id="2257-1">
+      <src xml:lang="en">Select the cells to wrap and select Wrap Text from the Home tab.</src>
+      <targets xml:lang="de">
+         <target row_number="25" engine="null">
+            <targetSeg>Wie mache ich in Excel 2013 in Zellen Zeilenumbruch?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wählen Sie die Zellen aus, und wählen Sie das Register &lt; emph > Umlauf Text von der Home-.</annotatedTarget>
+               <annotatedTarget annotator="B">Wählen Sie aus dem persönlichen Tab die Zellen aus, um Zeilenumbruch umzubrechen und auszuwählen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2281-2" original_id="2281-2">
+      <src xml:lang="en">Select the text to modify. From the Home tab, click the Font Color drop-down arrow and select the font color you want to use.</src>
+      <targets xml:lang="de">
+         <target row_number="26" engine="null">
+            <targetSeg>Wie ändert man die Textfarbe in Word 2013?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wählen Sie den zu modifizierenden Text aus. Klicken Sie im persönlichen Tab die Schrift an aufklappbaren Pfeil färben und die Schriftfarbe auswählen, die Sie verwenden möchten.</annotatedTarget>
+               <annotatedTarget annotator="B">Wählen Sie den Text aus, zu ändern. Von der Home-, klicken Sie auf das Register Schriftfarbe Drop-Down Pfeil und wählen Sie die Schriftfarbe Sie verwenden möchten."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2296-1" original_id="2296-1">
+      <src xml:lang="en">Select the image. The Format tab appears, click the Crop command, cropping handles will appear around the image. Click, hold, and drag a handle to crop the image.</src>
+      <targets xml:lang="de">
+         <target row_number="27" engine="null">
+            <targetSeg>Wie schneidet man ein Bild in Word 2013 zu?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wählen Sie das Bild. Das Format Registerkarte erscheint, klicken Sie auf das Zuschneiden Befehl, Zuschneidegriffe erscheinen wird das Bild. Klicken Sie, halten, und ziehen Sie einen der Griffe, um das Bild.</annotatedTarget>
+               <annotatedTarget annotator="B">Wählen Sie das Bild aus. Der Formattab erscheint, den zuschneiden-Befehl klicken, werden Kupieridentifikatoren umgeben Bild angezeigt. Klicken Sie an, halten Sie und ziehen Sie einen Griff, um das Bildes."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2332-2" original_id="2332-2">
+      <src xml:lang="en">From the Insert tab, select SmartArt in the Illustrations group. Select a category on the left, choose the desired SmartArt graphic, then click OK.</src>
+      <targets xml:lang="de">
+         <target row_number="28" engine="null">
+            <targetSeg>Wie kann ich eine SmartArt-Grafik in Word 2013 einfügen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wählen Sie aus dem Einsatztab SmartArt in der Illustrationsgruppe aus. Wählen Sie eine Kategorie links aus, wählen Sie die gewünschte SmartArt-Grafik, klicken Sie auf OK.</annotatedTarget>
+               <annotatedTarget annotator="B">Aus dem Einfügen Register wählen Sie SmartArt in den Illustrationen Gruppe. Wählen Sie eine Kategorie auf der linken Seite, wählen Sie den gewünschten SmartArt Grafik, klicken Sie auf OK."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2342-2" original_id="2342-2">
+      <src xml:lang="en">From the Design tab, click the Themes command, then select Save Current Theme...Type a name for your theme, then click Save.</src>
+      <targets xml:lang="de">
+         <target row_number="29" engine="null">
+            <targetSeg>Wie kann ich in Word 2013 das Motiv speichern?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie im Entwurfsmodus Tab den Themenbefehl, wählen dann aus Aktuelles Thema Speichern von... Geben Sie einen Namen für Ihr Thema, dann klicken Sie auf speichern ".</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie vom Design-Tab den Themen-Befehl an, dann wählen aus Gegenwärtiges Theme...Type Sparen ein Name für Ihr Thema, dann Klick Sparen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2345-2" original_id="2345-2">
+      <src xml:lang="en">Try to use the repair option in WinRAR.</src>
+      <targets xml:lang="de">
+         <target row_number="30" engine="null">
+            <targetSeg>Wie repariere ich beschädigte .rar Dateien?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Versuchen Sie, die Reparaturoption in WinRAR zu verwenden.</annotatedTarget>
+               <annotatedTarget annotator="B">Versuchen, die Reparatur Option in WinRAR."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2346-2" original_id="2346-2">
+      <src xml:lang="en">Unless you download anything, there is little chance of getting a virus on your iPad mini.</src>
+      <targets xml:lang="de">
+         <target row_number="31" engine="null">
+            <targetSeg>Kann sich ein iPad Mini einen Virus einfangen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wenn Sie Alles herunterladen, gibt es daher nicht Wahrscheinlichkeit, ein Virus auf Ihrem iPad-MINIROCK zu erhalten.</annotatedTarget>
+               <annotatedTarget annotator="B">Es sei denn, Sie Download, besteht kaum eine Chance, ein Virus auf Ihrem IPAD Mini."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2348-2" original_id="2348-2">
+      <src xml:lang="en">Yes, every Mackbook come with iLife which contains iPhoto, iMovie, and GarageBand.</src>
+      <targets xml:lang="de">
+         <target row_number="32" engine="null">
+            <targetSeg>Hat das Macbook iMovie oder muss ich es separat erwerben?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Ja, jeder Mackbook mit iLife gekommen, das iPhoto, iMovie und GarageBand enthält.</annotatedTarget>
+               <annotatedTarget annotator="B">Ja, alle Mackbook mit iLife die enthält iPhoto, iMovie, und GarageBand."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2357-1" original_id="2357-1">
+      <src xml:lang="en">Not from the YouTube site itself. It's possible to get one from going to another site via a link on YouTube.</src>
+      <targets xml:lang="de">
+         <target row_number="33" engine="null">
+            <targetSeg>Ist es möglich, Viren von YouTube zu bekommen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Nicht aus dem YouTube Seite selbst. Ihre möglich, von einer anderen Seite, über einen Link auf YouTube.</annotatedTarget>
+               <annotatedTarget annotator="B">Nicht von der YouTube-Website selbst. Sein möglich einen zu erhalten daran zu gehen zu einer anderen Website über einem Link auf YouTube."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2361-1" original_id="2361-1">
+      <src xml:lang="en">Go to Control Panel click Folder Options, then click on the view tab and select the ""show hidden files, folders, and drives"".</src>
+      <targets xml:lang="de">
+         <target row_number="34" engine="null">
+            <targetSeg>Wie kann ich in Windows 7 versteckte Dateien sehen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Gehen Sie zu Systemsteuerungs-Klick-Verzeichnis-Optionen, klicken Sie dann den Ansichtentab an und wählen Sie die "Schau" aus verheimlichte Dateien, Verzeichnisse, und Laufwerke".</annotatedTarget>
+               <annotatedTarget annotator="B">Sprung zu Systemsteuerung-Klickverzeichnis-Optionen, klicken Sie dann den Ansichtentab und wählen Sie aus den "anzeigen verborgene Dateien, Ordner und Laufwerke"."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2368-2" original_id="2368-2">
+      <src xml:lang="en">Click the File tab &gt; Backstage &gt; Options. Select Save, check the box next to Save to Computer by default, then click OK. The default save location will be changed.</src>
+      <targets xml:lang="de">
+         <target row_number="35" engine="null">
+            <targetSeg>Ist es möglich, den Standard-Speicherort für PowerPoint 2013 zu ändern?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie auf den Dateitab > an hinter den Kulissen > Optionen. Wählen Sie Speichern, überprüfen das Feld nächste zu Computer standardmäßig so speichern, dann klicken Sie auf OK. Die Standardeinstellung Speicherort speichern wird geändert werden.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie auf das Register &lt; Datei > Backstage- > Optionen. Auserlesen Sparen, überprüfen die Box nächste zu Computer standardmäßig Zu Sparen, dann Klick in Ordnung. Die Voreinstellung Speicherstelle sparen wird verändert werden."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2382-1" original_id="2382-1">
+      <src xml:lang="en">Click the check box in front of the email you want to ﬁle, click onh Move To, go to Create New, enter the folder name and chose Create. The email will be moved to your new folder.</src>
+      <targets xml:lang="de">
+         <target row_number="36" engine="null">
+            <targetSeg>Wie ich tun, um eine E-Mail-Ordner in Google Mail zu erstellen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie das Kontrollkästchen an vorn von der E-Mail, die Sie zu wollen, ﬁle gehen, Klick-Onh-Schritt Zu, EinZurichten Neu, gibt den Verzeichnisnamen ein und wählte Einrichten. Die E-Mail-werden auf Ihrem neuen Ordner.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie auf das Markierfeld vor der E-Mail, die Sie ﬁle möchten, klicken Sie auf ONH-ans, gehen Neu erstellen, liefert den Ordnernamen eingeben und ausgewählte erstellen. Die E-Mail wird in Ihrem neuen Ordner verschoben."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2387-1" original_id="2387-1">
+      <src xml:lang="en">Click the Preview command on the Transitions tab.</src>
+      <targets xml:lang="de">
+         <target row_number="37" engine="null">
+            <targetSeg>Wie kann ich eine Vorschau von einem Übergang in PowerPoint 2013 bekommen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie auf die Vorschau auf die Transitions ".</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie auf den Vorschaubefehl auf dem Übergangstab."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2392-1" original_id="2392-1">
+      <src xml:lang="en">Click the Notes command at the bottom of the screen to open the Notes pane. Click and drag the edge of the pane to resize it. Click the Notes pane and begin typing to add notes.</src>
+      <targets xml:lang="de">
+         <target row_number="38" engine="null">
+            <targetSeg>Ist es möglich Notizen zu PowerPoint 2013 hinzuzufügen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie den Vermerke-Befehl am Ende vom Bildschirm an, um das Vermerke-Fenster aufzumachen. Klicken und ziehen Sie die Rand des Folienliste auf die Größe ändern können. Klicken Sie auf das Notes Bereich und Eingabe beginnen hinzufügen.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie auf den Notizen-Befehl am unteren Bildrand, um das Notizen-Fenster zu öffnen. Klicken und ziehen Sie den Rand des Fensters, um es zu verändern. Klicken Sie auf das Notizen-Fenster und starten Sie eingeben, um Notizen hinzuzufügen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2395-2" original_id="2395-2">
+      <src xml:lang="en">Click the Start From Beginning command on the Quick Access Toolbar, or press the F5 key at the top of your keyboard.</src>
+      <targets xml:lang="de">
+         <target row_number="39" engine="null">
+            <targetSeg>Wie beginne ich eine Diashow in PowerPoint 2013?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie auf den Anfang aus anfangs-Befehl auf der schnellen Zugriffs-Symbolleiste, oder drücken Sie die F5-Taste am oberen Rand Ihrer Tastatur.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie auf das Start Von Anfang auf der Quick Access Werkzeugspalette, oder drücken Sie die Taste F5 oben auf Ihrer Tastatur."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2407-2" original_id="2407-2">
+      <src xml:lang="en">Select the picture, then click the Format tab, click the Compress Pictures command. Select your preferences.</src>
+      <targets xml:lang="de">
+         <target row_number="40" engine="null">
+            <targetSeg>Wie komprimiere ich ein Bild in PowerPoint 2013?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wählen Sie das Bild aus, klicken Sie auf den Formattab, klicken Sie auf den verkleinern Bilder-Befehl. Wählen Sie Ihre Einstellungen.</annotatedTarget>
+               <annotatedTarget annotator="B">Wählen Sie das Bild, dann klicken Sie auf das Format, klicken Sie auf das Register komprimieren Bilder Befehl. Wählen Sie Ihre Präferenzen aus."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2414-1" original_id="2414-1">
+      <src xml:lang="en">Click the image at the top right, then click the settings, go to advanced and at the bottom click on ""Delete Account"".</src>
+      <targets xml:lang="de">
+         <target row_number="41" engine="null">
+            <targetSeg>Wie kann ich einen YouTube-Kanal löschen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie das Bild an der Spitze an richtig, dann die Einstellungen anklicken, gehen zu fortgeschritten und am unteren Klick auf "Account löschen".</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie auf das Bild oben auf rechts, dann die Einstellungen klicken, gehen zu fortgeschritten und am unteren auf "Streiche Konto"."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2415-1" original_id="2415-1">
+      <src xml:lang="en">It is an open source web application framework which runs via the Ruby programming language.</src>
+      <targets xml:lang="de">
+         <target row_number="42" engine="null">
+            <targetSeg>Was ist Ruby on Rails?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Es ist ein Open-Source-Web-Anwendungs-Rahmen, der über der Rubin-Programmiersprache läuft.</annotatedTarget>
+               <annotatedTarget annotator="B">Es ist ein OpenSource-Web-Apps Rahmen, der über der Ruby-Programmiersprache ausgeführt wird."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2428-1" original_id="2428-1">
+      <src xml:lang="en">Click and drag to move an audio file to a new location on a slide.</src>
+      <targets xml:lang="de">
+         <target row_number="43" engine="null">
+            <targetSeg>Wie verschiebe ich eine Audiodatei in PowerPoint 2013?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken und ziehen Sie einen Audio-Datei an eine neue Position auf einer Folie.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken und ziehen Sie, um eine Tondatei an eine andere Stelle auf einer Folie zu verschieben."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2444-1" original_id="2444-1">
+      <src xml:lang="en">Deleting a short cut does not remove the file.</src>
+      <targets xml:lang="de">
+         <target row_number="44" engine="null">
+            <targetSeg>Wie kann ich eine Verknüpfung von einer Datei entfernen, ohne die Datei zu löschen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Das Löschen eines Abkürzung nicht entfernen Sie die Datei.</annotatedTarget>
+               <annotatedTarget annotator="B">Eine Verknüpfung zu löschen entfernt die Datei nicht."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2457-1" original_id="2457-1">
+      <src xml:lang="en">Right-click the hyperlink, click Remove Hyperlink.</src>
+      <targets xml:lang="de">
+         <target row_number="45" engine="null">
+            <targetSeg>Wie kann ich einen Hyperlink von PowerPoint 2013 entfernen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Recht-Klick das Hyperlink, Klick Hyperlink Beseitigen.</annotatedTarget>
+               <annotatedTarget annotator="B">Rechtsklicken Sie auf den Hyperlink, klicken Sie auf Hyperlink entfernen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2462-2" original_id="2462-2">
+      <src xml:lang="en">Go to power options and set the screen display dim/light to a different setting, like 15 minutes or 30 Minutes etc.</src>
+      <targets xml:lang="de">
+         <target row_number="46" engine="null">
+            <targetSeg>Mein HP Laptop-Bildschirm wird schwarz wenn ich ihn etwa 1 Minute nicht nutze.</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Sprung zu Netzanschaltungsoptionen und setzen Sie die Bildschirmanzeige Dim / zu einer anderen Einstellung, wie 15 Minuten oder 30 Minuten usw. beleuchten.</annotatedTarget>
+               <annotatedTarget annotator="B">Optionen gehen an die Macht und die Bildschirmanzeige Dim / Licht auf eine andere Einstellung, wie 15 Minuten oder 30 Protokoll usw."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2467-1" original_id="2467-1">
+      <src xml:lang="en">You can use html 5 for auto play.</src>
+      <targets xml:lang="de">
+         <target row_number="47" engine="null">
+            <targetSeg>Wie füge ich Autoplay Musik zu meiner Webpage hinzu?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Sie können HTML 5 für Auto spielen.</annotatedTarget>
+               <annotatedTarget annotator="B">Sie können html 5 für Automatisches abspielen verwenden."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2471-1" original_id="2471-1">
+      <src xml:lang="en">Games tend to use only one processor core because it's a lot easier to program games in a single ""thread"".</src>
+      <targets xml:lang="de">
+         <target row_number="48" engine="null">
+            <targetSeg>Warum nutzen Spiele nur einen von meinen 2 Dual-Core-Xeon-Prozessoren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Spiele, nur ein Prozessorkerns, weil seine viel leichter zu Programm Spiele in einem einzigen "Thread".</annotatedTarget>
+               <annotatedTarget annotator="B">Spiele Auswahl, nur einen Prozessorkern zu verwenden, da sein, Spiele in Programm, einzelne "Thread"."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2472-2" original_id="2472-2">
+      <src xml:lang="en">That is not possible. You have to go through each page and click on the unlike button under the like drop down menu.</src>
+      <targets xml:lang="de">
+         <target row_number="49" engine="null">
+            <targetSeg>Wie ""unlike"" ich alle Facebookseiten mit einem Klick?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Das ist nicht möglich. Sie müssen durch jede Seite gehen und die ungleichnamige Schaltfläche unter dergleichen klicken Sturz Menü gedrückt.</annotatedTarget>
+               <annotatedTarget annotator="B">Das ist nicht möglich. Sie haben, jeder Seite im Gegensatz zu und klicken Sie auf die Schaltfläche unter dem wie Drop-Down-Menü."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2491-2" original_id="2491-2">
+      <src xml:lang="en">Click the Launchpad icon on the Dock to open it. You will see icons for each app that is installed on your computer. Click and drag an icon to change the ordering.</src>
+      <targets xml:lang="de">
+         <target row_number="50" engine="null">
+            <targetSeg>Wie kann ich das Launchpad auf dem Mac neu organisieren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie auf das Launchpad-Symbol auf dem andocken, um es zu öffnen. Sie werden Symbole für jedes app sehen, das auf Ihrem Rechner installiert ist. Klicken und ziehen Sie ein Symbol, um die Reihenfolge zu ändern.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie das Launchpad-Icon auf dem Dock an, um es aufzumachen. Sie werden sehen Symbole für jede app, dass auf Ihrem Computer installiert ist. Klicken Sie an und ziehen Sie ein Icon, um das Ordnen zu verändern."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2495-1" original_id="2495-1">
+      <src xml:lang="en">Click the Apple icon in the top-left corner of the screen, then select System Preferences. You can then select the desired category to change settings.</src>
+      <targets xml:lang="de">
+         <target row_number="51" engine="null">
+            <targetSeg>Wo ist die Systemeinstellungen auf dem Mac?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie das Apfel-Icon in der oberlinken Ecke vom Bildschirm an, wählen Sie dann System-Präferenzen aus. Sie können dann wählen Sie die gewünschten Kategorie Einstellungen zu ändern.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie auf das Apple-Symbol in der linken oberen Ecke des Bildschirms, wählen Sie dann System-Einstellungen. Sie können dann die gewünschte Kategorie auswählen, um die Einstellungen zu ändern."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2504-2" original_id="2504-2">
+      <src xml:lang="en">It will only effect your ping, therefore they only effect games that require a connection.</src>
+      <targets xml:lang="de">
+         <target row_number="52" engine="null">
+            <targetSeg>Hat die Download/Upload-Geschwindigkeit Einfluss aufs Spielen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Es wird nur Ihr Klingeln Effekt fest, folglich Effekt fest sie nur Spiele, die eine Verbindung benötigen.</annotatedTarget>
+               <annotatedTarget annotator="B">Es wird nur Ihre Ping, sie daher nur Spiele, eine Verbindung erfordern."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2511-1" original_id="2511-1">
+      <src xml:lang="en">Open IE. Click on Help menu and select ""About Internet Explorer"". It will show your current version of Internet Explorer in that. </src>
+      <targets xml:lang="de">
+         <target row_number="53" engine="null">
+            <targetSeg>Woher weiß ich, welches IE ich habe?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">IE öffnen. Klicken Sie auf Hilfe-Menü und wählen Sie "About Internet Explorer". Es wird zeigen Sie Ihre aktuelle Version des Internet Explorer.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie Menü Hilfe und wählen Sie "etwa Internet Explorer". Es wird die aktuelle Version von Internet Explorer hinein anzeigen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2529-1" original_id="2529-1">
+      <src xml:lang="en">Press Ctrl+N.</src>
+      <targets xml:lang="de">
+         <target row_number="54" engine="null">
+            <targetSeg>Wie öffne ich bei Google Chrome ein neues Fenster?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Presse Ctrl+N.</annotatedTarget>
+               <annotatedTarget annotator="B">Drücken Sie Strg + N."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2539-1" original_id="2539-1">
+      <src xml:lang="en">Click the Chrome menu &gt; Bookmarks &gt; Bookmark Manager. You can organize your bookmarks into folders, delete bookmarks and folders.</src>
+      <targets xml:lang="de">
+         <target row_number="55" engine="null">
+            <targetSeg>Wie verwaltet man bei Chrome Lesezeichen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie auf die Chrome-Menü > Lesezeichen > Lesezeichen-Manager. Sie können Ihre Bookmarks in Verzeichnisse organisieren, Bookmarks und Verzeichnisse löschen.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie Chromium-Menü > an Lesezeichen > Lesezeichenverwaltung. Sie können Ihre Lesezeichen in Ordner verwalten Lesezeichen und Ordner löschen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2545-2" original_id="2545-2">
+      <src xml:lang="en">During the first 14 days after deactivation, if you log in to your account, you'll have the option to restore it.</src>
+      <targets xml:lang="de">
+         <target row_number="56" engine="null">
+            <targetSeg>Wie reaktiviert man einen deaktivierten FB-Account?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Während der ersten 14 Tagen nach Deaktivierung, wenn Sie sich an Ihrem Konto anmelden, youll die Option haben, es wiederherzustellen.</annotatedTarget>
+               <annotatedTarget annotator="B">Während der ersten 14 Tage nach Warmluftzufuhr, wenn Sie sich an Ihrem Konto, youll haben die Möglichkeit, es wiederherzustellen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2558-2" original_id="2558-2">
+      <src xml:lang="en">In Google Drive, click Create &gt; Folder. Type a name for your folder, then click OK. You must click the drop-down arrow next to My Drive in the left-navigation pane to see your folders.</src>
+      <targets xml:lang="de">
+         <target row_number="57" engine="null">
+            <targetSeg>Wie erstelle ich einen Ordner auf Google Drive?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie in Google Drive > erstellen Ordner. Geben Sie einen Namen für das Verzeichnis, dann klicken Sie auf OK. Sie müssen den aufklappbaren Pfeil neben meinem Laufwerk im Linknavigationsfenster klicken, Ihre Ordner zu sehen.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie in Google-Laufwerk >-Verzeichnis Einrichten. Tippen Sie einen Namen für Ihr Verzeichnis, dann Klick in Ordnung. Sie müssen Drop-Down klicken Sie auf den Pfeil neben My Drive in der linken Navigationsbereich zu sehen, Ihre Ordner."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2564-2" original_id="2564-2">
+      <src xml:lang="en">Open the file, then click File &gt; Export and select your desired conversion format.</src>
+      <targets xml:lang="de">
+         <target row_number="58" engine="null">
+            <targetSeg>Wie konvertiere ich ein Dokument in eine PDF-Datei?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Öffnen Sie die Datei auf, klicken Sie dann Datei > an exportieren und wählen Sie Ihr Sie Konvertierungsformat aus.</annotatedTarget>
+               <annotatedTarget annotator="B">Öffnen Sie die Datei, klicken Sie dann auf Datei > Export und wählen Sie die gewünschte Umwandlung Format."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2569-1" original_id="2569-1">
+      <src xml:lang="en">Select the cell and press the Delete or Backspace key on your keyboard.</src>
+      <targets xml:lang="de">
+         <target row_number="59" engine="null">
+            <targetSeg>Wie lösche ich Zellinhalt in Google Docs?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wählen Sie die Zelle aus und drücken Sie der Streichen oder Rücktaste auf Ihrer Tastatur.</annotatedTarget>
+               <annotatedTarget annotator="B">Wählen Sie die Zelle aus, und drücken Sie die Löschtaste Löschen oder auf Ihrer Tastatur."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2571-2" original_id="2571-2">
+      <src xml:lang="en">It opens the Incognito mode. It allows you to browse the web without saving any information on your computer.</src>
+      <targets xml:lang="de">
+         <target row_number="60" engine="null">
+            <targetSeg>Die Bedeutung der Tastenkombination STRG + SHIFT + N (Google Chrome)?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Es öffnet den Inkognitomodus. Es ermöglicht es Ihnen, sich das Web anzusehen, ohne Informationen auf Ihrem Rechner zu speichern.</annotatedTarget>
+               <annotatedTarget annotator="B">Es öffnet den Inkognito-Modus. Es können Sie im Web surfen, ohne etwaige Informationen auf Ihrem Computer."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2584-2" original_id="2584-2">
+      <src xml:lang="en">The 32-bit only allows you to have 4GB of RAM. The 64-bit is faster and allows up to 32GB of RAM.</src>
+      <targets xml:lang="de">
+         <target row_number="61" engine="null">
+            <targetSeg>Was ist der Unterschied zwischen 32 Bit und 64 Bit?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Das 32-bit ermöglicht Ihnen nur 4GByte von Stößel zu haben. Das 64-Bit ist schneller und ermöglicht bis zu 32GByte von Stößel.</annotatedTarget>
+               <annotatedTarget annotator="B">Die 32-Bit nur erlaubt es Ihnen, 4 GB Arbeitsspeicher haben. Der 64-Bit ist schneller und erlaubt bis zu 32 GB Arbeitsspeicher."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2585-2" original_id="2585-2">
+      <src xml:lang="en">No, blocking someone overrules everything</src>
+      <targets xml:lang="de">
+         <target row_number="62" engine="null">
+            <targetSeg>Wenn mich jemand auf Facebook blockiert, kann er meine Nachrichten im Gruppenchat sehen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Nein dauerhaften behandelt jemand alle</annotatedTarget>
+               <annotatedTarget annotator="B">Nein, blockende jemand overrules alles"</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2593-1" original_id="2593-1">
+      <src xml:lang="en">Click the tab and select Duplicate.</src>
+      <targets xml:lang="de">
+         <target row_number="63" engine="null">
+            <targetSeg>Wie dupliziere ich ein Blatt, auf Google Docs?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie auf das Register und wählen Sie).</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie auf den Tabulator und wählen Sie DUPLIKAT aus."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2609-1" original_id="2609-1">
+      <src xml:lang="en">On the Ribbon, select the Page Design tab &gt; Template group &gt; Change Template. Select a template.</src>
+      <targets xml:lang="de">
+         <target row_number="64" engine="null">
+            <targetSeg>Wie wende ich eine neue Vorlage an einer bestehenden Publikation in Publisher 2010 an?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Über die Ribbon, wählen Sie die Seitendesign Tab > Template Gruppe > Ändern Vorlage. Wählen Sie eine Vorlage aus.</annotatedTarget>
+               <annotatedTarget annotator="B">Wählen Sie auf dem Laufwerk den Seitendesign-Tab > aus Vorlagegruppe > Groß- Vorlage. Wählen Sie eine Dokumentvorlage."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2640-2" original_id="2640-2">
+      <src xml:lang="en">Download: from internet to your computer. Upload: from your computer to internet.</src>
+      <targets xml:lang="de">
+         <target row_number="65" engine="null">
+            <targetSeg>Was ist der Unterschied zwischen Download und Upload?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Download: Von Internet zu Ihrem Rechner. Upload: Von Ihrem Rechner zu Internet.</annotatedTarget>
+               <annotatedTarget annotator="B">Download: Aus dem Internet auf Ihrem Computer. Upload: Von Ihrem Rechner zu Internet."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2645-1" original_id="2645-1">
+      <src xml:lang="en">From the Compose window, select Signature &gt; New. Enter a name for the signature, then click OK, enter the desired signature, click OK.</src>
+      <targets xml:lang="de">
+         <target row_number="66" engine="null">
+            <targetSeg>Wie erstelle ich eine E-Mail Signatur auf Outlook 2010?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Die Compose Fenster aus, wählen Sie Signature > Neu. Geben Sie einen Namen für die Unterschrift ein, dann Klick in Ordnung, die gewünschte Unterschrift eingeben, Klick in Ordnung.</annotatedTarget>
+               <annotatedTarget annotator="B">Der Fenster, wählen Signatur > Komponieren Neu. Geben Sie einen Namen für die Signatur ein, dann klicken Sie auf OK, die gewünschte Signatur eingeben, klicken Sie auf OK."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2656-2" original_id="2656-2">
+      <src xml:lang="en">On the Ribbon, click the File &gt; Open &gt;Import. Follow the instructions to import contacts into Outlook.</src>
+      <targets xml:lang="de">
+         <target row_number="67" engine="null">
+            <targetSeg>Wie importiere ich Kontakte zu Outlook 2010?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie auf dem Laufwerk die Datei > an Open > importieren. Folgen Sie in Outlook den Anweisungen, Kontakte zu importieren.</annotatedTarget>
+               <annotatedTarget annotator="B">Über die Ribbon, klicken Sie auf die Datei > Open > Import. Folgen Sie den Anweisungen zu importieren Kontakte in Outlook."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2661-2" original_id="2661-2">
+      <src xml:lang="en">Select ""My Channel"", select the number of subscribers you have.</src>
+      <targets xml:lang="de">
+         <target row_number="68" engine="null">
+            <targetSeg>Wie kann ich meine Abonnenten auf YouTube sehen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wählen Sie "meinen Kanal", die Teilnehmermenge auswählen, die Sie haben.</annotatedTarget>
+               <annotatedTarget annotator="B">Wählen Sie "Meine Channel", wählen Sie die Anzahl der Abonnenten Sie haben."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2662-1" original_id="2662-1">
+      <src xml:lang="en">They don't get a notification.</src>
+      <targets xml:lang="de">
+         <target row_number="69" engine="null">
+            <targetSeg>Wenn ich aufhöre jemandem auf FB zu folgen, bekommt der das mit?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Sie erhalten eine Benachrichtigung nicht.</annotatedTarget>
+               <annotatedTarget annotator="B">Sie erhalten keine Benachrichtigung."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2666-1" original_id="2666-1">
+      <src xml:lang="en">No, you only can post pictures from android or ios</src>
+      <targets xml:lang="de">
+         <target row_number="70" engine="null">
+            <targetSeg>Ist es möglich, Bilder von meinem Computer zu Instagram zu schicken?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Nein, Sie nur können Bilder von android oder ios bekannt geben</annotatedTarget>
+               <annotatedTarget annotator="B">Nein, Sie können nur Bilder von android oder iOS bekannt geben"</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2681-2" original_id="2681-2">
+      <src xml:lang="en">You cant`t ""share"" it, but you can ""invite people"" to it.</src>
+      <targets xml:lang="de">
+         <target row_number="71" engine="null">
+            <targetSeg>Wie kann ich meine Gruppe auf Facebook teilen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Sie Cantt "share" "es, aber Sie können" einlädst Personen "Gruppierung.</annotatedTarget>
+               <annotatedTarget annotator="B">Sie nicht Cantrade "share", aber Sie können "laden Menschen"."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2691-2" original_id="2691-2">
+      <src xml:lang="en">Use a micro USB cable. Once you plug the phone into the computer, it should show up under Computer in the Start Menu. Then you can cut and paste to the computer.</src>
+      <targets xml:lang="de">
+         <target row_number="72" engine="null">
+            <targetSeg>Irgendwelche Vorschläge, wie ich meine Fotos von meinem Samsung S4 auf meinen Computer übertrage?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Verwenden Sie ein Mikro-USB-Kabel. Sobald Sie das Telefon<issue id="x66767" type="Incorrect function word"   > in</issue> den Rechner anschließen, sollte er unter Rechner im Startmenü erscheinen. Dann können Sie ausschneiden und <issue id="x66768" type="Incorrect function word"   >an </issue>den Rechner einfügen.</annotatedTarget>
+               <annotatedTarget annotator="B">Benutzen Sie ein Mikro-USB-Kabel. Wenn Sie das <issue id="x66769" type="Part of speech"   >Plug</issue>-Telefon in den Computer <issue id="x66770" type="Mistranslation"   >zeigen</issue>, es sollte unter Computer im Startmenu<issue id="x66771" type="Omission"   > </issue>. Dann können Sie <issue id="x66772" type="Mistranslation"   >entzieht</issue> und fügen Sie auf den Computer<issue id="x66773" type="Omission"   > </issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2695-2" original_id="2695-2">
+      <src xml:lang="en">If you use iPhone, you can use Free WhatsApp Recovery.</src>
+      <targets xml:lang="de">
+         <target row_number="73" engine="null">
+            <targetSeg>Kann ich WhatsApp Nachrichten wiederherstellen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wenn Sie iPhone verwenden, können Sie <issue id="x66763" type="Mistranslation"   >Freie</issue> WhatsApp-Wiederherstellung verwenden.</annotatedTarget>
+               <annotatedTarget annotator="B">Wenn Sie iPhone<issue id="x66764" type="Omission"   > </issue>, können Sie <issue id="x66765" type="Agreement"   >Kostenlos</issue> WhatsApp Recovery<issue id="x66766" type="Omission"   > </issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2706-1" original_id="2706-1">
+      <src xml:lang="en">Right click on the Icon &gt; Delete.</src>
+      <targets xml:lang="de">
+         <target row_number="74" engine="null">
+            <targetSeg>Wie kann ich ein Icon von meinem Desktop deinstallieren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Richtig das Icon anklicken, Das > Löschen.</annotatedTarget>
+               <annotatedTarget annotator="B">Rechts auf das Symbol > klicken löschen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2710-2" original_id="2710-2">
+      <src xml:lang="en">HTTrack is a free and easy-to-use offline browser utility.</src>
+      <targets xml:lang="de">
+         <target row_number="75" engine="null">
+            <targetSeg>Gibt es irgendwelche ähnlichen Programme wie Wysigot?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Httrack ist ein <issue id="x66751" type="Mistranslation"   ><issue id="x66752" type="Agreement"   >freier</issue></issue> und benutzerfreundliches <issue id="x66753" type="Spelling"   >Offlinebrowserdienstprogramm</issue>.</annotatedTarget>
+               <annotatedTarget annotator="B">Httrack ist eine <issue id="x66754" type="Mistranslation"   >freie</issue> und einfach zu <issue id="x66755" type="Agreement"   >bedienenden</issue> Offline-Browser<issue id="x66756" type="Omission"   > </issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2716-2" original_id="2716-2">
+      <src xml:lang="en">You need to install JRE. Download it from oracle web page. </src>
+      <targets xml:lang="de">
+         <target row_number="76" engine="null">
+            <targetSeg>Was kann ich tun, wenn mein PC nicht über Java-Laufzeitumgebung verfügt?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Sie müssen JRE installieren. Laden Sie es <issue id="x66745" type="Incorrect function word"   >aus</issue><issue id="x66746" type="Missing function word"   > </issue><issue id="x66747" type="Mistranslation"   >Orakelwebseite</issue> herunter.</annotatedTarget>
+               <annotatedTarget annotator="B">Sie müssen JRE installieren. <issue id="x66748" type="Untranslated"   >Download</issue> von<issue id="x66749" type="Missing function word"   > </issue>oracle <issue id="x66750" type="Mistranslation"   >Web-Seite</issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2732-2" original_id="2732-2">
+      <src xml:lang="en">Go to youtube. On the right side click on History and then 'Clear all watch history'.</src>
+      <targets xml:lang="de">
+         <target row_number="77" engine="null">
+            <targetSeg>Wie löscht man den Verlauf bei YouTube?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Gehen Sie <issue id="x66757" type="Incorrect function word"   >nach</issue> YouTube. Auf der rechten Seite klicken <issue id="x66758" type="Unintelligible"   >und dann jede Uhrchronik Verlauf löschen</issue>.</annotatedTarget>
+               <annotatedTarget annotator="B">Gehen Sie zu youtube. Auf der <issue id="x66759" type="Mistranslation"   >richtigen</issue> Seite Chronik <issue id="x66760" type="Mistranslation"   >anklicken</issue> und dann <issue id="x66761" type="Mistranslation"   >jede</issue> <issue id="x66762" type="Mistranslation"   >Uhrchronik</issue> Löschen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2738-1" original_id="2738-1">
+      <src xml:lang="en">If it lets you, your system would stop working altogether. </src>
+      <targets xml:lang="de">
+         <target row_number="78" engine="null">
+            <targetSeg>Was passieren würde, wenn ich System32 lösche?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Wenn es können Sie, Ihr System nicht mehr funktionieren würde.</annotatedTarget>
+               <annotatedTarget annotator="B">Wenn Sie können, würde Ihr System mehr, im ganzen zu arbeiten."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2752-1" original_id="2752-1">
+      <src xml:lang="en">Click on the Privacy Shortcuts icon in the upper right hand corner of the FB toolbar.</src>
+      <targets xml:lang="de">
+         <target row_number="79" engine="null">
+            <targetSeg>Wo kann ich meine Facebookeinstellungen ändern?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Klicken Sie<issue id="x66711" type="Omission"   > </issue>das Privatsphären-<issue id="x66712" type="Spelling"   >Abkürzungs-Icon</issue> in dem oberen <issue id="x66713" type="Mistranslation"   >an richtig Zeigerecke</issue> <issue id="x66714" type="Incorrect function word"   >von</issue> der FB-Toolbar.</annotatedTarget>
+               <annotatedTarget annotator="B">Klicken Sie auf das Privatsphären-<issue id="x66715" type="Spelling"   >Abkürzungsicon</issue> in dem oberen <issue id="x66716" type="Mistranslation"   >an rechts Zeigerecke</issue> der FB-Symbolleiste."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2780-1" original_id="2780-1">
+      <src xml:lang="en">Connect your portable storage to one of your PC's USB port, go to My Computer and right-click on the device you want to format. There should be a Format option which will allow you to choose FAT, FAT32, NTFS etc.</src>
+      <targets xml:lang="de">
+         <target row_number="80" engine="null">
+            <targetSeg>Ich muss eine tragbare Festplatte zu FAT32 formatieren, damit sie auf der PS3 funktioniert.</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Schließen Sie einen tragbaren Speicher zu einem Ihres PCs USB-Port, klicken Sie auf den Mein Computer und mit der rechten Maustaste auf das Gerät, das Sie formatieren möchten. Es sollte ein Format Option, die Ihnen erlaubt zu wählen Sie FAT, FAT32, NTFS usw.</annotatedTarget>
+               <annotatedTarget annotator="B">Schließen Sie Ihre tragbare Speicher bei einem Ihres PCs-USB-Ports, gehen Sie zu meinem Rechner und rechtsklicken Sie auf dem Gerät, das Sie formatieren möchten. Es sollte eine Formatoption, die Sie, geben, Fett, FAT32, NTFS usw. zu wählen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2783-1" original_id="2783-1">
+      <src xml:lang="en">Update iPhone will not delete any files on your iPhone.</src>
+      <targets xml:lang="de">
+         <target row_number="81" engine="null">
+            <targetSeg>Wenn ich mein iPhone auf iOS 7.1.2 aktualisiere, wird es alles löschen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Update iPhone wird <issue id="x66710" type="Mistranslation"   >nicht alle </issue>Dateien auf Ihrem iPhone löschen.</annotatedTarget>
+               <annotatedTarget annotator="B">Update iPhone wird keine Dateien auf Ihrem iPhone löschen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2789-1" original_id="2789-1">
+      <src xml:lang="en">Sign in to Skype, tap Contacts &gt; Search icon &gt; Skype directory. Enter a contact's name and select the contact you want to add from the search results.</src>
+      <targets xml:lang="de">
+         <target row_number="82" engine="null">
+            <targetSeg>Wie füge ich Kontakte zu Skype hinzu?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Melden Sie sich bei Skype, tappe Kontakte > Suchsymbol > Skype-Verzeichnis. Geben Sie einen Kontakte Namen und wählen Sie den Kontakt, den Sie hinzufügen möchten von der Suchergebnisse.</annotatedTarget>
+               <annotatedTarget annotator="B">Melden Sie sich nach Skype ein, Hähnekontakten > findet Symbol > Skype-Ordner. Geben Sie einen Kontaktenamen ein und wählen Sie aus den Suchergebnissen den Kontakt aus, den Sie einfügen möchten."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2795-1" original_id="2795-1">
+      <src xml:lang="en">Clock speed means the operating speed of a computer.</src>
+      <targets xml:lang="de">
+         <target row_number="83" engine="null">
+            <targetSeg>Was bedeutet Taktfrequenz?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A"><issue id="x66729" type="Mistranslation"   >Uhr-</issue>Geschwindigkeit<issue id="x66730" type="Omission"   > </issue><issue id="x66731" type="Mistranslation"   >für</issue> die Arbeitsgeschwindigkeit des Computers.</annotatedTarget>
+               <annotatedTarget annotator="B">Taktgebergeschwindigkeit<issue id="x66732" type="Omission"   > </issue><issue id="x66733" type="Mistranslation"   >für</issue> die Arbeitsgeschwindigkeit des Computers."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2808-1" original_id="2808-1">
+      <src xml:lang="en">You can use a cloud services like Dropbox.</src>
+      <targets xml:lang="de">
+         <target row_number="84" engine="null">
+            <targetSeg>Wie kann ich Daten von meinem Samsung Mobile zu meinem Laptop übertragen, ohne Bluetooth oder USB?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Können Sie eine Cloud-Dienste wie Dropbox<issue id="x66727" type="Omission"   > </issue>.</annotatedTarget>
+               <annotatedTarget annotator="B">Sie können eine <issue id="x66728" type="Mistranslation"   >Wolke Dienste</issue> wie Dropbox verwenden."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2833-2" original_id="2833-2">
+      <src xml:lang="en">You can't. They are not compatible.</src>
+      <targets xml:lang="de">
+         <target row_number="85" engine="null">
+            <targetSeg>Wie kann ich meine XBOX 360 Festplatte als Backup für meinen Computer?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A"><issue id="x66725" type="Mistranslation"   >Sie Auswahl</issue>. Sie sind nicht kompatibel.</annotatedTarget>
+               <annotatedTarget annotator="B"><issue id="x66726" type="Mistranslation"   >Cantrade Sie</issue>. Sie sind nicht kompatibel."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2836-1" original_id="2836-1">
+      <src xml:lang="en">Open a blank word document, insert the picture and then save the document as pdf.</src>
+      <targets xml:lang="de">
+         <target row_number="86" engine="null">
+            <targetSeg>Wie kann ich ein Bild in eine PDF Datei konvertieren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Öffnen Sie ein leeres Word-Dokument, das Bild <issue id="x66717" type="Tense/aspect/mood"   >einfügen</issue> und speichern Sie das Dokument als PDF.</annotatedTarget>
+               <annotatedTarget annotator="B">Öffnen Sie ein leeres <issue id="x66718" type="Mistranslation"   >Wortdokument</issue>, fügen Sie die Grafik ein und speichern Sie das Dokument als PDF."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2858-1" original_id="2858-1">
+      <src xml:lang="en">Sometimes it only takes one. Especially if the person who is in the video reports it themselves.</src>
+      <targets xml:lang="de">
+         <target row_number="87" engine="null">
+            <targetSeg>Kann ein Video von Facebook entfernt werden, wenn viele Menschen davon berichten?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A"><issue id="x66719" type="Overly literal"   >Es dauert nur manchmal</issue>. Vor allem, wenn die Person, die in <issue id="x66720" type="Mistranslation"   >der Video-Berichte</issue> <issue id="x66721" type="Mistranslation"   >ist</issue> es selbst.</annotatedTarget>
+               <annotatedTarget annotator="B"><issue id="x66722" type="Overly literal"   >Manchmal dauert nur ein</issue>. Insbesondere wenn die Person, die <issue id="x66723" type="Addition"   >Sie</issue> im Video ist, <issue id="x66724" type="Mistranslation"   >über gemeldet</issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2883-2" original_id="2883-2">
+      <src xml:lang="en">It means the speed (bandwidth) at which it's writing to the disk or reading from it. 100% would mean that it's using the hard drive as fast as it can.</src>
+      <targets xml:lang="de">
+         <target row_number="88" engine="null">
+            <targetSeg>Was ist Festplatten-Nutzung?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Er bedeutet Nominalzins (Bandbreite) an dem er auf der Festplatte abspeichernd oder davor lesend. 100% würden bedeuten dass sie das schwerfällt Laufwerk so schnell verbrauchend wie es können.</annotatedTarget>
+               <annotatedTarget annotator="B">Es bedeutet, dass die Geschwindigkeit (Bandbreite), bei dem der auf die Festplatte schreiben oder Lesung aus. 100% würde bedeuten, dass die mit der Festplatte so schnell, wie es können."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2886-1" original_id="2886-1">
+      <src xml:lang="en">2.5"" SATA not over 9.5mm thick. The brand doesn't matter. </src>
+      <targets xml:lang="de">
+         <target row_number="89" engine="null">
+            <targetSeg>Welche Art von SSD kann ich für Macbook Pro Mid 2010 nutzen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">2,5 "-SATA-nicht über 9.5mm thick. Die gewünschte ist unerheblich.</annotatedTarget>
+               <annotatedTarget annotator="B">2,5 "SATA nicht über 9. 5 mm Dick. Die gewünschte ist unerheblich."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2909-1" original_id="2909-1">
+      <src xml:lang="en">Right click on your desktop &gt; Personalize &gt; Classic Theme.</src>
+      <targets xml:lang="de">
+         <target row_number="90" engine="null">
+            <targetSeg>Wie kann ich den Windows 7 Knopf in die klassische Ansicht wechseln?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Mit der rechten Maustaste auf Ihrem Desktop > Personalisieren > Classic Theme.</annotatedTarget>
+               <annotatedTarget annotator="B">Rechts Ihre Arbeitsumgebung > klicken personalisieren Sie > klassisches Thema."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2911-2" original_id="2911-2">
+      <src xml:lang="en">In general, it is safe. Make absolutely sure that the bios update applies to your computer manufacturer and model.</src>
+      <targets xml:lang="de">
+         <target row_number="91" engine="null">
+            <targetSeg>Ist es sicher, mein BIOS zu aktualisieren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Im Allgemeinen ist es sicher. Vergewissern Sie sich vollständig sicher, dass das Bios Update auf Ihren Computerhersteller bezieht und Modellieren.</annotatedTarget>
+               <annotatedTarget annotator="B">Im Allgemeinen, es ist sicher. Stellen Sie sicher, dass das BIOS Update ist für Ihren Computer Hersteller und Modell."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2916-2" original_id="2916-2">
+      <src xml:lang="en">Windows media player or VLC.</src>
+      <targets xml:lang="de">
+         <target row_number="92" engine="null">
+            <targetSeg>Was ist ein kostenloser DVD-Player für den PC, damit ich meine DVDs anschauen kann?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Fenstermedienspieler oder VLC.</annotatedTarget>
+               <annotatedTarget annotator="B">Windows Media Player oder VLC."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2933-2" original_id="2933-2">
+      <src xml:lang="en">Control Panel &gt; Hardware and Sound &gt; Devices and Printers then right click on the printer you want to set as default and click the option.</src>
+      <targets xml:lang="de">
+         <target row_number="93" engine="null">
+            <targetSeg>Wie stelle ich den Standarddrucker ein?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Steuerelement auf > Hardware und Gesundes > Geräte und Drucker dann nach rechts den Drucker klicken, den Sie als Standard anpassen und die Option.</annotatedTarget>
+               <annotatedTarget annotator="B">Systemsteuerung > Hardware und Sound > Geräte und Drucker dann mit der rechten Maustaste auf den Drucker, den Sie als Standardbrowser festlegen wollen und klicken Sie auf die Option."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2941-2" original_id="2941-2">
+      <src xml:lang="en">You will not be able to login into pintrest, because it logs into facebook for you.</src>
+      <targets xml:lang="de">
+         <target row_number="94" engine="null">
+            <targetSeg>Kann ich trotz deaktiviertem FB Pinterest nutzen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Sie werden<issue id="x66740" type="Missing function word"   > </issue>nicht in pintrest anmelden können, da es in Facebook für Sie <issue id="x66741" type="Mistranslation"   >bekannt</issue>.</annotatedTarget>
+               <annotatedTarget annotator="B">Sie werden<issue id="x66742" type="Missing function word"   > </issue>nicht in pintrest anmelden können, da es in <issue id="x66743" type="Spelling"   >facebook</issue> für Sie <issue id="x66744" type="Mistranslation"   >bekannt</issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2967-1" original_id="2967-1">
+      <src xml:lang="en">Install File Expert. Open the app and find Zip Files icon. Enter the file name and click the magnifying lens icon. </src>
+      <targets xml:lang="de">
+         <target row_number="95" engine="null">
+            <targetSeg>Wie kann ich eine ZIP-Datei auf meinem Android Handy nach Namen suchen?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Datei Expert installieren. Öffnen Sie die App finden und Zip-Dateien Symbol. Geben Sie den Dateinamen und klicken Sie auf das Symbol vergrößernder Objektive.</annotatedTarget>
+               <annotatedTarget annotator="B">Setzen Sie Datei-Fachmann ein. Öffnen Sie das APP- und Zip-Dateien-Symbol auf. Geben Sie den Dateinamen ein und klicken Sie auf das vergrößernde Linsenicon."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2973-1" original_id="2973-1">
+      <src xml:lang="en">Go to Settings &gt; Security &gt; Deactivate.</src>
+      <targets xml:lang="de">
+         <target row_number="96" engine="null">
+            <targetSeg>Wie Facebook deaktivieren?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Gehen Sie <issue id="x66734" type="Incorrect function word"   >zu</issue> Einstellungen > Sicherheit > Deaktivieren.</annotatedTarget>
+               <annotatedTarget annotator="B"><issue id="x66735" type="Mistranslation"   >Sprung zu</issue> Einstellungen > <issue id="x66736" type="Mistranslation"   >Wertpapiers</issue> > <issue id="x66737" type="Spelling"   >deaktivieren</issue>."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2983-1" original_id="2983-1">
+      <src xml:lang="en">K-Lite codec is safe.</src>
+      <targets xml:lang="de">
+         <target row_number="97" engine="null">
+            <targetSeg>Ist K-Lite Codec sicher?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A"><issue id="x66738" type="Spelling"   >K-Lite codec</issue> <issue id="x66739" type="Word order"   >sicher</issue> ist.</annotatedTarget>
+               <annotatedTarget annotator="B">K-Lite-Codec ist sicher."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+   <annotGrp source="qtleap" id="i_2993-2" original_id="2993-2">
+      <src xml:lang="en">Go to Control Panel &gt; Program and Features.</src>
+      <targets xml:lang="de">
+         <target row_number="98" engine="null">
+            <targetSeg>Wie kann ich meine List der Computerprogramme finden?</targetSeg>
+            <annotatedTargets>
+               <annotatedTarget annotator="A">Sprung zu Steuerelement auf > -Programms und Funktionen.</annotatedTarget>
+               <annotatedTarget annotator="B">Gehen Sie zu Systemsteuerung > Program und Funktionen."</annotatedTarget>
+            </annotatedTargets>
+         </target>
+      </targets>
+   </annotGrp>
+</annotations>

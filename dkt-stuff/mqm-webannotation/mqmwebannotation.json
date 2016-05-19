@@ -1,0 +1,2666 @@
+{
+    "@graph": [
+        {
+            "@id": "_:a1",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t1"
+        },
+        {
+            "@id": "_:t1",
+            "hasSelector": "_:s1",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Gehen Sie zu"
+        },
+        {
+            "@id": "_:s1",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[1]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a2",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t2"
+        },
+        {
+            "@id": "_:t2",
+            "hasSelector": "_:s2",
+            "issueType": "Untranslated",
+            "http://www.w3.org/ns/oa#string": "Desktop & Screen Saver"
+        },
+        {
+            "@id": "_:s2",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[1]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a3",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t3"
+        },
+        {
+            "@id": "_:t3",
+            "hasSelector": "_:s3",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "ändern"
+        },
+        {
+            "@id": "_:s3",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[1]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a4",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t4"
+        },
+        {
+            "@id": "_:t4",
+            "hasSelector": "_:s4",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Sprung zu"
+        },
+        {
+            "@id": "_:s4",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[1]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a5",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t5"
+        },
+        {
+            "@id": "_:t5",
+            "hasSelector": "_:s5",
+            "issueType": "Part of speech",
+            "http://www.w3.org/ns/oa#string": "Sprung zu"
+        },
+        {
+            "@id": "_:s5",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[1]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]/issue[1]"
+        },
+        {
+            "@id": "_:a6",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t6"
+        },
+        {
+            "@id": "_:t6",
+            "hasSelector": "_:s6",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "drücken Sie"
+        },
+        {
+            "@id": "_:s6",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[4]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a7",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t7"
+        },
+        {
+            "@id": "_:t7",
+            "hasSelector": "_:s7",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "drücken"
+        },
+        {
+            "@id": "_:s7",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[4]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]/issue[1]"
+        },
+        {
+            "@id": "_:a8",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t8"
+        },
+        {
+            "@id": "_:t8",
+            "hasSelector": "_:s8",
+            "issueType": "Untranslated",
+            "http://www.w3.org/ns/oa#string": "Power"
+        },
+        {
+            "@id": "_:s8",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[4]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a9",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t9"
+        },
+        {
+            "@id": "_:t9",
+            "hasSelector": "_:s9",
+            "issueType": "Tense/aspect/mood",
+            "http://www.w3.org/ns/oa#string": "starten Sie"
+        },
+        {
+            "@id": "_:s9",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[4]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a10",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t10"
+        },
+        {
+            "@id": "_:t10",
+            "hasSelector": "_:s10",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "starten"
+        },
+        {
+            "@id": "_:s10",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[4]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]/issue[1]"
+        },
+        {
+            "@id": "_:a11",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t11"
+        },
+        {
+            "@id": "_:t11",
+            "hasSelector": "_:s11",
+            "issueType": "Addition",
+            "http://www.w3.org/ns/oa#string": "ist"
+        },
+        {
+            "@id": "_:s11",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[4]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[4]"
+        },
+        {
+            "@id": "_:a12",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t12"
+        },
+        {
+            "@id": "_:t12",
+            "hasSelector": "_:s12",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Netzanschaltungsschaltfläche"
+        },
+        {
+            "@id": "_:s12",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[4]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a13",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t13"
+        },
+        {
+            "@id": "_:t13",
+            "hasSelector": "_:s13",
+            "issueType": "Addition",
+            "http://www.w3.org/ns/oa#string": "nicht"
+        },
+        {
+            "@id": "_:s13",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[4]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a14",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t14"
+        },
+        {
+            "@id": "_:t14",
+            "hasSelector": "_:s14",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "er"
+        },
+        {
+            "@id": "_:s14",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[4]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a15",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t15"
+        },
+        {
+            "@id": "_:t15",
+            "hasSelector": "_:s15",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "eine Frage"
+        },
+        {
+            "@id": "_:s15",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[4]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[4]"
+        },
+        {
+            "@id": "_:a16",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t16"
+        },
+        {
+            "@id": "_:t16",
+            "hasSelector": "_:s16",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Kastenicon"
+        },
+        {
+            "@id": "_:s16",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a17",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t17"
+        },
+        {
+            "@id": "_:t17",
+            "hasSelector": "_:s17",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "wiederverwerten"
+        },
+        {
+            "@id": "_:s17",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a18",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t18"
+        },
+        {
+            "@id": "_:t18",
+            "hasSelector": "_:s18",
+            "issueType": "Part of speech",
+            "http://www.w3.org/ns/oa#string": "wiederverwerten"
+        },
+        {
+            "@id": "_:s18",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]/issue[1]"
+        },
+        {
+            "@id": "_:a19",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t19"
+        },
+        {
+            "@id": "_:t19",
+            "hasSelector": "_:s19",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "wiedergewinnen"
+        },
+        {
+            "@id": "_:s19",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a20",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t20"
+        },
+        {
+            "@id": "_:t20",
+            "hasSelector": "_:s20",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "rechts klicken"
+        },
+        {
+            "@id": "_:s20",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[4]"
+        },
+        {
+            "@id": "_:a21",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t21"
+        },
+        {
+            "@id": "_:t21",
+            "hasSelector": "_:s21",
+            "issueType": "Spelling",
+            "http://www.w3.org/ns/oa#string": "wiederherstellen"
+        },
+        {
+            "@id": "_:s21",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[5]"
+        },
+        {
+            "@id": "_:a22",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t22"
+        },
+        {
+            "@id": "_:t22",
+            "hasSelector": "_:s22",
+            "issueType": "Part of speech",
+            "http://www.w3.org/ns/oa#string": "Doppelklick"
+        },
+        {
+            "@id": "_:s22",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a23",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t23"
+        },
+        {
+            "@id": "_:t23",
+            "hasSelector": "_:s23",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Kastenicon"
+        },
+        {
+            "@id": "_:s23",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a24",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t24"
+        },
+        {
+            "@id": "_:t24",
+            "hasSelector": "_:s24",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "wiederverwerten"
+        },
+        {
+            "@id": "_:s24",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a25",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t25"
+        },
+        {
+            "@id": "_:t25",
+            "hasSelector": "_:s25",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "die Sie wünschen, sich zu erholen"
+        },
+        {
+            "@id": "_:s25",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[4]"
+        },
+        {
+            "@id": "_:a26",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t26"
+        },
+        {
+            "@id": "_:t26",
+            "hasSelector": "_:s26",
+            "issueType": "Grammar",
+            "http://www.w3.org/ns/oa#string": "die Sie wünschen, sich zu erholen"
+        },
+        {
+            "@id": "_:s26",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[4]/issue[1]"
+        },
+        {
+            "@id": "_:a27",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t27"
+        },
+        {
+            "@id": "_:t27",
+            "hasSelector": "_:s27",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "wieder"
+        },
+        {
+            "@id": "_:s27",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[5]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[5]"
+        },
+        {
+            "@id": "_:a28",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t28"
+        },
+        {
+            "@id": "_:t28",
+            "hasSelector": "_:s28",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "Keine"
+        },
+        {
+            "@id": "_:s28",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a29",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t29"
+        },
+        {
+            "@id": "_:t29",
+            "hasSelector": "_:s29",
+            "issueType": "Tense/aspect/mood",
+            "http://www.w3.org/ns/oa#string": "werden"
+        },
+        {
+            "@id": "_:s29",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a30",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t30"
+        },
+        {
+            "@id": "_:t30",
+            "hasSelector": "_:s30",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s30",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a31",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t31"
+        },
+        {
+            "@id": "_:t31",
+            "hasSelector": "_:s31",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "eines Zeitraums"
+        },
+        {
+            "@id": "_:s31",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[4]"
+        },
+        {
+            "@id": "_:a32",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t32"
+        },
+        {
+            "@id": "_:t32",
+            "hasSelector": "_:s32",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "abgebrochen werden"
+        },
+        {
+            "@id": "_:s32",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[5]"
+        },
+        {
+            "@id": "_:a33",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t33"
+        },
+        {
+            "@id": "_:t33",
+            "hasSelector": "_:s33",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "Keine"
+        },
+        {
+            "@id": "_:s33",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a34",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t34"
+        },
+        {
+            "@id": "_:t34",
+            "hasSelector": "_:s34",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s34",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a35",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t35"
+        },
+        {
+            "@id": "_:t35",
+            "hasSelector": "_:s35",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "durchbrochen"
+        },
+        {
+            "@id": "_:s35",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a36",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t36"
+        },
+        {
+            "@id": "_:t36",
+            "hasSelector": "_:s36",
+            "issueType": "Agreement",
+            "http://www.w3.org/ns/oa#string": "kann"
+        },
+        {
+            "@id": "_:s36",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[4]"
+        },
+        {
+            "@id": "_:a37",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t37"
+        },
+        {
+            "@id": "_:t37",
+            "hasSelector": "_:s37",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "aber"
+        },
+        {
+            "@id": "_:s37",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[5]"
+        },
+        {
+            "@id": "_:a38",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t38"
+        },
+        {
+            "@id": "_:t38",
+            "hasSelector": "_:s38",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "einem Zeitraum"
+        },
+        {
+            "@id": "_:s38",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[6]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[6]"
+        },
+        {
+            "@id": "_:a39",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t39"
+        },
+        {
+            "@id": "_:t39",
+            "hasSelector": "_:s39",
+            "issueType": "Agreement",
+            "http://www.w3.org/ns/oa#string": "der Hersteller"
+        },
+        {
+            "@id": "_:s39",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[7]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a40",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t40"
+        },
+        {
+            "@id": "_:t40",
+            "hasSelector": "_:s40",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "Ihnen"
+        },
+        {
+            "@id": "_:s40",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[7]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a41",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t41"
+        },
+        {
+            "@id": "_:t41",
+            "hasSelector": "_:s41",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Sie können, wechselt "
+        },
+        {
+            "@id": "_:s41",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[7]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a42",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t42"
+        },
+        {
+            "@id": "_:t42",
+            "hasSelector": "_:s42",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "einen"
+        },
+        {
+            "@id": "_:s42",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[9]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a43",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t43"
+        },
+        {
+            "@id": "_:t43",
+            "hasSelector": "_:s43",
+            "issueType": "Agreement",
+            "http://www.w3.org/ns/oa#string": "einen"
+        },
+        {
+            "@id": "_:s43",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[9]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a44",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t44"
+        },
+        {
+            "@id": "_:t44",
+            "hasSelector": "_:s44",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "dies"
+        },
+        {
+            "@id": "_:s44",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[9]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a45",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t45"
+        },
+        {
+            "@id": "_:t45",
+            "hasSelector": "_:s45",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s45",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[9]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a46",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t46"
+        },
+        {
+            "@id": "_:t46",
+            "hasSelector": "_:s46",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "dies "
+        },
+        {
+            "@id": "_:s46",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[9]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a47",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t47"
+        },
+        {
+            "@id": "_:t47",
+            "hasSelector": "_:s47",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "dies"
+        },
+        {
+            "@id": "_:s47",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[9]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]/issue[1]"
+        },
+        {
+            "@id": "_:a48",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t48"
+        },
+        {
+            "@id": "_:t48",
+            "hasSelector": "_:s48",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Gehen Sie zu"
+        },
+        {
+            "@id": "_:s48",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[10]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a49",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t49"
+        },
+        {
+            "@id": "_:t49",
+            "hasSelector": "_:s49",
+            "issueType": "Untranslated",
+            "http://www.w3.org/ns/oa#string": "Tools"
+        },
+        {
+            "@id": "_:s49",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[10]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a50",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t50"
+        },
+        {
+            "@id": "_:t50",
+            "hasSelector": "_:s50",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Browsingchronik"
+        },
+        {
+            "@id": "_:s50",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[10]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a51",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t51"
+        },
+        {
+            "@id": "_:t51",
+            "hasSelector": "_:s51",
+            "issueType": "Part of speech",
+            "http://www.w3.org/ns/oa#string": "Löschen"
+        },
+        {
+            "@id": "_:s51",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[10]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[4]"
+        },
+        {
+            "@id": "_:a52",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t52"
+        },
+        {
+            "@id": "_:t52",
+            "hasSelector": "_:s52",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "können"
+        },
+        {
+            "@id": "_:s52",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[10]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[5]"
+        },
+        {
+            "@id": "_:a53",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t53"
+        },
+        {
+            "@id": "_:t53",
+            "hasSelector": "_:s53",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "vorziehen"
+        },
+        {
+            "@id": "_:s53",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[10]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[6]"
+        },
+        {
+            "@id": "_:a54",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t54"
+        },
+        {
+            "@id": "_:t54",
+            "hasSelector": "_:s54",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Sprung zu"
+        },
+        {
+            "@id": "_:s54",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[10]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a55",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t55"
+        },
+        {
+            "@id": "_:t55",
+            "hasSelector": "_:s55",
+            "issueType": "Typography",
+            "http://www.w3.org/ns/oa#string": ","
+        },
+        {
+            "@id": "_:s55",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[10]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a56",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t56"
+        },
+        {
+            "@id": "_:t56",
+            "hasSelector": "_:s56",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s56",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[10]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a57",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t57"
+        },
+        {
+            "@id": "_:t57",
+            "hasSelector": "_:s57",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "ein"
+        },
+        {
+            "@id": "_:s57",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a58",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t58"
+        },
+        {
+            "@id": "_:t58",
+            "hasSelector": "_:s58",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "app"
+        },
+        {
+            "@id": "_:s58",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a59",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t59"
+        },
+        {
+            "@id": "_:t59",
+            "hasSelector": "_:s59",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "ein"
+        },
+        {
+            "@id": "_:s59",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a60",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t60"
+        },
+        {
+            "@id": "_:t60",
+            "hasSelector": "_:s60",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "in den"
+        },
+        {
+            "@id": "_:s60",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a61",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t61"
+        },
+        {
+            "@id": "_:t61",
+            "hasSelector": "_:s61",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Tourner auf "
+        },
+        {
+            "@id": "_:s61",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a62",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t62"
+        },
+        {
+            "@id": "_:t62",
+            "hasSelector": "_:s62",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "in"
+        },
+        {
+            "@id": "_:s62",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a63",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t63"
+        },
+        {
+            "@id": "_:t63",
+            "hasSelector": "_:s63",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s63",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[4]"
+        },
+        {
+            "@id": "_:a64",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t64"
+        },
+        {
+            "@id": "_:t64",
+            "hasSelector": "_:s64",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Home- Bildschirm"
+        },
+        {
+            "@id": "_:s64",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[5]"
+        },
+        {
+            "@id": "_:a65",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t65"
+        },
+        {
+            "@id": "_:t65",
+            "hasSelector": "_:s65",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "app"
+        },
+        {
+            "@id": "_:s65",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[6]"
+        },
+        {
+            "@id": "_:a66",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t66"
+        },
+        {
+            "@id": "_:t66",
+            "hasSelector": "_:s66",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "in"
+        },
+        {
+            "@id": "_:s66",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[7]"
+        },
+        {
+            "@id": "_:a67",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t67"
+        },
+        {
+            "@id": "_:t67",
+            "hasSelector": "_:s67",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s67",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[12]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[8]"
+        },
+        {
+            "@id": "_:a68",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t68"
+        },
+        {
+            "@id": "_:t68",
+            "hasSelector": "_:s68",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s68",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[13]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a69",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t69"
+        },
+        {
+            "@id": "_:t69",
+            "hasSelector": "_:s69",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s69",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[13]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a70",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t70"
+        },
+        {
+            "@id": "_:t70",
+            "hasSelector": "_:s70",
+            "issueType": "Agreement",
+            "http://www.w3.org/ns/oa#string": "das"
+        },
+        {
+            "@id": "_:s70",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[13]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a71",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t71"
+        },
+        {
+            "@id": "_:t71",
+            "hasSelector": "_:s71",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s71",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[13]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a72",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t72"
+        },
+        {
+            "@id": "_:t72",
+            "hasSelector": "_:s72",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Nr. "
+        },
+        {
+            "@id": "_:s72",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[15]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a73",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t73"
+        },
+        {
+            "@id": "_:t73",
+            "hasSelector": "_:s73",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "versetzt"
+        },
+        {
+            "@id": "_:s73",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[15]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a74",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t74"
+        },
+        {
+            "@id": "_:t74",
+            "hasSelector": "_:s74",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": "mehreren"
+        },
+        {
+            "@id": "_:s74",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[15]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a75",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t75"
+        },
+        {
+            "@id": "_:t75",
+            "hasSelector": "_:s75",
+            "issueType": "Agreement",
+            "http://www.w3.org/ns/oa#string": "mehreren"
+        },
+        {
+            "@id": "_:s75",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[15]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]/issue[1]"
+        },
+        {
+            "@id": "_:a76",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t76"
+        },
+        {
+            "@id": "_:t76",
+            "hasSelector": "_:s76",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Flughafen-explizit-"
+        },
+        {
+            "@id": "_:s76",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[15]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[4]"
+        },
+        {
+            "@id": "_:a77",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t77"
+        },
+        {
+            "@id": "_:t77",
+            "hasSelector": "_:s77",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Nr."
+        },
+        {
+            "@id": "_:s77",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[15]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a78",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t78"
+        },
+        {
+            "@id": "_:t78",
+            "hasSelector": "_:s78",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Stream"
+        },
+        {
+            "@id": "_:s78",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[15]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a79",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t79"
+        },
+        {
+            "@id": "_:t79",
+            "hasSelector": "_:s79",
+            "issueType": "Spelling",
+            "http://www.w3.org/ns/oa#string": "Express Einheiten"
+        },
+        {
+            "@id": "_:s79",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[15]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a80",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t80"
+        },
+        {
+            "@id": "_:t80",
+            "hasSelector": "_:s80",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "Nur"
+        },
+        {
+            "@id": "_:s80",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[17]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a81",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t81"
+        },
+        {
+            "@id": "_:t81",
+            "hasSelector": "_:s81",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s81",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[17]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a82",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t82"
+        },
+        {
+            "@id": "_:t82",
+            "hasSelector": "_:s82",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s82",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[17]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a83",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t83"
+        },
+        {
+            "@id": "_:t83",
+            "hasSelector": "_:s83",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s83",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[17]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a84",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t84"
+        },
+        {
+            "@id": "_:t84",
+            "hasSelector": "_:s84",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "wählen dann aus diese Person Sie"
+        },
+        {
+            "@id": "_:s84",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[17]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a85",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t85"
+        },
+        {
+            "@id": "_:t85",
+            "hasSelector": "_:s85",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Erhebung"
+        },
+        {
+            "@id": "_:s85",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[19]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a86",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t86"
+        },
+        {
+            "@id": "_:t86",
+            "hasSelector": "_:s86",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s86",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[19]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a87",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t87"
+        },
+        {
+            "@id": "_:t87",
+            "hasSelector": "_:s87",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s87",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[19]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a88",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t88"
+        },
+        {
+            "@id": "_:t88",
+            "hasSelector": "_:s88",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "benutzen"
+        },
+        {
+            "@id": "_:s88",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[19]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a89",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t89"
+        },
+        {
+            "@id": "_:t89",
+            "hasSelector": "_:s89",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "können soll"
+        },
+        {
+            "@id": "_:s89",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[19]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a90",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t90"
+        },
+        {
+            "@id": "_:t90",
+            "hasSelector": "_:s90",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "können soll"
+        },
+        {
+            "@id": "_:s90",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[19]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]/issue[1]"
+        },
+        {
+            "@id": "_:a91",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t91"
+        },
+        {
+            "@id": "_:t91",
+            "hasSelector": "_:s91",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "sehen"
+        },
+        {
+            "@id": "_:s91",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[20]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a92",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t92"
+        },
+        {
+            "@id": "_:t92",
+            "hasSelector": "_:s92",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Ihrer VPN-verbindet"
+        },
+        {
+            "@id": "_:s92",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[20]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a93",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t93"
+        },
+        {
+            "@id": "_:t93",
+            "hasSelector": "_:s93",
+            "issueType": "Agreement",
+            "http://www.w3.org/ns/oa#string": "ist"
+        },
+        {
+            "@id": "_:s93",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[20]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a94",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t94"
+        },
+        {
+            "@id": "_:t94",
+            "hasSelector": "_:s94",
+            "issueType": "Agreement",
+            "http://www.w3.org/ns/oa#string": "verbinden"
+        },
+        {
+            "@id": "_:s94",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[20]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a95",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t95"
+        },
+        {
+            "@id": "_:t95",
+            "hasSelector": "_:s95",
+            "issueType": "Addition",
+            "http://www.w3.org/ns/oa#string": "wollen"
+        },
+        {
+            "@id": "_:s95",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[20]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a96",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t96"
+        },
+        {
+            "@id": "_:t96",
+            "hasSelector": "_:s96",
+            "issueType": "Grammar",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s96",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[20]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a97",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t97"
+        },
+        {
+            "@id": "_:t97",
+            "hasSelector": "_:s97",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "nicht"
+        },
+        {
+            "@id": "_:s97",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[21]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a98",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t98"
+        },
+        {
+            "@id": "_:t98",
+            "hasSelector": "_:s98",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "auf"
+        },
+        {
+            "@id": "_:s98",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[21]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a99",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t99"
+        },
+        {
+            "@id": "_:t99",
+            "hasSelector": "_:s99",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "so"
+        },
+        {
+            "@id": "_:s99",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[21]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a100",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t100"
+        },
+        {
+            "@id": "_:t100",
+            "hasSelector": "_:s100",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "auf sie"
+        },
+        {
+            "@id": "_:s100",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[21]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a101",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t101"
+        },
+        {
+            "@id": "_:t101",
+            "hasSelector": "_:s101",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "sind"
+        },
+        {
+            "@id": "_:s101",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[21]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a102",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t102"
+        },
+        {
+            "@id": "_:t102",
+            "hasSelector": "_:s102",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": " in"
+        },
+        {
+            "@id": "_:s102",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[72]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a103",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t103"
+        },
+        {
+            "@id": "_:t103",
+            "hasSelector": "_:s103",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "an "
+        },
+        {
+            "@id": "_:s103",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[72]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a104",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t104"
+        },
+        {
+            "@id": "_:t104",
+            "hasSelector": "_:s104",
+            "issueType": "Part of speech",
+            "http://www.w3.org/ns/oa#string": "Plug"
+        },
+        {
+            "@id": "_:s104",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[72]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a105",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t105"
+        },
+        {
+            "@id": "_:t105",
+            "hasSelector": "_:s105",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "zeigen"
+        },
+        {
+            "@id": "_:s105",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[72]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a106",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t106"
+        },
+        {
+            "@id": "_:t106",
+            "hasSelector": "_:s106",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s106",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[72]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a107",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t107"
+        },
+        {
+            "@id": "_:t107",
+            "hasSelector": "_:s107",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "entzieht"
+        },
+        {
+            "@id": "_:s107",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[72]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[4]"
+        },
+        {
+            "@id": "_:a108",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t108"
+        },
+        {
+            "@id": "_:t108",
+            "hasSelector": "_:s108",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s108",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[72]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[5]"
+        },
+        {
+            "@id": "_:a109",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t109"
+        },
+        {
+            "@id": "_:t109",
+            "hasSelector": "_:s109",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Freie"
+        },
+        {
+            "@id": "_:s109",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[73]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a110",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t110"
+        },
+        {
+            "@id": "_:t110",
+            "hasSelector": "_:s110",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s110",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[73]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a111",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t111"
+        },
+        {
+            "@id": "_:t111",
+            "hasSelector": "_:s111",
+            "issueType": "Agreement",
+            "http://www.w3.org/ns/oa#string": "Kostenlos"
+        },
+        {
+            "@id": "_:s111",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[73]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a112",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t112"
+        },
+        {
+            "@id": "_:t112",
+            "hasSelector": "_:s112",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s112",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[73]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a113",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t113"
+        },
+        {
+            "@id": "_:t113",
+            "hasSelector": "_:s113",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "freier"
+        },
+        {
+            "@id": "_:s113",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[75]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a114",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t114"
+        },
+        {
+            "@id": "_:t114",
+            "hasSelector": "_:s114",
+            "issueType": "Agreement",
+            "http://www.w3.org/ns/oa#string": "freier"
+        },
+        {
+            "@id": "_:s114",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[75]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]/issue[1]"
+        },
+        {
+            "@id": "_:a115",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t115"
+        },
+        {
+            "@id": "_:t115",
+            "hasSelector": "_:s115",
+            "issueType": "Spelling",
+            "http://www.w3.org/ns/oa#string": "Offlinebrowserdienstprogramm"
+        },
+        {
+            "@id": "_:s115",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[75]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a116",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t116"
+        },
+        {
+            "@id": "_:t116",
+            "hasSelector": "_:s116",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "freie"
+        },
+        {
+            "@id": "_:s116",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[75]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a117",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t117"
+        },
+        {
+            "@id": "_:t117",
+            "hasSelector": "_:s117",
+            "issueType": "Agreement",
+            "http://www.w3.org/ns/oa#string": "bedienenden"
+        },
+        {
+            "@id": "_:s117",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[75]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a118",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t118"
+        },
+        {
+            "@id": "_:t118",
+            "hasSelector": "_:s118",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s118",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[75]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a119",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t119"
+        },
+        {
+            "@id": "_:t119",
+            "hasSelector": "_:s119",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "aus"
+        },
+        {
+            "@id": "_:s119",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[76]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a120",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t120"
+        },
+        {
+            "@id": "_:t120",
+            "hasSelector": "_:s120",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s120",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[76]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a121",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t121"
+        },
+        {
+            "@id": "_:t121",
+            "hasSelector": "_:s121",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Orakelwebseite"
+        },
+        {
+            "@id": "_:s121",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[76]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a122",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t122"
+        },
+        {
+            "@id": "_:t122",
+            "hasSelector": "_:s122",
+            "issueType": "Untranslated",
+            "http://www.w3.org/ns/oa#string": "Download"
+        },
+        {
+            "@id": "_:s122",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[76]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a123",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t123"
+        },
+        {
+            "@id": "_:t123",
+            "hasSelector": "_:s123",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s123",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[76]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a124",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t124"
+        },
+        {
+            "@id": "_:t124",
+            "hasSelector": "_:s124",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Web-Seite"
+        },
+        {
+            "@id": "_:s124",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[76]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a125",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t125"
+        },
+        {
+            "@id": "_:t125",
+            "hasSelector": "_:s125",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "nach"
+        },
+        {
+            "@id": "_:s125",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[77]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a126",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t126"
+        },
+        {
+            "@id": "_:t126",
+            "hasSelector": "_:s126",
+            "issueType": "Unintelligible",
+            "http://www.w3.org/ns/oa#string": "und dann jede Uhrchronik Verlauf löschen"
+        },
+        {
+            "@id": "_:s126",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[77]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a127",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t127"
+        },
+        {
+            "@id": "_:t127",
+            "hasSelector": "_:s127",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "richtigen"
+        },
+        {
+            "@id": "_:s127",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[77]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a128",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t128"
+        },
+        {
+            "@id": "_:t128",
+            "hasSelector": "_:s128",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "anklicken"
+        },
+        {
+            "@id": "_:s128",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[77]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a129",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t129"
+        },
+        {
+            "@id": "_:t129",
+            "hasSelector": "_:s129",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "jede"
+        },
+        {
+            "@id": "_:s129",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[77]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a130",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t130"
+        },
+        {
+            "@id": "_:t130",
+            "hasSelector": "_:s130",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Uhrchronik"
+        },
+        {
+            "@id": "_:s130",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[77]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[4]"
+        },
+        {
+            "@id": "_:a131",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t131"
+        },
+        {
+            "@id": "_:t131",
+            "hasSelector": "_:s131",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s131",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[79]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a132",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t132"
+        },
+        {
+            "@id": "_:t132",
+            "hasSelector": "_:s132",
+            "issueType": "Spelling",
+            "http://www.w3.org/ns/oa#string": "Abkürzungs-Icon"
+        },
+        {
+            "@id": "_:s132",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[79]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a133",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t133"
+        },
+        {
+            "@id": "_:t133",
+            "hasSelector": "_:s133",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "an richtig Zeigerecke"
+        },
+        {
+            "@id": "_:s133",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[79]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a134",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t134"
+        },
+        {
+            "@id": "_:t134",
+            "hasSelector": "_:s134",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "von"
+        },
+        {
+            "@id": "_:s134",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[79]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[4]"
+        },
+        {
+            "@id": "_:a135",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t135"
+        },
+        {
+            "@id": "_:t135",
+            "hasSelector": "_:s135",
+            "issueType": "Spelling",
+            "http://www.w3.org/ns/oa#string": "Abkürzungsicon"
+        },
+        {
+            "@id": "_:s135",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[79]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a136",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t136"
+        },
+        {
+            "@id": "_:t136",
+            "hasSelector": "_:s136",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "an rechts Zeigerecke"
+        },
+        {
+            "@id": "_:s136",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[79]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a137",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t137"
+        },
+        {
+            "@id": "_:t137",
+            "hasSelector": "_:s137",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "nicht alle "
+        },
+        {
+            "@id": "_:s137",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[81]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a138",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t138"
+        },
+        {
+            "@id": "_:t138",
+            "hasSelector": "_:s138",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Uhr-"
+        },
+        {
+            "@id": "_:s138",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[83]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a139",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t139"
+        },
+        {
+            "@id": "_:t139",
+            "hasSelector": "_:s139",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s139",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[83]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a140",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t140"
+        },
+        {
+            "@id": "_:t140",
+            "hasSelector": "_:s140",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "für"
+        },
+        {
+            "@id": "_:s140",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[83]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a141",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t141"
+        },
+        {
+            "@id": "_:t141",
+            "hasSelector": "_:s141",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s141",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[83]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a142",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t142"
+        },
+        {
+            "@id": "_:t142",
+            "hasSelector": "_:s142",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "für"
+        },
+        {
+            "@id": "_:s142",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[83]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a143",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t143"
+        },
+        {
+            "@id": "_:t143",
+            "hasSelector": "_:s143",
+            "issueType": "Omission",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s143",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[84]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a144",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t144"
+        },
+        {
+            "@id": "_:t144",
+            "hasSelector": "_:s144",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Wolke Dienste"
+        },
+        {
+            "@id": "_:s144",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[84]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a145",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t145"
+        },
+        {
+            "@id": "_:t145",
+            "hasSelector": "_:s145",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Sie Auswahl"
+        },
+        {
+            "@id": "_:s145",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[85]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a146",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t146"
+        },
+        {
+            "@id": "_:t146",
+            "hasSelector": "_:s146",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Cantrade Sie"
+        },
+        {
+            "@id": "_:s146",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[85]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a147",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t147"
+        },
+        {
+            "@id": "_:t147",
+            "hasSelector": "_:s147",
+            "issueType": "Tense/aspect/mood",
+            "http://www.w3.org/ns/oa#string": "einfügen"
+        },
+        {
+            "@id": "_:s147",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[86]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a148",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t148"
+        },
+        {
+            "@id": "_:t148",
+            "hasSelector": "_:s148",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Wortdokument"
+        },
+        {
+            "@id": "_:s148",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[86]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a149",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t149"
+        },
+        {
+            "@id": "_:t149",
+            "hasSelector": "_:s149",
+            "issueType": "Overly literal",
+            "http://www.w3.org/ns/oa#string": "Es dauert nur manchmal"
+        },
+        {
+            "@id": "_:s149",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[87]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a150",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t150"
+        },
+        {
+            "@id": "_:t150",
+            "hasSelector": "_:s150",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "der Video-Berichte"
+        },
+        {
+            "@id": "_:s150",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[87]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a151",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t151"
+        },
+        {
+            "@id": "_:t151",
+            "hasSelector": "_:s151",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "ist"
+        },
+        {
+            "@id": "_:s151",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[87]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[3]"
+        },
+        {
+            "@id": "_:a152",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t152"
+        },
+        {
+            "@id": "_:t152",
+            "hasSelector": "_:s152",
+            "issueType": "Overly literal",
+            "http://www.w3.org/ns/oa#string": "Manchmal dauert nur ein"
+        },
+        {
+            "@id": "_:s152",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[87]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a153",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t153"
+        },
+        {
+            "@id": "_:t153",
+            "hasSelector": "_:s153",
+            "issueType": "Addition",
+            "http://www.w3.org/ns/oa#string": "Sie"
+        },
+        {
+            "@id": "_:s153",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[87]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a154",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t154"
+        },
+        {
+            "@id": "_:t154",
+            "hasSelector": "_:s154",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "über gemeldet"
+        },
+        {
+            "@id": "_:s154",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[87]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a155",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t155"
+        },
+        {
+            "@id": "_:t155",
+            "hasSelector": "_:s155",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s155",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[94]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a156",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t156"
+        },
+        {
+            "@id": "_:t156",
+            "hasSelector": "_:s156",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "bekannt"
+        },
+        {
+            "@id": "_:s156",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[94]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        },
+        {
+            "@id": "_:a157",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t157"
+        },
+        {
+            "@id": "_:t157",
+            "hasSelector": "_:s157",
+            "issueType": "Missing function word",
+            "http://www.w3.org/ns/oa#string": " "
+        },
+        {
+            "@id": "_:s157",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[94]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a158",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t158"
+        },
+        {
+            "@id": "_:t158",
+            "hasSelector": "_:s158",
+            "issueType": "Spelling",
+            "http://www.w3.org/ns/oa#string": "facebook"
+        },
+        {
+            "@id": "_:s158",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[94]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a159",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t159"
+        },
+        {
+            "@id": "_:t159",
+            "hasSelector": "_:s159",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "bekannt"
+        },
+        {
+            "@id": "_:s159",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[94]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a160",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t160"
+        },
+        {
+            "@id": "_:t160",
+            "hasSelector": "_:s160",
+            "issueType": "Incorrect function word",
+            "http://www.w3.org/ns/oa#string": "zu"
+        },
+        {
+            "@id": "_:s160",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[96]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a161",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t161"
+        },
+        {
+            "@id": "_:t161",
+            "hasSelector": "_:s161",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Sprung zu"
+        },
+        {
+            "@id": "_:s161",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[96]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[1]"
+        },
+        {
+            "@id": "_:a162",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t162"
+        },
+        {
+            "@id": "_:t162",
+            "hasSelector": "_:s162",
+            "issueType": "Mistranslation",
+            "http://www.w3.org/ns/oa#string": "Wertpapiers"
+        },
+        {
+            "@id": "_:s162",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[96]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[2]"
+        },
+        {
+            "@id": "_:a163",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t163"
+        },
+        {
+            "@id": "_:t163",
+            "hasSelector": "_:s163",
+            "issueType": "Spelling",
+            "http://www.w3.org/ns/oa#string": "deaktivieren"
+        },
+        {
+            "@id": "_:s163",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[96]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[2]/issue[3]"
+        },
+        {
+            "@id": "_:a164",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t164"
+        },
+        {
+            "@id": "_:t164",
+            "hasSelector": "_:s164",
+            "issueType": "Spelling",
+            "http://www.w3.org/ns/oa#string": "K-Lite codec"
+        },
+        {
+            "@id": "_:s164",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[97]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[1]"
+        },
+        {
+            "@id": "_:a165",
+            "@type": "http://www.w3.org/ns/oa#Annotation",
+            "hasTarget": "_:t165"
+        },
+        {
+            "@id": "_:t165",
+            "hasSelector": "_:s165",
+            "issueType": "Word order",
+            "http://www.w3.org/ns/oa#string": "sicher"
+        },
+        {
+            "@id": "_:s165",
+            "type": "XPathSelector",
+            "value": "/annotations/annotGrp[97]/targets[1]/target[1]/annotatedTargets[1]/annotatedTarget[1]/issue[2]"
+        }
+    ],
+    "@context": {
+        "hasTarget": {
+            "@id": "http://www.w3.org/ns/oa#hasTarget",
+            "@type": "@id"
+        },
+        "hasSelector": {
+            "@id": "http://www.w3.org/ns/oa#hasSelector",
+            "@type": "@id"
+        },
+        "string": {
+            "@id": "http://www.w3.org/ns/oa#string",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "issueType": {
+            "@id": "http://dkt.dfki.de/ontologies/nif#mqmIssueType",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "dktnif": "http://dkt.dfki.de/ontologies/nif#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    }
+}
