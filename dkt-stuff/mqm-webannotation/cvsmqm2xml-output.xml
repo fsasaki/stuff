@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <annotations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xmlns:xs="http://www.w3.org/2001/XMLSchema"
-             xsi:noNamespaceSchemaLocation="http://qt21.eu/downloads/annotations.xsd">
+             xsi:noNamespaceSchemaLocation="annotations.xsd">
    <annotGrp source="qtleap" id="i_2011-1" original_id="2011-1">
       <src xml:lang="en">Go to System Preferences &gt; Desktop &amp; Screen Saver and change the settings.</src>
       <targets xml:lang="de">

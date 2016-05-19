@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" vc:minVersion="1.1" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xs:element name="annotations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="annotGrp" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="src">
+								<xs:complexType mixed="true">
+									<xs:attribute ref="xml:lang" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="targets">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="target" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="targetSeg" type="xs:string"/>
+													<xs:element name="annotatedTargets">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="annotatedTarget" maxOccurs="unbounded">
+																	<xs:complexType mixed="true">
+																		<xs:sequence>
+																			<xs:element minOccurs="0" maxOccurs="unbounded" ref="issue"/>
+																		</xs:sequence>
+																		<xs:attribute name="annotator" use="required" type="xs:NMTOKEN"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="engine" use="required" type="xs:NCName"/>
+												<xs:attribute name="row_number" use="required" type="xs:integer"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute ref="xml:lang" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="altTargets" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="altTarget" maxOccurs="unbounded">
+											<xs:complexType mixed="true">
+												<xs:attribute name="engine" use="required" type="xs:NCName"/>
+												<xs:attribute name="extra" type="xs:NCName"/>
+												<xs:attribute name="rank" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute ref="xml:lang" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" use="required" type="xs:NCName"/>
+						<xs:attribute name="original_id" use="required" type="xs:string"/>
+						<xs:attribute name="source" use="required" type="xs:NCName"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="issue">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="unbounded" ref="issue"/>
+			</xs:sequence>
+			<xs:attribute name="id" use="required" type="xs:NCName"/>
+			<xs:attribute name="type" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
