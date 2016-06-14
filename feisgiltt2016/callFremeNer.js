@@ -1,5 +1,4 @@
-
-function callFremeNer (selectedLanguage, selectedDataset, doctype, approach, sourceContent) {
+function callFremeNer(selectedLanguage, selectedDataset, doctype, approach, sourceContent) {
     this.selectedLanguage = selectedLanguage;
     this.selectedDataset = selectedDataset;
     this.doctype = doctype;
@@ -32,91 +31,86 @@ function callFremeNer (selectedLanguage, selectedDataset, doctype, approach, sou
     //for dev version : http://api-dev.freme-project.eu/current
     //for latest stable version: http://api.freme-project.eu/current
     var requestURL = fremeApiUrl + "/e-entity/freme-ner/documents?language=" + selectedLanguage + "&dataset=" + selectedDataset;
-    if (approach === "2" || approach === "3" || approach === "5") {
-        $.ajax({
-            type: 'POST',
-            url: requestURL,
-            data: requestBody,
-            async: true,
-            headers: {
-                'Accept': 'text/html',
-                'Content-Type': 'text/html'
-            }
-        })
-                .done(function (result1) {
-                    //console.log("success" + result1.toString());
-                    $("#out").empty().append(result1);
-                    console.log("transform back start");
-                    console.log("approachchoice " + approach);
-                    switch (approach) {
-                        case "2" :
-                            xslSourcePath235 = xslSourcePathApproach2;
-                            break;
-                        case "3" :
-                            xslSourcePath235 = xslSourcePathApproach3;
-                            break;
-                        case "5" :
-                            xslSourcePath235 = xslSourcePathApproach2;
-                    }
-                    ;
-                    console.log("approach 2,3,5 path" + xslSourcePath235);
-                    var tempstring = xsltTransform(xslSourcePath235, sourceContent, []);
-                    console.log("approach:" + approach);
-                    if (approach === "2" || approach === "3") {
-                        var tempstring2 = tempstring.replace(/</g, "&lt;");
-                        //return tempstring2;
-                        $("#output2").empty().append(tempstring2);
-                    } else if (approach === "5") {
-                        console.log("running approach 5");
-                        $("#output2").empty().addClass('output');
-                        console.log("approach 5 path:" + xslSourcePathApproach5);
-                        var tempstring5 = xsltTransform(xslSourcePathApproach5, tempstring, []);
-                        console.log("tempstring:" + tempstring);
-                        var tempstring52 = tempstring5.replace(/</g, "&lt;");
-                        //return tempstring52;
-                        $("#output2").empty().append(tempstring52);
-                    }
-                })
-                .fail(function (xhr, statusText, err) {
-                    console.log("error");
-                    error(xhr + statusText + err);
-                    console.log(xhr + statusText + err);
-                    $("#output2").empty().append(xhr + statusText + err);
-                });
-    } else {
-        $.ajax({
-            type: 'POST',
-            url: requestURL,
-            data: sourceContent,
-            async : true,
-            headers: {
-                'Accept': 'text/turtle',
-                'Content-Type': 'text/html'
-            }
-        })
-                .done(function (result1) {
-                    var tempstring2 = result1.replace(/</g, "&lt;");
-                    if (approach === "1") {
-                        //return tempstring2;
-                        $("#output2").empty().append(tempstring2);
-                    } else if (approach === "4") {
-                        //console.log("approach 4 output" +  tempstring2);
-                        $("#out").empty().append(tempstring2);
-                        console.log("xsl source for approach 4: " + xslSourcePathApproach4);
-                        var tempstring = xsltTransform(xslSourcePathApproach4, sourceContent, [{"ns": null, "name": "rdfoutput", "value": tempstring2}]);
-                        var tempstring2 = tempstring.replace(/</g, "&lt;");
-                        //return tempstring2;
-                        $("#output2").empty().append(tempstring2);
-                    }
-                    ;
-                })
-                .fail(function (xhr, statusText, err) {
-                    console.log("error");
-                    error(xhr + statusText + err);
-                    console.log(xhr + statusText + err);
-                    $("#output2").empty().append(xhr + statusText + err);
-                });
-    }
-    ;
-    ;
-};
+    return new Promise(function (resolve, reject) {
+        if (approach === "2" || approach === "3" || approach === "5") {
+            $.ajax({
+                type: 'POST',
+                url: requestURL,
+                data: requestBody,
+                async: true,
+                headers: {
+                    'Accept': 'text/html',
+                    'Content-Type': 'text/html'
+                }
+            })
+                    .done(function (result1) {
+                        $("#out").empty().append(result1);
+                        console.log("transform back start");
+                        console.log("approachchoice " + approach);
+                        switch (approach) {
+                            case "2" :
+                                xslSourcePath235 = xslSourcePathApproach2;
+                                break;
+                            case "3" :
+                                xslSourcePath235 = xslSourcePathApproach3;
+                                break;
+                            case "5" :
+                                xslSourcePath235 = xslSourcePathApproach2;
+                        }
+                        ;
+                        console.log("approach 2,3,5 path" + xslSourcePath235);
+                        var tempstring = xsltTransform(xslSourcePath235, sourceContent, []);
+                        console.log("approach:" + approach);
+                        if (approach === "2" || approach === "3") {
+                            var tempstring2 = tempstring.replace(/</g, "&lt;");
+                            resolve(tempstring2);
+                        } else if (approach === "5") {
+                            console.log("running approach 5");
+                            $("#output2").empty().addClass('output');
+                            console.log("approach 5 path:" + xslSourcePathApproach5);
+                            var tempstring5 = xsltTransform(xslSourcePathApproach5, tempstring, []);
+                            console.log("tempstring:" + tempstring);
+                            var tempstring52 = tempstring5.replace(/</g, "&lt;");
+                            resolve(tempstring52);
+                            $("#output2").empty().append(tempstring52);
+                        }
+                    })
+                    .fail(function (xhr, statusText, err) {
+                        console.log("error");
+                        console.log(xhr + statusText + err);
+                        reject(xhr + statusText + err);
+                    });
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: requestURL,
+                data: sourceContent,
+                async: true,
+                headers: {
+                    'Accept': 'text/turtle',
+                    'Content-Type': 'text/html'
+                }
+            })
+                    .done(function (result1) {
+                        var tempstring2 = result1.replace(/</g, "&lt;");
+                        if (approach === "1") {
+                            resolve(tempstring2);
+                        } else if (approach === "4") {
+                            console.log("xsl source for approach 4: " + xslSourcePathApproach4);
+                            var tempstring = xsltTransform(xslSourcePathApproach4, sourceContent, [{"ns": null, "name": "rdfoutput", "value": tempstring2}]);
+                            var tempstring3 = tempstring.replace(/</g, "&lt;");
+                            resolve(tempstring3);
+                        }
+                        ;
+                    })
+                    .fail(function (xhr, statusText, err) {
+                        console.log("error");
+                        console.log(xhr + statusText + err);
+                        reject(xhr + statusText + err);
+                    });
+        }
+        ;
+        ;
+    });
+}
+;
