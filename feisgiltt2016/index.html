@@ -15,6 +15,10 @@
                 var doctype = $("#doctype").find(":selected").val();
                 var approach = $('#approach').find(":selected").val();
                 var sourceContent = $('#content').val();
+		if(doctype === "stratml" && (approach === "3" || approach === "4" || approach === "5")) {
+		    alert("StratML processing so far only support approach 1 or 2!");
+		    return;
+		};
                 var myFremeNerOutput = new callFremeNer(selectedLanguage, selectedDataset, doctype, approach, sourceContent);
 		myFremeNerOutput.then(function(response) {
                 console.log("Success!", response);
@@ -88,13 +92,13 @@ function(reject) {console.log("Failed!", reject);}
 	<p>In the left form below enter a document of these types: Docbook 5.0 (<span class="loadsample" onclick="var docbooksample = $('#docbooksample').text();
                 $('#content').empty().val(docbooksample.replace(/</g, '&lt;'))">load a sample</span>), TEI P5 (<span class="loadsample" onclick="var teisample = $('#teisample').text();
                         $('#content').empty().val(teisample.replace(/</g, '&lt;'))">load a sample</span>), XLIFF 2 (<span class="loadsample" onclick="var teisample = $('#xliff2sample').text();
-                                $('#content').empty().val(teisample.replace(/</g, '&lt;'))">load a sample</span>). Then click on the bottom <q>Call FREME e-Entity</q>. Also, adapt the language and the data set used for enrichment to your needs.</p>
+                                $('#content').empty().val(teisample.replace(/</g, '&lt;'))">load a sample</span>), or StratML. Then click on the bottom <q>Call FREME e-Entity</q>. Also, adapt the language and the data set used for enrichment to your needs.</p>
 		    <button onclick="runEnrichment();" class="run">Call FREME e-Entity with XML content</button>
 	<button onclick="$('#out').empty().append('Output');
                 $('#output2').empty();
                 $('#output2').addClass('output');">Refresh output</button>
 	<form name="input">
-	    <p>Set the document type of the input: <select name="doctype" id="doctype"><option value="tei">TEI</option><option value="docbook" selected>DocBook</option><option value="xliff2">XLIFF 2</option></select></p>
+	    <p>Set the document type of the input: <select name="doctype" id="doctype"><option value="tei">TEI</option><option value="docbook" selected>DocBook</option><option value="xliff2">XLIFF 2</option><option value="stratml">StratML</option></select></p>
 	    <p>Set the language of the input: <select name="language" id="language"><option value="en" selected>English</option><option value="de">German</option><option value="nl">Dutch</option><option value="fr">French</option><option value="it">Italien</option><option value="es">Spanish</option></select></p>
 	    <p>Set the data set to be used for enrichment: <select name="dataset" id="dataset"><option value="dbpedia" selected>DBpedia</option><option value="onld">ONLD</option><option value="geopolitical">Geopolitical ontology</option><option value="viaf">VIAF</option><option value="orcid">ORCID</option></select></p>
 	    <p>Set the output type: <select name="approach" id="approach"><option value="1">1. Convert XML to linked data</option><option value="2">2. Embedd Linked Data into XML via Structured Markup</option><option value="3">3. Anchor Linked Data in XML Attributes</option><option value="4">4. Embed Linked Data in Metadata Sections of XML Files</option><option value="5">5. Anchor Linked Data via Annotations in XML Content</option></select></p>
