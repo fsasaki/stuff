@@ -33,11 +33,18 @@
         </xsl:element>
     </xsl:template>
     <xsl:template mode="writeAnnotation" match="span[@its-ta-ident-ref or @its-ta-class-ref]">
-        <span>
-            <xsl:copy-of select="@its-ta-ident-ref"/>
-            <xsl:copy-of select="@its-ta-class-ref"/>
-                    <xsl:value-of select="." disable-output-escaping="no"/>
-        </span>
+        <xsl:variable name="countAnnotations"><xsl:number count="span[@its-ta-ident-ref or @its-ta-class-ref]" level="any"/></xsl:variable>
+        <xsl:processing-instruction name="fa-start">
+            <xsl:value-of select="concat('no=&quot;',$countAnnotations,'&quot;')"/>
+            <xsl:for-each  select="@its-ta-ident-ref, @its-ta-class-ref">
+            <xsl:value-of select="concat('&#160;',name(),'=&quot;',.,'&quot;')"/>
+                <xsl:if test="not(last())">,</xsl:if>
+                </xsl:for-each>
+        </xsl:processing-instruction>
+        <xsl:value-of select="." disable-output-escaping="no"/>
+        <xsl:processing-instruction name="fa-end">
+            <xsl:value-of select="concat('no=&quot;',$countAnnotations,'&quot;')"/>
+        </xsl:processing-instruction>
     </xsl:template>
     <xsl:template match="text()" mode="writeAnnotation">
         <xsl:value-of select="." disable-output-escaping="no"/>
