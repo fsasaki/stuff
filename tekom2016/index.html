@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Conversion of TBX to Schema.org</title>
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            function tbx2schemaDotOrg() {
+                var sourceContent = $('#content').val();
+                var fremeApiURL = "http://api-dev.freme-project.eu/current/";
+                var requestURL = fremeApiURL + "toolbox/xslt-converter/documents/tbx-to-schema-dot-org";
+                $.ajax({
+                    type: 'POST',
+                    url: requestURL,
+                    data: sourceContent,
+                    async: true,
+                    headers: {
+                        'Content-Type': 'text/xml',
+                        'Accept': 'text/xml'
+                    }
+                })
+                        .done(function (result) {
+                            var xmlString = (new XMLSerializer()).serializeToString(result);
+                            var output = xmlString.replace(/</g, "&lt;");
+                            console.log(output);
+                            $("#output2").empty().append(output);
+                        })
+                        .fail(function (xhr, statusText, err) {
+                            console.log("error");
+                            error(xhr + statusText + err);
+                            console.log(xhr + statusText + err);
+                            //$("#output2").empty().append(xhr + statusText + err);
+                        });
+            }
+            ;
+        </script>
+        <style>
+            textarea.input { color: green;
+                             float: left;
+                             width: 45%;
+                             margin-left: 10px;
+                             margin-top: 10px;
+                             padding: 5px;
+                             border: 1px solid black;
+            }
+            textarea.output { color: blue;
+                              float: right;
+                              width: 45%;
+                              margin-right: 10px;
+                              margin-top: 10px;
+                              padding: 5px;
+                              border: 1px solid black;
+            }
+            span.loadsample {
+                color: blue;
+            }
+            button.run {
+                box-shadow: 4px 4px 2px #888888;
+            }
+            pre, code {
+                background-color: #e1e1ea;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>TBX 2 SchemaDotOrg</h1>
+        <h2 id="background">Background</h2>
+        <p>tbd</p>
+        <h2 id="try-it-out">Try it out</h2>
+        <p>In the left form below enter a TBX document Then click on the bottom <q>convert</q>.</p>
+        <button onclick="tbx2schemaDotOrg();" class="run">convert</button>
+        <button onclick="$('#out').empty().append('Output');
+                $('#output2').empty();
+                $('#output2').addClass('output');">Refresh output</button>
+        <form name="input">
+            <textarea rows="15" cols="50" name="content"  id="content" class="input"></textarea>
+        </form>
+        <div id="out" style="display: none;">Output</div>
+        <form name="output">
+            <textarea rows="15" cols="50" name="output2"  id="output2" class="output"></textarea>
+        </form>
+    </body>
+</html>
