@@ -21,10 +21,10 @@
                     }
                 })
                         .done(function (result) {
-                            var xmlString = (new XMLSerializer()).serializeToString(result);
-                            var output = xmlString.replace(/</g, "&lt;");
-                            console.log(output);
-                            $("#output2").empty().append(output);
+                            var xmlString = (new XMLSerializer()).serializeToString(result);            
+                            var output = xmlString.replace(/<\?xml .*\?>/, '')
+	                    var output2 = output.replace(/</g, "&lt;");
+                            $("#output2").empty().append(output2);
                         })
                         .fail(function (xhr, statusText, err) {
                             console.log("error");
@@ -68,7 +68,9 @@
         <h2 id="background">Background</h2>
         <p>tbd</p>
         <h2 id="try-it-out">Try it out</h2>
-        <p>In the left form below enter a TBX document Then click on the bottom <q>convert</q>.</p>
+        <p>In the left form below enter a TBX document (<span class="loadsample" onclick="var tbxsample = $('#tbxsample').text();
+											  $('#content').empty().val(tbxsample.replace(/</g, '&lt;'))">load a sample</span>). Then click on the bottom <q>convert</q>.</p>
+	<p>You can validate the output e.g. with the <a href="https://search.google.com/structured-data/testing-tool">Structured data testing tool</a> or the <a href="http://linter.structured-data.org/">Structured Data Linter</a>.</p>
         <button onclick="tbx2schemaDotOrg();" class="run">convert</button>
         <button onclick="$('#out').empty().append('Output');
                 $('#output2').empty();
@@ -80,5 +82,167 @@
         <form name="output">
             <textarea rows="15" cols="50" name="output2"  id="output2" class="output"></textarea>
         </form>
+	<div id="tbxsample" style="display: none;">&lt;martif type="TBX" xml:lang="en">
+	&lt;martifHeader>
+		&lt;fileDesc>
+			&lt;titleStmt>
+				&lt;title>XXXterm&lt;/title>
+			&lt;/titleStmt>
+			&lt;publicationStmt>
+				&lt;p>Distributor=XXX Language Services contact=YYY-TERM Company=XXX AG
+					URL=http://www.XXX.com/company/legal/impressum.epx Region=world
+					PubStatus=unknown DateValue=March 2010
+				&lt;/p>
+			&lt;/publicationStmt>
+			&lt;sourceDesc>
+				&lt;p>CreaTool=XXXterm CreaToolVersion= 740 OrigFormat=R3-internal
+					AdminLang=en CreaDate= 20150211073900 CreaId= L
+				&lt;/p>
+			&lt;/sourceDesc>
+		&lt;/fileDesc>
+		&lt;encodingDesc>
+			&lt;p type="DCSName">XXXTBXXCSV02.xcs&lt;/p>
+		&lt;/encodingDesc>
+	&lt;/martifHeader>
+	&lt;text>
+		&lt;body>
+			&lt;termEntry id="tid_db6_014D420D507ED411B1360060B03C6BFB">
+				&lt;descripGrp>
+					&lt;descrip type="definition" />
+					&lt;transacGrp>
+						&lt;transac type="transactionType">origination&lt;/transac>
+						&lt;transacNote type="responsibility" />
+						&lt;date />
+					&lt;/transacGrp>
+					&lt;transacGrp>
+						&lt;transac type="transactionType">modification&lt;/transac>
+						&lt;transacNote type="responsibility" />
+						&lt;date />
+					&lt;/transacGrp>
+				&lt;/descripGrp>
+				&lt;transacGrp>
+					&lt;transac type="transactionType">origination&lt;/transac>
+					&lt;transacNote type="responsibility">S5&lt;/transacNote>
+					&lt;date>20080307024400&lt;/date>
+				&lt;/transacGrp>
+				&lt;transacGrp>
+					&lt;transac type="transactionType">modification&lt;/transac>
+					&lt;transacNote type="responsibility">S5&lt;/transacNote>
+					&lt;date>20080407020448&lt;/date>
+				&lt;/transacGrp>
+				&lt;admin type="conceptOrigin">de&lt;/admin>
+				&lt;descrip type="characteristic">standardEntry&lt;/descrip>
+				&lt;admin type="XXXAddProductSubset">CA; &lt;/admin>
+				&lt;descrip type="XXXAddProductSubsetSubjectField">Cross-Application Components; &lt;/descrip>
+				&lt;descrip type="XXXNonTranslatable" />
+				&lt;descrip type="XXXLegalRestriction" />
+				&lt;descrip type="XXXProprietaryRestriction" />
+				&lt;descrip type="XXXtermCategory" />
+				&lt;descrip type="entryNote" />
+				&lt;admin type="productSubset">BC&lt;/admin>
+				&lt;descrip type="subjectField">Basis Components&lt;/descrip>
+				&lt;langSet xml:lang="DE">
+					&lt;ntig>
+						&lt;termGrp>
+							&lt;term id="oid_db6_034D420D507ED411B1360060B03C6BFB">einrichten&lt;/term>
+							&lt;termNote type="partOfSpeech">Verb&lt;/termNote>
+							&lt;termNote type="grammaticalGender" />
+							&lt;termNote type="geographicalUsage" />
+							&lt;termNote type="termType">entryTerm&lt;/termNote>
+							&lt;termNote type="processStatus">finalized&lt;/termNote>
+						&lt;/termGrp>
+						&lt;admin type="annotatedNote" />
+						&lt;descrip type="context" />
+						&lt;admin type="projectSubset">30A&lt;/admin>
+						&lt;admin type="XXXLastBasisRelease" />
+						&lt;admin type="XXXEnhancement" />
+						&lt;admin type="XXXFirstEnhancementRelease" />
+						&lt;admin type="XXXLastEnhancementRelease" />
+						&lt;xref target="link2source" type="externalCrossReference">KENO
+							IWB_EXTHLP57/38DE0C4EB711D182BF0000E829FBFE KENO
+							IWB_EXTHLP5738DE0C4EB711D182BF0000E829FBFE
+						&lt;/xref>
+						&lt;transacGrp>
+							&lt;transac type="transactionType">origination&lt;/transac>
+							&lt;transacNote type="responsibility">CARLSSONJ&lt;/transacNote>
+							&lt;date>20000830104445&lt;/date>
+						&lt;/transacGrp>
+						&lt;transacGrp>
+							&lt;transac type="transactionType">modification&lt;/transac>
+							&lt;transacNote type="responsibility">BUCHNER&lt;/transacNote>
+							&lt;date>20110215092235&lt;/date>
+						&lt;/transacGrp>
+					&lt;/ntig>
+				&lt;/langSet>
+				&lt;langSet xml:lang="FR">
+					&lt;ntig>
+						&lt;termGrp>
+							&lt;term id="oid_db6_0E40995937DB4C49A6B6AC335E2A4085">configurer&lt;/term>
+							&lt;termNote type="partOfSpeech">Verb&lt;/termNote>
+							&lt;termNote type="grammaticalGender" />
+							&lt;termNote type="geographicalUsage" />
+							&lt;termNote type="termType">entryTerm&lt;/termNote>
+							&lt;termNote type="processStatus">finalized&lt;/termNote>
+						&lt;/termGrp>
+						&lt;admin type="annotatedNote" />
+						&lt;descrip type="context" />
+						&lt;admin type="projectSubset">30A&lt;/admin>
+						&lt;admin type="XXXLastBasisRelease" />
+						&lt;admin type="XXXEnhancement" />
+						&lt;admin type="XXXFirstEnhancementRelease" />
+						&lt;admin type="XXXLastEnhancementRelease" />
+						&lt;xref target="link2source" type="externalCrossReference">KENO
+							IWB_EXTHLP57/38DE0C4EB711D182BF0000E829FBFE KENO
+							IWB_EXTHLP5738DE0C4EB711D182BF0000E829FBFE
+						&lt;/xref>
+						&lt;transacGrp>
+							&lt;transac type="transactionType">origination&lt;/transac>
+							&lt;transacNote type="responsibility">N&lt;/transacNote>
+							&lt;date>20020405161417&lt;/date>
+						&lt;/transacGrp>
+						&lt;transacGrp>
+							&lt;transac type="transactionType">modification&lt;/transac>
+							&lt;transacNote type="responsibility">N&lt;/transacNote>
+							&lt;date>20020405161417&lt;/date>
+						&lt;/transacGrp>
+					&lt;/ntig>
+				&lt;/langSet>
+				&lt;langSet xml:lang="EN">
+					&lt;ntig>
+						&lt;termGrp>
+							&lt;term id="oid_db6_3CC7BB7B7D6BB04582E8B0479AB143B0">set up&lt;/term>
+							&lt;termNote type="partOfSpeech">Verb&lt;/termNote>
+							&lt;termNote type="grammaticalGender" />
+							&lt;termNote type="geographicalUsage" />
+							&lt;termNote type="termType">entryTerm&lt;/termNote>
+							&lt;termNote type="processStatus">finalized&lt;/termNote>
+						&lt;/termGrp>
+						&lt;admin type="annotatedNote" />
+						&lt;descrip type="context" />
+						&lt;admin type="projectSubset">30A&lt;/admin>
+						&lt;admin type="XXXLastBasisRelease" />
+						&lt;admin type="XXXEnhancement" />
+						&lt;admin type="XXXFirstEnhancementRelease" />
+						&lt;admin type="XXXLastEnhancementRelease" />
+						&lt;xref target="link2source" type="externalCrossReference">KENO
+							IWB_EXTHLP57/38DE0C4EB711D182BF0000E829FBFE KENO
+							IWB_EXTHLP5738DE0C4EB711D182BF0000E829FBFE
+						&lt;/xref>
+						&lt;transacGrp>
+							&lt;transac type="transactionType">origination&lt;/transac>
+							&lt;transacNote type="responsibility">CS&lt;/transacNote>
+							&lt;date>20011212152515&lt;/date>
+						&lt;/transacGrp>
+						&lt;transacGrp>
+							&lt;transac type="transactionType">modification&lt;/transac>
+							&lt;transacNote type="responsibility">CS&lt;/transacNote>
+							&lt;date>20011212152515&lt;/date>
+						&lt;/transacGrp>
+					&lt;/ntig>
+				&lt;/langSet>
+			&lt;/termEntry>
+		&lt;/body>
+	&lt;/text>
+&lt;/martif></div>
     </body>
 </html>
