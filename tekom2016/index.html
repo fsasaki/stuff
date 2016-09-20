@@ -10,7 +10,8 @@
                 var selectedInputType = $("#inputtype").find(":selected").val();
                 var sourceContent = $('#content').val();
                 var requestBody = null;
-                if (selectedInputType === "forminput") {requestBody = sourceContent;};
+                requestBody = sourceContent;
+                /*if (selectedInputType === "forminput") {requestBody = sourceContent;};*/
                 var fremeApiURL = "http://api-dev.freme-project.eu/current/";
                 var requestURL = fremeApiURL + "toolbox/xslt-converter/documents/tbx-to-schema-dot-org";
                 if (selectedInputType === "url") {requestURL = requestURL + "?intype=url&input=" + sourceContent;};
@@ -82,9 +83,9 @@
         <button onclick="$('#out').empty().append('Output');
                 $('#output2').empty();
                 $('#output2').addClass('output');">Refresh output</button>
-       <p>Set the type of input: <select name="inputtype" id="inputtype"><option value="forminput" selected>Form input</option><option value="url">URL (paste in form)</option>
+      <!-- <p>Set the type of input: <select name="inputtype" id="inputtype"><option value="forminput" selected>Form input</option><option value="url">URL (paste in form)</option>
            </select>
-       </p>
+       </p>-->
         <form name="input">
             <textarea rows="15" cols="50" name="content"  id="content" class="input"></textarea>
         </form>
