@@ -7,13 +7,20 @@
         src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script type="text/javascript">
             function tbx2schemaDotOrg() {
+                var selectedInputType = $("#inputtype").find(":selected").val();
                 var sourceContent = $('#content').val();
+                var requestBody = null;
+                if (selectedInputType === "forminput") {requestBody = sourceContent;};
                 var fremeApiURL = "http://api-dev.freme-project.eu/current/";
                 var requestURL = fremeApiURL + "toolbox/xslt-converter/documents/tbx-to-schema-dot-org";
+                if (selectedInputType === "url") {requestURL = requestURL + "?intype=url&input=" + sourceContent;};
+                console.log("url: " + requestURL);
+                /*http://api-dev.freme-project.eu/current/toolbox/xslt-converter/documents/tbx-to-schema-dot-org?intype=url&input=https://raw.githubusercontent.com/fsasaki/stuff/gh-pages/tekom2016/tbx-sample.tbx*/
+                /*http://api-dev.freme-project.eu/current/toolbox/xslt-converter/documents/tbx-to-schema-dot-org?intype=url&url=https://raw.githubusercontent.com/fsasaki/stuff/gh-pages/tekom2016/tbx-sample.tbx*/
                 $.ajax({
                     type: 'POST',
                     url: requestURL,
-                    data: sourceContent,
+                    data: requestBody,
                     async: true,
                     headers: {
                         'Content-Type': 'text/xml',
@@ -22,7 +29,7 @@
                 })
                         .done(function (result) {
                             var xmlString = (new XMLSerializer()).serializeToString(result);            
-                            var output = xmlString.replace(/<\?xml .*\?>/, '')
+                            var output = xmlString.replace(/<\?xml .*\?>/, '');
 	                    var output2 = output.replace(/</g, "&lt;");
                             $("#output2").empty().append(output2);
                         })
@@ -75,6 +82,9 @@
         <button onclick="$('#out').empty().append('Output');
                 $('#output2').empty();
                 $('#output2').addClass('output');">Refresh output</button>
+       <p>Set the type of input: <select name="inputtype" id="inputtype"><option value="forminput" selected>Form input</option><option value="url">URL (paste in form)</option>
+           </select>
+       </p>
         <form name="input">
             <textarea rows="15" cols="50" name="content"  id="content" class="input"></textarea>
         </form>
