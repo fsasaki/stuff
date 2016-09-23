@@ -7,7 +7,6 @@
         src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script type="text/javascript">
             function tbx2schemaDotOrg() {
-                var pipeline = '[ {   "method": "POST",   "endpoint": "http://api-dev.freme-project.eu/current/e-terminology/tilde",    "parameters" : {     	"source-lang" : "en",     	"target-lang" : "de",     	"filter" : "terms-basic-infos"     },     "headers" : {       "Accept": "text/xml"     },     "body" : "@@@"   },  {       "method": "POST",       "endpoint": "http://api-dev.freme-project.eu/current/toolbox/xslt-converter/documents/e-terminology-to-schema-dot-org",       "headers": {           "Content-Type": "text/xml",           "Accept": "text/xml"       }   }   ]';
                 var selectedInputType = $("#inputtype").find(":selected").val();
                 var sourceContent = $('#content').val();
                 var requestBody = null;
@@ -18,9 +17,9 @@
                 var requestURL = fremeApiURL + "toolbox/xslt-converter/documents/tbx-to-schema-dot-org";
                 if (selectedInputType === "terms")
                 {
-                    requestURL = "http://api-dev.freme-project.eu/current/pipelining/chain";
-                    requestBody = pipeline.replace("@@@", sourceContent);
-                    ctype = "application/json";
+                    requestURL = "http://api-dev.freme-project.eu/current/pipelining/chain/9?stats=false&useI18n=false";
+                    requestBody = sourceContent;
+                    ctype = "text/plain";
                     //$("#output2").empty().append(requestBody);
                 }
                 ;
