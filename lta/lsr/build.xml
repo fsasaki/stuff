@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Apache Ant script to build lsr XML format
+					   Felix Sasaki, W3C -->
+<project name="" default="generateRegistry" basedir=".">
+  <target name="generateRegistry">
+    <java fork="true" classname="Lsr2xml" output="lsr2.xml">
+      <arg value="registry.txt"/>
+    </java>
+    <java fork="true" classname="net.sf.saxon.Transform" output="lsr3.xml">
+      <classpath path="../saxon9he.jar"></classpath>
+      <arg value="lsr2.xml"/>
+      <arg value="lsrCleanUp.xsl"/>
+    </java>
+    <copy file="lsr3.xml" tofile="lsr.xml"/>
+  </target>
+</project>

@@ -1,0 +1,107 @@
+<!DOCTYPE lta:messages [<!ENTITY rfc4646bis "http://tools.ietf.org/html/draft-ietf-ltru-4646bis-23#">]>
+<lta:messages xmlns="http://www.w3.org/1999/xhtml" xmlns:lta="http://www.w3.org/2008/05/lta/">
+  <lta:message id="m1">
+    <lta:unit xml:lang="en">Language Tag Analyzer (LTA) - Result</lta:unit>
+    <lta:unit xml:lang="de">Language Tag Analyzer (LTA) - Ergebnisse</lta:unit>
+  </lta:message>
+  <lta:message id="m2">
+    <lta:unit xml:lang="en">Input language tag is <lta:var no="m2v1"/>.</lta:unit>
+    <lta:unit xml:lang="de">Eingabe Language Tag ist <lta:var no="m2v1"/>.</lta:unit>
+  </lta:message>
+  <lta:message id="m3">
+    <lta:unit xml:lang="en">Result:</lta:unit>
+    <lta:unit xml:lang="de">Ergebnis:</lta:unit>
+  </lta:message>
+  <lta:message id="m4">
+    <lta:unit xml:lang="en">Recognized sub tags: <lta:var no="m4v1"/>.</lta:unit>
+    <lta:unit xml:lang="de">Erkannte Sub Tags: <lta:var no="m4v1"/>.</lta:unit>
+  </lta:message>
+  <lta:message id="m5">
+    <lta:unit xml:lang="en">LTA home page</lta:unit>
+    <lta:unit xml:lang="de">LTA Startseite</lta:unit>
+  </lta:message>
+  <lta:message id="m6">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-2.2.9" class="must-error">Well-formedness</a> error: the language tag is not wellformed. Rest tag with error: <lta:var no="m6v1"/>. Potential sub tags at this position: <lta:var no="m6v2"/>.</lta:unit>
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-2.2.9" class="must-error">Wohlgeformtheitsfehler</a>: Der Language Tag ist nicht wohlgeformt. Fehlerhafter Rest Tag: <lta:var no="m6v1"/>. Potentielle Sub Tags an dieser Position: <lta:var no="m6v2"/>.</lta:unit>
+  </lta:message>
+  <lta:message id="m7">
+    <lta:unit xml:lang="en">Form from registry: "<lta:var no="m7v1"/>". Type: <lta:var no="m7v2"/>. Date added: <lta:var no="m7v3"/>. </lta:unit>
+    <lta:unit xml:lang="de">Form aus dem Registry: "<lta:var no="m7v1"/>". Typ: <lta:var no="m7v2"/>. Eintragsdatum: <lta:var no="m7v3"/>. </lta:unit>
+  </lta:message>
+  <lta:message id="m8">
+    <lta:unit xml:lang="en">Further information: </lta:unit>
+    <lta:unit xml:lang="de">Weitere Informationen: </lta:unit>
+  </lta:message>
+  <lta:message id="m9">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-2.2.9" class="must-error">Validation error</a>: Sub tag "<lta:var no="m9v1"/>" of type <lta:var no="m9v2"/> is not in registry.</lta:unit>
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-2.2.9" class="must-error">Validierungsfehler</a>: Der Sub Tag "<lta:var no="m9v1"/>" vom Typ "<lta:var no="m9v2"/>" ist nicht im Registry.</lta:unit>
+  </lta:message>
+ <lta:message id="m10">
+    <lta:unit xml:lang="en">Output in XML</lta:unit>
+    <lta:unit xml:lang="de">Ausgabe in XML</lta:unit>
+  </lta:message>
+ <lta:message id="m11">
+    <lta:unit xml:lang="en">Output in RDF</lta:unit>
+    <lta:unit xml:lang="de">Ausgabe in RDF</lta:unit>
+ </lta:message>
+  <lta:message id="m12">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-2.2.6" class="must-error">Singleton repetition</a> is not allowed: Repeated singleton is "<lta:var no="m12v1"/>". Subtag: "<lta:var no="m12v2"/>".</lta:unit>
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-2.2.6" class="must-error">Singleton Wiederhohlung</a> ist nicht erlaubt: Wiederhohlter Singleton ist "<lta:var no="m12v1"/>". Subtag ist <lta:var no="m12v2"/></lta:unit>
+  </lta:message>
+  <lta:message id="m13">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-2.2.2" class="must-error">Extlang subtag is too long</a>.</lta:unit>
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-2.2.2" class="must-error">Extlang Subtag ist zu lang</a>.</lta:unit>
+  </lta:message>
+  <lta:message id="m14">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-2.2.3" class="should-error">Script should be suppressed</a>. Subtag: "<lta:var no="m14v1"/>". Script to be suppressed: "<lta:var no="m14v2"/>".</lta:unit>
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-2.2.3" class="should-error">Script sollte unterdrückt werden</a>. Subtag: "<lta:var no="m14v1"/>". Zu unterdrückendes Script: "<lta:var no="m14v2"/>".</lta:unit>
+  </lta:message>
+  <lta:message id="m15">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-2.2.2" class="should-error">Wrong prefix for extlang subtag</a>. Wrong prefix: "<lta:var no="m15v1"/>". Correct prefix: "<lta:var no="m15v2"/>".</lta:unit>
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-2.2.2" class="should-error">Falsches Prefix  für extlang Subtag</a>. Falsches Prefix: "<lta:var no="m15v1"/>". Korrektes Prefix: "<lta:var no="m15v2"/>".</lta:unit>
+  </lta:message>
+  <lta:message id="m16">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-2.2.5" class="must-error">Variant repetition</a>.</lta:unit>
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-2.2.5" class="must-error">Wiederhohlung einer Variante</a>.</lta:unit>
+  </lta:message>
+  <lta:message id="m17">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-2.2.5" class="should-error">Wrong prefix for variant</a>. Correct prefix(es): <lta:var no="m17v1"/></lta:unit>
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;l#section-2.2.5" class="should-error">Falsches Prefix für Variante</a>. Korrekte(s) Präfix (Präfixe): <lta:var no="m17v1"/></lta:unit>
+  </lta:message>
+  <lta:message id="m18">
+    <lta:unit xml:lang="en"><span class="noerror">No errors in the language tag!</span></lta:unit>
+    <lta:unit xml:lang="de"><span class="noerror">Keine Fehler im Language Tag!</span></lta:unit>
+  </lta:message>
+  <lta:message id="m19">
+    <lta:unit xml:lang="en"><span class="must-error">Errors</span> or <span class="should-error">warnings</span> in the language tag. Amount: <lta:var no="m19v1"/>.</lta:unit>
+    <lta:unit xml:lang="de"><span class="must-error">Fehler</span> oder <span class="should-error">Warnungen</span> im Language Tag. Anzahl: <lta:var no="m19v1"/>.</lta:unit>
+  </lta:message>
+  <lta:message id="m20">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-3.1.7">Preferred value</a>: </lta:unit>    
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-3.1.7">Bevorzugter Wert</a>: </lta:unit>
+  </lta:message>
+  <lta:message id="m21">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-3.1.6">Deprecated</a> since </lta:unit>    
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-3.1.6">Veraltet</a> seit </lta:unit>
+  </lta:message>
+  <lta:message id="m22">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-3.1.10">Macrolanguage</a>: </lta:unit>    
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-3.1.10">Macrolanguage</a>: </lta:unit>
+  </lta:message>
+  <lta:message id="m23">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-3.1.11">Scope</a>: </lta:unit>    
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-3.1.11">Skopus</a>: </lta:unit>
+  </lta:message>
+  <lta:message id="m24">
+    <lta:unit xml:lang="en">Be careful with the (sub)tags <q>mul</q> <q>und</q> <q>zxx</q> <q>mis</q> <q>i-default</q> and read the <a href="&rfc4646bis;section-4.1">usage guidance</a>.</lta:unit>    
+    <lta:unit xml:lang="de">Sei vorsichtig mit den (Sub)tags (sub)tags <q>mul</q> <q>und</q> <q>zxx</q> <q>mis</q> <q>i-default</q> und lese die <a href="&rfc4646bis;section-4.1">Benutzerhinweise</a>.</lta:unit>    
+  </lta:message>
+  <lta:message id="m25">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-3.1.12">Comment</a>: </lta:unit>    
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-3.1.12">Kommentar</a>: </lta:unit>    
+  </lta:message>
+  <lta:message id="m26">
+    <lta:unit xml:lang="en"><a href="&rfc4646bis;section-3.1.5">Description</a>: </lta:unit>    
+    <lta:unit xml:lang="de"><a href="&rfc4646bis;section-3.1.5">Beschreibung</a>: </lta:unit>    
+  </lta:message>
+</lta:messages>

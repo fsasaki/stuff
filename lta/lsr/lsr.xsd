@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.w3.org/2008/05/lta/" xmlns:lta="http://www.w3.org/2008/05/lta/"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+<!-- LSR registry in XML format. For documentation, see http://www.w3.org/2008/05/lta/02/ .-->
+    <xs:simpleType name="scType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="macrolanguage"/>
+            <xs:enumeration value="collection"/>
+            <xs:enumeration value="special"/>
+            <xs:enumeration value="private-use"/>
+        </xs:restriction>
+    </xs:simpleType>
+<!-- The wrapper around the registry, including filedate and a list of tags.-->
+    <xs:element name="lsr">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="filedate" type="xs:string"/>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element ref="lta:lan"/>
+                    <xs:element ref="lta:ext"/>
+                    <xs:element ref="lta:scr"/>
+                    <xs:element ref="lta:reg"/>
+                    <xs:element ref="lta:var"/>
+                    <xs:element ref="lta:gra"/>
+                    <xs:element ref="lta:red"/>
+                    <!-- tbd: private use -->
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+<!-- The language tag -->
+    <xs:element name="lan">
+        <xs:complexType>
+            <xs:sequence>
+<!-- The macrolanguage field -->              
+                <xs:element name="ma" minOccurs="0" maxOccurs="unbounded"/>
+<!-- A description -->
+                <xs:element name="ds" minOccurs="0" maxOccurs="unbounded"/>
+<!-- A comment -->
+                <xs:element name="co" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+<!-- The type of the tag -->
+            <xs:attribute name="ty">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="language"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+<!-- sub tag field-->
+            <xs:attribute name="su" type="xs:string"/>
+<!-- added field-->
+            <xs:attribute name="ad" type="xs:date"/>
+<!-- suppressScript field -->
+            <xs:attribute name="sup" type="xs:string" use="optional"/>
+<!-- scope field-->
+            <xs:attribute name="sc" use="optional" type="lta:scType"/>
+<!-- deprecated field -->
+            <xs:attribute name="de" type="xs:string" use="optional"/>
+<!-- preferredValue field-->
+            <xs:attribute name="pr" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+<!-- extlang -->
+    <xs:element name="ext">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ma" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="ds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="co" minOccurs="0" maxOccurs="unbounded"/>
+<!-- zero or more prefixes -->
+                <xs:element name="pref" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="ty">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="extlang"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="su" type="xs:string"/>
+            <xs:attribute name="ad" type="xs:date"/>
+            <xs:attribute name="sup" type="xs:string" use="optional"/>
+            <xs:attribute name="sc" type="lta:scType" use="optional"/>
+            <xs:attribute name="de" type="xs:string" use="optional"/>
+            <xs:attribute name="pr" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+<!-- script subtag -->
+    <xs:element name="scr">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element name="ds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="co" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="ty">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="script"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="su">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[A-Z].+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="ad" type="xs:date"/>
+            <xs:attribute name="sc" type="lta:scType" use="optional"/>
+            <xs:attribute name="de" type="xs:string" use="optional"/>
+            <xs:attribute name="pr" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="reg">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="co" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="ty">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="region"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="su">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="([A-Z]{2}.*)|(\d{3})"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="ad" type="xs:date"/>
+            <xs:attribute name="de" type="xs:string" use="optional"/>
+            <xs:attribute name="pr" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="var">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="co" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="pref" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="ty">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="variant"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="su" type="xs:string"/>
+            <xs:attribute name="ad" type="xs:date"/>
+            <xs:attribute name="de" use="optional"/>
+            <xs:attribute name="pr" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="gra">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="co" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="ty">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="grandfathered"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="ta" type="xs:string"/>
+            <xs:attribute name="ad" type="xs:date"/>
+            <xs:attribute name="de" type="xs:string" use="optional"/>
+            <xs:attribute name="pr" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="red">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="co" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="ty">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="redundant"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="ta" type="xs:string"/>
+            <xs:attribute name="ad" type="xs:date"/>
+            <xs:attribute name="de" use="optional"/>
+            <xs:attribute name="pr" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

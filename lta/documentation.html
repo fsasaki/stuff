@@ -1,0 +1,91 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <title>Language Tag Analyzer (LTA)</title>
+   </head>
+   <body><h1>Language Tag Analyzer (LTA)</h1><p align="center"><a href="#purpose">Purpose</a> · <a
+      href="#examples">Examples</a> · <a href="#downloads">Downloads</a> · <a href="#notes"
+         >Notes</a></p><h2 id="purpose">Purpose</h2><p><a href="../">Language Tag Analyzer
+            (LTA)</a> is an XSLT 2.0 implementation that checks wellformedness, validity and some other
+            constraints of languags tags, following the <a
+               href="http://tools.ietf.org/html/draft-ietf-ltru-4646bis-23">ongoing revision of RFC
+               4646</a>.</p><h2 id="examples">Examples demonstrating (error) messages</h2>
+      <ul>
+         <li>
+            <a href="http://www.sasakiatcf.com/felix/lta/language-tags/q?input=en">en</a>
+         </li>
+         <li>
+            <a href="http://www.sasakiatcf.com/felix/lta/language-tags/q?input=de-x">de-x</a>
+         </li>
+         <li>
+            <a href="http://www.sasakiatcf.com/felix/lta/language-tags/q?input=xa">xa</a>
+         </li>
+         <li>
+            <a href="http://www.sasakiatcf.com/felix/lta/language-tags/q?input=en-latn">en-latn</a>
+         </li>
+         <li>
+            <a href="http://www.sasakiatcf.com/felix/lta/language-tags/q?input=ja-1901">ja-1901</a>
+         </li>
+         <li>
+            <a href="http://www.sasakiatcf.com/felix/lta/language-tags/q?input=fr-cmn">fr-cmn</a>
+         </li>
+         <li>
+            <a href="http://www.sasakiatcf.com/felix/lta/language-tags/q?input=zh-cmn-cmn">zh-cmn-cmn</a>
+         </li>
+         <li>
+            <a href="http://www.sasakiatcf.com/felix/lta/language-tags/q?input=zh-cmn-a-bbb-a-ccc">zh-cmn-a-bbb-a-ccc</a>
+         </li>
+         <li>
+            <a href="http://www.sasakiatcf.com/felix/lta/language-tags/q?input=de-de-1901-1901">de-de-1901-1901</a>
+         </li>
+      </ul>
+      <!-- <p>Output is available in three formats:
+         XML, RDF and HTML (for human readers with messages in English or German). For the
+         well-formed language tag <code>en-US-x-myst</code> the XML output will be:</p>
+         <pre>&lt;lta:Language-Tag xmlns:lta="http://www.w3.org/2008/05/lta/" input="en-US-x-myst">
+         &lt;lta:language type="shortest ISO 639 code">
+         &lt;lta:lan ty="language" su="en" ad="2005-10-16" sup="Latn">
+         &lt;lta:ds>English&lt;/lta:ds>
+         &lt;/lta:lan>
+         &lt;/lta:language>
+         &lt;lta:region type="ISO 3166-1 code">
+         &lt;lta:reg ty="region" su="US" ad="2005-10-16">
+         &lt;lta:ds>United States&lt;/lta:ds>
+         &lt;/lta:reg>
+         &lt;/lta:region>
+         &lt;lta:privateuse>x-myst&lt;/lta:privateuse>
+         &lt;/lta:Language-Tag></pre>
+         <p>The XML output for a not-wellformed language tag like will <code>en-US3-x-myst</code>
+         be:</p>
+         <pre>&lt;lta:Language-Tag xmlns:lta="http://www.w3.org/2008/05/lta/" input="en-US3-x-myst">
+         &lt;lta:language type="shortest ISO 639 code">
+         &lt;lta:lan ty="language" su="en" ad="2005-10-16" sup="Latn">
+         &lt;lta:ds>English&lt;/lta:ds>
+         &lt;/lta:lan>
+         &lt;/lta:language>
+         &lt;lta:notWellformed restTag="us3-x-myst"
+         potentialSubtags="script region variant extension privatuse "/>
+         &lt;/lta:Language-Tag></pre> -->
+      <h2 id="downloads">Downloads</h2><ul>
+         <li><a href="http://www.w3.org/2008/05/lta/04/../01/lta-01.zip">Version 0.1</a> (May 2008). NOTE: this version is based on a
+            previous draft of ltr-4646-bis, so its usage is discouraged.</li>
+         <li><a href="http://www.w3.org/2008/05/lta/04/../02/lta-02.zip">Version 0.2</a> (October 2008). Encompasses:<ul>
+            <li>ANT <a href="http://www.w3.org/2008/05/lta/04/build.xml">Build script</a> for updating <a href="http://www.w3.org/2008/05/lta/04/lsr.xml">XML
+               version of language subtag registry</a> (see also the <a href="http://www.w3.org/2008/05/lta/04/lsr.xsd">XML
+                  Schema document</a> for validation)</li>
+            
+            <li><a href="http://www.w3.org/2008/05/lta/04/lta.xsl">Main XSLT file</a> which imports the other ones</li>
+            <li><a href="http://www.w3.org/2008/05/lta/04/messages.xml">localized messages</a> for HTML output, currently in
+               English and in German</li>
+         </ul></li>
+         <li><a href="http://www.w3.org/2008/05/lta/04/../03/lta-03.zip">Version 0.3</a> (February 2009). More constraints being checked and a different HTML output.</li>
+         
+         <li><a href="http://www.w3.org/2008/05/lta/04/../04/lta-04.zip">Version 0.4</a> (February 2009). A bit different HTML output.</li>
+         <li><a href="lta-05.zip">Version 0.5</a> (July 2009). More, more output messages!</li>
+      </ul><h2 id="notes">Notes</h2><p>This is work in progress, which reflects parts of the <a
+         href="http://tools.ietf.org/html/draft-ietf-ltru-4646bis-23">ongoing revision of RFC
+         4646</a>. Please provide feedback to <a href="mailto:felix.sasaki@fh-potsdam.de"
+            >Felix Sasaki</a></p><hr/><p><small><script type="text/javascript"> document.write("Last modified: " + document.lastModified);</script></small></p></body>
+</html>
