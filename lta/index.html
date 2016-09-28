@@ -34,16 +34,30 @@
                         border-color:green;
                         padding: 1px;
             }
+            *.example {
+                color: blue;
+            }
         </style>
     </head>
     <body>
         <h1>LTA</h1>
-        <button onclick="analyzeLanguageTag('en-us-1996');">Analyse language tag</button>
+        <button onclick="analyzeLanguageTag();">Analyse language tag</button>
         <button onclick="$('#output').empty();">Refresh output</button>
         <form name="input">
             <p>Provide the language tag:</p>
-            <textarea rows="1" cols="15" name="content"  id="content" class="input"></textarea>
-        </form><!--
+            <textarea rows="1" cols="20" name="content"  id="content" class="input"></textarea>
+        </form>
+        <p>Here are a few examples: <span onclick="$('#content').empty().append('en');" class="example">en</span>;
+            <span onclick="$('#content').empty().append('de-de-1901');" class="example">de-de-1901</span>; 
+        <span onclick="$('#content').empty().append('de-x');" class="example">de-x</span>; 
+        <span onclick="$('#content').empty().append('xa');" class="example">xa</span>; 
+        <span onclick="$('#content').empty().append('en-latn');" class="example">en-latn</span>; 
+        <span onclick="$('#content').empty().append('ja-1901');" class="example">ja-1901</span>; 
+        <span onclick="$('#content').empty().append('fr-cmn');" class="example">fr-cmn</span>; 
+        <span onclick="$('#content').empty().append('zh-cmn-cmn');" class="example">zh-cmn-cmn</span>; 
+        <span onclick="$('#content').empty().append('zh-cmn-a-bbb-a-ccc');" class="example">zh-cmn-a-bbb-a-ccc</span>; 
+        <span onclick="$('#content').empty().append('de-de-1901-1901');" class="example">de-de-1901-1901</span>.</p>
+        <!--
         <p>Set the language of the output <select name="language" id="language"><option value="en" selected>English</option>
                <option value="de">German</option></select></p>-->
         <div id="output"></div>
