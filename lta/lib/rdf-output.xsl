@@ -32,23 +32,48 @@
 		xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml"
 		exclude-result-prefixes="my saxon xs h lta">
   <!-- RDF output -->
-  <xsl:template mode="rdf" match="lta:Language-Tag">
-    <xsl:text>@prefix lta: &lt;http://www.w3.org/2008/05/lta/&gt; .&#xA;@prefix ltainstance: &lt;http://www.w3.org/2008/05/lta/instance&gt; .&#xA;@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .&#xA;</xsl:text>
-    <xsl:value-of select="concat('ltainstance:',$inputlangtag)"/>
-    <xsl:text>&#x20;rdf:type lta:languagetag.&#xA;</xsl:text>
-    <xsl:apply-templates mode="rdf"/>
+  <!-- Sub tag types to handle
+lta:irregular
+lta:regular
+lta:privateuse
+lta:language
+lta:script
+lta:region
+lta:variant
+lta:extension
+-->
+  <xsl:template name="getSubTagUri">
+    <xsl:param name="subtag"/>
+    <xsl:variable name="type" select="local-name($subtag)"/>
+    <xsl:variable name="subtagString"/>
+    <xsl:value-of select="concat('lst:',$type,'-',$subtag/lta:subtag)"/>
   </xsl:template>
+  <xsl:template mode="rdf" match="lta:Language-Tag">
+    <xsl:text disable-output-escaping="yes">@prefix lto: &lt;http://example.com/languagetags/ontology#&gt;.&#xA;@prefix ltag: &lt;http://example.com/languagetags#&gt;.&#xA;@prefix lst: &lt;http://example.com/languagesubtags#&gt;.&#xA;@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .&#xA;</xsl:text>
+    <xsl:value-of select="concat('ltag:',$inputlangtag)"/>
+    <xsl:text>&#x20;rdf:type lto:Languagetag;&#xA; lto:firstSubTag </xsl:text><xsl:call-template name="getSubTagUri"><xsl:with-param name="subtag" select="*[1]"/></xsl:call-template><xsl:text>.</xsl:text>
+      <xsl:for-each select="*">
+        <xsl:variable name="subTagUri"><xsl:call-template name="getSubTagUri"><xsl:with-param name="subtag" select="self::*"/></xsl:call-template></xsl:variable>
+        <xsl:text>&#xA;</xsl:text><xsl:value-of select="$subTagUri"/><xsl:text>&#x20;rdf:type lto:</xsl:text><xsl:value-of select="local-name()"/><xsl:text>subtag</xsl:text>
+     <xsl:choose>
+       <xsl:when test="position()!=last()"><xsl:text>;&#x20;lto:nextSubTag&#x20;</xsl:text><xsl:call-template name="getSubTagUri"><xsl:with-param name="subtag" select="following-sibling::*[1]"/></xsl:call-template><xsl:text>.</xsl:text></xsl:when>
+       <xsl:otherwise>.&#xA;</xsl:otherwise>
+     </xsl:choose>
+      </xsl:for-each>
+  </xsl:template>
+  <xsl:template match="*" mode="writeSubTags"></xsl:template>
+  <!--  
   <xsl:template mode="rdf" match="* |@*">
     <xsl:variable name="subtag" select="*/@su | */@ta"/>
     <xsl:value-of
-       select="concat('ltainstance:',$subtag,'&#x20;','rdf:type&#x20;',name(),'_subtag.&#xA;')"/>
+       select="concat('lsubtag:',$subtag,'&#x20;','rdf:type&#x20;',name(),'_subtag.&#xA;')"/>
     <xsl:for-each select="*/@*[not(name()='su' or name()='ty')]">
-      <xsl:value-of select="concat('ltainstance:', $subtag,'&#x20;', name(), ' &#x22;', ., '&#x22;.')"/>
+      <xsl:value-of select="concat('lsubtag:', $subtag,'&#x20;', name(), ' &#x22;', ., '&#x22;.')"/>
       <xsl:text>&#xA;</xsl:text>
     </xsl:for-each>
   <xsl:for-each select="*/*">
  <xsl:value-of
-       select="concat('ltainstance:', parent::*/@su | parent::*/@ta,'&#x20;', name(),' &#x22;', normalize-space(.),'&#x22;.')"/>
+       select="concat('lsubtaginfo:', parent::*/@su | parent::*/@ta,'&#x20;', name(),' &#x22;', normalize-space(.),'&#x22;.')"/>
 <xsl:text>&#xA;</xsl:text>
 </xsl:for-each>
   </xsl:template>
@@ -56,5 +81,5 @@
     <xsl:value-of
        select="concat
 	       ('ltainstance:',@restTag,'&#x20;rdf:type&#x20;lta:notWellformed.')"/>
-  </xsl:template>
+  </xsl:template>-->
 </xsl:stylesheet>
