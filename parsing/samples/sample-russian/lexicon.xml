@@ -1,0 +1,4 @@
+  <lexicon>
+    <t type="N">[matches(.,("^(muchina|morogrnoe)$"))]</t>       
+    <t type="V">[matches(.,("^(lubit)$"))]</t>
+  </lexicon>

@@ -1,0 +1,17 @@
+  <lexicon>
+    <t type="D">[matches(.,"^(der|die|das|ein|eine|einer|den|einen|einem|dem)$")]</t>    
+    <t type="N">[matches(.,("^(Mann|Männer|Manne|Mannes|Männern)$"))]</t>   
+    <t type="N">[matches(.,("^(Eis)$"))]</t>  
+    <t type="N">[matches(.,("^(Kind|Kinde|Kinder|Kindern)$"))]</t>   
+  <t type="N">[matches(.,("^(Garten|Gärten|Gartens)$"))]</t>   
+ <t type="N">[matches(.,("^(Fernrohr|Fernrohren|Fernrohres)$"))]</t> 
+ <t type="N">[matches(.,("^(Brillen|Brille)$"))]</t>     
+    <t type="N">[matches(.,("^(Buch|Bücher|Buche|Buches|Büchern)$"))]</t> 
+    <t type="V">[matches(.,("^(lesen|lese|liest|lest)$"))]</t>
+   <t type="V">[matches(.,("^(sehe|siehst|sieht|sehen|seht)$"))]</t>
+    <t type="V">[matches(.,("^(lieben|liebe|liebst|liebt)$"))]</t>
+    <t type="P">[matches(.,("^(im|an|auf|über|ohne|in|mit)$"))]</t>
+    <t type="A">[matches(.,("^(grün|grüne|grünes|grüner|grünen|grünem)$"))]</t>
+    <t type="A">[matches(.,("^(nett|nette|nettes|netter|netten|nettem)$"))]</t>
+    <t type="A">[matches(.,("^(lieb|liebe|lieben|liebes|liebem)$"))]</t>
+  </lexicon>

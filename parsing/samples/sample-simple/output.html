@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <title>Parsing results</title>
+   </head>
+   <body>
+      <p>Grammar used:
+                </p>
+      <ul>
+         <li>Rule no. 1: 
+        S
+       → NP, VP</li>
+         <li>Rule no. 2: 
+        NP
+       → D, N</li>
+         <li>Rule no. 3: 
+        NP
+       → D, ADJP, N</li>
+         <li>Rule no. 3-1: 
+      NP
+     → D, ADJP</li>
+         <li>Rule no. 3-1-1: 
+      ADJP
+     → A, ADJP-X</li>
+         <li>Rule no. 3-1-2: 
+      ADJP-X
+     → A, ADJP-X</li>
+         <li>Rule no. 3-1-3: 
+      ADJP-X
+     → </li>
+         <li>Rule no. 4: 
+        NP
+       → EN</li>
+         <li>Rule no. 5: 
+        VP
+       → V, NP</li>
+         <li>Rule no. 6: 
+        VP
+       → V, PP</li>
+         <li>Rule no. 7: 
+        VP
+       → V, NP, PP</li>
+         <li>Rule no. 8: 
+        PP
+       → P, NP</li>
+         <li>Rule no. 9: 
+        NP
+       → D, N, PP</li>
+      </ul>
+      <p>Lexicon entries:</p>
+      <ul>
+         <li>Terminal D: [matches(.,"^(der|die|das|ein|eine|einer|den|einen|einem|dem)$")] </li>
+         <li>Terminal N: [matches(.,("^(Mann|Männer|Manne|Mannes|Männern)$"))], [matches(.,("^(Eis)$"))], [matches(.,("^(Kind|Kinde|Kinder|Kindern)$"))], [matches(.,("^(Garten|Gärten|Gartens)$"))], [matches(.,("^(Fernrohr|Fernrohren|Fernrohres)$"))], [matches(.,("^(Brillen|Brille)$"))], [matches(.,("^(Buch|Bücher|Buche|Buches|Büchern)$"))] </li>
+         <li>Terminal V: [matches(.,("^(lesen|lese|liest|lest)$"))], [matches(.,("^(sehe|siehst|sieht|sehen|seht)$"))], [matches(.,("^(lieben|liebe|liebst|liebt)$"))] </li>
+         <li>Terminal P: [matches(.,("^(im|an|auf|über|ohne|in|mit)$"))] </li>
+         <li>Terminal A: [matches(.,("^(grün|grüne|grünes|grüner|grünen|grünem)$"))], [matches(.,("^(nett|nette|nettes|netter|netten|nettem)$"))], [matches(.,("^(lieb|liebe|lieben|liebes|liebem)$"))] </li>
+      </ul>
+      <p>Input String:</p>
+      <table>
+         <tr>
+            <th>Position:</th>
+            <td>0</td>
+            <td/>
+            <td>1</td>
+            <td/>
+            <td>2</td>
+            <td/>
+            <td>3</td>
+            <td/>
+            <td>4</td>
+            <td/>
+            <td>5</td>
+         </tr>
+         <tr>
+            <th>Tokens:</th>
+            <td/>
+            <td>die</td>
+            <td/>
+            <td>Männer</td>
+            <td/>
+            <td>lieben</td>
+            <td/>
+            <td>ein</td>
+            <td/>
+            <td>Eis</td>
+            <td/>
+         </tr>
+      </table>
+      <hr/>
+      <table>
+         <tr>
+            <td valign="top">
+               <h2 id="chart">Chart</h2>
+               <p>Move over cells to get additional information.</p>
+               <table border="1">
+                  <tr>
+                     <td>1.</td>
+                     <td title="Generation via initialization.">&lt;0, 0, [ $ NP VP ]<small>S</small>&gt;</td>
+                     <td title="Generated via lexicon lookup.">&lt;0, 1, [ die ]<small>D</small>&gt;</td>
+                  </tr>
+                  <tr>
+                     <td>2.</td>
+                     <td title="Generation via grammar. Grammar rule: 2.">&lt;0, 0, [ $ D N ]<small>NP</small>&gt;</td>
+                     <td title="Generated via lexicon lookup.">&lt;1, 2, [ Männer ]<small>N</small>&gt;</td>
+                  </tr>
+                  <tr>
+                     <td>3.</td>
+                     <td title="Generation via grammar. Grammar rule: 3.">&lt;0, 0, [ $ D ADJP N ]<small>NP</small>&gt;</td>
+                     <td title="Generated via combination of hypothesis with a constituent. Hypothesis used: 7.">&lt;0, 2, [ KON(1) KON(2) ]<small>NP</small>&gt;</td>
+                  </tr>
+                  <tr>
+                     <td>4.</td>
+                     <td title="Generation via grammar. Grammar rule: 3-1.">&lt;0, 0, [ $ D ADJP ]<small>NP</small>&gt;</td>
+                     <td title="Generated via lexicon lookup.">&lt;2, 3, [ lieben ]<small>V</small>&gt;</td>
+                  </tr>
+                  <tr>
+                     <td>5.</td>
+                     <td title="Generation via grammar. Grammar rule: 4.">&lt;0, 0, [ $ EN ]<small>NP</small>&gt;</td>
+                     <td title="Generated via lexicon lookup.">&lt;2, 3, [ lieben ]<small>A</small>&gt;</td>
+                  </tr>
+                  <tr>
+                     <td>6.</td>
+                     <td title="Generation via grammar. Grammar rule: 9.">&lt;0, 0, [ $ D N PP ]<small>NP</small>&gt;</td>
+                     <td title="Generated via lexicon lookup.">&lt;3, 4, [ ein ]<small>D</small>&gt;</td>
+                  </tr>
+                  <tr>
+                     <td>7.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 2. Constituent used: 1">&lt;0, 1, [ KON(1) $ N ]<small>NP</small>&gt;</td>
+                     <td title="Generated via lexicon lookup.">&lt;4, 5, [ Eis ]<small>N</small>&gt;</td>
+                  </tr>
+                  <tr>
+                     <td>8.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 3. Constituent used: 1">&lt;0, 1, [ KON(1) $ ADJP N ]<small>NP</small>&gt;</td>
+                     <td title="Generated via combination of hypothesis with a constituent. Hypothesis used: 27.">&lt;3, 5, [ KON(6) KON(7) ]<small>NP</small>&gt;</td>
+                  </tr>
+                  <tr>
+                     <td>9.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 4. Constituent used: 1">&lt;0, 1, [ KON(1) $ ADJP ]<small>NP</small>&gt;</td>
+                     <td title="Generated via combination of hypothesis with a constituent. Hypothesis used: 18.">&lt;2, 5, [ KON(4) KON(8) ]<small>VP</small>&gt;</td>
+                  </tr>
+                  <tr>
+                     <td>10.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 6. Constituent used: 1">&lt;0, 1, [ KON(1) $ N PP ]<small>NP</small>&gt;</td>
+                     <td title="Generated via combination of hypothesis with a constituent. Hypothesis used: 14.">&lt;0, 5, [ KON(3) KON(9) ]<small>S</small>&gt;</td>
+                  </tr>
+                  <tr>
+                     <td>11.</td>
+                     <td title="Generation via grammar. Grammar rule: 3-1-1.">&lt;1, 1, [ $ A ADJP-X ]<small>ADJP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>12.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 10. Constituent used: 2">&lt;0, 2, [ KON(1) KON(2) $ PP ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>13.</td>
+                     <td title="Generation via grammar. Grammar rule: 8.">&lt;2, 2, [ $ P NP ]<small>PP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>14.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 1. Constituent used: 3">&lt;0, 2, [ KON(3) $ VP ]<small>S</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>15.</td>
+                     <td title="Generation via grammar. Grammar rule: 5.">&lt;2, 2, [ $ V NP ]<small>VP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>16.</td>
+                     <td title="Generation via grammar. Grammar rule: 6.">&lt;2, 2, [ $ V PP ]<small>VP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>17.</td>
+                     <td title="Generation via grammar. Grammar rule: 7.">&lt;2, 2, [ $ V NP PP ]<small>VP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>18.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 15. Constituent used: 4">&lt;2, 3, [ KON(4) $ NP ]<small>VP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>19.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 16. Constituent used: 4">&lt;2, 3, [ KON(4) $ PP ]<small>VP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>20.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 17. Constituent used: 4">&lt;2, 3, [ KON(4) $ NP PP ]<small>VP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>21.</td>
+                     <td title="Generation via grammar. Grammar rule: 2.">&lt;3, 3, [ $ D N ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>22.</td>
+                     <td title="Generation via grammar. Grammar rule: 3.">&lt;3, 3, [ $ D ADJP N ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>23.</td>
+                     <td title="Generation via grammar. Grammar rule: 3-1.">&lt;3, 3, [ $ D ADJP ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>24.</td>
+                     <td title="Generation via grammar. Grammar rule: 4.">&lt;3, 3, [ $ EN ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>25.</td>
+                     <td title="Generation via grammar. Grammar rule: 9.">&lt;3, 3, [ $ D N PP ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>26.</td>
+                     <td title="Generation via grammar. Grammar rule: 8.">&lt;3, 3, [ $ P NP ]<small>PP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>27.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 21. Constituent used: 6">&lt;3, 4, [ KON(6) $ N ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>28.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 22. Constituent used: 6">&lt;3, 4, [ KON(6) $ ADJP N ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>29.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 23. Constituent used: 6">&lt;3, 4, [ KON(6) $ ADJP ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>30.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 25. Constituent used: 6">&lt;3, 4, [ KON(6) $ N PP ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>31.</td>
+                     <td title="Generation via grammar. Grammar rule: 3-1-1.">&lt;4, 4, [ $ A ADJP-X ]<small>ADJP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>32.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 30. Constituent used: 7">&lt;3, 5, [ KON(6) KON(7) $ PP ]<small>NP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>33.</td>
+                     <td title="Generation via grammar. Grammar rule: 8.">&lt;5, 5, [ $ P NP ]<small>PP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>34.</td>
+                     <td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 20. Constituent used: 8">&lt;2, 5, [ KON(4) KON(8) $ PP ]<small>VP</small>&gt;</td>
+                     <td>-</td>
+                  </tr>
+               </table>
+            </td>
+            <td valign="top">
+               <h2 id="parse-tree">Parse tree(s) (if parse was successful)</h2>
+               <hr/>
+               <pre>
+ <span class="element">&lt;S&gt;</span>
+  <span class="element">&lt;NP&gt;</span>
+   <span class="element">&lt;D&gt;</span>die<span class="element">&lt;/D</span>&gt;
+   <span class="element">&lt;N&gt;</span>Männer<span class="element">&lt;/N</span>&gt;
+  <span class="element">&lt;/NP</span>&gt;
+  <span class="element">&lt;VP&gt;</span>
+   <span class="element">&lt;V&gt;</span>lieben<span class="element">&lt;/V</span>&gt;
+   <span class="element">&lt;NP&gt;</span>
+    <span class="element">&lt;D&gt;</span>ein<span class="element">&lt;/D</span>&gt;
+    <span class="element">&lt;N&gt;</span>Eis<span class="element">&lt;/N</span>&gt;
+   <span class="element">&lt;/NP</span>&gt;
+  <span class="element">&lt;/VP</span>&gt;
+ <span class="element">&lt;/S</span>&gt;</pre>
+               <hr/>
+            </td>
+         </tr>
+      </table>
+      <hr/>
+   </body>
+</html> 

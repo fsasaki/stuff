@@ -1,0 +1,120 @@
+<grammar>
+    <rule no="1">
+      <lhs>
+        <nt>S</nt>
+      </lhs>
+      <rhs>
+        <nt>NP</nt>
+        <nt>VP</nt>
+      </rhs>
+    </rule>
+    <rule no="2">
+      <lhs>
+        <nt>NP</nt>
+      </lhs>
+      <rhs>
+        <t>D</t>
+        <t>N</t>
+      </rhs>
+    </rule>
+    <rule no="3">
+      <lhs>
+        <nt>NP</nt>
+      </lhs>
+      <rhs>
+        <t>D</t>
+        <nt>ADJP</nt>
+        <t>N</t>
+      </rhs>
+    </rule>
+  <rule no="3-1">
+    <lhs>
+      <nt>NP</nt>
+    </lhs>
+    <rhs>
+      <t>D</t>
+      <nt>ADJP</nt>
+    </rhs>
+  </rule>
+  <rule no="3-1-1">
+    <lhs>
+      <nt>ADJP</nt>
+    </lhs>
+    <rhs>
+      <t>A</t>
+      <nt>ADJP-X</nt>
+    </rhs>
+  </rule>
+  <rule no="3-1-2">
+    <lhs>
+      <nt>ADJP-X</nt>
+    </lhs>
+    <rhs>
+      <t>A</t>
+      <nt>ADJP-X</nt>
+    </rhs>
+  </rule>
+  <rule no="3-1-3">
+    <lhs>
+      <nt>ADJP-X</nt>
+    </lhs>
+    <rhs>
+      <empty/>
+    </rhs>
+  </rule>
+    <rule no="4">
+      <lhs>
+        <nt>NP</nt>
+      </lhs>
+      <rhs>
+        <t>EN</t>
+      </rhs>
+    </rule>
+    <rule no="5">
+      <lhs>
+        <nt>VP</nt>
+      </lhs>
+      <rhs>
+        <t>V</t>
+        <nt>NP</nt>
+      </rhs>
+    </rule>
+    <rule no="6">
+      <lhs>
+        <nt>VP</nt>
+      </lhs>
+      <rhs>
+        <t>V</t>
+        <nt>PP</nt>
+      </rhs>
+    </rule>
+    <rule no="7">
+      <lhs>
+        <nt>VP</nt>
+      </lhs>
+      <rhs>
+        <t>V</t>
+        <nt>NP</nt>
+        <nt>PP</nt>
+      </rhs>
+    </rule>   
+    <rule no="8">
+      <lhs>
+        <nt>PP</nt>
+      </lhs>
+      <rhs>
+        <t>P</t>
+        <nt>NP</nt>
+      </rhs>
+    </rule> 
+    <rule no="9">
+      <lhs>
+        <nt>NP</nt>
+      </lhs>
+      <rhs>
+	<t>D</t>
+        <t>N</t>
+        <nt>PP</nt>
+      </rhs>
+    </rule>
+  </grammar>

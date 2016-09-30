@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>Parsing results</title></head><body><p>Grammar used:
+                </p><ul><li>Rule no. 1: 
+        S
+       → ADDEXPR</li><li>Rule no. 2: 
+        S
+       → MINUSEXPR</li><li>Rule no. 3: 
+        ADDEXPR
+       → INT, ADD-OP, INT</li><li>Rule no. 4: 
+      MINUSEXPR
+     → INT, MINUS-OP, INT</li></ul><p>Lexicon entries:</p><ul><li>Terminal ADD-OP: [matches(.,"^\+$")] </li><li>Terminal MINUS-OP: [matches(.,"^\-$")] </li><li>Terminal INT: [matches(.,("^\d+$"))] </li></ul><p>Input String:</p><table><tr><th>Position:</th><td>0</td><td/><td>1</td><td/><td>2</td><td/><td>3</td></tr><tr><th>Tokens:</th><td/><td>1</td><td/><td>+</td><td/><td>10000000</td><td/></tr></table><hr/><table><tr><td valign="top"><h2 id="chart">Chart</h2><p>Move over cells to get additional information.</p><table border="1"><tr><td>1.</td><td title="Generation via initialization.">&lt;0, 0, [ $ ADDEXPR ]<small>S</small>&gt;</td><td title="Generated via lexicon lookup.">&lt;0, 1, [ 1 ]<small>INT</small>&gt;</td></tr><tr><td>2.</td><td title="Generation via initialization.">&lt;0, 0, [ $ MINUSEXPR ]<small>S</small>&gt;</td><td title="Generated via lexicon lookup.">&lt;1, 2, [ + ]<small>ADD-OP</small>&gt;</td></tr><tr><td>3.</td><td title="Generation via grammar. Grammar rule: 3.">&lt;0, 0, [ $ INT ADD-OP INT ]<small>ADDEXPR</small>&gt;</td><td title="Generated via lexicon lookup.">&lt;2, 3, [ 10000000 ]<small>INT</small>&gt;</td></tr><tr><td>4.</td><td title="Generation via grammar. Grammar rule: 4.">&lt;0, 0, [ $ INT MINUS-OP INT ]<small>MINUSEXPR</small>&gt;</td><td title="Generated via combination of hypothesis with a constituent. Hypothesis used: 7.">&lt;0, 3, [ KON(1) KON(2) KON(3) ]<small>ADDEXPR</small>&gt;</td></tr><tr><td>5.</td><td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 3. Constituent used: 1">&lt;0, 1, [ KON(1) $ ADD-OP INT ]<small>ADDEXPR</small>&gt;</td><td title="Generated via combination of hypothesis with a constituent. Hypothesis used: 1.">&lt;0, 3, [ KON(4) ]<small>S</small>&gt;</td></tr><tr><td>6.</td><td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 4. Constituent used: 1">&lt;0, 1, [ KON(1) $ MINUS-OP INT ]<small>MINUSEXPR</small>&gt;</td><td>-</td></tr><tr><td>7.</td><td title="Generation via combination of hypothesis with a constituent. Hypothesis used: 5. Constituent used: 2">&lt;0, 2, [ KON(1) KON(2) $ INT ]<small>ADDEXPR</small>&gt;</td><td>-</td></tr></table></td><td valign="top"><h2 id="parse-tree">Parse tree(s) (if parse was successful)</h2><hr/><pre>
+ <span class="element">&lt;ADDEXPR&gt;</span>
+  <span class="element">&lt;INT&gt;</span>1<span class="element">&lt;/INT</span>&gt;
+  <span class="element">&lt;ADD-OP&gt;</span>+<span class="element">&lt;/ADD-OP</span>&gt;
+  <span class="element">&lt;INT&gt;</span>10000000<span class="element">&lt;/INT</span>&gt;
+ <span class="element">&lt;/ADDEXPR</span>&gt;</pre><hr/><hr/><pre>
+ <span class="element">&lt;S&gt;</span>
+  <span class="element">&lt;ADDEXPR&gt;</span>
+   <span class="element">&lt;INT&gt;</span>1<span class="element">&lt;/INT</span>&gt;
+   <span class="element">&lt;ADD-OP&gt;</span>+<span class="element">&lt;/ADD-OP</span>&gt;
+   <span class="element">&lt;INT&gt;</span>10000000<span class="element">&lt;/INT</span>&gt;
+  <span class="element">&lt;/ADDEXPR</span>&gt;
+ <span class="element">&lt;/S</span>&gt;</pre><hr/></td></tr></table><hr/></body></html>

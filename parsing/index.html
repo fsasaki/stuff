@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Early Parser</title>
+        <script
+        src="lib/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/Saxon-CE_1.1/Saxonce/Saxonce.nocache.js"></script>
+        <script type="text/javascript" src="lib/callSaxon.js"></script>
+        <script type="text/javascript">
+            function loadSample(sampleid) {
+                var grammarselector = "#" + sampleid + "> *.grammar";
+                var samplegrammar = $(grammarselector).text();
+                $('#grammar').empty().val(samplegrammar);
+                var lexiconselector = "#" + sampleid + "> *.lexicon";
+                var samplelexicon = $(lexiconselector).text();
+                $('#lexicon').empty().val(samplelexicon);
+                var stringselector = "#" + sampleid + "> *.string";
+                var sampleinput = $(stringselector).text();
+                $('#string').empty().val(sampleinput);
+            }
+            function parse() {
+                var grammarInput = "<grammarInput>" + $('#grammar').val() + "</grammarInput>\n";
+                var lexiconInput = "<lexiconInput>" + $('#lexicon').val() + "</lexiconInput>\n";
+                var inputString = "<inputString>" + $('#string').val() + "</inputString>\n";
+                var completeInput = "<inputItems>\n" + grammarInput + lexiconInput + inputString + "</inputItems>";
+                console.log(completeInput);
+                var tempstring = xsltTransform("lib/parse2html.xsl", completeInput, []);
+                $("#output").empty().append(tempstring);
+            }
+            ;
+        </script>
+        <style type="text/css"> *.element { color: #800080; font-weight: bold;} *.attribute {
+                color: black; font-weight: bold;} *.aval { color: #0080FF; font-weight: normal;}
+            *.example {
+                color: blue;
+            }
+            *.string {
+                float:left;
+                margin-left:10px;
+                margin-right:10px;
+            }
+            *.grammar {
+                float:left;
+                margin-right:10px;
+            }
+            *.lexicon {
+                float:left;
+                margin-right:10px;
+            }
+            *.input {
+                float:left;
+                margin-right:10px;
+            }
+            *.output {
+                border:solid 1px #000;
+            }
+            *.parsingoutput {
+                float:left;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Early Parser</h1>
+        <p>(load samples: <span class="example" onclick="loadSample('sample1');">sample 1</span>, 
+            <span class="example" onclick="loadSample('sample2');">sample 2</span>, 
+            <span class="example" onclick="loadSample('sample3');">sample 3</span>)</p>
+        <button onclick="parse();">parse</button>
+        <button onclick="$('#output').empty();">Refresh output</button>
+        <div class="allinput">
+            <form name="input">
+                <div class="string input">
+                    <p>String<br>input</p>
+                    <textarea rows="10" cols="30" name="string"  id="string"></textarea>
+                </div>
+                <div class="grammar input">
+                    <p>Grammar<br>(terminals indexed with "t")</p>
+                    <textarea rows="10" cols="30" name="grammar"  id="grammar"></textarea></div>
+                <div  class="lexicon input">
+                    <p>Lexicon<br>input</p>
+                    <textarea rows="10" cols="30" name="lexicon"  id="lexicon"></textarea></div>
+            </form>
+        </div>
+        <div id="output"></div>
+        <div id="samples" style="display: none;">
+            <div id="sample1" >
+                <div class="grammar">S => NP, VP
+NP => Dt, Nt
+VP => Vt, NP</div>
+                <div class="lexicon" >D:the
+N:book|table|man|woman
+V:read</div>
+                <div class="string">the man read the book</div>
+            </div>
+            <div id="sample2">
+                <div class="grammar">S => ADDEXPR
+S => MINUSEXPR
+ADDEXPR => INTt, ADD-OPt, INTt
+MINUSEXPR => INTt, MINUS-OP, INTt</div>
+                <div class="lexicon">INT:^\d+$
+ADD-OP:\+
+MINUS-OP:-</div>
+                <div class="string">2 + 3</div>
+            </div>
+            <div id="sample3">
+                <div class="grammar">S => NP, VP
+NP => Dt, Nt
+VP => Vt, NP
+VP => Vt, NP, PREP
+NP => Dt, Nt, PREP
+PREP => PREPt, NP</div>
+                <div class="lexicon">D:the
+N:book|table|man|woman
+V:read
+PREP:on</div>
+                <div class="string">the woman read the book on the table</div>
+            </div>
+        </div>
+    </body>
+</html>

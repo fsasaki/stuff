@@ -1,0 +1,5 @@
+  <lexicon>
+    <t type="ADD-OP">[matches(.,"^\+$")]</t>   
+    <t type="MINUS-OP">[matches(.,"^\-$")]</t>
+    <t type="INT">[matches(.,("^\d+$"))]</t>   
+  </lexicon>

@@ -1,0 +1,38 @@
+<grammar>
+    <rule no="1">
+      <lhs>
+        <nt>S</nt>
+      </lhs>
+      <rhs>
+        <nt>ADDEXPR</nt>
+      </rhs>
+      </rule> 
+    <rule no="2">
+      <lhs>
+        <nt>S</nt>
+      </lhs>
+      <rhs>
+        <nt>MINUSEXPR</nt>
+      </rhs>
+    </rule>
+    <rule no="3">
+      <lhs>
+        <nt>ADDEXPR</nt>
+      </lhs>
+      <rhs>
+        <t>INT</t>
+        <t>ADD-OP</t>
+        <t>INT</t>
+      </rhs>
+    </rule>
+  <rule no="4">
+    <lhs>
+      <nt>MINUSEXPR</nt>
+    </lhs>
+    <rhs>
+      <t>INT</t>
+      <t>MINUS-OP</t>
+      <t>INT</t>
+    </rhs>
+  </rule>
+  </grammar>

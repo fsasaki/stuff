@@ -1,0 +1,28 @@
+<grammar>
+    <rule no="1">
+      <lhs>
+        <nt>S</nt>
+      </lhs>
+      <rhs>
+        <nt>NP</nt>
+        <nt>VP</nt>
+      </rhs>
+    </rule>
+    <rule no="2">
+      <lhs>
+        <nt>NP</nt>
+      </lhs>
+      <rhs>
+            <t>N</t>
+      </rhs>
+    </rule>
+    <rule no="3">
+      <lhs>
+        <nt>VP</nt>
+      </lhs>
+      <rhs>
+        <t>V</t>
+        <nt>NP</nt>
+      </rhs>
+    </rule>
+  </grammar>
