@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Conversion of Terms to Schema.org</title>
-        <script
-        src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Search Meets Terminology</title>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="http://jqueryui.com//resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $("#tabs").tabs();
+            });
+            $(function () {
+                $("input").checkboxradio();
+            });
+            $(function () {
+                $(".controlgroup").controlgroup();
+                $(".controlgroup-vertical").controlgroup({
+                    "direction": "vertical"
+                });
+            });
+        </script>
         <script type="text/javascript">
             function tbx2schemaDotOrg() {
                 var selectedInputType = $("#inputtype").find(":selected").val();
@@ -20,7 +37,6 @@
                     requestURL = "http://api-dev.freme-project.eu/current/pipelining/chain/9?stats=false&useI18n=false";
                     requestBody = sourceContent;
                     ctype = "text/plain";
-                    //$("#output2").empty().append(requestBody);
                 }
                 ;
                 $.ajax({
@@ -37,73 +53,105 @@
                             var xmlString = (new XMLSerializer()).serializeToString(result);
                             var output = xmlString.replace(/<\?xml .*\?>/, '');
                             var output2 = output.replace(/</g, "&lt;");
-                            $("#output2").empty().append(output2);
+                            $("#out").empty().append(output2);
+                            $("#out").dialog({position: { my: "center center", at: "center center"} 
+                                , autoOpen: false, hide: "fold", show: "blind", width: "90%" , height: "auto"} );
+                            $("#out").dialog("open");
                         })
                         .fail(function (xhr, statusText, err) {
                             console.log("error");
                             error(xhr + statusText + err);
                             console.log(xhr + statusText + sourceContent);
-                            //$("#output2").empty().append(xhr + statusText + err);
                         });
             }
             ;
         </script>
         <style>
-            textarea.input { color: green;
+            textarea.input { color: black;
                              float: left;
-                             width: 45%;
+                             width: 100%;
+                             height: 20%;
                              margin-left: 10px;
                              margin-top: 10px;
                              padding: 5px;
                              border: 1px solid black;
             }
-            textarea.output { color: blue;
-                              float: right;
-                              width: 45%;
-                              margin-right: 10px;
-                              margin-top: 10px;
-                              padding: 5px;
-                              border: 1px solid black;
-            }
             span.loadsample {
                 color: blue;
             }
-            button.run {
-                box-shadow: 4px 4px 2px #888888;
+            .title {
+               text-align: center;
             }
-            pre, code {
-                background-color: #e1e1ea;
+        </style>
+        <style>
+            .ui-controlgroup-vertical {
+                width: 150px;
+            }
+            .ui-controlgroup.ui-controlgroup-vertical > button.ui-button,
+            .ui-controlgroup.ui-controlgroup-vertical > .ui-controlgroup-label {
+                text-align: center;
+            }
+            #car-type-button {
+                width: 120px;
+            }
+            .ui-controlgroup-horizontal .ui-spinner-input {
+                width: 20px;
             }
         </style>
     </head>
     <body>
-        <h1>Conversion of Terms to Schema.org</h1>
-        <h2 id="background">Background</h2>
-        <p>Conversion of terms to Schema.org. Detailed description will follow. For more TBX input files, see the related repository of <a href="https://github.com/cimiano/tbx2rdf/tree/master/samples/TBX-resources">TBX2RDF</a>.</p>
-        <h2 id="try-it-out">Try it out</h2>
-        <p>In the left form below enter either a
-                            TBX document (<span class="loadsample" onclick="var tbxsample = $('#tbxsample').text();
-                    $('#content').empty().val(tbxsample.replace(/</g, '&lt;'))">load a sample</span>)
-                                or some text (<span class="loadsample" onclick="
-                                                                                   $('#content').empty().val('Seeking knowledge and wisdom.')">load a sample</span>). 
-            If you want to convert TBX files, choose the input type <q>TBX file</q>. 
-            If you want to detect terms in text, choose the input type <q>text with terms</q>. Then click on the bottom <q>convert</q>.</p>
-        <p>You can validate the output e.g. with the <a href="https://search.google.com/structured-data/testing-tool">Structured data testing tool</a> or the <a href="http://linter.structured-data.org/">Structured Data Linter</a>.</p>
-        <button onclick="tbx2schemaDotOrg();" class="run">convert</button>
-        <button onclick="$('#out').empty().append('Output');
-                $('#output2').empty();
-                $('#output2').addClass('output');">Refresh output</button>
-        <p>Set the type of input: <select name="inputtype" id="inputtype"><option value="forminput" selected>TBX file</option><option value="terms">Text with terms (paste in form)</option>
-            </select>
-        </p>
-        <form name="input">
-            <textarea rows="15" cols="50" name="content"  id="content" class="input"></textarea>
-        </form>
-        <div id="out" style="display: none;">Output</div>
-        <form name="output">
-            <textarea rows="15" cols="50" name="output2"  id="output2" class="output"></textarea>
-        </form>
-        <div id="tbxsample" style="display: none;">&lt;martif type="TBX" xml:lang="en">
+        <h1 class="title">Search Meets Terminology</h1>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Background</a></li>
+                <li><a href="#tabs-2">Try it out</a></li>
+                <li><a href="#tabs-3">Further information</a></li>
+            </ul>
+            <div id="tabs-1">
+                <p>This demo has been created in the context of a presentation at the TCWorld 2016 conference by 
+                    Felix Sasaki (DFKI / W3C Fellow) and Christian Lieske (SAP).
+                    The aim is to show how terminology related information can be used to generate Schema.org rich snippets. This adds a new view on 
+                    terminology data bases, providing new usage scenarios like search engine optimization.
+</p>
+                 
+            </div>
+            <div id="tabs-2">
+                <p>In the form below enter either a
+                    TBX document (<span class="loadsample" onclick="var tbxsample = $('#tbxsample').text();
+                                    $('#content').empty().val(tbxsample.replace(/</g, '&lt;'))">load a sample</span>, or find
+                                    further samples in the
+                                    repository of <a href="https://github.com/cimiano/tbx2rdf/tree/master/samples/TBX-resources">TBX2RDF</a>.)
+                    Alternatively, enter some text (<span class="loadsample" onclick="
+                                        $('#content').empty().val('Seeking knowledge and wisdom.')">load a sample</span>). 
+                                                        If you want to convert TBX files, choose the input type <q>TBX file</q>. </p>
+                <p>
+                    If you want to detect terms in text, choose the input type <q>text with terms</q>. Then click on the bottom <q>generate Schema.org snippets</q>.</p>
+                <p>You can validate the output e.g. with the <a href="https://search.google.com/structured-data/testing-tool">Structured data testing tool</a> or the <a href="http://linter.structured-data.org/">Structured Data Linter</a>.</p>
+
+                <textarea rows="10" cols="20" name="content"  id="content" class="input"></textarea>
+                <div class="widget">
+
+                    <fieldset>
+                        <legend>Options</legend>
+                        <div class="controlgroup">
+                            <select id="inputtype">
+                                <option value="forminput">Process TBX file</option>
+                                <option value="terms">Process text with terms</option>
+                            </select>
+                            <button onclick="tbx2schemaDotOrg();"><strong>generate Schema.org snippets</strong></button>
+                        </div></fieldset>
+                </div>
+
+                <div id="out" title="Output"></div>
+                <!-- 
+                <form name="output">
+                    <textarea rows="15" cols="50" name="output2"  id="output2" class="output"></textarea>
+                </form> -->
+            </div>
+            <div id="tabs-3">
+                <p>Some further info.</p>
+            </div>
+      <div id="tbxsample" style="display: none;">&lt;martif type="TBX" xml:lang="en">
             &lt;martifHeader>
             &lt;fileDesc>
             &lt;titleStmt>
@@ -264,6 +312,7 @@
             &lt;/termEntry>
             &lt;/body>
             &lt;/text>
-            &lt;/martif></div>
+&lt;/martif></div>
+        </div>
     </body>
 </html>
