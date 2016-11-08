@@ -54,7 +54,7 @@
                             var output = xmlString.replace(/<\?xml .*\?>/, '');
                             var output2 = output.replace(/</g, "&lt;");
                             $("#out").empty().append(output2);
-                            $("#out").dialog({position: { my: "center center", at: "center center"} 
+                            $("#out").dialog({position: { my: "center", at: "center", of : window} 
                                 , autoOpen: false, hide: "fold", show: "blind", width: "90%" , height: "auto"} );
                             $("#out").dialog("open");
                         })
