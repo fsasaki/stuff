@@ -1,0 +1,2789 @@
+<!DOCTYPE html><html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Metadata for the Multilingual Web - Usage Scenarios and
+         Implementations
+      </title><script src="https://www.w3.org/Tools/respec/respec-w3c-common" async="" class="remove" type="text/javascript"></script><script class="remove" type="text/javascript">
+                    var respecConfig = {
+                    // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
+                    specStatus:           "IG-NOTE",
+                    publishDate:  "2017-01-21",
+                    previousPublishDate:  "2013-03-07",
+                    previousMaturity:  "FPWD",
+                    noRecTrack:           true,
+                    shortName:            "mlw-metadata-us-impl",
+                    copyrightStart:       "2017",
+                    edDraftURI:           "http://w3c.github.io/mlw-metadata-us-impl/",
+                    
+                    // if this is a LCWD, uncomment and set the end of its review period
+                    // lcEnd: "2009-08-05",
+                    
+                    // editors, add as many as you like
+                    // only "name" is required
+                    editors:  [
+                    { name: "Christian Lieske", mailto: "christian.lieske@sap.com", company: "SAP SE" }
+                    ],
+                    wg:           "Internationalization Tag Set Interest Group",
+                    wgURI:        "https://www.w3.org/International/its/ig/",
+                    wgPublicList: "public-i18n-its-ig",
+                    bugTracker: { new: "https://github.com/w3c/mlw-metadata-us-impl/issues", open: "https://github.com/w3c/mlw-metadata-us-impl/issues" } ,
+                    otherLinks: [
+                    {
+                    key: "Github",
+                    data: [
+                    {
+                    value: "repository",
+                    href: "https://github.com/w3c/mlw-metadata-us-impl"
+                    }
+                    ]
+                    }
+                    ],
+                    
+                    // URI of the patent status for this WG, for Rec-track documents
+                    // !!!! IMPORTANT !!!!
+                    // This is important for Rec-track documents, do not copy a patent URI from a random
+                    // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+                    // Team Contact.
+                    charterDisclosureURI:  "https://www.w3.org/International/its/ig/charter-2016",
+                    // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
+                    };
+                </script></head>
+   <body>
+      <div id="abstract">
+         
+         
+         
+         <p>The <a href="http://www.w3.org/TR/its20/">W3C Internationalization Tag Set 2.0</a> - developed by the <a href="http://www.w3.org/International/multilingualweb/lt/">W3C MultilingualWeb-LT Working Group</a> enhances the foundation to integrate automated processing of human language into
+            core Web technologies. ITS 2.0 bears many
+            commonalities with is predecessor <a href="http://www.w3.org/TR/2007/REC-its-20070403/">ITS 1.0</a> but provides additional concepts that are designed to foster the automated creation
+            and processing of multilingual Web content.
+            ITS 2.0 focuses on HTML, XML-based formats in general, and can leverage processing
+            based on the XML Localization Interchange
+            File Format (XLIFF), as well as the Natural Language Processing Interchange Format
+            (NIF).
+            
+            
+         </p>
+         
+         <p>The W3C MultilingualWeb-LT Working Group received funding by the European Commission
+            (project <a href="http://cordis.europa.eu/fp7/ict/language-technologies/project-multilingualweb-lt_en.html">LT-Web|</a>) through the Seventh Framework Programme (FP7) in the area of Language Technologies
+            (Grant Agreement No. 287815).  As part
+            of their activities, members of the Working Group and the LT-Web project created various
+            implementations that exemplify how
+            ITS 2.0 supports automated processing of human language into core Web technologies.
+            These implementations/the corresponding
+            usage scenarios are sketched in this document. Each section of the document comprises
+            the following:
+            
+            
+         </p>
+         
+         
+         <ul>
+            
+            <li> Description - An explanation of the scenario
+               
+               
+            </li>
+            
+            <li> Data category usage - An explanation which of the ITS 2.0 data categories are involved
+               in the automated processing; (for
+               details on the data categories, <a href="http://www.w3.org/TR/its20/">W3C Internationalization Tag Set 2.0</a> has to be consulted)
+               
+               
+            </li>
+            
+            <li> Benefits - Reasons why the ITS 2.0 data categories enable or enhance the automated
+               processing
+               
+               
+            </li>
+            
+            <li> Information on Implementation Status/Issues - Links to tools and implementers (detailed
+               information, running software, source
+               code etc.)
+               
+               
+            </li>
+            
+         </ul>
+         
+         
+         
+      </div>
+      <div id="sotd">
+         <p>This document describes usage scenarios and related implementations for <a href="http://www.w3.org/TR/its20/">Internationalization Tag Set (ITS)
+               2.0</a>. ITS 2.0 enhances the foundation to integrate both automated and
+            manual processing of human language into core Web technologies.
+         </p>
+         <p>The work described in this document receives funding by the European
+            Commission (project <a href="http://cordis.europa.eu/fp7/ict/language-technologies/project-multilingualweb-lt_en.html">MultilingualWeb-LT (LT-Web)</a> ) through the Seventh Framework
+            Programme (FP7) in the area of Language Technologies (Grant Agreement No.
+            287815).
+         </p>
+      </div>
+      <section id="Introduction">
+         <h2>  Introduction</h2>
+         <p>The <a href="http://www.w3.org/TR/its20/">W3C Internationalization Tag Set 2.0</a> - developed by the <a href="http://www.w3.org/International/multilingualweb/lt/">W3C MultilingualWeb-LT Working Group</a> enhances the foundation to integrate automated processing of human language into
+            core Web technologies. ITS 2.0 bears many
+            commonalities with is predecessor <a href="http://www.w3.org/TR/2007/REC-its-20070403/">ITS 1.0</a> but provides additional concepts that are designed to foster the automated creation
+            and processing of multilingual Web content.
+            ITS 2.0 focuses on HTML, XML-based formats in general, and can leverage processing
+            based on the XML Localization Interchange
+            File Format (XLIFF), as well as the Natural Language Processing Interchange Format
+            (NIF).
+            
+            
+         </p>
+         <p>The W3C MultilingualWeb-LT Working Group received funding by the European Commission
+            (project <a href="http://cordis.europa.eu/fp7/ict/language-technologies/project-multilingualweb-lt_en.html">MultilingualWeb-LT (LT-Web)</a>) through the Seventh Framework Programme (FP7) in the area of Language Technologies
+            (Grant Agreement No. 287815). As part
+            of their activities, project members and members of the Working Group compiled a list
+            of usage scenarios that exemplify how
+            ITS 2.0 integrates automated processing of human language into core Web technologies.
+            These usage scenarios - and implementations
+            realized by the Working Group - are sketched in this document. The usage scenarios
+            comprise information such as the following:
+            
+            
+         </p>
+         <ul>
+            
+            <li> Description - An explanation of the scenario
+               
+               
+            </li>
+            
+            <li> Data category usage - An explanation how the individual ITS 2.0 data categories are
+               involved in the automated processing
+               (for details on the data categories, <a href="http://www.w3.org/TR/its20/">W3C Internationalization Tag Set 2.0</a>)
+               
+               
+            </li>
+            
+            <li> Benefits - Reasons why the ITS 2.0 data categories enable or enhance the automated
+               processing
+               
+               
+            </li>
+            
+            <li> Information on Implementation Status/Issues - Links to tools and implementers (detailed
+               information, running software, source
+               code etc.)
+               
+               
+            </li>
+            
+         </ul>
+      </section>
+      <section id="Usage_scenarios">
+         <h2>  Usage scenarios</h2>
+         <section id="Simple_Machine_Translation">
+            <h2> Simple Machine Translation</h2>
+            <section id="Description">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> Translate XML and HTML5 content via a Machine Translation (MT) system such as Microsoft
+                     Translator.
+                     
+                     
+                  </li>
+                  
+                  <li> The parts of the content that should be translated are first extracted based on ITS
+                     2.0 markup. The extracted parts are send
+                     to the MT system. After translation, the translated content is merged back with the
+                     parts that are not translation-relevant
+                     (recreating the original XML or HTML5 format).
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> The ITS 2.0 markup provides key information to drive the reliable extraction of translation-relevant
+                     content from both XML
+                     and HTML5.
+                     
+                     
+                  </li>
+                  
+                  <li> Processing details such as the need to preserve white space can be passed on.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Translate - Parts that are not translation-relevant are marked (and protected).
+                     
+                     
+                  </li>
+                  
+                  <li> Locale Filter - Only the parts that pass the locale filter are extracted. The other
+                     parts are treated as 'do not translate'
+                     content.
+                     
+                     
+                  </li>
+                  
+                  <li> Element Within Text - Elements are either extracted as in-line codes or as sub-flows.
+                     
+                     
+                  </li>
+                  
+                  <li> Preserve Space - Extracted parts/text units can be annotated with the information
+                     that whitespace is relevant and thus needs
+                     to be preserved.
+                     
+                     
+                  </li>
+                  
+                  <li> Domain - Domain values are placed into a property that can be used to select an MT
+                     system and/or to provide domain-related
+                     metadata to an MT system.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>Tool: Okapi Framework (ENLASO).
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Details <a href="http://www.w3.org/International/multilingualweb/lt/wiki/File:Some_Use_Cases_with_the_Current_Okapi_Framework_Implementation_of_ITS_2.0(Yves_Savourel-2012-09-25).pptx">(slides)</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Running software: <a href="http://code.google.com/p/okapi/downloads/list">http://code.google.com/p/okapi/downloads/list</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Source code: <a href="http://code.google.com/p/okapi/source/browse/">http://code.google.com/p/okapi/source/browse/</a>
+                     
+                     
+                  </li>
+                  
+                  <li> General documentation: <a href="http://www.opentag.com/okapi/wiki/">http://www.opentag.com/okapi/wiki/</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Implementation status/issues:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Only the first occurrence of the Domain value triggers the selection of the engine.
+                     
+                     
+                  </li>
+                  
+                  <li> Preserve Space is currently not respected by the engine.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Translation_Package_Creation">
+            <h2> Translation Package Creation</h2>
+            <section id="Description_2">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> Create a Translation Package in OASIS XML Localization Interchange File Format (XLIFF)
+                     from XML or HTML5 content.
+                     
+                     
+                  </li>
+                  
+                  <li> Based on its ITS 2.0 metadata, the content goes through a processing pipeline (e.g.
+                     extraction of translation-relevant parts).
+                     At the end of the pipeline, an XLIFF package is stored.
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> The ITS 2.0 markup provides key information to drive the reliable extraction of translation-relevant
+                     content from both XML
+                     and HTML5.
+                     
+                     
+                  </li>
+                  
+                  <li> Processing details such as the need to preserve white space can be passed on.
+                     
+                     
+                  </li>
+                  
+                  <li> Efficient version comparison and leveraging of existing translations is possible.
+                     
+                     
+                  </li>
+                  
+                  <li> Information like domain of the content, external references or localization notes,
+                     is made available in the XLIFF package.
+                     Thus, any XLIFF-enabled tool can make use of this information to provide translation
+                     assistance.
+                     
+                     
+                  </li>
+                  
+                  <li> Terms in the source content are marked, and thus can be matched against a terminology
+                     database.
+                     
+                     
+                  </li>
+                  
+                  <li> Constraints about storage size and allowed characters help to meet physical requirements.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_2">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Translate - Parts that are not translation-relevant are marked (and protected).
+                     
+                     
+                  </li>
+                  
+                  <li> Locale Filter - Only the parts that pass the locale filter are extracted. The other
+                     parts are treated as 'do not translate'
+                     content.
+                     
+                     
+                  </li>
+                  
+                  <li> Element Within Text - Elements are either extracted as in-line codes or as sub-flows.
+                     
+                     
+                  </li>
+                  
+                  <li> Preserve Space - The information is mapped to <i>xml:space</i>
+                     
+                     
+                  </li>
+                  
+                  <li> Id Value - The value is connected to the name of the extracted text unit.
+                     
+                     
+                  </li>
+                  
+                  <li> Domain - Values are placed into a corresponding <i>okp:itsDomain</i> attribute.
+                     
+                     
+                  </li>
+                  
+                  <li> Storage Size - The information is placed in native ITS 2.0 markup.
+                     
+                     
+                  </li>
+                  
+                  <li> External Resource - The URI is placed in a corresponding <i>okp:itsExternalResourceRef</i> attribute.
+                     
+                     
+                  </li>
+                  
+                  <li> Terminology - The information about terminology is placed in a special XLIFF note
+                     element.
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Note - The text is place in an XLIFF note.
+                     
+                     
+                  </li>
+                  
+                  <li> Allowed Characters - The pattern is placed in <i>its:allowedCharacters</i>.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_2">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>Tool: Okapi Framework (ENLASO).
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Details <a href="http://www.w3.org/International/multilingualweb/lt/wiki/File:Some_Use_Cases_with_the_Current_Okapi_Framework_Implementation_of_ITS_2.0%28Yves_Savourel-2012-09-25%29.pptx">(slides)</a>
+                     
+                     
+                  </li>
+                  
+                  <li> ITS 2.0 support in Okapi's XLIFF components: <a href="http://www.opentag.com/okapi/wiki/index.php?title=ITS_Components">http://www.opentag.com/okapi/wiki/index.php?title=ITS_Components</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Running software: <a href="http://code.google.com/p/okapi/downloads/list">http://code.google.com/p/okapi/downloads/list</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Source code: <a href="http://code.google.com/p/okapi/source/browse/">http://code.google.com/p/okapi/source/browse/</a>
+                     
+                     
+                  </li>
+                  
+                  <li> General documentation: <a href="http://www.opentag.com/okapi/wiki/">http://www.opentag.com/okapi/wiki/</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Implementation status/issues:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> ITS to XLIFF and XLIFF to ITS mapping needs to be finalized
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Quality_Check">
+            <h2> Quality Check</h2>
+            <section id="Description_3">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> Load XML, HTML5 and XLIFF content for which ITS 2.0 meta data exists into a tool
+                     that performs different kind of quality
+                     checks (CheckMate, a tool for checking quality).
+                     
+                     
+                  </li>
+                  
+                  <li> The XML and HTML5 content is processed based on its ITS 2.0 properties. The constraints
+                     defined with ITS 2.0 are verified
+                     by CheckMate.
+                     
+                     
+                  </li>
+                  
+                  <li> The XLIFF content is processed based on its ITS 2.0 properties. The constraints defined
+                     with ITS 2.0 are verified by CheckMate.
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> The ITS 2.0 markup provides key information to drive the reliable extraction of translation-relevant
+                     content from both XML
+                     and HTML5.
+                     
+                     
+                  </li>
+                  
+                  <li> The ITS 2.0 markup provides key information to drive quality-related checks.
+                     
+                     
+                  </li>
+                  
+                  <li> The ITS 2.0 markup allows all different file formats to be handled in the same way
+                     by the quality checking tool.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_3">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Translate - Parts that are not translation-relevant are marked (and protected).
+                     
+                     
+                  </li>
+                  
+                  <li> Locale Filter - Only the parts that pass the locale filter are extracted. The other
+                     parts are treated as 'do not translate'
+                     content.
+                     
+                     
+                  </li>
+                  
+                  <li> Element Within Text - Elements are either extracted as in-line codes or as sub-flows.
+                     
+                     
+                  </li>
+                  
+                  <li> Preserve Space - The information is mapped to the preserveSpace field in the extracted
+                     text unit.
+                     
+                     
+                  </li>
+                  
+                  <li> Id Value - The ids are used to identify all entries with an issue. 
+                     
+                     
+                  </li>
+                  
+                  <li> Storage Size - The content is verified against the storage size constraints.
+                     
+                     
+                  </li>
+                  
+                  <li> Allowed Characters - The content is verified against the pattern matching allowed
+                     characters.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_3">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>Tool: Okapi Framework (ENLASO).
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Details <a href="http://www.w3.org/International/multilingualweb/lt/wiki/File:Some_Use_Cases_with_the_Current_Okapi_Framework_Implementation_of_ITS_2.0%28Yves_Savourel-2012-09-25%29.pptx">(slides)</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Running software: <a href="http://code.google.com/p/okapi/downloads/list">http://code.google.com/p/okapi/downloads/list</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Source code: <a href="http://code.google.com/p/okapi/source/browse/">http://code.google.com/p/okapi/source/browse/</a>
+                     
+                     
+                  </li>
+                  
+                  <li> General documentation: <a href="http://www.opentag.com/okapi/wiki/">http://www.opentag.com/okapi/wiki/</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Implementation status/issues:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> The Okapi's quality checker step does not map its warning levels properly to the
+                     ITS severity values.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Processing_HTML5_documents_with_an_XML_tool_chain">
+            <h2> Processing HTMLdocuments with an XML tool chain</h2>
+            <section id="Description_4">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> Turn HTML5 with "its-" attributes into XHTML with "its:" prefixes.
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Allows processing of HTML5 documents with XML tools.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_4">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> All data categories are covered.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_4">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <ul>
+                  
+                  <li> Details: Command-line tool, which uses a general HTML5 library to create XML (see
+                     <a href="https://github.com/kosek/html5-its-tools">https://github.com/kosek/html5-its-tools</a>)
+                     
+                     
+                  </li>
+                  
+                  <li> Source code: <a href="https://github.com/kosek/html5-its-tools">https://github.com/kosek/html5-its-tools</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Validating_HTML5_with_ITS_2.0_metadata">
+            <h2> Validating HTMLwith ITS metadata</h2>
+            <section id="Description_5">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> W3C uses <a href="http://validator.nu/">validator.nu</a> as experimental validator for HTML5. For HTML5 with ITS 2.0 metadata, validator.nu
+                     generates errors,
+                     since "its-" attributes are not valid HTML5.
+                     
+                     
+                  </li>
+                  
+                  <li> The software allows validation of HTML5+ITS 2.0 with validator.nu (soon to be deployed
+                     as HTML5+ITS 2.0 validator at W3C
+                     validation service)
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Allows the validation of HTML5 documents which include ITS 2.0 markup.
+                     
+                     
+                  </li>
+                  
+                  <li> Detects errors in ITS 2.0 markup for HTML5.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_5">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> All data categories are covered
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_5">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <ul>
+                  
+                  
+                  <li><a href="http://validator.nu">On-line validation service</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Command-line tool, which uses a general HTML5 library (see <a href="https://github.com/kosek/html5-its-tools">https://github.com/kosek/html5-its-tools</a>)
+                     
+                     
+                  </li>
+                  
+                  
+               </ul>
+               <ul>
+                  
+                  <li> Source code: <a href="https://bitbucket.org/kosek">https://bitbucket.org/kosek</a> and <a href="https://github.com/kosek/html5-its-tools">https://github.com/kosek/html5-its-tools</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Interchange_between_Content_Management_System_and_Translation_Management_System">
+            <h2> Interchange between Content Management System and Translation Management System</h2>
+            <section id="Description_6">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> Content is roundtripped between a Content Management System (CMS) and Translation
+                     Management System (TMS).
+                     
+                     
+                  </li>
+                  
+                  <li> The content originates in a CMS, and gets exposed/serialized as XHTML + ITS 2.0.
+                     This is sent to a TMS, and processed in
+                     a workflow. Upon completion, the TMS exposes/serializes localized/translated XHTML
+                     + ITS 2.0 to the CMS.
+                     
+                     
+                  </li>
+                  
+                  <li> See <a href="#ITS_2.0_for_localization_of_content_in_a_Web_Content_Management_System">ITS 2.0 for localization of content in a Web Content Management System</a> for the description of the CMS side
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Facilitated coupling/interoperability between CMS and TMS.
+                     
+                     
+                  </li>
+                  
+                  <li> Cost and quality benefits for Language Service Buyer (CMS side) and Language Service
+                     Provider (TMS side).
+                     
+                     
+                  </li>
+                  
+                  <li> Language Service Buyer has more control of the localization workflow via ITS 2.0
+                     metadata
+                     
+                     <ol>
+                        
+                        <li> Automatic (e.g. via data category "Translate")
+                           
+                           
+                        </li>
+                        
+                        <li> Semiautomatic (e.g. via data category "Domain")
+                           
+                           
+                        </li>
+                        
+                        <li> Manual (e.g. via data category "Localization Note")
+                           
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_6">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Translate (global and local usage) - Parts that are not translation-relevant are
+                     marked (and protected).
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Note (global and local usage) - Provide additional information for process
+                     managers, translators and reviewers
+                     to facilitate processing.
+                     
+                     
+                  </li>
+                  
+                  <li> Domain (global usage) -
+                     
+                     <ol>
+                        
+                        <li> Provide additional information for process managers, translators and reviewers to
+                           facilitate processing.
+                           
+                           
+                        </li>
+                        
+                        <li> Control workflow dimensions such as selection of dictionaries and translation memories
+                           on the TMS side.
+                           
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                  </li>
+                  
+               </ul>
+               <ul>
+                  
+                  <li> Language Information (local usage)- Control workflow dimensions such as selecting
+                     suitable translators and reviewers. Also
+                     adds context information that helps to decide if a piece of content shall or shall
+                     not be translated.
+                     
+                     
+                  </li>
+                  
+                  <li> Allowed Characters (local usage) - The content is verified against the pattern matching
+                     allowed characters to ensure that
+                     on the TMS side, no inappropriate characters become part of the content (e.g. due
+                     to work of a translator).
+                     
+                     
+                  </li>
+                  
+                  <li> Storage Size (local usage) - The content is verified against the storage size constraints
+                     to ensure that on the TMS side,
+                     no capacity limitations related to the content are violated (e.g. due to a lengthy
+                     translation).
+                     
+                     
+                  </li>
+                  
+                  <li> Provenance (local usage) - Allows tracking of human agents or software agents that
+                     processed the content on the TMS side.
+                     In the case of updates, provenance/tracking information will enable the TMS side to
+                     assign or propose the same human agents
+                     (translators, or reviewers) that participated in the initial processing.
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Additional data category (not part of ITS 2.0):
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Readiness (global usage) - Provides information to translation process managers (examples:
+                     When was the content was ready
+                     to be processed? What is the deadline? What is the priority? Which service/process
+                     variant is relevant?)
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_6">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>Tools (developed by Linguaserve):
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Details: modified version of internal localization workflow; pre-production/post-production
+                     CMS XHTML + ITS 2.0 processing
+                     engine
+                     
+                     
+                  </li>
+                  
+                  <li> Running software: <a href="https://www-pre.linguaserve.net/las_demos/control/MLWLTWP3DemoEngine">https://www-pre.linguaserve.net/las_demos/control/MLWLTWP3DemoEngine</a> (credentials: user= demos; password=demosLingu@serve)
+                     
+                     
+                  </li>
+                  
+                  <li> <a href="https://www.w3.org/International/multilingualweb/lt/wiki/LSP_Localization_Chain_Side_Use_Case_Demonstration">General documentation</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Implementation status:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Successfully tested roundtripping Drupal XHTML files utilizing supported ITS 2.0
+                     data categories in workflow
+                     
+                     
+                  </li>
+                  
+                  <li> Used in productive translation
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Implementation issues:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Compliant implementation of ITS 2.0 global rules not finished yet
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Content_Internationalization_and_Advanced_Machine_Translation">
+            <h2> Content Internationalization and Advanced Machine Translation</h2>
+            <section id="Description_7">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> Enable an HTML5 content reviser (language editor, translation post-editor) to add
+                     ITS 2.0 metadata to the contents of web
+                     documents.
+                     
+                     
+                  </li>
+                  
+                  <li> Use the ITS 2.0 metadata to control the behavior of different Machine Translation
+                     (MT) Systems and Multilingual Publication
+                     System.
+                     
+                     
+                  </li>
+                  
+                  <li> Covers post-editing of translations generated by MT.
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> The ITS 2.0 markup:
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <ol>
+                  
+                  <li> provides key information to drive the reliable extraction of translation-relevant
+                     content from HTML5;
+                     
+                     
+                  </li>
+                  
+                  <li> helps to control workflow dimensions such as selection of domain-specific vocabulary
+                     to improve the Machine Translation results;
+                     
+                     
+                  </li>
+                  
+                  <li> provides information for post-editing.
+                     
+                     
+                  </li>
+                  
+               </ol>
+            </section>
+            <section id="Data_category_usage_7">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Translate - Parts that are not translation-relevant are marked (and protected).
+                     
+                     
+                     <ul>
+                        
+                        <li> Implementers: <a href="http://www.linguaserve.com/">Linguaserve</a>, <a href="http://www.dcu.ie/">DCU</a>, <a href="http://www.lucysoftware.com/">LucySoftware</a>.
+                           
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Note - Provides additional information for language or translation editors
+                     to facilitate translation.
+                     
+                     
+                     <ul>
+                        
+                        <li> Implementers: <a href="http://www.linguaserve.com/">Linguaserve</a>.
+                           
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  <li> Language Information - Controls workflow dimensions such as setting the source language,
+                     and the target language (via the
+                     lang attribute of the output), it also protects the translation of contents where
+                     the lang attribute is different from the
+                     source language.
+                     
+                     
+                     <ul>
+                        
+                        <li> Implementers: <a href="http://www.linguaserve.com/">Linguaserve</a>, <a href="http://www.dcu.ie/">DCU</a>, <a href="http://www.lucysoftware.com/">LucySoftware</a>.
+                           
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  <li> Domain - Domain values are mapped to the domains used by the individual MT systems,
+                     and used to select the appropriate vocabulary.
+                     
+                     
+                     <ul>
+                        
+                        <li> Implementers: <a href="http://www.linguaserve.com/">Linguaserve</a>, <a href="http://www.dcu.ie/">DCU</a>, <a href="http://www.lucysoftware.com/">LucySoftware</a>.
+                           
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  <li> Provenance - Allows tracking of human agents (language or translation editors) or
+                     software agents (MT systems) that processed
+                     the content.
+                     
+                     
+                     <ul>
+                        
+                        <li> Implementers: <a href="http://www.linguaserve.com/">Linguaserve</a>.
+                           
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Quality Issue - Can be provided for the translated content by the reviser.
+                     Can be utilized for example by MT
+                     developers to improve the MT System.
+                     
+                     
+                     <ul>
+                        
+                        <li> Implementers: <a href="http://www.linguaserve.com/">Linguaserve</a>.
+                           
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  <li> Locale Filter - Reveals that content is only relevant for certain locales (useful
+                     in localization).
+                     
+                     
+                     <ul>
+                        
+                        <li> Implementers: <a href="http://www.dcu.ie/">DCU</a>.
+                           
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  <li> MT Confidence - Assesses the confidence in the quality of the translation generated
+                     by the MT system.
+                     
+                     
+                     <ul>
+                        
+                        <li> Implementers: <a href="http://www.dcu.ie/">DCU</a>.
+                           
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_7">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>Tools:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Real Time Multilingual Publication System ATLAS PW1 (Linguaserve).
+                     
+                     
+                  </li>
+                  
+                  <li> Statistical MT System MaTrEx (DCU).
+                     
+                     
+                  </li>
+                  
+                  <li> Rule-based MT System (LucySoftware).
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <ul>
+                  
+                  <li> Details: <a href="https://www.w3.org/International/multilingualweb/lt/wiki/Online_MT_Systems_Use_Case_Demonstration">https://www.w3.org/International/multilingualweb/lt/wiki/Online_MT_Systems_Use_Case_Demonstration</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Running software:
+                     
+                     
+                     <ul>
+                        
+                        <li> <a href="https://atlaspw1-pre.linguaserve.net/admin/">ITS 2.0 ATLAS PW1 Testing Page</a> (credentials: user=mlw-lt_public password=MLWLT4atlaspw1$).
+                           
+                           
+                        </li>
+                        
+                        <li> <a href="http://atlaspw1-pre.linguaserve.net:10080/its2_prototype/home.html">ITS 2.0 ATLAS PW1 Prototype</a> (credentials: user=mlw-lt password=its2-wp4).
+                           
+                           
+                        </li>
+                        
+                        <li> <a href="http://its2-aeat.linguaserve.net">Spanish Tax Agency showcase</a> (credentials: user=mlw-lt password=its2-wp4).
+                           
+                           
+                        </li>
+                        
+                        <li> <a href="http://www.openmatrex.org/">MaTrEx</a>.
+                           
+                           
+                        </li>
+                        
+                        <li> <a href="http://service.lucysoftware.com:8080/dts">ITS 2.0 LucySoftware prototype</a> (credentials: user=mlwlt password=ltweb11).
+                           
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  <li> Source code: Not public
+                     
+                     
+                  </li>
+                  
+                  <li> General documentation:
+                     
+                     
+                     <ul>
+                        
+                        <li> <a href="http://www.w3.org/International/multilingualweb/lt/wiki/images/e/e4/D4.1.1.pdf">D4.1.1: Lucy Modification</a>
+                           
+                           
+                        </li>
+                        
+                        <li> <a href="http://www.w3.org/International/multilingualweb/lt/wiki/images/a/a0/D4.1.2.pdf">D4.1.2: MaTrEx Modification</a>
+                           
+                           
+                        </li>
+                        
+                        <li> <a href="http://www.w3.org/International/multilingualweb/lt/wiki/images/d/db/D4.1.3.pdf">D4.1.3: Linguaserve Online System Modification</a>
+                           
+                           
+                        </li>
+                        
+                        <li> <a href="http://www.w3.org/International/multilingualweb/lt/wiki/images/e/e2/D4.1.4.pdf">D4.1.4: Report on Modifications in MT System</a>
+                           
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Implementation issues:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Implementation of ITS 2.0 translate data category for attributes currently restricted
+                     to global rules
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Using_ITS_2.0_with_GNU_gettext_utilities.2FPO_files">
+            <h2> Using ITS with GNU gettext utilities/PO files</h2>
+            <section id="Description_8">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> The GNU gettext utilities assist in internationalizing and translating in the context
+                     of UNIX-like Operating Systems. The
+                     file format of the utilities is the GNU gettext portable object (PO) file format.
+                     
+                     
+                  </li>
+                  
+                  <li> The implementation - ITS Tool - enables roundtripping between PO files and XML formats
+                     like <a href="http://projectmallard.org/">mallard</a>.
+                     
+                     
+                  </li>
+                  
+                  <li> ITS Tool includes default rules for various formats, and uses them for PO file generation.
+                     
+                     
+                  </li>
+                  
+                  <li> ITS Tool is aware of various ITS 2.0 data categories in the PO file generation step.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_8">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Preserve Space
+                     
+                     
+                  </li>
+                  
+                  <li> Locale Filter
+                     
+                     
+                  </li>
+                  
+                  <li> External Resource
+                     
+                     
+                  </li>
+                  
+                  <li> Translate
+                     
+                     
+                  </li>
+                  
+                  <li> Elements Within Text
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Note
+                     
+                     
+                  </li>
+                  
+                  <li> Language Information
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_8">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <ul>
+                  
+                  <li> Details: <a href="http://itstool.org/">http://itstool.org/</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Implementation status/issues:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Need to convert built-in rules to new categories, and to deprecate extensions (not
+                     a conformance blocker).
+                     
+                     
+                  </li>
+                  
+                  <li> No support for its:param (blocked by lacking support for setting XPath variables
+                     in libxml2 Python bindings; <a href="https://bugzilla.gnome.org/show_bug.cgi?id=684390">patch</a> pending review).
+                     
+                     
+                  </li>
+                  
+                  <li> No support support for HTML. libxml2's HTML parser does not correctly handle HTML5.
+                     Need to evaluate other libraries.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Harnessing_ITS_2.0_Metadata_to_Improve_the_Human_Review_Process">
+            <h2> Harnessing ITS Metadata to Improve the Human Review Process</h2>
+            <section id="Description_9">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> The implementation - the "Reviewer's Workbench" (a desktop application) - reads HTML,
+                     XML and XLIFF files annotated with
+                     ITS 2.0 metadata.
+                     
+                     
+                  </li>
+                  
+                  <li> At each segment of the original content, the ITS metadata is made accessible to reviewers.
+                     Reviewers can adapt the access
+                     via user-definable filter/formatting "rules". The metadata allows human reviewers
+                     to make efficient decisions.
+                     
+                     
+                  </li>
+                  
+                  <li> During the review of translations, reviewers can add Localization Quality Issue annotations
+                     (which are serialized as ITS
+                     2.0 metadata when the file is saved). Provenance annotations are added in the background.
+                     
+                     
+                  </li>
+                  
+                  <li> The combination of captured Localization Quality Issue and Provenance data then becomes
+                     valuable data which can be used for
+                     traditional business intelligence, or semantic web applications.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_9">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Provenance
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Quality Issue
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Increases review effectiveness as reviewers can be informed by metadata.
+                     
+                     
+                  </li>
+                  
+                  <li> Harvests data during review.
+                     
+                     
+                  </li>
+                  
+                  <li> Facilitates audit and quality correction.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_9">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <ul>
+                  
+                  <li> Application development currently at alpha stage.
+                     
+                     
+                  </li>
+                  
+                  <li> Awaiting finalization of XLIFF mappings and underlying Okapi filter support.
+                     
+                     
+                  </li>
+                  
+                  <li> Application is closed source.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="XLIFF-based_Machine_Translation">
+            <h2>  XLIFF-based Machine Translation</h2>
+            <section id="Description_10">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> Invoke Machine Translation (MT) from a localization workflow using ITS 2.0 integrated
+                     with the XML Localization Interchange
+                     File Format (XLIFF)
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_10">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Domain - The domain value can be used by the MT system to improve processing accuracy
+                     
+                     
+                  </li>
+                  
+                  <li> Translate - Parts that are not translation-relevant are marked (and protected).
+                     
+                     
+                  </li>
+                  
+                  <li> MT Confidence - Assesses the confidence in the quality of the translation generated
+                     by the MT system. 
+                     
+                     
+                  </li>
+                  
+                  <li> Terminology - Enforce the MT system to translate specific words or phrases according
+                     to terminological information
+                     
+                     
+                  </li>
+                  
+                  <li> Provenance - Allows tracking of human agents (content editors) or software agents
+                     (MT systems) that processed the content.
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> The use of XLIFF allows an MT system to be integrated seamlessly into automated localization
+                     workflows involving commercial
+                     Translation Management Systems and Computer Assisted Translation (CAT) tools. 
+                     
+                     
+                  </li>
+                  
+                  <li> The use of XLIFF and ITS 2.0 facilitates the integration of/switch between multiple
+                     MT systems to provide alternative translation
+                     within a single project workflow.   
+                     
+                     
+                  </li>
+                  
+                  <li> The use of the ITS 2.0 "translate" attribute ensures that content is not altered
+                     by the MT system - especially if that content
+                     is included in a translation project as context for human agents such as translation
+                     post-editors.
+                     
+                     
+                  </li>
+                  
+                  <li> The ITS 2.0 "domain" metadata in XLIFF ensures that the most relevant MT engine can
+                     be selected by the MT system.
+                     
+                     
+                  </li>
+                  
+                  <li> Combining XLIFF and ITS 2.0 "terminology" metadata enforce the MT system to translate
+                     specific words or phrases according
+                     to terminological information.
+                     
+                     
+                  </li>
+                  
+                  <li> Integrating ITS 2.0 MT confidence scores into XLIFF target language translation enables
+                     them to be presented to translation
+                     post-editors. 
+                     
+                     
+                  </li>
+                  
+                  <li> Recording provenance information enables localization managers to compare the performance
+                     of different MT engines or systems,
+                     or different translation post-editors.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_10">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <ul>
+                  
+                  <li> Details: <a href="http://www.w3.org/International/multilingualweb/lt/wiki/Simple_Segment_Machine_Translation_Use_Case_Demonstration">http://www.w3.org/International/multilingualweb/lt/wiki/Simple_Segment_Machine_Translation_Use_Case_Demonstration</a></li>
+                  
+                  <li>Tools: TCD CMS-LION / DCU MaTrEx</li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="XLIFF-based_CMS-to-TMS_Roundtripping_for_HTML.26XML">
+            <h2>  XLIFF-based CMS-to-TMS Roundtripping for HTML&amp;XML</h2>
+            <section id="Description_11">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> SOLAS - is a service-based architecture for orchestrating localization workflows
+                     among XLIFF-aware components.
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <ol>
+                  
+                  <li> One of SOLAS components is an OKAPI based extra Extractor/Merger service that maps
+                     ITS 2.0 categories onto XLIFF 1.2
+                     
+                     
+                  </li>
+                  
+                  <li> SOLAS is also integrated with CMS-L10N, can receive/return XLIFF jobs created by
+                     CMS-L10N.
+                     
+                     
+                  </li>
+                  
+               </ol>
+               <ul>
+                  
+                  <li> CMS-L10N (aka LION) is basically a middleware component based on an RDF triple store
+                     over an arbitrary CMS (tested with Alfresco,
+                     Drupal and Wikimedia).
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <ol>
+                  
+                  <li> Can parse the source including most of the ITS 2.0 metadata and produce XLIFF 1.2
+                     according to a currently agreed mapping.
+                     After the roundtrip, that is handled via SOLAS, it updates the RDF triple store accordingly.
+                     
+                     
+                  </li>
+                  
+               </ol>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> The use of ITS 2.0 and XLIFF helps to modularize and connect specialized (single-purpose)
+                     components.
+                     
+                     
+                  </li>
+                  
+                  <li> SOLAS can handle input of components aware of different ITS 2.0 categories or unaware
+                     of ITS at all and combine them. SOLAS
+                     orchestration ensures basic ITS compliance even with ITS unaware components. E.g.
+                     If a service provider is unaware of the
+                     translate flag, SOLAS can filter the translation request for that provider, so that
+                     the flag is actually interpreted.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_11">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Translate
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Note
+                     
+                     
+                  </li>
+                  
+                  <li> Terminology
+                     
+                     
+                  </li>
+                  
+                  <li> Directionality
+                     
+                     
+                  </li>
+                  
+                  <li> Language Information
+                     
+                     
+                  </li>
+                  
+                  <li> Elements Within Text
+                     
+                     
+                  </li>
+                  
+                  <li> Domain
+                     
+                     
+                  </li>
+                  
+                  <li> Text Analysis
+                     
+                     
+                  </li>
+                  
+                  <li> Locale Filter
+                     
+                     
+                  </li>
+                  
+                  <li> Provenance
+                     
+                     
+                  </li>
+                  
+                  <li> External Resource
+                     
+                     
+                  </li>
+                  
+                  <li> Target Pointer
+                     
+                     
+                  </li>
+                  
+                  <li> Id Value
+                     
+                     
+                  </li>
+                  
+                  <li> Preserve Space
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Quality Issue
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Quality Rating
+                     
+                     
+                  </li>
+                  
+                  <li> MT Confidence
+                     
+                     
+                  </li>
+                  
+                  <li> Allowed Characters
+                     
+                     
+                  </li>
+                  
+                  <li> Storage Size
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_11">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>Implementer: TCD/UL, Making use of MT components by Moravia and DCU, and JSI Enrycher
+                  as Text Analysis service.
+                  
+                  
+               </p>
+               <p>This tool is based on an <a href="http://www.w3.org/International/multilingualweb/lt/wiki/XLIFF_Mapping">ITS-XLIFF mapping</a>:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> The mapping is currently under discussion.
+                     
+                     
+                  </li>
+                  
+                  <li> The goal is to freeze the mapping and to produce a best practice note within lifespan
+                     of the LT-Web project. 
+                     
+                     
+                  </li>
+                  
+                  <li> The focus is currently on XLIFF 1.2 favoring solutions that can be structurally preserved
+                     in XLIFF 2.0. that is the main
+                     target in the long run.
+                  </li>
+                  
+               </ul>
+               <p>Although all ITS categories listed above, as encoded by OKAPI or TCD's CMS-LION, are
+                  covered, the demos in mid March show
+                  consumption of mainly the following: translate, term, text analysis, domain, localization
+                  note, provenance, and MT confidence.
+                  The demos involve:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> An XLIFF-based source quality assurance tool (LKR by UL)
+                     
+                     
+                  </li>
+                  
+                  <li> A Project Manager/Localization Engineer friendly XLIFF Viewer/Editor (LocConnect
+                     by UL)
+                     
+                     
+                  </li>
+                  
+                  <li> Integrated Machine Translation Solutions
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <ol>
+                  
+                  <li> Moravia's implementation of M4Loc and Moses with ITS 2.0 support
+                     
+                     
+                  </li>
+                  
+                  <li> DCU MaTrEx with ITS 2.0 support
+                     
+                     
+                  </li>
+                  
+                  <li> Fallback handling of the ITS 2.0 information within SOLAS MT Service Mapper with
+                     services that are not ITS 2.0 aware, such
+                     as Microsoft Bing
+                     
+                     
+                  </li>
+                  
+               </ol>
+               <ul>
+                  
+                  <li> Details (M4Loc processing of ITS2.0 enhanced XLIFF files):
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <ol>
+                  
+                  <li> Running software: <a href="http://mlwlt.moravia.com">http://mlwlt.moravia.com</a> (testing site)
+                     
+                     
+                  </li>
+                  
+                  <li> Running software (web-service): <a href="http://mlwlt.moravia.com/mlwlt-service-xliff-mt/mlwlt-service.asmx">http://mlwlt.moravia.com/mlwlt-service-xliff-mt/mlwlt-service.asmx</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Source code: <a href="https://github.com/mkarasek/mlwlt-m4loc-xliff-mt">https://github.com/mkarasek/mlwlt-m4loc-xliff-mt</a>
+                     
+                     
+                  </li>
+                  
+                  <li> General documentation: <a href="https://github.com/mkarasek/mlwlt-m4loc-xliff-mt/wiki">https://github.com/mkarasek/mlwlt-m4loc-xliff-mt/wiki</a>
+                     
+                     
+                  </li>
+                  
+               </ol>
+               <p>Please note that links to the running software are currently only accessible to the
+                  SOLAS system at the moment. They should
+                  become public next week.
+                  
+                  
+               </p>
+            </section>
+         </section>
+         <section id="ITS_2.0_for_localization_of_content_in_a_Web_Content_Management_System">
+            <h2>  ITS for localization of content in a Web Content Management System</h2>
+            <section id="Description_12">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> Drupal is a Web Content Management System (WCMS).
+                     
+                     
+                  </li>
+                  
+                  <li> <a href="http://drupal.org/sandbox/kfritsche/1908292/">The Drupal modules</a>, developed by <a href="http://www.cocomore.com/en/home">Cocomore</a>, 
+                     
+                     <ol>
+                        
+                        <li> add the ability to apply ITS 2.0 local metadata through Drupal's WYSIWYG editor.
+                           
+                           
+                        </li>
+                        
+                        <li> add the ability to apply global ITS 2.0 metadata at content mode level.
+                           
+                           
+                        </li>
+                        
+                        <li> Implemented jQuery plugin to optimize the GUI of the Translation Management tool
+                           (there is a <a href="http://plugins.jquery.com/its-parser/">published jQuery download</a> as standalone solution, too). 
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Support for ITS 2.0 in Drupal facilitates the localization/translation of Drupal-based
+                     content.
+                     
+                     
+                  </li>
+                  
+                  <li> The Drupal modules facilitate the roundtripping process from WCMS with systems of
+                     Localization Service Provider (including
+                     automatic content re-integration).
+                     
+                     
+                  </li>
+                  
+                  <li> The Drupal modules enable tracking of provenance information (e.g. to identify translation
+                     post-editors).
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_12">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Translate - Mark content which should not be translated and highlight this marked
+                     content.
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Note - Add a note for the translator to improve his understanding of
+                     this content and can make a better translation.
+                     
+                     
+                  </li>
+                  
+                  <li> Domain - Set the domain of a text to improve the machine and human translation process.
+                     
+                     
+                  </li>
+                  
+                  <li> Provenance - Check which translator/reviser worked on content.
+                     
+                     
+                  </li>
+                  
+                  <li> Allowed Characters/Storage Size - Make the translator aware of restrictions for specific
+                     content, like not allowed characters
+                     or a maximum length of a translation. These constraints are automatically set by Drupal.
+                     
+                     
+                  </li>
+                  
+                  <li> Text Analysis - Annotate text with terminology metadata to improve the machine and
+                     human translation process.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_12">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>Tool: Drupal Module for editing and viewing of ITS 2.0 markup (Cocomore AG)
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Source Code/Documentation: <a href="http://drupal.org/sandbox/kfritsche/1908292">http://drupal.org/sandbox/kfritsche/1908292</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Tool: Drupal Module to connect to TMGMT Translator Linguaserve (Cocomore AG)
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Description of the TMS side: <a href="#Interchange_between_Content_Management_System_and_Translation_Management_System">Interchange between Content Management System and Translation Management System</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Source Code/Documentation: <a href="http://drupal.org/sandbox/kfritsche/1908422">http://drupal.org/sandbox/kfritsche/1908422</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Tool: Drupal Module to interact with TMGMT Workflow (Cocomore AG)
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Details: Adds possibility to have additional steps before/after translation and integrates
+                     the Text Analysis results from
+                     "Enrycher".
+                     
+                     
+                  </li>
+                  
+                  <li> Source Code/Documentation: <a href="http://drupal.org/sandbox/kfritsche/1908598">http://drupal.org/sandbox/kfritsche/1908598</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Tool: ITS 2.0 jQuery Plugin (Cocomore AG)
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Details: Selector plugin to read ITS 2.0 data from a node or select nodes by specified
+                     ITS markup.
+                     
+                     
+                  </li>
+                  
+                  <li> Running software: <a href="http://plugins.jquery.com/its-parser/">http://plugins.jquery.com/its-parser/</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Source Code: <a href="https://github.com/attrib/jquery-its2-src">https://github.com/attrib/jquery-its2-src</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Documentation: <a href="https://github.com/attrib/jquery-its2">https://github.com/attrib/jquery-its2</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Integrating_ITS_2.0.2C_Content_Management_Interoperability_Services.2C_and_W3C_Provenance">
+            <h2>  Integrating ITS  Content Management Interoperability Services, and W Provenance</h2>
+            <section id="Description_13">
+               <h2>  Description</h2>
+               <p>Localization interoperability can be enhanced by using not just ITS 2.0 as standard.
+                  In particular, the following standards
+                  provide additional opportunities:
+                  
+                  
+               </p>
+               <ol>
+                  
+                  <li> OASIS Content Management Information Service (CMIS) to externally associate multiple
+                     ITS 2.0 rules files with large sets
+                     of documents, and to retrieve those documents regardless of the Content Management
+                     System in use
+                     
+                     
+                  </li>
+                  
+                  <li> W3C Provenance (PROV) to track which human agents or software agents processed the
+                     content; tracking can span multiple agents/components,
+                     while allowing individual tracking records to be easily consolidated via linked data
+                     approaches
+                     
+                     
+                  </li>
+                  
+               </ol>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Enables ITS 2.0 annotations to be associated with multiple documents via the CMS
+                     without editing individual files. This reduces
+                     source content internationalization and document management costs. Furthermore, it
+                     reduces annotation errors.
+                     
+                     
+                  </li>
+                  
+                  <li> Allows fine-grained tracking and analysis of Language Technology (LT) components,
+                     human agents (language workers) and service
+                     providers - even across multiple organizations, projects, and heterogeneous process
+                     landscapes. This reduces the overhead costs
+                     in tracking, monitoring, analyzing and optimizing the localization workflows - especially
+                     of the critical elements within
+                     them (e.g. MT engines, human terminologists and translators)
+                     
+                     
+                  </li>
+                  
+                  <li> Enables tracking of human linguistic judgments and their influence on the output
+                     of LT components. Tracking data can be
+                     curated for retraining/retuning those LT components (e.g. Statistical Machine Translation
+                     or text analysis components)
+                     
+                     
+                  </li>
+                  
+                  <li> Tracking information can be mapped to the W3C PROV Ontology (PROV-O) which expresses
+                     the PROV Data Model using the OWL2 Web
+                     Ontology Language (OWL2), and stored in Resource Description Framework (RDF) triple
+                     stores.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_13">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Provenance - Tracks MT-based translation and translation revision through a post-editing
+                     interface. Tracking is implemented
+                     as standoff provenance records in XLIFF files. The post-editing records detail which
+                     of the MT outputs was used if multiple
+                     MT outputs are offered to the post-editor. The agent's ITS annotations (from translation
+                     and translation revision) are mapped
+                     to PROV-O triples in the accompanying RDF provenance logs.
+                     
+                     
+                  </li>
+                  
+                  <li> Text analysis - Calls text analysis service (e.g. Enrycher) on source HTML file for
+                     Named Entity Recognition annotations.
+                     These annotations are also mapped into XLIFF files. This annotation results in logging
+                     of activities performed on an 'analysed
+                     text' entity in the PROV-O triple store.
+                     
+                     
+                  </li>
+                  
+                  <li> Terminology - Allows text annotated by Named Entity Recognition, as well as other
+                     phrases, to be identified as terms and
+                     used to populate a multilingual glossary. If the text analysis annotation returns
+                     a DBpedia reference, a query for the label
+                     used in the equivalent target language page can be attempted to populate the term
+                     target in the glossary. The terminology
+                     annotation and the glossary are mapped to XLIFF as well as resulting in a 'term' entity
+                     being tracked in the PROV-O provenance
+                     logs.
+                     
+                     
+                  </li>
+                  
+                  <li> MT Confidence - This is used to annotate - in XLIFF - the assumed quality of output
+                     of MT engines. MT Confidence is also
+                     tracked for the translation entities generated by MT in the PROV-O logs.
+                     
+                     
+                  </li>
+                  
+                  <li> Domain - Mapped from HTML source document to XLIFF, and used to annotate PROV-O entities
+                     representing source units, i.e.
+                     the source content of translation units.
+                     
+                     
+                  </li>
+                  
+                  <li> Translate - Mapped from HTML source document to XLIFF, and used to annotate PROV-O
+                     entities representing source units, i.e.
+                     the source content of translation units.
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Where available, and not already specified by explicit ITS provenance annotation,
+                  annotatorsRef was used to derive PROV-O
+                  agent details for specific activities, e.g. text analysis and terminology.
+                  
+                  
+               </p>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_13">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>Details:</p>
+               <ul>
+                  
+                  <li> <a href="http://www.w3.org/International/multilingualweb/lt/wiki/File:2012-09-21-lrc.ppt">Slides</a>
+                     
+                     
+                  </li>
+                  
+                  <li> <a href="https://www.scss.tcd.ie/~lefinn/CMS-L10n-DemoVideo.mp4">Demo video</a>
+                     
+                     
+                  </li>
+                  
+                  <li> <a href="http://www.w3.org/International/multilingualweb/lt/wiki/Provenance_Best_Practice#Example:_RDF-PROV_from_XLIFF.2FITS_Roundtrip">Examples of HTML-to-XLIFF-PROV-O mappings</a> 
+                     
+                     
+                  </li>
+                  
+                  <li> <a href="http://www.w3.org/International/multilingualweb/lt/wiki/Provenance_Best_Practice#ITS-PROV-O_Vocabulary">Suggested PROV-O vocabulary extensions for this localisation roundtrip application
+                        of the W3C provenance specification</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Text_Analysis_-_Named_Entity_Recognition_and_Enrichment">
+            <h2>  Text Analysis - Named Entity Recognition and Enrichment</h2>
+            <section id="Description_14">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> Named entities (e.g. names of persons, places, or products) in HTML content are recognized
+                     based on the Natural Language
+                     Processing (NLP) tool - Enrycher.
+                     
+                     
+                  </li>
+                  
+                  <li> The entities are enriched in the following ways:
+                     
+                     <ol>
+                        
+                        <li> the identity is computed/disambiguated (so that for example London - England, and
+                           London - Ontario can be distinguished)
+                           
+                           
+                        </li>
+                        
+                        <li> a category (e.g. geographic name/place) is assigned
+                           
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </li>
+                  
+                  <li> Both the entity recognition and the enrichment generate markup which amongst others
+                     allows tracking of the software agent/NLP
+                     tool that was used
+                     
+                     
+                  </li>
+                  
+                  <li> Enriched, disambiguated content facilitates processing for source and target languages
+                     (amongst others since it provides
+                     context to translators)
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> The ITS 2.0 markup provides the key information about entities, so they can be correctly
+                     processed. Example: one may employ
+                     specific translations, transliterations, officially mandated translations, or even
+                     keep the original.
+                     
+                     
+                  </li>
+                  
+                  <li> Content management systems may use disambiguated, enriched content for providing
+                     entity-centric browsing and retrieval functionality.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_14">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Text Analysis - Mark fragments of content which mention named entities; enrich the
+                     content by additional information such
+                     as a URI denoting the entity's identity.
+                     
+                     
+                  </li>
+                  
+                  <li> Text Analysis - Mark fragments of content with individual word meanings; enrich the
+                     content by additional information such
+                     as a URI denoting the word's meaning.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_14">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <ul>
+                  
+                  <li> Running code: <a href="http://enrycher.ijs.si/mlw/">Enrycher demo</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Source code: <a href="https://github.com/tadejs/enrycher-its20">Enrycher-ITS2.0 data category implementation</a>
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Implementation issues and need for discussion: 
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Implementation of NLP tools for providing the Domain data category annotations.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Automated_Terminology_Annotation">
+            <h2>  Automated Terminology Annotation</h2>
+            <section id="Description_15">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> Term candidates in HTML5, XLIFF and plaintext are annotated by humans or software
+                     agents (automatic term candidate annotation).
+                     
+                     
+                  </li>
+                  
+                  <li> Automatic term candidate annotation can comprise:
+                     
+                     <ol>
+                        
+                        <li> Term candidate recognition based on existing terminology resources (e.g., term banks,
+                           such as EuroTermBank or IATE)
+                           
+                           
+                        </li>
+                        
+                        <li> Term candidate identification based on unguided terminology extraction systems (e.g.,
+                           ACCURAT Toolkit or TTC TermSuite)
+                           
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                  </li>
+                  
+                  <li> Content analysis and terminology mark-up are performed by a Web Service API with
+                     the following functionality:
+                     
+                     <ol>
+                        
+                        <li> Support for ITS 2.0 metadata (Terminology, Language Information, Domain, Elements
+                           Within Text and Locale Filter data categories);
+                           
+                           
+                        </li>
+                        
+                        <li> Annotation of the content by the two above-mentioned methods. The API breaks down
+                           the content in Language and Domain dimensions
+                           and uses terminology annotation services provided by the TaaS platform in order to
+                           identify terms and link them with the TaaS
+                           platform.
+                           
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                  </li>
+                  
+                  <li> Visualization capabilities are provided for the annotated terminology allowing human
+                     users access to the annotation results.
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  The Web Service API can be integrated in automated language processing workflows,
+                  for instance, machine translation, localization,
+                  terminology management and many other tasks that may benefit from terminology annotation.
+                  
+                  
+               </p>
+            </section>
+            <section id="Data_category_usage_15">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Domain - The domain information is used to split and analyze the content per domain
+                     separately. This allows filtering terms
+                     in the term bank-based terminology annotation as well as identifying domain-specific
+                     content using unguided term extraction
+                     systems. The user is asked to provide a default domain for the term bank-based terminology
+                     annotation. This user-supplied
+                     domain will be overridden with ITS 2.0 domain metadata if present in the content.
+                     
+                     
+                  </li>
+                  
+                  <li> Element Within Text - The information is used to decide which elements are extracted
+                     as in-line codes and sub-flows.
+                     
+                     
+                  </li>
+                  
+                  <li> Language Information - The language information is used to split and analyze the
+                     content per language. The user will be asked
+                     to provide a source (default) language, however, the default language will be overridden
+                     with ITS 2.0 Language Information
+                     metadata if present in the content.
+                     
+                     
+                  </li>
+                  
+                  <li> Locale Filter - Whenever used only the text in the locale as specified by the user
+                     defined source language is analyzed. The
+                     remaining content is ignored.
+                     
+                     
+                  </li>
+                  
+                  <li> Terminology - For existing terminology metadata, the mark-up is preserved (terminology
+                     mark-up overlaps are not allowed).
+                     For new terminology metadata, terms are marked according to the Terminology data category’s
+                     rules.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_15">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>The implementation has reached Milestone 2 (Initial HTML5 term tagging with simple
+                  visualization). The implementation for
+                  the Milestone 3 (Enhanced HTML5 term tagging with full visualization) is ongoing.
+                  
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> Detailed slides: will be made available at the end of May, 2013
+                     
+                     
+                  </li>
+                  
+                  <li> Running code: <a href="http://taws.tilde.com">http://taws.tilde.com</a>
+                     
+                     
+                  </li>
+                  
+                  <li> Source code: will be made available at the end of May, 2013
+                     
+                     
+                  </li>
+                  
+                  <li> General documentation: will be made available at the end of May, 2013
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="Universal_Preview_of_ITS_2.0_Metadata_in_XML.2C_XLIFF.2C_and_HTML_Files">
+            <h2>  Universal Preview of ITS Metadata in XML, XLIFF, and HTML Files</h2>
+            <section id="Description_16">
+               <h2>  Description</h2>
+               <p>XML-based source content such as XLIFF files is usually provided to translators or
+                  reviewers as reduced and partially transformed
+                  text without any information about local or global context or support for rendering/visualization
+                  of content itself or metadata
+                  embedded in the content. In sum this has negative effects on quality of final output
+                  and productivity of human workers.
+                  
+                  
+               </p>
+               <p>The usage scenario allows rendering of content and metadata for easy and interactive
+                  reading it as a reference material in
+                  a browser. The rendering includes special visual cues, and interaction possibilities
+                  (such as colour-coding and pop-ups for
+                  metadata to be displayed). It is based on auxiliary files in HTML5+ITS 2.0 (including
+                  JavaScript) that are generated from
+                  ITS-annotated source content of any supported formats (XML, XLIFF, HTML).
+                  
+                  
+               </p>
+            </section>
+            <section id="Data_category_usage_16">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> All ITS 2.0 data categories
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_16">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>Implementer: Logrus
+                  
+                  
+               </p>
+               <p>Implementation status: Prototype will display Translate, Localization Note, and Terminology
+                  data categories at the <a href="http://www.multilingualweb.eu/rome-showcase">MultilingualWeb
+                     Workshop March 2013</a>.
+                  
+                  
+               </p>
+            </section>
+         </section>
+         <section id="ITS_2.0_in_word_processing_software">
+            <h2>  ITS in word processing software</h2>
+            <section id="Description_17">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> The tool - ITS  for Libre Office Writer Extension (ILO)- allows use of a subset of
+                     ITS 2.0 in an open source word processing
+                     software (Libre Office).
+                     
+                     
+                  </li>
+                  
+                  <li> Capabilities include:
+                     
+                     <ol>
+                        
+                        <li> Tagging phrases and terms as “not to translate” (translate)
+                           
+                           
+                        </li>
+                        
+                        <li> Tagging words as “term” (terminology)
+                           
+                           
+                        </li>
+                        
+                        <li> Tagging words for a specific locale only (locale filter)
+                           
+                           
+                        </li>
+                        
+                        <li> Providing additional information for the translator (localization note)
+                           
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                  </li>
+                  
+                  <li> The Libre Office extension and its software packages allows users to
+                     
+                     <ol>
+                        
+                        <li> Load ITS 2.0 annotated XML files (ODT, XLIFF)
+                           
+                           
+                        </li>
+                        
+                        <li> Visualize ITS 2.0 metadata in the WYSIWYG editor of Libre office
+                           
+                           
+                        </li>
+                        
+                        <li> Edit text related to ITS 2.0 meta data
+                           
+                           
+                        </li>
+                        
+                        <li> Save and export the text and including ITS 2.0 markup into the original file format
+                           (ODT, XLIFF)
+                           
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_17">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Terminology - One or several words can be marked up as “term”
+                     
+                     
+                  </li>
+                  
+                  <li> Translate – Mark content as “to translate” or “not to translate”
+                     
+                     
+                  </li>
+                  
+                  <li> Localization Note – Pass a message (information, alert) to human agents (such as
+                     translators)
+                     
+                     
+                  </li>
+                  
+                  <li> Locale Filter – Limit content to specific locales
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_17">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <p>ILO uses OKAPI capabilities for XLIFF handling and will be available in April 2013.
+                  The use of ILO will be presented at the <a href="http://www.multilingualweb.eu/rome-showcase">MultilingualWeb Workshop March 2013</a>. The results of ILO development will be given back to the public domain under the
+                  open licenses
+                  LGPL V3 (same as Libre Office).
+                  
+                  
+               </p>
+            </section>
+         </section>
+         <section id="Training_for_Statistical_Machine_Translation">
+            <h2>  Training for Statistical Machine Translation</h2>
+            <section id="Description_18">
+               <h2>  Description</h2>
+               <ul>
+                  
+                  <li> ITS 2.0 bilingual data is collected in a Content Management System, and passed to
+                     a Statistical Machine Translation (SMT)
+                     system for training the system's language models.
+                     
+                     
+                  </li>
+                  
+                  <li> If domain information is supplied for the content, domain-aware modules in the SMT
+                     system are trained on the corresponding
+                     content.
+                     
+                     
+                  </li>
+                  
+               </ul>
+               <p>Benefits:
+                  
+                  
+               </p>
+               <ul>
+                  
+                  <li> The ITS 2.0 markup provides key information to drive the reliable extraction of domain-specific
+                     content.
+                     
+                     
+                  </li>
+                  
+                  <li> MT systems trained on domain-specific data allow for potentially more accurate translation.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="Data_category_usage_18">
+               <h2>  Data category usage</h2>
+               <ul>
+                  
+                  <li> Translate - Parts that retain their original form are passed through the MT as-is.
+                     
+                     
+                  </li>
+                  
+                  <li> Language Information - Used to select the appropriate MT language models.
+                     
+                     
+                  </li>
+                  
+                  <li> Domain - Domain values direct the selection of/training of the appropriate MT language
+                     models.
+                     
+                     
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="More_Information_and_Implementation_Status.2FIssues_18">
+               <h2>  More Information and Implementation Status/Issues</h2>
+               <ul>
+                  <li>Details: <a href="http://www.w3.org/International/multilingualweb/lt/wiki/WP5">http://www.w3.org/International/multilingualweb/lt/wiki/WP5</a></li>
+                  
+                  <li>Tools involved: Cocomore CMS and MaTrEx MT system.</li>
+                  
+                  <li>Tool: MaTrEx Domain-Tuning MT Tool. The Tool is currently in development.</li>
+                  
+               </ul>
+            </section>
+         </section>
+      </section>
+      <section id="Authors_and_Implementation_Contributors">
+         <h2>  Authors and Implementation Contributors</h2>
+         <p>Renat Bikmatov (Logrus), 
+            David Filip (University of Limerick),
+            Leroy Finn (Trinity College Dublin),
+            Karl Fritsche (Cocomore AG),
+            Serge Gladkoff (Logrus),
+            Declan Groves (Centre for Next Generation Localisation (CNGL), Dublin City University),
+            Milan Karasek (Moravia), 
+            Jirka Kosek (University of Economics, Prague),
+            Kevin Lew (Spartan Software),
+            Dave Lewis (Trinity College Dublin),
+            Fredrik Liden (ENLASO Corporation),
+            Shaun McCane ((public) Invited expert),
+            Sean Mooney (University of Limerick),
+            Pablo Nieto Caride (Linguaserve),
+            Pēteris Ņikiforovs (Tilde),
+            David O'Carrol (University of Limerick), 
+            Philip O'Duffy (University of Limerick), 
+            Mauricio del Olmo (Linguaserve),
+            Mārcis Pinnis (Tilde),
+            Phil Ritchie (VistaTEC),
+            Nieves Sande (German Research Center for Artificial Intelligence (DFKI) Gmbh),
+            Felix Sasaki (W3C Fellow),
+            Yves Savourel (ENLASO Corporation),
+            Sebastian Sklarß (]init[ Europe),
+            Ankit Srivastava (Centre for Next Generation Localisation (CNGL), Dublin City University),
+            Tadej Štajner (Jozef Stefan Institute),
+            Chase Tingley (Spartan Software),
+            Asanka Wasala (University of Limerick), 
+            Clemens Weins (Cocomore AG).
+         </p>
+      </section>
+   </body>
+</html>

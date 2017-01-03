@@ -124,7 +124,7 @@
             <xsl:value-of select="."/>
         </a>
     </xsl:template>
-    <xsl:template match="h:ul | h:li | h:p | h:i">
+    <xsl:template match="h:ul | h:ol | h:li | h:p | h:i">
         <xsl:element name="{name()}">
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates/>
