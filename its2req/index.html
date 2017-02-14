@@ -1,0 +1,3218 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Requirements for Internationalization Tag Set (ITS) 2.0</title><style type="text/css">
+          pre { background-color: #F0F0F0;}
+      </style>
+      <link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/W3C-WD.css"/>
+   </head>
+   <body>
+      <div class="head">
+         <p><a href="http://www.w3.org/"><img src="http://www.w3.org/Icons/w3c_home" alt="W3C" height="48" width="72" /></a></p>
+         <h1><a name="title" id="title"></a>Requirements for Internationalization Tag Set
+            (ITS) 2.0
+         </h1>
+         <h2><a name="w3c-doctype" id="w3c-doctype"></a>W3C Working Draft 24 May 2012
+         </h2>
+         <dl>
+            <dt>This version:</dt>
+            <dd><a href="http://www.w3.org/TR/2012/WD-its2req-20120524/">http://www.w3.org/TR/2012/WD-its2req-20120524/</a></dd>
+            <dt>Latest version:</dt>
+            <dd><a href="http://www.w3.org/TR/its2req/">http://www.w3.org/TR/its2req/</a></dd>
+            <dt>Editors:</dt>
+            <dd>Dave Lewis (TCD)</dd>
+            <dd>Arle Lommel (DFKI)</dd>
+            <dd>Felix Sasaki (DFKI / W3C Fellow)</dd>
+         </dl>
+         <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2012 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.
+         </p>
+      </div>
+      <hr />
+      <div>
+         <h2><a name="abstract" id="abstract"></a>Abstract
+         </h2>
+         <p>This document gathers metadata proposed within the <a href="http://www.w3.org/International/multilingualweb/lt/">MultilingualWeb-LT Working Group</a> for the Internationalization Tag
+            Set Version 2.0 (ITS 2.0). The metadata targets web content (mainly HTML5)
+            and deep Web content, for example content stored in a content management
+            system (CMS) or XML files from which HTML pages are generated, that
+            facilitates its interaction with multilingual technologies and localization
+            processes.
+         </p>
+         <h2><a name="status" id="status"></a>Status of this Document
+         </h2>
+         <p><em>This section describes the status of this document at the time of its
+               publication. Other documents may supersede this document. A list of
+               current W3C publications and the latest revision of this technical
+               report can be found in the <a href="http://www.w3.org/TR/">W3C technical
+                  reports index</a> at http://www.w3.org/TR/.</em></p>
+         <p>This document is a First Public Working Draft published by the <a href="http://www.w3.org/International/multilingualweb/lt/">MultilingualWeb-LT Working Group</a>, part of the <a href="http://www.w3.org/International/Activity">W3C Internationalization
+               Activity</a>. The Working Group expects to advance this Working Draft to
+            Working Group Note (see <a href="http://www.w3.org/2004/02/Process-20040205/tr.html#maturity-levels">W3C document maturity levels</a>).
+         </p>
+         <p>This document describes use cases for ITS 2.0 metadata. By publishing this
+            working draft the working group does not express any consensus about the
+            implementation approach, the use cases described or the proposed metadata
+            items. The main purpose of this publication is to gather feedback from a
+            wider audience. Comments discussed within the working group are marked as
+            <b>COMMENT:</b>. A <a href="https://www.w3.org/International/multilingualweb/lt/track/issues/">list of issues discussed within the Working Group</a> is available.
+         </p>
+         <p><a href="#Feedback">Feedback about the content of this document</a> is
+            encouraged. See also <a href="https://www.w3.org/International/multilingualweb/lt/track/issues/">issues discussed within the Working Group</a>. Send your comments to <a href="mailto:public-multilingualweb-lt-comments@w3.org">public-multilingualweb-lt-comments@w3.org</a>. Use "Comment on ITS 2.0
+            requirements WD" in the subject line of your email. The <a href="http://lists.w3.org/Archives/Public/public-multilingualweb-lt-comments/">archives for this list</a> are publicly available.
+         </p>
+         <p>Publication as a Working Draft does not imply endorsement by the W3C
+            Membership. This is a draft document and may be updated, replaced or
+            obsoleted by other documents at any time. It is inappropriate to cite this
+            document as other than work in progress.
+         </p>
+         <p> This document was produced by a group operating under the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>. The group does not expect this document to become a W3C Recommendation. W3C maintains a <a rel="disclosure" href="http://www.w3.org/2004/01/pp-impl/53116/status">public list of any patent disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual
+            who has actual knowledge of a patent which the individual believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</a>. 
+         </p>
+      </div>
+      <div class="toc">
+         <h2><a name="contents" id="contents"></a>Table of Contents
+         </h2>
+         <table id="toc" class="toc" summary="Contents">
+            <tr>
+               <td rowspan="1" colspan="1">                                   
+                  <ul>
+                     <li class="toclevel-1"><a href="#Introduction" shape="rect"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a>
+                        
+                        <ul>
+                           <li class="toclevel-2"><a href="#Purpose_of_this_Document" shape="rect"><span class="tocnumber">1.1</span> <span class="toctext">Purpose of this Document</span></a></li>
+                           <li class="toclevel-2"><a href="#Who_should_read_this" shape="rect"><span class="tocnumber">1.2</span> <span class="toctext">Who should read this</span></a></li>
+                           <li class="toclevel-2"><a href="#Terminology_and_Metadata_Approach" shape="rect"><span class="tocnumber">1.3</span> <span class="toctext">Terminology and Metadata Approach</span></a></li>
+                           <li class="toclevel-2"><a href="#Implementation_Approach" shape="rect"><span class="tocnumber">1.4</span> <span class="toctext">Implementation Approach</span></a></li>
+                           <li class="toclevel-2"><a href="#Feedback" shape="rect"><span class="tocnumber">1.5</span> <span class="toctext">Feedback</span></a>
+                              
+                              <ul>
+                                 <li class="toclevel-3"><a href="#Requirements_Questionnaire" shape="rect"><span class="tocnumber">1.5.1</span> <span class="toctext">Requirements Questionnaire</span></a></li>
+                                 <li class="toclevel-3"><a href="#Requirements_Assessment" shape="rect"><span class="tocnumber">1.5.2</span> <span class="toctext">Requirements Assessment</span></a></li>
+                              </ul>
+                              
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li class="toclevel-1"><a href="#Glossary_of_Terms" shape="rect"><span class="tocnumber">2</span> <span class="toctext">Glossary of Terms</span></a>
+                        
+                        <ul>
+                           <li class="toclevel-2"><a href="#Key_Defnitions" shape="rect"><span class="tocnumber">2.1</span> <span class="toctext">Key Defnitions</span></a></li>
+                           <li class="toclevel-2"><a href="#Product_Classes_Implementing_Requirements" shape="rect"><span class="tocnumber">2.2</span> <span class="toctext">Product Classes Implementing Requirements</span></a></li>
+                           <li class="toclevel-2"><a href="#Use_Case_Actor_Roles" shape="rect"><span class="tocnumber">2.3</span> <span class="toctext">Use Case Actor Roles</span></a></li>
+                        </ul>
+                        
+                     </li>
+                     <li class="toclevel-1"><a href="#Use_Cases" shape="rect"><span class="tocnumber">3</span> <span class="toctext">Use Cases</span></a>
+                        
+                        <ul>
+                           <li class="toclevel-2"><a href="#Authoring" shape="rect"><span class="tocnumber">3.1</span> <span class="toctext">Authoring</span></a></li>
+                           <li class="toclevel-2"><a href="#Automatic_enrichment_of_the_source_content_with_named_entity_annotations"
+                                 shape="rect"><span class="tocnumber">3.2</span> <span class="toctext">Automatic enrichment of the source content with named entity annotations</span></a></li>
+                           <li class="toclevel-2"><a href="#CMS-Localization_Exchange" shape="rect"><span class="tocnumber">3.3</span> <span class="toctext">CMS-Localization Exchange</span></a></li>
+                           <li class="toclevel-2"><a href="#Quality_Assurance_.28QA.29" shape="rect"><span class="tocnumber">3.4</span> <span class="toctext">Quality Assurance (QA)</span></a></li>
+                           <li class="toclevel-2"><a href="#Translation_.28Pre-QA.29" shape="rect"><span class="tocnumber">3.5</span> <span class="toctext">Translation (Pre-QA)</span></a></li>
+                           <li class="toclevel-2"><a href="#Translation_Provenance_and_Quality_Metadata" shape="rect"><span class="tocnumber">3.6</span> <span class="toctext">Translation Provenance and Quality Metadata</span></a></li>
+                           <li class="toclevel-2"><a href="#Translation_.28Post-QA.29" shape="rect"><span class="tocnumber">3.7</span> <span class="toctext">Translation (Post-QA)</span></a></li>
+                           <li class="toclevel-2"><a href="#CMS-Side_Revision_Management" shape="rect"><span class="tocnumber">3.8</span> <span class="toctext">CMS-Side Revision Management</span></a></li>
+                           <li class="toclevel-2"><a href="#Publication_Decision_Support" shape="rect"><span class="tocnumber">3.9</span> <span class="toctext">Publication Decision Support</span></a></li>
+                           <li class="toclevel-2"><a href="#Real_Time_Translation_Systems_.28RTTS.29" shape="rect"><span class="tocnumber">3.10</span> <span class="toctext">Real Time Translation Systems (RTTS)</span></a></li>
+                        </ul>
+                        
+                     </li>
+                     <li class="toclevel-1"><a href="#Overview_of_proposed_metadata_categories" shape="rect"><span class="tocnumber">4</span> <span class="toctext">Overview of proposed metadata categories</span></a>
+                        
+                        <ul>
+                           <li class="toclevel-2"><a href="#Visualization" shape="rect"><span class="tocnumber">4.1</span> <span class="toctext">Visualization</span></a></li>
+                           <li class="toclevel-2"><a href="#Tabular_Overview" shape="rect"><span class="tocnumber">4.2</span> <span class="toctext">Tabular Overview</span></a></li>
+                           <li class="toclevel-2"><a href="#Identification_of_Language_and_Locale" shape="rect"><span class="tocnumber">4.3</span> <span class="toctext">Identification of Language and Locale</span></a></li>
+                        </ul>
+                        
+                     </li>
+                     <li class="toclevel-1"><a href="#Descriptions_of_proposed_metadata_categories" shape="rect"><span class="tocnumber">5</span> <span class="toctext">Descriptions of proposed metadata categories</span></a>
+                        
+                        <ul>
+                           <li class="toclevel-2"><a href="#Internationalization" shape="rect"><span class="tocnumber">5.1</span> <span class="toctext">Internationalization</span></a>
+                              
+                              <ul>
+                                 <li class="toclevel-3"><a href="#autoLanguageProcessingRule" shape="rect"><span class="tocnumber">5.1.1</span> <span class="toctext">autoLanguageProcessingRule</span></a></li>
+                                 <li class="toclevel-3"><a href="#directionality" shape="rect"><span class="tocnumber">5.1.2</span> <span class="toctext">directionality</span></a></li>
+                                 <li class="toclevel-3"><a href="#locale-filter" shape="rect"><span class="tocnumber">5.1.3</span> <span class="toctext">locale-filter</span></a></li>
+                                 <li class="toclevel-3"><a href="#idValue" shape="rect"><span class="tocnumber">5.1.4</span> <span class="toctext">idValue</span></a></li>
+                                 <li class="toclevel-3"><a href="#ElementsWithinText" shape="rect"><span class="tocnumber">5.1.5</span> <span class="toctext">ElementsWithinText</span></a></li>
+                                 <li class="toclevel-3"><a href="#preserveSpace" shape="rect"><span class="tocnumber">5.1.6</span> <span class="toctext">preserveSpace</span></a></li>
+                                 <li class="toclevel-3"><a href="#ruby" shape="rect"><span class="tocnumber">5.1.7</span> <span class="toctext">ruby</span></a></li>
+                                 <li class="toclevel-3"><a href="#targetPointer" shape="rect"><span class="tocnumber">5.1.8</span> <span class="toctext">targetPointer</span></a></li>
+                                 <li class="toclevel-3"><a href="#translate" shape="rect"><span class="tocnumber">5.1.9</span> <span class="toctext">translate</span></a></li>
+                                 <li class="toclevel-3"><a href="#localization_note" shape="rect"><span class="tocnumber">5.1.10</span> <span class="toctext">localization note</span></a></li>
+                                 <li class="toclevel-3"><a href="#language_information" shape="rect"><span class="tocnumber">5.1.11</span> <span class="toctext">language information</span></a></li>
+                              </ul>
+                              
+                           </li>
+                           <li class="toclevel-2"><a href="#Process" shape="rect"><span class="tocnumber">5.2</span> <span class="toctext">Process</span></a>
+                              
+                              <ul>
+                                 <li class="toclevel-3"><a href="#readiness" shape="rect"><span class="tocnumber">5.2.1</span> <span class="toctext">readiness</span></a></li>
+                                 <li class="toclevel-3"><a href="#progress-indicator" shape="rect"><span class="tocnumber">5.2.2</span> <span class="toctext">progress-indicator</span></a></li>
+                                 <li class="toclevel-3"><a href="#cacheStatus" shape="rect"><span class="tocnumber">5.2.3</span> <span class="toctext">cacheStatus</span></a></li>
+                              </ul>
+                              
+                           </li>
+                           <li class="toclevel-2"><a href="#Project_Information" shape="rect"><span class="tocnumber">5.3</span> <span class="toctext">Project Information</span></a>
+                              
+                              <ul>
+                                 <li class="toclevel-3"><a href="#domain" shape="rect"><span class="tocnumber">5.3.1</span> <span class="toctext">domain</span></a></li>
+                                 <li class="toclevel-3"><a href="#formatType" shape="rect"><span class="tocnumber">5.3.2</span> <span class="toctext">formatType</span></a></li>
+                                 <li class="toclevel-3"><a href="#genre" shape="rect"><span class="tocnumber">5.3.3</span> <span class="toctext">genre</span></a></li>
+                                 <li class="toclevel-3"><a href="#purpose" shape="rect"><span class="tocnumber">5.3.4</span> <span class="toctext">purpose</span></a></li>
+                                 <li class="toclevel-3"><a href="#register" shape="rect"><span class="tocnumber">5.3.5</span> <span class="toctext">register</span></a></li>
+                                 <li class="toclevel-3"><a href="#translatorQualification" shape="rect"><span class="tocnumber">5.3.6</span> <span class="toctext">translatorQualification</span></a></li>
+                              </ul>
+                              
+                           </li>
+                           <li class="toclevel-2"><a href="#Provenance" shape="rect"><span class="tocnumber">5.4</span> <span class="toctext">Provenance</span></a>
+                              
+                              <ul>
+                                 <li class="toclevel-3"><a href="#author" shape="rect"><span class="tocnumber">5.4.1</span> <span class="toctext">author</span></a></li>
+                                 <li class="toclevel-3"><a href="#contentLicensingTerms" shape="rect"><span class="tocnumber">5.4.2</span> <span class="toctext">contentLicensingTerms</span></a></li>
+                                 <li class="toclevel-3"><a href="#revisionAgent" shape="rect"><span class="tocnumber">5.4.3</span> <span class="toctext">revisionAgent</span></a></li>
+                                 <li class="toclevel-3"><a href="#sourceLanguage" shape="rect"><span class="tocnumber">5.4.4</span> <span class="toctext">sourceLanguage</span></a></li>
+                                 <li class="toclevel-3"><a href="#translationAgent" shape="rect"><span class="tocnumber">5.4.5</span> <span class="toctext">translationAgent</span></a></li>
+                              </ul>
+                              
+                           </li>
+                           <li class="toclevel-2"><a href="#Quality" shape="rect"><span class="tocnumber">5.5</span> <span class="toctext">Quality</span></a>
+                              
+                              <ul>
+                                 <li class="toclevel-3"><a href="#qualityError" shape="rect"><span class="tocnumber">5.5.1</span> <span class="toctext">qualityError</span></a></li>
+                                 <li class="toclevel-3"><a href="#qualityProfile" shape="rect"><span class="tocnumber">5.5.2</span> <span class="toctext">qualityProfile</span></a></li>
+                              </ul>
+                              
+                           </li>
+                           <li class="toclevel-2"><a href="#Translation" shape="rect"><span class="tocnumber">5.6</span> <span class="toctext">Translation</span></a>
+                              
+                              <ul>
+                                 <li class="toclevel-3"><a href="#confidentiality" shape="rect"><span class="tocnumber">5.6.1</span> <span class="toctext">confidentiality</span></a></li>
+                                 <li class="toclevel-3"><a href="#context" shape="rect"><span class="tocnumber">5.6.2</span> <span class="toctext">context</span></a></li>
+                                 <li class="toclevel-3"><a href="#externalPlaceholder" shape="rect"><span class="tocnumber">5.6.3</span> <span class="toctext">externalPlaceholder</span></a></li>
+                                 <li class="toclevel-3"><a href="#languageResource" shape="rect"><span class="tocnumber">5.6.4</span> <span class="toctext">languageResource</span></a></li>
+                                 <li class="toclevel-3"><a href="#mtConfidence" shape="rect"><span class="tocnumber">5.6.5</span> <span class="toctext">mtConfidence</span></a></li>
+                                 <li class="toclevel-3"><a href="#specialRequirements" shape="rect"><span class="tocnumber">5.6.6</span> <span class="toctext">specialRequirements</span></a></li>
+                              </ul>
+                              
+                           </li>
+                           <li class="toclevel-2"><a href="#Terminology" shape="rect"><span class="tocnumber">5.7</span> <span class="toctext">Terminology</span></a>
+                              
+                              <ul>
+                                 <li class="toclevel-3"><a href="#disambiguation" shape="rect"><span class="tocnumber">5.7.1</span> <span class="toctext">disambiguation</span></a></li>
+                                 <li class="toclevel-3"><a href="#namedEntity" shape="rect"><span class="tocnumber">5.7.2</span> <span class="toctext">namedEntity</span></a></li>
+                                 <li class="toclevel-3"><a href="#terminology_2" shape="rect"><span class="tocnumber">5.7.3</span> <span class="toctext">terminology</span></a></li>
+                                 <li class="toclevel-3"><a href="#textAnalysisAnnotation" shape="rect"><span class="tocnumber">5.7.4</span> <span class="toctext">textAnalysisAnnotation</span></a></li>
+                              </ul>
+                              
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li class="toclevel-1"><a href="#Requirements" shape="rect"><span class="tocnumber">6</span> <span class="toctext">Requirements</span></a>
+                        
+                        <ul>
+                           <li class="toclevel-2"><a href="#Support_ITS_1.0_Data_Categories" shape="rect"><span class="tocnumber">6.1</span> <span class="toctext">Support ITS 1.0 Data Categories</span></a></li>
+                           <li class="toclevel-2"><a href="#Limited_Impact" shape="rect"><span class="tocnumber">6.2</span> <span class="toctext">Limited Impact</span></a></li>
+                           <li class="toclevel-2"><a href="#Round-trip_interoperability_with_XLIFF_1.2" shape="rect"><span class="tocnumber">6.3</span> <span class="toctext">Round-trip interoperability with XLIFF 1.2</span></a></li>
+                           <li class="toclevel-2"><a href="#Compatibility_with_multiple_source_content_formats" shape="rect"><span class="tocnumber">6.4</span> <span class="toctext">Compatibility with multiple source content formats</span></a></li>
+                           <li class="toclevel-2"><a href="#Optimize_execution_of_ITS_processing_rules" shape="rect"><span class="tocnumber">6.5</span> <span class="toctext">Optimize execution of ITS processing rules</span></a></li>
+                           <li class="toclevel-2"><a href="#Removal.2C_Archiving_and_Reintegration_of_ITS_mark-up" shape="rect"><span class="tocnumber">6.6</span> <span class="toctext">Removal, Archiving and Reintegration of ITS mark-up</span></a></li>
+                           <li class="toclevel-2"><a href="#Process_Model" shape="rect"><span class="tocnumber">6.7</span> <span class="toctext">Process Model</span></a></li>
+                        </ul>
+                        
+                     </li>
+                     <li class="toclevel-1"><a href="#References" shape="rect"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+                     <li class="toclevel-1"><a href="#Acknowledgements" shape="rect"><span class="tocnumber">8</span> <span class="toctext">Acknowledgements</span></a></li>
+                  </ul>
+                  
+               </td>
+            </tr>
+         </table><a name="Introduction" id="Introduction" shape="rect"></a><h2> <span class="mw-headline">1  Introduction </span></h2><a name="Purpose_of_this_Document" id="Purpose_of_this_Document" shape="rect"></a><h3> <span class="mw-headline">1.1 Purpose of this Document</span></h3>
+         <p>This document gathers metadata proposed within the <a href="http://www.w3.org/International/multilingualweb/lt/"
+               class="external text"
+               title="http://www.w3.org/International/multilingualweb/lt/"
+               rel="nofollow"
+               shape="rect">MultilingualWeb-LT Working Group</a> for the Internationalization Tag Set Version 2.0 (ITS 2.0). The metadata is used to annotate web content (referred to henceforth
+            just as content) to facilitates its interaction with multilingual technologies and localization processes with the aim of
+            publishing that content on the Web in multiple languages. In this context, content can refer to static web content in HTML
+            or XHTML, deep web content, for example content stored in a content management system (CMS) or XML files from which HTML or
+            XHTML pages are generated.
+            
+         </p><a name="Who_should_read_this" id="Who_should_read_this" shape="rect"></a><h3> <span class="mw-headline">1.2 Who should read this</span></h3>
+         <p>The target audience for this document includes the following categories:
+            
+         </p>
+         <ul>
+            <li> Developers of localization tools
+               
+            </li>
+            <li> Localizers involved with Web content
+               
+            </li>
+            <li> Developers of language technology applications (e.g. machine translation) that are part of or that make use of the Web
+               
+            </li>
+            <li> Developers and users of CMS systems
+               
+            </li>
+            <li> Developers of authoring tools for Web content
+               
+            </li>
+            <li> Authors of Web content
+               
+            </li>
+            <li> Designers of content-related schema, e.g. XML based formats like DocBook or DITA
+               
+            </li>
+            <li> Developers of Internet specifications at the World Wide Web Consortium and related bodies
+               
+            </li>
+         </ul>
+         <p>Since a lot of the terminology is not known across communities, this document contains a <a href="#Glossary_of_Terms" title="" shape="rect"> glossary of terms</a>.
+            
+         </p><a name="Terminology_and_Metadata_Approach" id="Terminology_and_Metadata_Approach"
+            shape="rect"></a><h3> <span class="mw-headline">1.3 Terminology and Metadata Approach</span></h3>
+         <p>Following the terminology introduced in the <a href="http://www.w3.org/TR/2007/REC-its-20070403/" class="external text"
+               title="http://www.w3.org/TR/2007/REC-its-20070403/"
+               rel="nofollow"
+               shape="rect">Internationalization Tag Set (ITS) 1.0</a> specification, ITS 2.0 metadata items are called <a href="http://www.w3.org/TR/2007/REC-its-20070403/#def-datacat"
+               class="external text"
+               title="http://www.w3.org/TR/2007/REC-its-20070403/#def-datacat"
+               rel="nofollow"
+               shape="rect">data categories</a>. Data categories are defined conceptually (e.g. <a href="http://www.w3.org/TR/2007/REC-its-20070403/#translatability-definition"
+               class="external text"
+               title="http://www.w3.org/TR/2007/REC-its-20070403/#translatability-definition"
+               rel="nofollow"
+               shape="rect">Translate</a>). In ITS 1.0, they are implemented in XML, see the <a href="http://www.w3.org/TR/2007/REC-its-20070403/#translatability-implementation"
+               class="external text"
+               title="http://www.w3.org/TR/2007/REC-its-20070403/#translatability-implementation"
+               rel="nofollow"
+               shape="rect">implementation for Translate</a>. ITS 2.0 will provide additional definitions and offer implementations at least for HTML5.
+            
+         </p>
+         <p>To lower burden on implementors and to foster adoption, the data categories are proposed as in independent items. See the
+            section on <a href="#Support_ITS_1.0_Data_Categories" title="" shape="rect"> support of ITS 1.0 data categories</a> for more details.
+            
+         </p><a name="Implementation_Approach" id="Implementation_Approach" shape="rect"></a><h3> <span class="mw-headline">1.4 Implementation Approach</span></h3>
+         <p>The MultilingualWeb-LT working group currently plans the following implementation approach.
+            
+         </p>
+         <ul>
+            <li> Conceptual, prose definitions of data categories will be given as in the ITS 1.0 specification.
+               
+            </li>
+            <li> The implementation for HTML5 will rely on lower cased, custom attributes in HTML5 prefixed with its-, eg.: &lt;p its-locnote="..."&gt;...&lt;/p&gt;
+               (Note that the prefix <i>its-</i> itself might still change). This approach is  taken from the <a href="http://dev.w3.org/html5/spec/infrastructure.html#extensibility"
+                  class="external text"
+                  title="http://dev.w3.org/html5/spec/infrastructure.html#extensibility"
+                  rel="nofollow"
+                  shape="rect">extensibility section of the HTML5 specification</a>.
+               
+            </li>
+            <li> In addition, the working group will provide an algorithm to convert its- attributes into RDFa and Microdata markup, to serve
+               the needs of the Semantic Web community and of search engine optimization.
+               
+            </li>
+            <li> The conversion to RDFa will add URIs to each metadata item in an HTML5 document. This is needed as reference points for the
+               metadata items after extraction of RDF.
+               
+            </li>
+            <li> In XML, the its- prefixed attributes will have a counterpart in a dedicated namespace. The ITS namespace <a href="http://www.w3.org/2005/11/its/" class="external free"
+                  title="http://www.w3.org/2005/11/its/"
+                  rel="nofollow"
+                  shape="rect">http://www.w3.org/2005/11/its/</a> is under consideration.
+               
+            </li>
+         </ul><a name="Feedback" id="Feedback" shape="rect"></a><h3> <span class="mw-headline">1.5 Feedback</span></h3>
+         <p>Please send feedback to the <a href="mailto:public-multilingualweb-lt-comments-request@w3.org"
+               class="external text"
+               title="mailto:public-multilingualweb-lt-comments-request@w3.org"
+               rel="nofollow"
+               shape="rect">public-multilingualweb-lt-comments</a> list <a href="http://lists.w3.org/Archives/Public/public-multilingualweb-lt-comments"
+               class="external text"
+               title="http://lists.w3.org/Archives/Public/public-multilingualweb-lt-comments"
+               rel="nofollow"
+               shape="rect">(archive)</a>.
+            
+         </p>
+         <p>At the current stage, the working group has gathered a long list of potential ITS 2.0 data categories. We especially welcome
+            feedback on the following aspects:
+            
+         </p>
+         <ul>
+            <li> Feasibility of the metadata approach and the implementation approach described above.
+               
+            </li>
+            <li> Who is willing to implement a given data category in applications?
+               
+            </li>
+            <li> What data categories can be merged with other data categories in the list?
+               
+            </li>
+            <li> What data categories need to be defined more clearly?
+               
+            </li>
+            <li> What usage scenarios and existing or to be created implementations are important for specific data categories?
+               
+            </li>
+            <li> What types of content is in need of these data categories: HTML, XML, CMS configuration files, XLIFF, etc.
+               
+            </li>
+         </ul>
+         <p>The working group will gather feedback until <b>end of June 2012</b>. This feedback will be the basis for creating the first draft of the data category standard definition. After June 2012,
+            this document (the "requirements document") will not be updated anymore.
+            
+         </p>
+         <p>Requirements are used to define the set of data categories to be addressed in the standard definition which is due for a <b>feature freeze November 2012</b>. The WG has closed the open gathering of requirements by the end of April 2012, and has performed an initial round of consolidation
+            for a working draft of the requirements document to be published for 20th May. The WG will continue a process of requirements
+            consolidation, such that a prioritised and consistent set of data category requirements is available by the end of June 2012.
+            A major milestone in this process will be an open <a href="http://www.multilingualweb.eu/documents/dublin-workshop/dublin-cfp"
+               class="external text"
+               title="http://www.multilingualweb.eu/documents/dublin-workshop/dublin-cfp"
+               rel="nofollow"
+               shape="rect">requirements workshop</a> to be conducted in Dublin 12-13 June.
+            
+         </p><a name="Requirements_Questionnaire" id="Requirements_Questionnaire" shape="rect"></a><h4> <span class="mw-headline">1.5.1  Requirements Questionnaire </span></h4>
+         <p>A public consultation questionnaire has been executed, resulting in 17 responses. A <a href="/International/multilingualweb/lt/wiki/Questionnaire_Results"
+               title="Questionnaire Results"
+               shape="rect">summary of results</a> has been produced that assesses responses against current state of requirements.
+            
+         </p><a name="Requirements_Assessment" id="Requirements_Assessment" shape="rect"></a><h4> <span class="mw-headline">1.5.2  Requirements Assessment </span></h4>
+         <p>A <a href="/International/multilingualweb/lt/wiki/Requirements_Assessment"
+               title="Requirements Assessment"
+               shape="rect"> requirements assessment</a> conducted 4th May 2012, and is now being supplemented with implementation commitments. This will guide the prioritisation
+            of work on the different data categories.
+            
+         </p><a name="Glossary_of_Terms" id="Glossary_of_Terms" shape="rect"></a><h2> <span class="mw-headline">2 Glossary of Terms</span></h2><a name="Key_Defnitions" id="Key_Defnitions" shape="rect"></a><h3> <span class="mw-headline">2.1  Key Defnitions </span></h3>
+         <p>The following terms common in multilingual technologies and localization processes are used in this document:
+            
+         </p>
+         <dl>
+            <dt>localization</dt>
+            <dd> See <a href="http://www.w3.org/International/questions/qa-i18n#l10n"
+                  class="external free"
+                  title="http://www.w3.org/International/questions/qa-i18n#l10n"
+                  rel="nofollow"
+                  shape="rect">http://www.w3.org/International/questions/qa-i18n#l10n</a> 
+               
+            </dd>
+            <dt>internationalization</dt>
+            <dd> See <a href="http://www.w3.org/International/questions/qa-i18n#i18n"
+                  class="external free"
+                  title="http://www.w3.org/International/questions/qa-i18n#i18n"
+                  rel="nofollow"
+                  shape="rect">http://www.w3.org/International/questions/qa-i18n#i18n</a>
+               
+            </dd>
+            <dt>source language</dt>
+            <dd> Refers to the language in which content is originally authored. Content is a source language is sometime referred to as source
+               content.
+               
+            </dd>
+            <dt>target language</dt>
+            <dd> Refers to the language into which source content is translated.
+               
+            </dd>
+            <dt>language service provider (LSP)</dt>
+            <dd> An organisation offering commercial translation and localisation services.
+               
+            </dd>
+            <dt>locale</dt>
+            <dd> A specific target market with known language, cultural and other requirements for the publication of content.
+               
+            </dd>
+            <dt>language service client</dt>
+            <dd> An organisation making use of the services of an LSP to convert content from a form suitable for one locale to a form suitable
+               for one or more other locales. In the context of localisation processes, sometime referred to just as the 'client'.
+               
+            </dd>
+         </dl><a name="Product_Classes_Implementing_Requirements"
+            id="Product_Classes_Implementing_Requirements"
+            shape="rect"></a><h3> <span class="mw-headline">2.2  Product Classes Implementing Requirements </span></h3>
+         <p>To clarify the product classes impacted by ITS 2.0 requirements, and referenced by use cases, the following classes are identified:
+            
+         </p>
+         <dl>
+            <dt>Content Authoring Tool</dt>
+            <dd> Used by content authors to generate source language content and associated internationalisation mark-up. This class includes:
+               tools for authoring static HTML/XHTML; authoring tools integrated into CMS and authoring tools producing XML files that are
+               converted by CMS or XML stylesheet transforms into HTML/XHTML documents. 
+               
+            </dd>
+            <dt>Source Quality Assurance (QA) Tool</dt>
+            <dd> Used to assess the conformance of source content to style, controlled language, terminology and internationalisation guidelines.
+               
+            </dd>
+            <dt>Content Management System (CMS)</dt>
+            <dd> Used to manage multiple content files or content components from authorship to publication, including version control and
+               archiving.
+               
+            </dd>
+            <dt>Translation Management System</dt>
+            <dd> Manages the localisation workflow process, collecting and distributing source and target content and associated language
+               resources such as translation memories, term bases, context information and translation guidelines.
+            </dd>
+            <dt>Computer Assisted Translation (CAT) tool</dt>
+            <dd> Used by translators to improve productivity of content translation and translation post-editing. May include features such
+               as TM match, terminology/glossary lookup, machine translation, concordancing, access to external reference and context material
+               and in-context (WISYWIG) preview/editing.
+               
+            </dd>
+            <dt>Translation QA Tool</dt>
+            <dd> Used for checking and reporting the quality of translations in relation to translation guidelines. 
+               
+            </dd>
+            <dt>Machine Translation Service</dt>
+            <dd> Online services that is used to automatically transform source language content into target language content.
+               
+            </dd>
+            <dt>Text Analytics Service</dt>
+            <dd> Online services used to automatically generate annotations to specific pieces of content based on automated analysis of their
+               lexical and semantic properties.
+               
+            </dd>
+            <dt>Web Browsers</dt>
+            <dd> Applications that render HTML and XHTML documents for users.
+               
+            </dd>
+         </dl><a name="Use_Case_Actor_Roles" id="Use_Case_Actor_Roles" shape="rect"></a><h3> <span class="mw-headline">2.3  Use Case Actor Roles</span></h3>
+         <p>The following are descriptions of potential roles for use case actors that benefit from the use of data categories:
+            
+         </p>
+         <dl>
+            <dt>Content Author</dt>
+            <dd> Author of web content. 
+               
+            </dd>
+            <dt>Content Consumer</dt>
+            <dd> User who reads translated content and may offer some feedback on its usefulness or quality if given the opportunity
+               
+            </dd>
+            <dt>Terminologist</dt>
+            <dd> Working for the content generating organisation, this person is responsible for identifying terminology in the source content,
+               cataloguing it so that it can receive consistent treatments and ensuring consistent translations are available in required
+               target languages.
+               
+            </dd>
+            <dt>Client-based Localisation Manager</dt>
+            <dd> Manages content localisation, either by passing content to be localised to an LSP or by invoking translation services directly
+               on content held on the client's systems. Typically an employee of the organisation that owns the content.
+               
+            </dd>
+            <dt>Client-based Translator/Posteditor</dt>
+            <dd> A translator who translates or post-edits suggested MT or TM translations text segments or terms presented via a specialised
+               interface to a client's systems. Could be a professional translator or a volunteer working on a crowd-sourced translation
+               project.
+               
+            </dd>
+            <dt>Client-based Translation Reviewer</dt>
+            <dd> A bi-lingual person who provides a quality assessment of translated text, presented via a specialised interface to the client's
+               system, at granularities from individual terms or segments up to a set of documents. Could be a professional reviewer or a
+               volunteer working on a crowd-sourced translation project.
+               
+            </dd>
+            <dt>LSP-based Translation Process Manager</dt>
+            <dd> A manager responsible for: the extraction of text to be translated from the client's systems; its preparation for translation;
+               its machine translation and/or TM-matching; the packaging of provisional translation, source, source context and any relevant
+               TMs or term-bases; the distribution of packages to translators; the monitoring of translation/postediting progress; and the
+               collection of completed translation for return to client.
+               
+            </dd>
+            <dt>LSP-based Translation Review Process Manager</dt>
+            <dd> A manager responsible for: the extraction of translated text from a CMS; its the packaging of translation, source, source
+               context and any relevant TMs or term-bases; the distribution of packages to reviewers; the monitoring of review progress;
+               and the collection of completed completed reviews and the assembly of a report for the client.
+               
+            </dd>
+            <dt>LSP-based Translator/Posteditor</dt>
+            <dd> A professional translator who directly translates or post-edits suggested MT or TM translations of text segments or terms
+               presented via a CAT tool.
+               
+            </dd>
+            <dt>LSP-based Translation Reviewer</dt>
+            <dd> A professional linguist(?) who provides a quality assessment of translated text, presented via a CAT tool, at granularities
+               from individual terms or segments up to a set of documents.
+               
+            </dd>
+            <dt>Machine Translation (MT) service provider</dt>
+            <dd> The developer and operator of software systems that provide an MT service. Typically responsible for the ongoing reconfiguration/retraining
+               of the service.
+               
+            </dd>
+            <dt>Text Analytics (TA) service provider</dt>
+            <dd> The developer and operator of software systems that provide an TA service. Typically responsible for the ongoing reconfiguration/retraining
+               of the service.
+               
+            </dd>
+            <dt>CMS developer</dt>
+            <dd> The developer of CMS platform software.
+               
+            </dd>
+            <dt>Localisation Tool developer</dt>
+            <dd> The developer of software systems that support translation and postediting, multilingual terminology management, translation
+               review and localisation workflow management.
+               
+            </dd>
+            <dt>System Integrator</dt>
+            <dd> A software developer contracted to develop plugins or connectors that interface two or more software systems sources from
+               separate third parties.
+               
+            </dd>
+            <dt>Search Engine Web Crawler</dt>
+            <dd> An automated agent that crawls multilingual web pages in order to index them for search engine providers.
+               
+            </dd>
+         </dl><a name="Use_Cases" id="Use_Cases" shape="rect"></a><h2> <span class="mw-headline">3 Use Cases</span></h2>
+         <p>ITS 2.0 will support several business scenarios around the production of multilingual web content and the operation of localisation
+            processes over web content. The following use case description serve as a broad orientation. Some use cases are linked to
+            proposed data categories. More links will be created in a subsequent version of this document or in the to be published ITS
+            2.0 draft.
+            
+         </p><a name="Authoring" id="Authoring" shape="rect"></a><h3> <span class="mw-headline">3.1 Authoring</span></h3>
+         <dl>
+            <dd>Content authors can add internationalization meta-data to documents or document fragments that they are authoring. This metadata
+               helps to ensure that content is translated correctly and in way that is appropriate to its intended use. It can also ensure
+               that content is not translated unnecessarily, that certain terms are translated in a prescribed way and that special care
+               is taken in translating specific content. Communicating this via meta-data reduces downstream content processing costs, reduces
+               the likelihood of translation errors and improves the assurance of quality of translations. In all these cases, metadata items
+               may be added, either automatically or manually by the content creator using content authoring tools.
+               
+               <ul>
+                  <li>Relevant metadata:
+                     
+                  </li>
+                  <li>Since authoring is a central process for ITS 2.0 data categories, the following list only provides a broad overview.
+                     
+                     <ul>
+                        <li><a href="#author" title="" shape="rect">author</a>
+                           
+                        </li>
+                        <li><a href="#purpose" title="" shape="rect">purpose</a>
+                           
+                        </li>
+                        <li><a href="#translate" title="" shape="rect">translate</a>
+                           
+                        </li>
+                        <li><a href="#register" title="" shape="rect">register</a>
+                           
+                        </li>
+                        <li><a href="#specialRequirements" title="" shape="rect">special requirements</a>
+                           
+                        </li>
+                        <li>…
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>See note on <a href="/International/multilingualweb/lt/wiki/CMS-level_data_category_scoping"
+                        title="CMS-level data category scoping"
+                        shape="rect">CMS-level data category scoping</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Automatic_enrichment_of_the_source_content_with_named_entity_annotations"
+            id="Automatic_enrichment_of_the_source_content_with_named_entity_annotations"
+            shape="rect"></a><h3> <span class="mw-headline">3.2 Automatic enrichment of the source content with named entity annotations</span></h3>
+         <dl>
+            <dd>This use case elaborates on the mention of automatic meta data annotation Content Authoring use case description. The automation
+               of meta-data annotation reduces the manual cost of annotation and may increase the accuracy, consistency and comprehensiveness
+               of such annotations. 
+               
+               <ul>
+                  <li>The enrichment of source content with named entity annotations is one example of such an automatic process. 
+                     
+                  </li>
+                  <li> To realize this use case, tooling is already available and will be tailored by working group participants. One main tool
+                     in this respect is the <a href="http://enrycher.ijs.si/" class="external text"
+                        title="http://enrycher.ijs.si/"
+                        rel="nofollow"
+                        shape="rect">Enrycher tool</a>. Enrycher adds metadata for semantic and contextual information. Using named entity extraction and disambiguation can provide
+                     links from literal terms to concrete concepts, even in ambiguous circumstances. These links to concepts can be used to indicate
+                     whether a particular fragment of text represents a term, whether it is of a particular type, and alternative terms that can
+                     be used for that concept in other languages. Concretely, Enrycher uses DBPedia to serve as a multilingual knowledge base in
+                     order to map concepts to terms in foreign languages. Given that it also outputs the type of the term even if the exact term
+                     is not known, it can still serve as input to translation rules that apply to specific term types (personal names, locations,
+                     etc.).
+                     
+                  </li>
+                  <li>The annotation procedure with Enrycher is implemented as an additive enrichment of HTML5 markup.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="CMS-Localization_Exchange" id="CMS-Localization_Exchange" shape="rect"></a><h3> <span class="mw-headline">3.3 CMS-Localization Exchange</span></h3>
+         <dl>
+            <dd>In localization, it is common that content is created by a client and then processed in the following manner: 
+               
+               <ul>
+                  <li> The client sends content (defined by client-based localization manager) to the LSP or indicates that content available on
+                     the client's systems is ready to be localised.
+                     
+                  </li>
+                  <li> The LSP obtains the content and localises it.
+                     
+                  </li>
+                  <li> The localized content is re-integrated into the client's systems. This process should also be triggered by the client-based
+                     localization manager (and not be ‘injected’ by the LSP), typically subject to some QA review conducted by the client, the
+                     translating LSP or a third party LSP. 
+                     
+                  </li>
+                  <li> In this scenario, metadata such a content identifier specifying the position of translated content to be re-integration into
+                     the broader content document structures  needs to be provided.
+                     
+                  </li>
+                  <li>Specialised file formats that contain the same content in multiple languages are often used for exchanging source and target
+                     content between systems such as CMS, TMS and CAT tools, that participate localisation processes. An important international
+                     standard in this regard is the <a href="http://docs.oasis-open.org/xliff/xliff-core/xliff-core.html"
+                        class="external text"
+                        title="http://docs.oasis-open.org/xliff/xliff-core/xliff-core.html"
+                        rel="nofollow"
+                        shape="rect">OASIS XML Localisation Interchange File Format (XLIFF)</a>. The conversion of content format to XLIFF and back again, so-called <i>XLIFF roundtripping</i> is an important class of implementations for this use case.  
+                     
+                  </li>
+                  <li>The accurate automated conversion of content files to multilingual localization file formats reduces file handling costs associated
+                     with file handling and reduces any associated errors or loss of content. It must however maintain the binding of certain meta-data
+                     to both source and target content.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Quality_Assurance_.28QA.29" id="Quality_Assurance_.28QA.29" shape="rect"></a><h3> <span class="mw-headline">3.4 Quality Assurance (QA)</span></h3>
+         <dl>
+            <dd>QA metadata can be applied to either content documents or sub-document fragments (for example, some portions of a document
+               may have been previously proofread and it is useful to know which parts need attention and which do not). These metadata support
+               the systematic review of a document to identify any linguistic errors (e.g., mistranslations, typographic errors, text inappropriate
+               left untranslated, grammatical errors, stylistic errors). This can help ensure QA consistency when more than one individual
+               is involved in provision and assessment of translation (i.e., situations other than self-assessment), where information about
+               the translation process is needed. For example, an LSP may provide a translation, which gets sent to another LSP for review
+               (and optionally returned to the first vendor for correction). 
+               
+               <ul>
+                  <li>Relevant metadata:
+                     
+                     <ul>
+                        <li><a href="#translate" title="" shape="rect">translate</a>
+                           
+                        </li>
+                        <li><a href="#author" title="" shape="rect">author</a>
+                           
+                        </li>
+                        <li><a href="#purpose" title="" shape="rect">purpose</a>
+                           
+                        </li>
+                        <li>links to related information (reference documentation, previously translated materials)
+                           
+                        </li>
+                        <li><a href="#Terminology" title="" shape="rect">terminology</a>
+                           
+                        </li>
+                        <li><a href="#translationAgent" title="" shape="rect">translation agent</a>
+                           
+                        </li>
+                        <li><a href="#Process_Model" title="" shape="rect">proofread</a> as part of the process model
+                           
+                        </li>
+                        <li><a href="#Quality" title="" shape="rect">quality</a>, including type of error and error severity
+                           
+                        </li>
+                        <li>conformance score/conformance rank (COMMENT: currently unmapped to a data category; needs an explanation) This relates to
+                           some statistical quality assurance technology VistaTEC is using technology from partner Digital Linguistics called Review
+                           Sentinel. Underlying technology is licensed from Trinity College, Dublin. See <a href="http://www.digitallinguistics.com" class="external free"
+                              title="http://www.digitallinguistics.com"
+                              rel="nofollow"
+                              shape="rect">http://www.digitallinguistics.com</a>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Translation_.28Pre-QA.29" id="Translation_.28Pre-QA.29" shape="rect"></a><h3> <span class="mw-headline">3.5 Translation (Pre-QA)</span></h3>
+         <dl>
+            <dd>The translator uses the <a href="#translate" title="" shape="rect">translate</a> data category, related information and definitions during translation to improve the quality and accuracy of the translation
+               and to ensure only the required content is translated (reducing wasteage of translation effort).
+               
+               <ul>
+                  <li>The translator may add metadata to signify the content that was human translated. 
+                     
+                  </li>
+                  <li>A lot of metadata is relevant for translation. The following is only a small subset. Pre-QA means that this metadata is relevant
+                     before a quality assurance step has taken place.  
+                     
+                     <ul>
+                        <li><a href="#translate" title="" shape="rect">translate</a>
+                           
+                        </li>
+                        <li><a href="#author" title="" shape="rect">author</a>
+                           
+                        </li>
+                        <li><a href="#purpose" title="" shape="rect">purpose</a>
+                           
+                        </li>
+                        <li><a href="#Terminology" title="" shape="rect">terminology</a>
+                           
+                        </li>
+                        <li><a href="#translationAgent" title="" shape="rect">translation agent</a>
+                           
+                        </li>
+                        <li><a href="#Process_Model" title="" shape="rect">process model</a>, esp. proofread state
+                           
+                        </li>
+                        <li><a href="#localization_note" title="" shape="rect">localization note</a>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Translation_Provenance_and_Quality_Metadata"
+            id="Translation_Provenance_and_Quality_Metadata"
+            shape="rect"></a><h3> <span class="mw-headline">3.6 Translation Provenance and Quality Metadata</span></h3>
+         <dl>
+            <dd>The way in which content has been translated is often important. It is often necessary to distinguish between content that
+               has been human translated, machine translated or results from human post-editing of machine translation.
+               
+               <ul>
+                  <li> Client localisation managers may want to be assured that received target translation has been subjected to some human checking
+                     or postediting if that had been the contracted requirement.
+                     
+                  </li>
+                  <li>LSP-based Translation Review Process Manager may want to differentiate solely machine translated target content from human
+                     mediated translation when managing review processes and assigning QA review guidelines
+                     
+                  </li>
+                  <li> MT creators are unable to effectively discern human authored, full high quality translation content from non-reviewed automatically
+                     generated noise. They need to be able to control the MT training sets based on information describing the quality and which
+                     process has been used to create it.
+                     
+                  </li>
+                  <li>Serch engine web crawlers may rank translated content differnetly depending on whether it was just machine translated or subject
+                     to some human postediting or QA to maintain quality of search results
+                     
+                  </li>
+                  <li> Relevant metadata
+                     
+                     <ul>
+                        <li><a href="#sourceLanguage" title="" shape="rect">source language</a>
+                           
+                        </li>
+                        <li><a href="#translate" title="" shape="rect">translate</a> (<i>translate</i> attribute preserved so the process knows if the text was translated or not)
+                           
+                        </li>
+                        <li><a href="#translationAgent" title="" shape="rect">translation agent</a>
+                           
+                        </li>
+                        <li><a href="#mtConfidence" title="" shape="rect">MT confidence score</a> (for raw MT output)
+                           
+                        </li>
+                        <li><a href="#revisionAgent" title="" shape="rect">information on how the text was revised/post-edited</a>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Translation_.28Post-QA.29" id="Translation_.28Post-QA.29" shape="rect"></a><h3> <span class="mw-headline">3.7 Translation (Post-QA)</span></h3>
+         <dl>
+            <dd>
+               <ul>
+                  <li> After a quality assurance process, translator fix errors and signify that all content has been re-verified. After the POST-QA
+                     process, the content is reintegrated into the original source, e.g. a CMS, an XML file or other types of content.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="CMS-Side_Revision_Management" id="CMS-Side_Revision_Management"
+            shape="rect"></a><h3> <span class="mw-headline">3.8 CMS-Side Revision Management</span></h3>
+         <dl>
+            <dd>
+               <ul>
+                  <li> For revision after the localization process, information about the time of translation and last revisions is useful. With
+                     this information, it can be decided whether the content should be published or whether a reversion to previous versions is
+                     necessary. Content managers shall be able to identify unsatisfactory content to be transmitted back to the LSP.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Publication_Decision_Support" id="Publication_Decision_Support"
+            shape="rect"></a><h3> <span class="mw-headline">3.9 Publication Decision Support</span></h3>
+         <dl>
+            <dd>
+               <ul>
+                  <li> The content manager should be able to make decisions about publication depending on various pieces of information, such as:
+                     
+                     
+                     <ul>
+                        <li> (a) MT and/or human translation
+                           
+                        </li>
+                        <li> (b) level and type of QA
+                           
+                        </li>
+                        <li> (c) level of completion of translation process
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Real_Time_Translation_Systems_.28RTTS.29"
+            id="Real_Time_Translation_Systems_.28RTTS.29"
+            shape="rect"></a><h3> <span class="mw-headline">3.10 Real Time Translation Systems (RTTS)</span></h3>
+         <dl>
+            <dd>Real Time Translation Systems (RTTS) are systems that provides synchronous translation of basically two types:
+               
+            </dd>
+            <dd> 
+               
+               <ul>
+                  <li>Interoperable, when the RTTS gives back the translation in real time and the client server published the content in the web
+                     by their means.
+                     
+                  </li>
+                  <li>Publishing, when the RTTS takes the source content already published by the client in the web and performs the translation
+                     and the publishing, both in real time.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd>Both approaches need metadata to be used in the synchronous machine translation phase, the synchronous automatic publishing
+               phase and the asynchronous post-editing or terminological tasks for quality machine translation improvements.
+               
+            </dd>
+            <dd> 
+               
+               <ul>
+                  <li>Relevant metadata:
+                     
+                  </li>
+                  <li>TBC
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Overview_of_proposed_metadata_categories"
+            id="Overview_of_proposed_metadata_categories"
+            shape="rect"></a><h2> <span class="mw-headline">4 Overview of proposed metadata categories</span></h2><a name="Visualization" id="Visualization" shape="rect"></a><h3> <span class="mw-headline">4.1 Visualization</span></h3>
+         <p>The following figure provides a broad overview of the proposed data categories.
+            
+         </p>
+         <p><a href="Proposed_metadata.jpeg"
+               class="image"
+               shape="rect"><img src="Proposed_metadata.jpeg"
+                    alt="Overview of proposed data categories" /></a>
+            
+         </p><a name="Tabular_Overview" id="Tabular_Overview" shape="rect"></a><h3> <span class="mw-headline">4.2 Tabular Overview</span></h3>
+         <p>The table below lists proposed metadata elements with a brief description and statement about which level(s) they apply to
+            (document = applies to the entire document, element = applies to defined elements in the document, span = applies to user/tool-defined
+            spans). Links go to more detailed information below. For a table showing which data categories are needed by which work packages,
+            see <a href="/International/multilingualweb/lt/wiki/Requirements_Mapped_to_Workpackages"
+               title="Requirements Mapped to Workpackages"
+               shape="rect">this document</a>.
+            
+         </p>
+         <p><br clear="none" />
+            
+         </p>
+         <table border="1">
+            <tr>
+               <th colspan="2" rowspan="1">Name</th>
+               <th rowspan="1" colspan="1">Short description</th>
+               <th rowspan="1" colspan="1">Level</th>
+            </tr>
+            <tr>
+               <th colspan="5" class="section" rowspan="1">Internationalization</th>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#autoLanguageProcessingRule" title="" shape="rect">autoLanguageProcessingRule</a></td>
+               <td rowspan="1" colspan="1">This data category captures information that it is acceptable to create target language content purely based on automated
+                  language processing (such as automated transliteration, or machine translation).
+               </td>
+               <td rowspan="1" colspan="1">span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#directionality" title="" shape="rect">directionality</a></td>
+               <td rowspan="1" colspan="1">Improve handling of ITS directionality rules</td>
+               <td rowspan="1" colspan="1">element, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#locale-filter" title="" shape="rect">locale filter</a></td>
+               <td rowspan="1" colspan="1">provides instruction that content should be excluded from translated version (not just untranslated, but deleted) in all cases
+                  or for specified locales
+               </td>
+               <td rowspan="1" colspan="1">element, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#idValue" title="" shape="rect">idValue</a></td>
+               <td rowspan="1" colspan="1">mechanism to associate ITS translateRule with unique IDs</td>
+               <td rowspan="1" colspan="1">element</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#ElementsWithinText" title="" shape="rect">ElementsWithinText</a></td>
+               <td rowspan="1" colspan="1">Provide a way to identify elements nested within other elements</td>
+               <td rowspan="1" colspan="1">element</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#preserveSpace" title="" shape="rect">preserveSpace</a></td>
+               <td rowspan="1" colspan="1">identifies whether white space should be preserved in the translation process</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#ruby" title="" shape="rect">ruby</a></td>
+               <td rowspan="1" colspan="1">Improve ITS ruby model</td>
+               <td rowspan="1" colspan="1">span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#targetPointer" title="" shape="rect">targetPointer</a></td>
+               <td rowspan="1" colspan="1">identifies relationship between source and target in a file at the element level, e.g., specifies that the translation for
+                  a &lt;source&gt; element goes in a &lt;target&gt; element
+               </td>
+               <td rowspan="1" colspan="1">document, element, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#translate" title="" shape="rect">translate</a></td>
+               <td rowspan="1" colspan="1">specifies whether the content of the element to which the attribute is applied should be translated or not</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#localization_note" title="" shape="rect">localization note</a></td>
+               <td rowspan="1" colspan="1">used to communicate notes to localizers about a particular item of content</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#language_information" title="" shape="rect">language information</a></td>
+               <td rowspan="1" colspan="1">used to express the language of a given piece of content</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <th colspan="5" class="section" rowspan="1">Process</th>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#readiness" title="" shape="rect">readiness</a></td>
+               <td rowspan="1" colspan="1">provides positive guidance regarding steps to be undertaken in a CMS/localization process</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#progress-indicator" title="" shape="rect">progress-indicator</a></td>
+               <td rowspan="1" colspan="1">reports the proportion of a document that has completed by a process</td>
+               <td rowspan="1" colspan="1">document</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#cacheStatus" title="" shape="rect">cacheStatus</a></td>
+               <td rowspan="1" colspan="1">indicates need to (re)translate dynamic web content for real time MT</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <th colspan="5" class="section" rowspan="1">Project Information</th>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#domain" title="" shape="rect">domain</a></td>
+               <td rowspan="1" colspan="1">information about the domain (subject field) of the content</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#formatType" title="" shape="rect">formatType</a></td>
+               <td rowspan="1" colspan="1">provides information about the format or service for which the content is produced (e.g., subtitles, spoken text)</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#genre" title="" shape="rect">genre</a></td>
+               <td rowspan="1" colspan="1">information about the genre (text type) of the content</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#purpose" title="" shape="rect">purpose</a></td>
+               <td rowspan="1" colspan="1">information about the purpose of the text</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#register" title="" shape="rect">register</a></td>
+               <td rowspan="1" colspan="1">information about stylistic/register requirements (e.g., formality level)</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#translatorQualification" title="" shape="rect">translatorQualification</a></td>
+               <td rowspan="1" colspan="1">information about the qualifications required for the translator</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <th colspan="5" class="section" rowspan="1">Provenance</th>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#author" title="" shape="rect">author</a></td>
+               <td rowspan="1" colspan="1">provides information about the author of content (= dc:author)</td>
+               <td rowspan="1" colspan="1"></td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#contentLicensingTerms" title="" shape="rect">contentLicensingTerms</a></td>
+               <td rowspan="1" colspan="1">Licensing terms for content (e.g., can it be used in databases or for TM?)</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#revisionAgent" title="" shape="rect">revisionAgent</a></td>
+               <td rowspan="1" colspan="1">provides information concerning how a text was revised (e.g., human postediting)</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#sourceLanguage" title="" shape="rect">sourceLanguage</a></td>
+               <td rowspan="1" colspan="1">provides information concerning what language the original text was in</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#translationAgent" title="" shape="rect">translationAgent</a></td>
+               <td rowspan="1" colspan="1">provides information concerning how a text was translated (e.g., MT, HT)</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <th colspan="5" class="section" rowspan="1">Quality</th>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#qualityError" title="" shape="rect">qualityError</a></td>
+               <td rowspan="1" colspan="1">describes an authoring or translation error</td>
+               <td rowspan="1" colspan="1">span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#qualityProfile" title="" shape="rect">qualityProfile</a></td>
+               <td rowspan="1" colspan="1">describes the profile/results of a language-oriented quality assurance task</td>
+               <td rowspan="1" colspan="1">document, element, span</td>
+            </tr>
+            <tr>
+               <th colspan="5" class="section" rowspan="1">Translation</th>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#confidentiality" title="" shape="rect">confidentiality</a></td>
+               <td rowspan="1" colspan="1">States whether text is confidential (and thus cannot be exposed to public translation services)</td>
+               <td rowspan="1" colspan="1">document, element, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#context" title="" shape="rect">context</a></td>
+               <td rowspan="1" colspan="1">Provides information about where the text occurs (e.g., in a button, a header, body text)</td>
+               <td rowspan="1" colspan="1">element, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#externalPlaceholder" title="" shape="rect">externalPlaceholder</a></td>
+               <td rowspan="1" colspan="1">Provides instructions for translators on how to deal with external resources</td>
+               <td rowspan="1" colspan="1">element</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#languageResource" title="" shape="rect">languageResource</a></td>
+               <td rowspan="1" colspan="1">states what translation-oriented languages resource(s) is/are to be used</td>
+               <td rowspan="1" colspan="1">document, span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#mtConfidence" title="" shape="rect">mtConfidence</a></td>
+               <td rowspan="1" colspan="1">Information provided by an MT engine concerning its confidence in the result</td>
+               <td rowspan="1" colspan="1">span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#specialRequirements" title="" shape="rect">specialRequirements</a></td>
+               <td rowspan="1" colspan="1">information about any special localization requirements (e.g., string length, character limitations)</td>
+               <td rowspan="1" colspan="1">span</td>
+            </tr>
+            <tr>
+               <th colspan="5" class="section" rowspan="1">Terminology</th>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#disambiguation" title="" shape="rect">mtDisambiguation</a></td>
+               <td rowspan="1" colspan="1">Information required to assist MT to distinguish between ambiguous cases</td>
+               <td rowspan="1" colspan="1">span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#namedEntity" title="" shape="rect">namedEntity</a></td>
+               <td rowspan="1" colspan="1">Values for types of named entities,</td>
+               <td rowspan="1" colspan="1">span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#Terminology" title="" shape="rect">terminology</a></td>
+               <td rowspan="1" colspan="1">marking of information about terms used in the content</td>
+               <td rowspan="1" colspan="1">span</td>
+            </tr>
+            <tr>
+               <td class="blankLeft" rowspan="1" colspan="1"></td>
+               <td class="metadataItem" rowspan="1" colspan="1"><a href="#textAnalysisAnnotation" title="" shape="rect">textAnalysisAnnotation</a></td>
+               <td rowspan="1" colspan="1">embed information generated by text analysis services</td>
+               <td rowspan="1" colspan="1">span</td>
+            </tr>
+         </table><a name="Identification_of_Language_and_Locale"
+            id="Identification_of_Language_and_Locale"
+            shape="rect"></a><h3> <span class="mw-headline">4.3 Identification of Language and Locale</span></h3>
+         <p>In this document, <b>language</b> is identified via <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt" class="external text"
+               title="http://www.rfc-editor.org/rfc/bcp/bcp47.txt"
+               rel="nofollow"
+               shape="rect">BCP 47 language tags</a>.
+            
+         </p>
+         <p><b>Locale information</b> is based on <a href="http://unicode.org/reports/tr35/" class="external text"
+               title="http://unicode.org/reports/tr35/"
+               rel="nofollow"
+               shape="rect">UTC #35</a>, with the following approach to convert a language tag to a locale identifier:
+            
+         </p>
+         <ul>
+            <li> The hypen that separate subtags within a language tag are converted to underscore following the process described at
+               
+            </li>
+         </ul>
+         <p><a href="http://unicode.org/reports/tr35/#BCP_47_Language_Tag_Conversion"
+               class="external free"
+               title="http://unicode.org/reports/tr35/#BCP_47_Language_Tag_Conversion"
+               rel="nofollow"
+               shape="rect">http://unicode.org/reports/tr35/#BCP_47_Language_Tag_Conversion</a>
+            
+         </p>
+         <ul>
+            <li> Implementations of ITS 2.0 are not expected to process the "u" extension for further locale information as defined in <a href="http://tools.ietf.org/html/rfc6067" class="external text"
+                  title="http://tools.ietf.org/html/rfc6067"
+                  rel="nofollow"
+                  shape="rect">RFC 6067</a>.
+               
+            </li>
+         </ul>
+         <p>An example language tag is de-de. An example locale is de_de.
+            
+         </p>
+         <p>Both language tags and locale identifiers are case insensitive and are written in lower case throughout this document.
+            
+         </p><a name="Descriptions_of_proposed_metadata_categories"
+            id="Descriptions_of_proposed_metadata_categories"
+            shape="rect"></a><h2> <span class="mw-headline">5  Descriptions of proposed metadata categories </span></h2><a name="Internationalization" id="Internationalization" shape="rect"></a><h3> <span class="mw-headline">5.1  Internationalization </span></h3>
+         <p>These categories relate primarily to the internationalization of content and are generated prior to translation (and may be
+            consumed in translation). Includes any items that build on existing ITS functionality.
+            
+         </p><a name="autoLanguageProcessingRule" id="autoLanguageProcessingRule" shape="rect"></a><h4> <span class="mw-headline">5.1.1  autoLanguageProcessingRule </span></h4>
+         <dl>
+            <dd>Indicates how the span should be treated during automatic translation. This features goes beyond the <i>translate</i> category to provide instruction for cases where text should be transliterated rather than translated.
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd>Possible values:
+               
+               <ul>
+                  <li> transliteration
+                     
+                  </li>
+                  <li> machineTranslation
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li>source on <a href="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_data_category_for_automated_language_processing"
+                        class="external text"
+                        title="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_data_category_for_automated_language_processing"
+                        rel="nofollow"
+                        shape="rect">ITS 1.0 wiki</a>
+                     
+                  </li>
+                  <li>COMMENT: this proposed data category might be changed to be specific to the process of Transliteration - feedback is welcome
+                     on this proposal.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Example</b>
+               
+               <ul>
+                  <li>&lt;p&gt;<b>&lt;span autoLanguageProcessingRule="transliterate"&gt;Stellaris&lt;/span&gt;</b> is a brand name and should transliterated into Japanese as ステルラリス.&lt;/p&gt;
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="directionality" id="directionality" shape="rect"></a><h4> <span class="mw-headline">5.1.2  directionality </span></h4>
+         <dl>
+            <dd>HTML5 brings new features to directionality. The <a href="http://www.w3.org/TR/2007/REC-its-20070403/#directionality"
+                  class="external text"
+                  title="http://www.w3.org/TR/2007/REC-its-20070403/#directionality"
+                  rel="nofollow"
+                  shape="rect">ITS 1.0 feature</a> should be updated to reflect the changes.
+               
+            </dd>
+         </dl><a name="locale-filter" id="locale-filter" shape="rect"></a><h4> <span class="mw-headline">5.1.3  locale-filter </span></h4>
+         <dl>
+            <dd>ITS 2.0 should support the indication of source content elements as only being suitable for inclusion for localisation to
+               specific locales only, for not being suitable for  localisation to specific locales or for not being suitable for localisation
+               at all
+               
+            </dd>
+            <dd><b>Use Cases</b>
+               
+            </dd>
+            <dd>localise a Swiss legal notice only in "de_ch;fr_ch;it_ch"
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd>locale-filter-type : (positive|negative|none)
+               
+               <ul>
+                  <li>"none" indicates that  the element should not be passed for localization under any circumstances
+                     
+                  </li>
+                  <li>"positive" means the element MAY ONLY be localised for the locales specified in locale-filter-list
+                     
+                  </li>
+                  <li>"negative" means the element MUST NOT be localised for the locales specified in the locale-filter-list
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>locale-filter-list : list of locale identifiers
+               
+            </dd>
+         </dl><a name="idValue" id="idValue" shape="rect"></a><h4> <span class="mw-headline">5.1.4  idValue </span></h4>
+         <dl>
+            <dd> Using identifiers with content is a very common activity in localization and follows the best practices for internationalization
+               (See <a href="http://www.w3.org/TR/xml-i18n-bp/#DevUniqueID" class="external free"
+                  title="http://www.w3.org/TR/xml-i18n-bp/#DevUniqueID"
+                  rel="nofollow"
+                  shape="rect">http://www.w3.org/TR/xml-i18n-bp/#DevUniqueID</a>). For example unique IDs can be used to leverage the same translation from one version of the document to another, or to
+               align content between two versions.
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd> The XML attribute xml:id is the standard way of representing an identifier in ITS 1.0 (See <a href="http://www.w3.org/TR/xml-i18n-bp/#AuthUniqueID" class="external free"
+                  title="http://www.w3.org/TR/xml-i18n-bp/#AuthUniqueID"
+                  rel="nofollow"
+                  shape="rect">http://www.w3.org/TR/xml-i18n-bp/#AuthUniqueID</a>. However, in some case the document may be using other attributes, and could be in non XML formats. 
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd> Such ID value must be persistent from one version of the content to the next, and, ideally, it should be globally unique.
+               If it cannot be globally unique it should be unique value at the document level.
+               
+            </dd>
+            <dd> 
+               
+            </dd>
+            <dd> Ideally the mechanism should allow to build 'complex' values based on different parts of the document (e.g. attributes element
+               or event hard-coded text.
+               
+            </dd>
+            <dd> For example, in the XML document below, the two elements &lt;text&gt; and &lt;desc&gt; are translatable, but they have only one corresponding
+               identifier, the name attribute in their parent element. To make sure you have a unique identifier for both the content of
+               &lt;text&gt; and the content of &lt;desc&gt;, you can combine the value of the parent's id with the elements' name to obtain the values
+               "id1_text" and "id1_desc" for the &lt;text&gt; and &lt;desc&gt; element respectively. (See Example A below).
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd><i>to be determined</i>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li> There is an existing proposal for an idValue attribute for the translateRule of ITS 1.0 that may or may not be a solution:
+                     <a href="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_idValue"
+                        class="external free"
+                        title="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_idValue"
+                        rel="nofollow"
+                        shape="rect">http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_idValue</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li> Such an ID value would also enable a number of other data categories either through rule references or through external reference
+                     to the span from stand off meta-data. A similar approach was taken in xml:tm.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li> Such id value would be mapped to the XLIFF 'resname' attribute. XLIFF makes a distinction between 'id' and 'resname'. IDs
+                     are tool-specific and, while they can be the same as the 'resname', they do not necessarily persistent across different version
+                     of the document, or can even differ depending on the extraction options used on the same document.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><pre xml:space="preserve">Example A:
+
+&lt;doc&gt;
+ &lt;msg name="id1"&gt;
+  &lt;text&gt;Content of text&lt;/text&gt;
+  &lt;desc&gt;Context of desc&lt;/desc&gt;
+ &lt;/msg&gt;
+&lt;/doc&gt;
+
+--&gt; Corresponding XLIFF output:
+
+&lt;trans-unit id='1' resname='id1_text'&gt;
+ &lt;source&gt;Content of text&lt;/source&gt;
+&lt;/trans-unit&gt;
+&lt;trans-unit id='2' resname='id1_desc'&gt;
+ &lt;source&gt;Content of desc&lt;/source&gt;
+&lt;/trans-unit&gt;
+</pre><a name="ElementsWithinText" id="ElementsWithinText" shape="rect"></a><h4> <span class="mw-headline">5.1.5  ElementsWithinText </span></h4>
+         <dl>
+            <dd> ITS2.0 should support the <a href="http://www.w3.org/TR/its/#elements-within-text" class="external text"
+                  title="http://www.w3.org/TR/its/#elements-within-text"
+                  rel="nofollow"
+                  shape="rect">elements within text</a> data category from ITS1.0 and should consider the following extension for <b>local</b> elements within text.
+               
+            </dd>
+            <dd> There is no local rule for the "Element Within Text" data category. Having a local rule would allow ITS processor without
+               XPath support to still identify element nested or within text from other elements.
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd> Possibly, a locale attribute <code>withinText</code> with a value <code>yes|no|nested</code> (See Example A)
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> See the definition for the <a href="http://www.w3.org/TR/2007/REC-its-20070403/#within-text-definition"
+                        class="external text"
+                        title="http://www.w3.org/TR/2007/REC-its-20070403/#within-text-definition"
+                        rel="nofollow"
+                        shape="rect">Elements Within Text</a> data category in ITS 1.0. That definition was only implemented as a global rule in ITS 1.0.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li> There is a proposed solution for this listed here: :<a href="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_Local_.22Elements_within_Text.22"
+                        class="external free"
+                        title="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_Local_.22Elements_within_Text.22"
+                        rel="nofollow"
+                        shape="rect">http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_Local_.22Elements_within_Text.22</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+         </dl><pre xml:space="preserve">Example A
+
+&lt;text
+ xmlns:its="<a href="http://www.w3.org/2005/11/its" class="external free"
+               title="http://www.w3.org/2005/11/its"
+               rel="nofollow"
+               shape="rect">http://www.w3.org/2005/11/its</a>"
+ xmlns:itsx="<a href="http://www.w3.org/2008/12/its-extensions" class="external free"
+               title="http://www.w3.org/2008/12/its-extensions"
+               rel="nofollow"
+               shape="rect">http://www.w3.org/2008/12/its-extensions</a>"
+ its:version="1.0"&gt;
+ &lt;body&gt;
+  &lt;par&gt;Text with &lt;bold itsx:withinText='yes'&gt;bold&lt;/bold&gt;.&lt;/par&gt;
+ &lt;/body&gt;
+&lt;/text&gt;
+</pre><a name="preserveSpace" id="preserveSpace" shape="rect"></a><h4> <span class="mw-headline">5.1.6  preserveSpace </span></h4>
+         <dl>
+            <dd>Knowing whether the white spaces in a given element (especially the line-breaks) are collapsible or not is important for proper
+               segmentation and matching when using computer assisted translation tools.
+               
+            </dd>
+            <dd> 
+               
+            </dd>
+            <dd>There are two main types of white space usages:
+               
+            </dd>
+            <dd> 
+               
+               <ul>
+                  <li> Text formatted for reasons not related to the final presentation of the document. For example a paragraph "pretty-printed"
+                     (See Example A below).
+                     
+                  </li>
+                  <li> Text where white spaces are meaningful. For example, where line-breaks can be segment-breaks and/or spaces is the only way
+                     to format the final output (See Example B below).
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd> 
+               
+            </dd>
+            <dd> It is important for translation tools to make a difference between those two cases (text can be collapsed safely) and the
+               last two (text should not be collapsed).
+               
+            </dd>
+            <dd> 
+               
+            </dd>
+            <dd> The indication of whether white spaces should be preserved or not should be accessible from the document itself, as defining
+               the information at the rendering level (e.g. in a CSS style-sheet) may not be accessible for the translation tool.
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd><i>to be determined</i>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> The xml:space="preserve" attribute may provide a solution for some of these requirements at the document instance level.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li> The xml:space attributes defines only "preserve" and "default", "default" not being necessarily "do-not-preserve", but means
+                     "do-whatever-you-want". Do we have situations where "do-not-preserve" would be needed?
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li> The whiteSpace constraint defined in the XML Schema Part 2 (<a href="http://www.w3.org/TR/xmlschema-2/#rf-whiteSpace" class="external free"
+                        title="http://www.w3.org/TR/xmlschema-2/#rf-whiteSpace"
+                        rel="nofollow"
+                        shape="rect">http://www.w3.org/TR/xmlschema-2/#rf-whiteSpace</a>) may provide a solution for these requirements at the schema level. 
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li> The white-space property in CSS2 (<a href="http://www.w3.org/TR/CSS2/text.html#white-space-prop"
+                        class="external free"
+                        title="http://www.w3.org/TR/CSS2/text.html#white-space-prop"
+                        rel="nofollow"
+                        shape="rect">http://www.w3.org/TR/CSS2/text.html#white-space-prop</a>) defines a more complex set of values than xml:space. Are they needed?
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li> There is an existing proposal for a whitespace attribute for the translateRule of ITS 1.0 that may or may not be a solution:
+                     <a href="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_whiteSpaces"
+                        class="external free"
+                        title="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_whiteSpaces"
+                        rel="nofollow"
+                        shape="rect">http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_whiteSpaces</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li> There is an existing extension to ITS that implements a solution for the preservation of white spaces: See itst:preserveSpaceRule
+                     in <a href="http://itstool.org/extensions/" class="external free"
+                        title="http://itstool.org/extensions/"
+                        rel="nofollow"
+                        shape="rect">http://itstool.org/extensions/</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+         </dl><pre xml:space="preserve">Example A:
+
+&lt;para&gt;This is the first
+      sentence of the paragraph. It's followed
+      by a second sentence.&lt;/para&gt;
+</pre><pre xml:space="preserve">Example B:
+
+&lt;data name="CMD_USAGE"&gt;
+ &lt;value&gt;Usage: po2xliff input[ options[ output]]
+Where options are:
+    -trg: create target entries
+   -fill: fill the target entries with the source text&lt;/value&gt;
+&lt;/data&gt;
+</pre><a name="ruby" id="ruby" shape="rect"></a><h4> <span class="mw-headline">5.1.7  ruby </span></h4>
+         <dl>
+            <dd>The ITS 1.0 ruby model is based on the <a href="http://www.w3.org/TR/2001/REC-ruby-20010531/" class="external text"
+                  title="http://www.w3.org/TR/2001/REC-ruby-20010531/"
+                  rel="nofollow"
+                  shape="rect">XHTML ruby specification</a>. ITS 2.0 will update the ruby model to refer to HTML5. The related discussion is ongoing in the <a href="http://www.w3.org/International/core/" class="external text"
+                  title="http://www.w3.org/International/core/"
+                  rel="nofollow"
+                  shape="rect">I18N Core working group</a>.  
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li>see <a href="http://www.w3.org/TR/2007/REC-its-20070403/#ruby-annotation"
+                        class="external text"
+                        title="http://www.w3.org/TR/2007/REC-its-20070403/#ruby-annotation"
+                        rel="nofollow"
+                        shape="rect">ITS 1.0 Ruby data category</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="targetPointer" id="targetPointer" shape="rect"></a><h4> <span class="mw-headline">5.1.8  targetPointer </span></h4>
+         <dl>
+            <dd> Various proprietary file formats (e.g. software resources, localization formats) store two or more language versions of the
+               same text. Such format cannot be processed easily with a traditional XML filter because there is currently no way in ITS 1.0
+               to indicate where the <i>target</i> text for a given <i>source</i> is. (See Example A and B).
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+               <ul>
+                  <li> Possibly an XPath expression that selects the node where the target is located relatively the location of its corresponding
+                     source. (See Example C). This addresses only cases for a single target.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> Real life use case here: <a href="http://tech.groups.yahoo.com/group/okapitools/message/2672"
+                        class="external free"
+                        title="http://tech.groups.yahoo.com/group/okapitools/message/2672"
+                        rel="nofollow"
+                        shape="rect">http://tech.groups.yahoo.com/group/okapitools/message/2672</a>
+                     
+                  </li>
+                  <li> There is an existing proposal for a targetPointer attribute for the translateRule of ITS 1.0 that may or may not be a solution:<br clear="none" /> <a href="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_targetPointer"
+                        class="external free"
+                        title="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_targetPointer"
+                        rel="nofollow"
+                        shape="rect">http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_targetPointer</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><pre xml:space="preserve">Example A:
+
+&lt;file&gt;
+ &lt;entry xml:id="one"&gt;
+  &lt;source&gt;Text one of the source&lt;/source&gt;
+  &lt;target&gt;Text one of the target&lt;/target&gt;
+ &lt;/entry&gt;
+ &lt;entry xml:id="two"&gt;
+  &lt;source&gt;Text two of the source&lt;/source&gt;
+  &lt;target&gt;&lt;/target&gt;
+ &lt;/entry&gt;
+&lt;/file&gt;
+</pre><pre xml:space="preserve">Example B:
+
+&lt;file&gt;
+ &lt;entry id='1'&gt;
+  &lt;text loc='1'&gt;Very important text&lt;/text&gt;
+  &lt;text loc='2'&gt;Texte très important&lt;/text&gt;
+  &lt;text loc='3'&gt;非常重要的文本&lt;/text&gt;
+  &lt;text loc='4'&gt;Zeer belangrijke tekst&lt;/text&gt;
+  &lt;text loc='5'&gt;Очень важный текст&lt;/text&gt;
+ &lt;/entry&gt;
+&lt;/file&gt;
+</pre><pre xml:space="preserve">Example C:
+
+&lt;its:rules xmlns:its="<a href="http://www.w3.org/2005/11/its" class="external free"
+               title="http://www.w3.org/2005/11/its"
+               rel="nofollow"
+               shape="rect">http://www.w3.org/2005/11/its</a>" version="2.0"
+ xmlns:itsx="<a href="http://www.w3.org/2008/12/its-extensions" class="external free"
+               title="http://www.w3.org/2008/12/its-extensions"
+               rel="nofollow"
+               shape="rect">http://www.w3.org/2008/12/its-extensions</a>"&gt;
+ &lt;its:translateRule translate="no" selector="//file"/&gt;
+ &lt;its:translateRule translate="yes" selector="//source"
+  itsx:targetPointer="../target"/&gt;
+&lt;/its:rules&gt;
+</pre><a name="translate" id="translate" shape="rect"></a><h4> <span class="mw-headline">5.1.9  translate </span></h4>
+         <dl>
+            <dd>Specifies whether content should be translated or not
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data Model</b>
+               
+               <ul>
+                  <li> yes
+                     
+                  </li>
+                  <li> no
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> Already implemented in html5 and in <a href="http://www.w3.org/TR/2007/REC-its-20070403/#trans-datacat"
+                        class="external text"
+                        title="http://www.w3.org/TR/2007/REC-its-20070403/#trans-datacat"
+                        rel="nofollow"
+                        shape="rect">ITS 1.0</a> for XML content. ITS 2.0 will define how to apply this to CMS or other types of content.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="localization_note" id="localization_note" shape="rect"></a><h4> <span class="mw-headline">5.1.10  localization note </span></h4>
+         <dl>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> Based on <a href="http://www.w3.org/TR/2007/REC-its-20070403/#locNote-datacat"
+                        class="external text"
+                        title="http://www.w3.org/TR/2007/REC-its-20070403/#locNote-datacat"
+                        rel="nofollow"
+                        shape="rect">ITS 1.0</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="language_information" id="language_information" shape="rect"></a><h4> <span class="mw-headline">5.1.11  language information </span></h4>
+         <dl>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> Based on <a href="http://www.w3.org/TR/2007/REC-its-20070403/#language-information"
+                        class="external text"
+                        title="http://www.w3.org/TR/2007/REC-its-20070403/#language-information"
+                        rel="nofollow"
+                        shape="rect">ITS 1.0</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Process" id="Process" shape="rect"></a><h3> <span class="mw-headline">5.2  Process </span></h3>
+         <p>These categories are used primarily for controlling or indicating the state of the content production process.
+            
+         </p>
+         <ul>
+            <li>COMMENT: The naming convention used here is inconsistent: some of the categories use "Status" and others "State". We should
+               be consistent. 
+               
+            </li>
+         </ul>
+         <p><br clear="none" />
+            
+         </p><a name="readiness" id="readiness" shape="rect"></a><h4> <span class="mw-headline">5.2.1  readiness </span></h4>
+         <dl>
+            <dd>ITS2.0 should be able to indicate the readiness of an element for submission to different processes or provide an estimate
+               of when and element will be ready for a particular process.
+               
+            </dd>
+            <dd>ITS2.0 should be able to indicate the relative priority elements should  be subjected to when submitted to a process.
+               
+            </dd>
+            <dd>ITS2.0 should be able to indicate an expectation of when an a specific  process should be completed for an element.
+               
+            </dd>
+            <dd>ITS2.0 should be able to specify if an element previously submitted to a  process has subsequently been revised and therefore
+               needs to be re-submitted to that process.
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dt>ready-to-process</dt>
+            <dd> the type of the next process requested
+               
+            </dd>
+            <dt>process-ref</dt>
+            <dd> a pointer to an external set of process type definitions used for ready-to-process if the default value set is not used
+               
+            </dd>
+            <dt>ready-at</dt>
+            <dd> defines the time the content is ready for the process, it could be some time in the past, or some time in the future
+               
+            </dd>
+            <dt>revised</dt>
+            <dd>  (yes|no) - indicates is this is a different version of content that was previously marked as ready for the declared process
+               
+            </dd>
+            <dt>priority</dt>
+            <dd> (high|low) - should we should keep this simple?
+               
+            </dd>
+            <dt>complete-by</dt>
+            <dd> provides a target date-time for completing the process
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> COMMENT: this combines previous data categories: processTrigger, legalStatus, processState, proofreadingState and revision
+                     state
+                     
+                  </li>
+                  <li> COMMENT: the definition of the process model is now extracted into a separate requirements under the subject process-model,
+                     since it applies now to several data categories
+                     
+                  </li>
+                  <li> COMMENT: The following attribute are relevant if the process type of 'ready-to-process' was of the class <i>translate</i>:
+                     
+                     <ul>
+                        <li> <i>contentType</i>, values: MIME or custom values - This indicates the format or the type of the content used in the content in order to apply
+                           the right filter or normalization rules, and the subsequent processes. For example, to express HTML we could use: “contentType:
+                           text/html
+                           
+                        </li>
+                        <li><i>sourceLang</i> – value: standard ISO 639 value - this value indicates the source language for the current translation requested. It is different
+                           from the sourceLanguage (provenance) Data Category , since this indicates the language the original source text was and sourceLang
+                           indicates the current source language to be used for the translation that can be different from the original source - <b>this should be considered as an attribute for proveance</b> 
+                           
+                        </li>
+                        <li><i>contentResultSource</i> –value: yes / no. Indicates the format if the Localisation chain needs to give back the original 
+                           
+                        </li>
+                        <li><i>contentResultTarget</i> – value: monolingual, multilingual; indicates if the resulting translation, in the cases of several target languages, should
+                           be delivered in several monolingual content files or in a single multilingual content file 
+                           
+                        </li>
+                        <li><i>pivotLang</i> - value: standard ISO value. Indicates the intermediate language in the case is needed. Two examples: 1) Going from a source
+                           language to two language variants (eg. into Brazil and Portugal Portuguese), it is more cost-effective to go to one first
+                           (being this first variant a "pivot" language) and to revise later to the second variant; Going from one language to another
+                           via an intermediate language (eg. from Maltese into English and from English into Irish, because there is not direct Maltese
+                           into Irish available translation). 
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li> COMMENT: There seems to be a not insignificant overlap with ISO/TS 11669 in this case. For the sake of consistency we should
+                     try to consolidate with that standard where possible.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="progress-indicator" id="progress-indicator" shape="rect"></a><h4> <span class="mw-headline">5.2.2  progress-indicator </span></h4>
+         <dl>
+            <dd>ITS 2.0 must be able to convey a simple indication of the proportion of a specified process that has been completed
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd>progress-of-process : a process name
+               
+            </dd>
+            <dd>progress-indicator : 0-100
+               
+            </dd>
+            <dd>progress-units : (sentence|words) default: sentence
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+         </dl><a name="cacheStatus" id="cacheStatus" shape="rect"></a><h4> <span class="mw-headline">5.2.3  cacheStatus </span></h4>
+         <dl>
+            <dd>Provides an indication of the status of the source and target(s) texts in a system cache for use by real-time translation,
+               TMS, etc. to determine when retranslation is needed. A timestamp can be used to determine when the content was cached.
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd>Examples:
+               
+               <ul>
+                  <li> The original content is not saved in the cache (i.e., it is new or has been updated): (re)translation is needed
+                     
+                  </li>
+                  <li> The translated content is not saved in the cache (i.e., it has not been previously translated or has expired): translation
+                     is needed
+                     
+                  </li>
+                  <li> Neither the original nor the translated page are saved in the cache: both need to be cached
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+               <ul>
+                  <li><b>cache</b> - values: yes, no;
+                     
+                  </li>
+                  <li><b>scope</b> - values: source, target, both
+                     
+                  </li>
+                  <li><b>timestamp</b> - date and time
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li>COMMENT: I would suggest for the date and time that we use one of the following. I believe the first is better as it is more
+                     easily readable for humans and is ISO standards-based.
+                     
+                     <ul>
+                        <li> UTC + ISO 8601 (e.g., “20120405T060000” = April 5, 2012 at 06:00:00 UTC)
+                           
+                        </li>
+                        <li> The Unix time stamp (e.g., "1333605600" = April 5, 2012 at 06:00:00 UTC).
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>COMMENT: XML Schema data types for date and time might be better, e.g. 2012-04-05T060000
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Project_Information" id="Project_Information" shape="rect"></a><h3> <span class="mw-headline">5.3  Project Information </span></h3>
+         <p>These categories provide information about the project that may be useful for controlling processes, but they do not convey
+            or control process state themselves.
+            
+         </p><a name="domain" id="domain" shape="rect"></a><h4> <span class="mw-headline">5.3.1  domain </span></h4>
+         <dl>
+            <dd>Specifies the domain of the text
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd>text string
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> It needs to be decided what ontology of domains to be used.
+                     
+                  </li>
+                  <li> COMMENT: should this be just a pointer to a concept node in an ontology, accompanied by a pointer to the ontology? This would
+                     need some conformance statement on the form of the ontology, but Semantic web ontologies naturally support this.
+                     
+                  </li>
+                  <li> COMMENT: A standard list of values has been suggested, but this seems hard to achieve.
+                     
+                  </li>
+                  <li> COMMENT: There might be a need to support multiple domains. For example, a text about the history of Russian legal reforms
+                     will have domain-specific content from at least two domains (history, legal) that cannot be united into a single hierarchy.
+                     We need to think about the structure to support this.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Examples</b>
+               
+               <ul>
+                  <li> &lt;meta name="its-domain" content="computer-aided design" /&gt; (document level)
+                     
+                  </li>
+                  <li> &lt;div its-domain="computer-aided design"&gt;[…]&lt;/div&gt; (element level)
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="formatType" id="formatType" shape="rect"></a><h4> <span class="mw-headline">5.3.2  formatType </span></h4>
+         <dl>
+            <dd>provides information about the format or service for which the content is produced (e.g., subtitles, spoken text)
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd><i>to be determined</i>
+               
+            </dd>
+         </dl><a name="genre" id="genre" shape="rect"></a><h4> <span class="mw-headline">5.3.3  genre </span></h4>
+         <dl>
+            <dd>information about the genre (text type) of the content
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd><i>to be determined</i>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> COMMENT: separate but related to <i>domain</i>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Examples</b>
+               
+               <ul>
+                  <li>&lt;meta name="its-genre" content="advertising" /&gt; (document level)
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="purpose" id="purpose" shape="rect"></a><h4> <span class="mw-headline">5.3.4  purpose </span></h4>
+         <dl>
+            <dd>Information about the purpose of the text (e.g., advertising, educational)
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd><i>to be determined</i>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> Equivalent to Linport <i>purpose</i> (<a href="http://www.ttt.org/specs/#1d" class="external text"
+                        title="http://www.ttt.org/specs/#1d"
+                        rel="nofollow"
+                        shape="rect">parameter 1d</a>)
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="register" id="register" shape="rect"></a><h4> <span class="mw-headline">5.3.5  register </span></h4>
+         <dl>
+            <dd>Defines the register expectations for the translation (e.g., formal)
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd>picklist: (intimate|informal|consultative|formal|frozen) (Taken from Joos 1961)
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> The original description stated it was for “style”, but the description was for register
+                     
+                  </li>
+                  <li> Corresponds to Linport <i>register</i> (<a href="http://www.ttt.org/specs/#10" class="external text"
+                        title="http://www.ttt.org/specs/#10"
+                        rel="nofollow"
+                        shape="rect">parameter 10</a>)
+                     
+                  </li>
+                  <li> COMMENT: There is no scholarly agreement on register divisions. The listing above is somewhat accepted for English, but would
+                     not always work for other languages.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Examples</b>
+               
+               <ul>
+                  <li> <b>&lt;p its-register="formal"&gt;</b>In the courtroom proceedings in Thomas v. Thomas, Judge Thomson maintained that the Biblical statement <b>&lt;span its-register="frozen"&gt;</b>“Thou shalt not commit adultery”<b>&lt;/span&gt;</b> was still considered the law of the land.<b>&lt;/p&gt;</b>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="translatorQualification" id="translatorQualification" shape="rect"></a><h4> <span class="mw-headline">5.3.6  translatorQualification </span></h4>
+         <dl>
+            <dd>Information about any qualifications required of the the translator
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd>text string
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> Corresponds to Linport <i>qualifications</i> (<a href="http://www.ttt.org/specs/#20a" class="external text"
+                        title="http://www.ttt.org/specs/#20a"
+                        rel="nofollow"
+                        shape="rect">parameter 20a</a>)
+                     
+                  </li>
+                  <li> Impossibly to enumerate all possible values. Primarily useful for human decision making processes.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Example</b>
+               
+               <ul>
+                  <li>&lt;meta name="its-translatorQualification" content="certified English to Hungarian with expertise in musicology" /&gt;
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Provenance" id="Provenance" shape="rect"></a><h3> <span class="mw-headline">5.4  Provenance </span></h3>
+         <p>These categories provide a record of the origin of information and the agents that have acted on it.
+            
+         </p><a name="author" id="author" shape="rect"></a><h4> <span class="mw-headline">5.4.1  author </span></h4>
+         <dl>
+            <dd>provides information concerning the author of content
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd>Description of author, to be defined
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> COMMENT: Is this equivalent to dc:author?
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="contentLicensingTerms" id="contentLicensingTerms" shape="rect"></a><h4> <span class="mw-headline">5.4.2  contentLicensingTerms </span></h4>
+         <dl>
+            <dd>MT creator should be aware not only of process and quality metadata but also about a legal provenance metadata. This would
+               use RDF license linking mechanism. The aim is to provide machine readable information about content licensing terms and their
+               implementation in MT related processes. In reference implementations, business rules should be defined to automatically include
+               or not include data in training corpora, based on provided licensing information.
+               
+            </dd>
+            <dd>See also [<a href="http://www.meta-net.eu/whitepapers/meta-share/licenses"
+                  class="external free"
+                  title="http://www.meta-net.eu/whitepapers/meta-share/licenses"
+                  rel="nofollow"
+                  shape="rect">http://www.meta-net.eu/whitepapers/meta-share/licenses</a> META-SHARE work on language resource licensing
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd><i>to be defined</i>
+               
+            </dd>
+         </dl><a name="revisionAgent" id="revisionAgent" shape="rect"></a><h4> <span class="mw-headline">5.4.3  revisionAgent </span></h4>
+         <dl>
+            <dd>provides information concerning how a text was revised (e.g., human postediting)
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd>Description of agent, to be defined
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li>Needs information on the action of the revisor as well, e.g., the degree of postediting: light, moderate, full.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="sourceLanguage" id="sourceLanguage" shape="rect"></a><h4> <span class="mw-headline">5.4.4  sourceLanguage </span></h4>
+         <dl>
+            <dd>provides information concerning what language the original source text was in
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd>language/locale ID
+               
+            </dd>
+         </dl><a name="translationAgent" id="translationAgent" shape="rect"></a><h4> <span class="mw-headline">5.4.5  translationAgent </span></h4>
+         <dl>
+            <dd>provides information concerning how a text was translated (e.g., MT, human translation)
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+               <ul>
+                  <li>type: (human|machine|social)
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li>COMMENT: Do we want to allow more granularity, e.g., some way to say "this was translated by Bing Translator v. 1.0.2" or
+                     "translated using SDL Trados Studio 2011"? If we do this, we make it harder to process the values. If we stick with the type
+                     values, we simplify decisions about how to trust the results.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Quality" id="Quality" shape="rect"></a><h3> <span class="mw-headline">5.5  Quality </span></h3>
+         <p>These categories are used for explicit quality assurance steps undertaken on content (source or target).
+            
+         </p><a name="qualityError" id="qualityError" shape="rect"></a><h4> <span class="mw-headline">5.5.1  qualityError </span></h4>
+         <dl>
+            <dd>Describes the nature and severity of an error detected during a language-oriented quality assurance (QA) process
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd><i>Note that the content of this element may be a span or may be empty in the case where an error does not enclose a span of
+                  content (e.g., something is missing in the content).</i>
+               
+               <ul>
+                  <li><b>type</b>? (text) the type (name) of the rule that was violated, as defined in the <b>ruleSet</b> attribute. If no ruleSet attribute is present, the default value of "LISA QA Model" is assumed. (This parameter is optional
+                     since this element could be used with only the "note" attribute present for manual tasks where no formal system is used or
+                     where a manual note is added.)
+                     
+                  </li>
+                  <li><b>ruleSet</b>? (text)  the rule set referred to. If this parameter is used, the value should correspond to a rule declared in a <i>ruleSetName</i> attribute in the <b>qualityProfile</b> metadata category.
+                     
+                  </li>
+                  <li><b>severity</b>? (text) the severity assigned to the error, if the QA profile uses severity. Note that the content of this attribute is native
+                     to the particular QA system and is not normalized.
+                     
+                  </li>
+                  <li><b>note</b>? (text) contains any note text added in the QA process
+                     
+                  </li>
+                  <li><b>agent</b>? (text) string identifying the agent responsible for adding the data
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Example</b>
+               
+            </dd>
+            <dd>(Assumes a declared QA Profile of “SAE J2450”)
+               
+               <ul>
+                  <li><i>The <b>&lt;span its-qa-type="syntactic error" its-qa-ruleSet="SAE J2450" its-qa-severity="major" its-qa-note="bad grammar" its-qa-agent="ABCReview"&gt;</b>verbs agrees<b>&lt;/span&gt;</b> with the subject.</i>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li>While any established metric may be used (or none at all if the "type" and "ruleSet" attributes are omitted), the default
+                     is to use the LISA QA Model, which seems to have the most general currency in the translation and localization industry, and
+                     other metrics should be declared in the <b>qualityProfile</b> data category.
+                     
+                  </li>
+                  <li>In principle, this can be used without any attributes at all as a pure marker, e.g., <i>The <b>&lt;qualityError&gt;</b>verbs agrees<b>&lt;/qualityError&gt;</b> with the subject.</i>. However, inclusion of the attributes makes this data category more useful for real actions.
+                     
+                  </li>
+                  <li>COMMENT: Should we look at having a catalog of recognized rule sets that could be declared in this element without the need
+                     for the <b>qualityProfile</b> as a separate metadata element? That would promote data portability since individual pieces of content could be copied without
+                     an external reference? Then the dependency on <b>qualityProfile</b> would exist only if the user wants to declare a profile that is not in the catalog.
+                     
+                  </li>
+                  <li>COMMENT: I combined the previous score and weight items into severity. Since this applies to single errors, the score is by
+                     definition 1, but the severity is variable. The earlier formulation confused score and severity.
+                     
+                  </li>
+                  <li>COMMENT: If [severity] should be a number then it definitively should be an integer. With floats you will have to deal with
+                     rounding errors.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="qualityProfile" id="qualityProfile" shape="rect"></a><h4> <span class="mw-headline">5.5.2  qualityProfile </span></h4>
+         <dl>
+            <dd>Defines a source QA profile applied to the entire document, a section of a document, or an element, and, optionally, the results
+               of that model
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+               <ul>
+                  <li><b>name</b>? (text) The name used to refer to this rule set in the document. If undefined the value of "LISA QA Model" is assumed.
+                     
+                  </li>
+                  <li><b>uri</b>? The URI where the rule set can be found (if available).
+                     
+                  </li>
+                  <li><b>pass</b>? The status of whether the content has passed the check. Suggested values include: pass, fail, warning
+                     
+                  </li>
+                  <li><b>score</b>? The score or error count (whichever is appropriate) returned by the QA rule.
+                     
+                  </li>
+                  <li><b>agent</b>? text description of the part responsible for supplying the score/pass.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Example</b>
+               
+            </dd>
+            <dd>(This example assumes that the data category is declared as a meta element, but I'm sure there are better ways to handle this.
+               
+               <ul>
+                  <li>&lt;meta name="qualityProfile" content="name:LISA QA Model;uri:<a href="http://www.example.com;pass:no;score:85%" class="external free"
+                        title="http://www.example.com;pass:no;score:85%"
+                        rel="nofollow"
+                        shape="rect">http://www.example.com;pass:no;score:85%</a>" agent="ABCReview" /&gt;
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li>At least one of the attributes must be used (otherwise the data category is empty).
+                     
+                  </li>
+                  <li>COMMENT: Can be used without qualityError where this presents a summary of QA activities that are not tagged (e.g., when a
+                     reviewer uses the LISA QA Model software, which does not permit local tagging of errors).
+                     
+                  </li>
+                  <li>"agent" is defined in both this and qualityError. When declared here, agent is global in scope to indicate who did an assessment;
+                     when declared locally, it applies only to the local scope and overrides a global declaration.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Translation" id="Translation" shape="rect"></a><h3> <span class="mw-headline">5.6  Translation </span></h3>
+         <p>These categories are used or generated in the translation process. (There is some conceptual overlap with <a href="#Internationalization" title="" shape="rect">Internationalization</a> that we may want to resolve)
+            
+         </p><a name="confidentiality" id="confidentiality" shape="rect"></a><h4> <span class="mw-headline">5.6.1  confidentiality </span></h4>
+         <dl>
+            <dd>States whether the text can be submitted to public services (e.g., online MT engines or not)
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+               <ul>
+                  <li>(confidential|nonconfidential)
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li>Any more complex confidentiality requirements (e.g., a statement that something is top-secret, community, corporate, etc.)
+                     would be handled by separate negotiation between the parties and are not covered here.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="context" id="context" shape="rect"></a><h4> <span class="mw-headline">5.6.2  context </span></h4>
+         <dl>
+            <dd>Provides information about where the text occurs (e.g., in a button, a header, body text)
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+               <ul>
+                  <li><i>picklist (to be defined)</i>
+                     
+                  </li>
+                  <li>grouping category (see <a href="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_.22Context.22_data_category"
+                        class="external text"
+                        title="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_.22Context.22_data_category"
+                        rel="nofollow"
+                        shape="rect">ITS 1.0 wiki</a> for details)
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> Corresponds partially to the <i>termLocation</i> data category in TBX:
+                     
+                  </li>
+               </ul>
+               
+               <dl>
+                  <dd>A location in a document, computer file, or other information medium, where the term frequently occurs, such as a user interface
+                     object (in software), a packaging element, a component in an industrial process, and so forth. The element content shall be
+                     expressed in plainText, and preferably be restricted to a set of picklist values. The following picklist values are recommended
+                     for software user interface locations in a Windows environment.
+                     
+                     <ul>
+                        <li> checkBox
+                           
+                        </li>
+                        <li> comboBox
+                           
+                        </li>
+                        <li> comboBoxElement • dialogBox
+                           
+                        </li>
+                        <li> groupBox
+                           
+                        </li>
+                        <li> informativeMessage • interactiveMessage • menuItem
+                           
+                        </li>
+                        <li> progressBar
+                           
+                        </li>
+                        <li> pushButton
+                           
+                        </li>
+                        <li> radioButton
+                           
+                        </li>
+                        <li> slider
+                           
+                        </li>
+                        <li> spinBox
+                           
+                        </li>
+                        <li> tab
+                           
+                        </li>
+                        <li> tableText
+                           
+                        </li>
+                        <li> textBox
+                           
+                        </li>
+                        <li> toolTip
+                           
+                        </li>
+                        <li> user-definedType
+                           
+                        </li>
+                     </ul>
+                     
+                  </dd>
+               </dl>
+               
+               <ul>
+                  <li>Source in <a href="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_.22Context.22_data_category"
+                        class="external text"
+                        title="http://www.w3.org/International/its/wiki/IssuesAndProposedFeatures#Proposal:_.22Context.22_data_category"
+                        rel="nofollow"
+                        shape="rect">ITS wiki</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="externalPlaceholder" id="externalPlaceholder" shape="rect"></a><h4> <span class="mw-headline">5.6.3  externalPlaceholder </span></h4>
+         <dl>
+            <dd>instructions on how to deal with external resources (e.g., graphics files) in translation. Derived from <a href="http://itstool.org/extensions/" class="external text"
+                  title="http://itstool.org/extensions/"
+                  rel="nofollow"
+                  shape="rect">itst:externalRefRule</a>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd>See the <a href="http://itstool.org/extensions/" class="external text"
+                  title="http://itstool.org/extensions/"
+                  rel="nofollow"
+                  shape="rect">itst:externalRefRule</a> description
+               
+            </dd>
+         </dl><a name="languageResource" id="languageResource" shape="rect"></a><h4> <span class="mw-headline">5.6.4  languageResource </span></h4>
+         <dl>
+            <dd>Identified what language resource(s) are to be used for translation memory, MT lexicon look-up, terminology management, and
+               similar tasks
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+               <ul>
+                  <li>type{1,1}: picklist with the values (terminology|lexicon|corpus|TM)
+                     
+                  </li>
+                  <li>location{1,1}: uri of resource
+                     
+                  </li>
+                  <li>format{1,1}: text string identifying the format (e.g., "Multiterm", "TBX", "TMX") (see notes)
+                     
+                  </li>
+                  <li>id{1,1}: id value used to bind other metadata to this item
+                     
+                  </li>
+                  <li>description{0,1}: text description for human consumption
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li>COMMENT: suggestion that we use MIME-types for <i>format</i> declaration, declaring private types if needed.
+                     
+                  </li>
+                  <li>COMMENT: there are not public MIME-type declarations for many common formats and we might need to allow "other" as an option.
+                     
+                  </li>
+                  <li>COMMENT: the issue of format needs to be resolved. I personally like the idea of MIME types if they work.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="mtConfidence" id="mtConfidence" shape="rect"></a><h4> <span class="mw-headline">5.6.5  mtConfidence </span></h4>
+         <dl>
+            <dd>used by MT systems to indicate their confidence in the provided translation
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+               <ul>
+                  <li>a numeric value between 0.0 and 1.0
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="specialRequirements" id="specialRequirements" shape="rect"></a><h4> <span class="mw-headline">5.6.6  specialRequirements </span></h4>
+         <dl>
+            <dd>Any special requirements about the translation/localization (e.g., string lengths, character limitations)
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd><i>to be defined</i>
+               
+            </dd>
+         </dl><a name="Terminology" id="Terminology" shape="rect"></a><h3> <span class="mw-headline">5.7  Terminology </span></h3>
+         <p>Data Categories related to the association of content with terminological data.
+            
+         </p><a name="disambiguation" id="disambiguation" shape="rect"></a><h4> <span class="mw-headline">5.7.1  disambiguation </span></h4>
+         <dl>
+            <dd>Includes data to be used by MT systems in disambiguating difficult content
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+               <ul>
+                  <li><b>concept reference</b>: points to a concept in an ontology that this fragment of text represents. May be an URI or an XPath pointer. 
+                     
+                  </li>
+                  <li><b>alternative labels</b>: expressions of that concept in other languages.
+                     
+                  </li>
+                  <li><b>disambiguation data</b>: plain text content to be used by the system. This content is not defined and may be application specific, e.g., a code used
+                     by the system, a synonym, a pointer to a location in an ontology (Tadej - to remove in favor of concept reference)
+                     
+                  </li>
+                  <li><b>semantic selector</b>: plain text content to be used by the system. This content is not defined and may be application specific, e.g., a code used
+                     by the system, a synonym, a pointer to a location in a semantic network. (Tadej - to remove in favor of concept reference)
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> Text analysis should depend solely on the source language, independent of the target languages.
+                     
+                  </li>
+                  <li> The component must provide additive markup, preserving the original structure of the document.
+                     
+                  </li>
+                  <li> The annotations should refer to a span of content
+                     
+                  </li>
+                  <li> It should support the use case of terminology or concept translation via identification of these concepts;
+                     
+                  </li>
+                  <li> It should support the use case of marking up input data for training MT systems
+                     
+                  </li>
+                  <li> It should be extensible to support ontologies describing the linguistic properties of the fragments
+                     
+                  </li>
+                  <li>Open system to be used by MT, for example by the following applications :
+                     
+                     <ul>
+                        <li>domain selector: it can be used to select the dictionary or specialization that applies.  (Tadej - to remove in favor of the
+                           'domain' data category)
+                           
+                        </li>
+                        <li>semantic selector: it can be used by disambiguation rules or filters.  (Tadej - to remove in favor of concept reference)
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="namedEntity" id="namedEntity" shape="rect"></a><h4> <span class="mw-headline">5.7.2  namedEntity </span></h4>
+         <dl>
+            <dd>When describing a fragment of text that has been identified as a named entity, we would like to specify the following pieces
+               of information in order to help downstream consumers of the data, for instance when training MT systems
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+               <ul>
+                  <li> <b>Entity type</b>: a pointer (URI) to a concept, defining a particular type of the entity. The entity URI space is open. Current recommendations
+                     for domains are the NERD ontology (Named Entity Disambiguation and Recognition) <a href="http://nerd.eurecom.fr/ontology" class="external free"
+                        title="http://nerd.eurecom.fr/ontology"
+                        rel="nofollow"
+                        shape="rect">http://nerd.eurecom.fr/ontology</a> and schema.org (<a href="http://schema.org/docs/full.html" class="external free"
+                        title="http://schema.org/docs/full.html"
+                        rel="nofollow"
+                        shape="rect">http://schema.org/docs/full.html</a>)
+                     
+                  </li>
+                  <li> Uses properties from 'disambiguation', if the entity is recognized;
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="terminology_2" id="terminology_2" shape="rect"></a><h4> <span class="mw-headline">5.7.3  terminology </span></h4>
+         <dl>
+            <dd>Identification and marking of terms in content with associated information
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd> * <b>Terminology lexicon </b>: the lexicon, used in the term reference. See subsection 'terminology resource';
+               
+            </dd>
+            <dd> * Uses properties from 'disambiguation' in order to point to concrete terms;
+               
+            </dd>
+            <dd>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li> The concept reference is translaable from ITS1.0 termInfo property: it can be identified by a URI (its:termInfoRef) or optionally
+                     XPath (its:termInfoPointer, its:termInfoRefPointer)
+                     
+                  </li>
+                  <li> COMMENT: should keep relevant standards (e.g., <a href="http://www.w3.org/TR/2007/REC-its-20070403/#terminology"
+                        class="external text"
+                        title="http://www.w3.org/TR/2007/REC-its-20070403/#terminology"
+                        rel="nofollow"
+                        shape="rect">ITS 1.0 term data category</a>, TBX, OLIF) in mind.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="textAnalysisAnnotation" id="textAnalysisAnnotation" shape="rect"></a><h4> <span class="mw-headline">5.7.4  textAnalysisAnnotation </span></h4>
+         <dl>
+            <dd>This data category allows the results of text analysis to be annotated in content. 
+               
+            </dd>
+            <dd><b>Data Model</b>
+               
+               <ul>
+                  <li> <b>Annotation agent</b> - which tool produced the annotation.
+                     
+                  </li>
+                  <li> <b>Confidence score</b> - what is the system's confidence for this annotation, on the range of [0.0, 1.0].
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Requirements" id="Requirements" shape="rect"></a><h2> <span class="mw-headline">6 Requirements</span></h2><a name="Support_ITS_1.0_Data_Categories" id="Support_ITS_1.0_Data_Categories"
+            shape="rect"></a><h3> <span class="mw-headline">6.1  Support ITS 1.0 Data Categories </span></h3>
+         <p>MLW-LT must support all ITS 1.0 data categories and their functionality, using the following approach:
+            
+         </p>
+         <dl>
+            <dd>
+               <ul>
+                  <li>It will adopt the use of data categories to define discrete units of functionality.
+                     
+                  </li>
+                  <li>It will adopt the separation of data category definition from the mapping of the data category to a given content format
+                     
+                  </li>
+                  <li>It will adopt the conformance principle of ITS1.0 that an implementation only needs to implement one data category to claim
+                     conformance to the successor of ITS 1.0.
+                     
+                  </li>
+                  <li>A data category implementation only needs to support a single content format mapping in order to support a claim of MLW-LT
+                     conformance
+                     
+                  </li>
+                  <li>MLW-LT will specify implementations of data categories in the following: HTML5, XML
+                     
+                  </li>
+                  <li>MLW-LT will support all the ITS1.0 data category definitions
+                     
+                  </li>
+                  <li>Where ITS1.0 data categories are implemented in XML, the implementation must be conformant with the ITS1.0 mapping to XML
+                     to claim conformance to the successor of ITS 1.0
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd><b>Notes</b>
+               
+               <ul>
+                  <li>ITS1.0 merely <a href="http://www.w3.org/TR/its/#datacategory-locations" class="external text"
+                        title="http://www.w3.org/TR/its/#datacategory-locations"
+                        rel="nofollow"
+                        shape="rect">mentions</a> XPATH 1.0 or its successor, but XPath 2.0 is the newest version and there are <a href="http://www.w3.org/TR/xpath20/#id-backwards-compatibility"
+                        class="external text"
+                        title="http://www.w3.org/TR/xpath20/#id-backwards-compatibility"
+                        rel="nofollow"
+                        shape="rect">backward compatibility</a> issues to consider
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Limited_Impact" id="Limited_Impact" shape="rect"></a><h3> <span class="mw-headline">6.2  Limited Impact </span></h3>
+         <dl>
+            <dd>
+               <ul>
+                  <li> All solutions proposed should be designed to have as little impact as possible on the tree structure of the original document
+                     and on the content models in the original schema.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Round-trip_interoperability_with_XLIFF_1.2"
+            id="Round-trip_interoperability_with_XLIFF_1.2"
+            shape="rect"></a><h3> <span class="mw-headline">6.3  Round-trip interoperability with XLIFF 1.2 </span></h3>
+         <dl>
+            <dd>
+               <ul>
+                  <li> Solutions should be able to be passed back and forth with XLIFF 1.2 with no data loss
+                     
+                  </li>
+                  <li> For the <a href="#Implementation_Approach" title="" shape="rect">implementation approach</a> envisaged, this means that its-* attributes would be converted in XLIFF to the relevant namespace, e.g. its-term in HTML5
+                     to its:term.
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Compatibility_with_multiple_source_content_formats"
+            id="Compatibility_with_multiple_source_content_formats"
+            shape="rect"></a><h3> <span class="mw-headline">6.4  Compatibility with multiple source content formats </span></h3>
+         <dl>
+            <dd>
+               <ul>
+                  <li> Solutions must work with many XML/HTML source formats
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Optimize_execution_of_ITS_processing_rules"
+            id="Optimize_execution_of_ITS_processing_rules"
+            shape="rect"></a><h3> <span class="mw-headline">6.5  Optimize execution of ITS processing rules </span></h3>
+         <dl>
+            <dd>
+               <ul>
+                  <li> See <i>itst:match</i> at <a href="http://itstool.org/extensions/" class="external free"
+                        title="http://itstool.org/extensions/"
+                        rel="nofollow"
+                        shape="rect">http://itstool.org/extensions/</a>
+                     
+                  </li>
+                  <li> Proposed on <a href="https://lists.w3.org/Archives/Member/member-multilingualweb-lt/2012Mar/0011.html"
+                        class="external text"
+                        title="https://lists.w3.org/Archives/Member/member-multilingualweb-lt/2012Mar/0011.html"
+                        rel="nofollow"
+                        shape="rect">the MLW-LT member mailing list</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Removal.2C_Archiving_and_Reintegration_of_ITS_mark-up"
+            id="Removal.2C_Archiving_and_Reintegration_of_ITS_mark-up"
+            shape="rect"></a><h3> <span class="mw-headline">6.6  Removal, Archiving and Reintegration of ITS mark-up </span></h3>
+         <dl>
+            <dd>
+               <ul>
+                  <li> It should be possible to remove ITS 2.0 markup from a document without altering it original state - this may be useful when
+                     localization is deemed complete and the markup would be an overhead for publishing
+                     
+                  </li>
+                  <li> It should be possible to archive ITS 2.0 markup removed from a file in a form that it can be reintegrated into the file at
+                     a later date, e.g. if re-translation or revision is unexpectedly required
+                     
+                  </li>
+                  <li> These requirements extrapolated from CMS community feedback - see: <a href="http://lists.w3.org/Archives/Public/public-multilingualweb-lt/2012Apr/0011.html"
+                        class="external free"
+                        title="http://lists.w3.org/Archives/Public/public-multilingualweb-lt/2012Apr/0011.html"
+                        rel="nofollow"
+                        shape="rect">http://lists.w3.org/Archives/Public/public-multilingualweb-lt/2012Apr/0011.html</a>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="Process_Model" id="Process_Model" shape="rect"></a><h3> <span class="mw-headline">6.7 Process Model</span></h3>
+         <dl>
+            <dd>ITS2.0 should support an explicit expression of the process model to which ITS2.0 conformant content can be subjected.
+               
+            </dd>
+            <dd>The process model may be references from several currently proposed data categories, including readiness, progress-indicator
+               and provenance
+               
+            </dd>
+            <dd>A default process model referenced from an ITS standard may be useful in clarifying different use cases for various data categories
+               
+            </dd>
+            <dd>The process model should be flexible, so that a subset can be configured to document a conformant implementation of ITS2.0
+               
+            </dd>
+            <dd>The process model should be extensible, so that an extended version can be used to document a conformant implementation of
+               ITS2.0 subject to agreement on the definitions of extensions
+               
+            </dd>
+            <dd><b>Data model</b>
+               
+            </dd>
+            <dd><b>Model 1</b>
+               
+               <ul>
+                  <li><i>proposed for original process Trigger</i> Encodes the actions or workflow item requested (i.e., what should be triggers). The values could be user defined, since it
+                     is hard to generalize a set or combinations of actions for specific workflows. Some possible values are:
+                     
+                     <ul>
+                        <li><i>contentQuote</i> -  indicates that a quoting or pricing is requested, not to perform the job
+                           
+                        </li>
+                        <li><i>contentAlignment</i> -  in case the content is to add to a Translation Memory (?)
+                           
+                        </li>
+                        <li><i>contentL10N</i> -  localize the content
+                           
+                        </li>
+                        <li><i>contentI18N</i> -  internationalize the content
+                           
+                        </li>
+                        <li><i>contentDtp</i> -  desktop publishing of content
+                           
+                        </li>
+                        <li><i>contentSubtitle</i> -  subtitling of content
+                           
+                        </li>
+                        <li><i>contentVoiceOver</i> -  voice-over of content
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd> 
+               
+               <ul>
+                  <li>
+                     <ul>
+                        <li><i>sourceRewrite: rewrite the source content (needs contentResultSource</i> -  yes)
+                           
+                        </li>
+                        <li><i>sourceReview: review the source content (needs contentResultSource</i> -  yes)
+                           
+                        </li>
+                        <li><i>sourceTranscribe: transcribe the source content (needs contentResultSource</i> -  yes)
+                           
+                        </li>
+                        <li><i>sourceTransliteration: transliterate the source content (needs contentResultSource</i> -  yes)
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li>
+                     <ul>
+                        <li><i>hTranslate </i> -  human translation
+                           
+                        </li>
+                        <li><i>mTranslate</i> -  machine translation
+                           
+                        </li>
+                        <li><i>hTranscreate</i> -  human transcreation
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+            <dd>
+               
+               <ul>
+                  <li>
+                     <ul>
+                        <li><i>posteditQA</i> -  human postediting of mTranslate
+                           
+                        </li>
+                        <li><i>reviewQA</i> -  human review for quality assurance only the target text, without the source text (see UNE 15038 “review”), by an expert
+                           for instance
+                           
+                        </li>
+                        <li><i>reviseQA</i> -  human revision for quality assurance examining the translation and comparing source and target (see UNE 15038 “revision”)
+                           
+                        </li>
+                        <li><i>proofQA</i> -  human checking of proofs before publishing for quality assurance (see UNE 15038 “proofreading”)
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li><b>Model 2</b>
+                     
+                  </li>
+                  <li><i>Proposed as part of table produced to analyse generation and consumption of data categories by different</i>
+                     
+                  </li>
+                  <li>this uses a hierarchical definition of processes, which may be useful for offering some flexibility and extensibility properties
+                     to the model
+                     
+                  </li>
+                  <li><i>Generation of Source Content</i>
+                     
+                  </li>
+                  <li><i>Translation</i>
+                     
+                  </li>
+                  <li><i>Consumption of Translated Content</i>
+                     
+                  </li>
+               </ul>
+               
+            </dd>
+         </dl><a name="References" id="References" shape="rect"></a><h2> <span class="mw-headline">7  References </span></h2>
+         <p>A references section will be provided in a future version of this document.
+            
+         </p>
+         
+         <a name="Acknowledgements" id="Acknowledgements" shape="rect"></a><h2> <span class="mw-headline">8  Acknowledgements </span></h2>
+         <p>This document has been created by <a href="https://www.w3.org/2000/09/dbwg/details?group=53116&amp;public=1"
+               class="external text"
+               title="https://www.w3.org/2000/09/dbwg/details?group=53116&amp;public=1"
+               rel="nofollow"
+               shape="rect">participants of the MultilingualWeb-LT Working Group</a>.
+            
+         </p>
+         <p>Members of the Working Group are (at the time of writing, and by alphabetical order): 
+            Mihael Arcan (DERI Galway at the National University of Ireland, Galway, Ireland), Pablo Badía (Linguaserve), Aaron Beaton (Opera Software), Luis Bellido (Universidad Politécnica de Madrid), Aljoscha Burchardt (German Research Center for Artificial Intelligence (DFKI) Gmbh), Nicoletta CalzolarI (CNR--Consiglio Nazionale delle Ricerche), Giuseppe Deriard (Linguaserve), Pedro Luis Díez Orzas (Linguaserve), David Filip (University of Limerick), Karl Fritsche (Cocomore AG), Daniel Grasmick (Lucy Software and Services GmbH), Declan Groves (Centre for Next Generation Localisation), Moritz Hellwig (Cocomore AG), Tao  Hong (Baidu, Inc.), Dominic Jones (Trinity College Dublin), Milan Karásek (Moravia Worldwide), Jirka Kosek (University of Economics, Prague), Maxime Lefrançois (Institut National de Recherche en Informatique et en Automatique (INRIA)), David Lewis (Trinity College Dublin), Fredrik Liden (ENLASO Corporation), Arle Lommel (German Research Center for Artificial Intelligence (DFKI) Gmbh), Jan Nelson (Microsoft Corporation), Des Oates (Adobe Systems Inc.), Carina Pellar (Cocomore AG), Georg Rehm (German Research Center for Artificial Intelligence (DFKI) Gmbh), Phil Ritchie (VistaTEC), Thomas Rüdesheim (Lucy Software and Services GmbH), Felix Sasaki (W3C/ERCIM), Yves Savourel (ENLASO Corporation), Najib Tounsi (Ecole Mohammadia d'Ingenieurs Rabat (EMI)), Ronny Unger (Cocomore AG), Piek Vossen (Vrije Universiteit), Tadej &#138;tajner (Jozef Stefan Institute).
+         </p>
+      </div>
+   </body>
+</html>

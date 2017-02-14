@@ -102,7 +102,7 @@
                     <xsl:if test="not(local-name() = 'h2')">
                         <section id="{preceding-sibling::h:a[1]/@id}">
                             <h2>
-                                <xsl:value-of select="replace(., '\d.', '')"/>
+                                <xsl:value-of select="replace(., '\d+.', '')"/>
                             </h2>
                             <xsl:for-each-group select="current-group()" group-starting-with="h:h4">
                                 <xsl:if test="local-name() = 'h3'">
