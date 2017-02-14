@@ -30,11 +30,11 @@
                 var ctype = "text/xml";
                 requestBody = sourceContent;
                 /*if (selectedInputType === "forminput") {requestBody = sourceContent;};*/
-                var fremeApiURL = "http://api-dev.freme-project.eu/current/";
-                var requestURL = fremeApiURL + "toolbox/xslt-converter/documents/tbx-to-schema-dot-org";
+                var fremeApiURL = "https://api.freme-project.eu/current/";
+                var requestURL = fremeApiURL + "toolbox/xslt-converter/documents/tbx-to-schema-dot-org?useI18n=false";
                 if (selectedInputType === "terms")
                 {
-                    requestURL = "http://api-dev.freme-project.eu/current/pipelining/chain/9?stats=false&useI18n=false";
+                    requestURL = "https://api.freme-project.eu/current/pipelining/chain/10?stats=false&useI18n=false";
                     requestBody = sourceContent;
                     ctype = "text/plain";
                 }
