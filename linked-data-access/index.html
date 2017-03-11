@@ -34,10 +34,10 @@
                                     var bindings = result.results.bindings;
                                     var output = bindings[0].population.value;
                                     console.log(output);
-                                    $("#out").empty().append(output);
+                                    $("#out").empty().append("The population of " + queryPart2 + " is " + output);
                                 } else
-                                    $("#out").empty().append("I don't know the population of " + queryPart2);
-                                (console.log("I don't know the population of " + queryPart2));
+                                    $("#out").empty().append("I don't know the population of this place." + queryPart2);
+                                (console.log("I don't know the population of this place."));
                             })
                             .fail(function (xhr, statusText, err) {
                                 console.log("error");
