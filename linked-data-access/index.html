@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Demo</title>
+        <script src="ApiAi.min.js" type="text/javascript">
+        </script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            function processRequest(text) {
+                $("#out").empty();
+                var endpoint = "http://dbpedia.org/sparql?format=application%2Fsparql-results%2Bjson&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on&query=";
+                var queryPart1 = "SELECT ?city ?population WHERE { ?city rdfs:label '";
+                var queryPart3 = "'@en. ?city <http://dbpedia.org/ontology/populationTotal> ?population} LIMIT 10";
+                client = new ApiAi.ApiAiClient({accessToken: '845fd3a89eba4ede94d90cd74825d007'});
+                promise = client.textRequest(text);
+                promise
+                        .then(handleResponse)
+                        .catch(heandleError);
+                function handleResponse(serverResponse) {
+                    var queryPart2 = serverResponse.result.parameters.city;
+                    console.log(serverResponse.result.parameters.city);
+                    var queryComplete = queryPart1 + queryPart2 + queryPart3;
+                    console.log(queryComplete);
+                    $.ajax({
+                        type: 'POST',
+                        url: endpoint + queryComplete,
+                        async: true,
+                        headers: {
+                        }
+                    })
+                            .done(function (result) {
+                                if (result.results.bindings[0]) {
+                                    var bindings = result.results.bindings;
+                                    var output = bindings[0].population.value;
+                                    console.log(output);
+                                    $("#out").empty().append(output);
+                                } else
+                                    $("#out").empty().append("I don't know the population of " + queryPart2);
+                                (console.log("I don't know the population of " + queryPart2));
+                            })
+                            .fail(function (xhr, statusText, err) {
+                                console.log("error");
+                                error(xhr + statusText + err);
+                                console.log(xhr + statusText);
+                            });
+                }
+                function heandleError(serverError) {
+                    console.log(serverError);
+                }
+            }
+            ;
+        </script>
+    </head>
+    <body>
+        <h1>Get information from linked data</h1>
+        <p>Ask questions to DBpedia:</p>
+        <textarea rows="10" cols="20" name="content"  id="content" class="input"></textarea><br>
+        <button onclick="processRequest($('#content').val());"><strong>Get information from linked data</strong></button><br>
+        <div id="out"></div>
+    </body>
+</html> 
