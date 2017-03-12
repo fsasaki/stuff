@@ -24,6 +24,7 @@
             });
 
             var recognition;
+            var synth;
 
             function startRecognition() {
                 recognition = new webkitSpeechRecognition();
@@ -110,7 +111,12 @@
                                 var bindings = result.results.bindings;
                                 var output = bindings[0].population.value;
                                 console.log(output);
-                                $("#response").empty().append("The population of " + queryPart2 + " is " + output + ".");
+                                var outputtext = "The population of " + queryPart2 + " is " + output + ".";
+                                $("#response").empty().append(outputtext);
+                                synth = window.speechSynthesis;
+                                var utterThis = new SpeechSynthesisUtterance(outputtext);
+                                utterThis.lang = "en-US";
+                                synth.speak(utterThis);
                             } else
                                 $("#response").empty().append("I don't know the population of this place.");
                         })
@@ -132,7 +138,7 @@
     </head>
     <body>
         <h1>Get information from linked data</h1>
-        <p>Ask questions to DBpedia. You will get a response below.</p>
+        <p>Ask questions to DBpedia. You will get a response below. Works only with Chrome browser because of text-to-speech / speech-to-text functions.</p>
         <div id="inputoutput">
             <input id="input" type="text"> <button id="rec">Speak</button>
             <br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
