@@ -124,8 +124,8 @@ String.prototype.replaceAll = function(str1, str2, ignore)
                                 output = bindings[0][outputVariables[intentNum]].value;
                                 console.log(output);
                                 var outputtext1 = responses[intentNum].replace("@@@placeholder@@@", placeholder);
-                                var outputtext2 = outputtext1.replace("@@@output@@@", output) +  "\nThe query used for this output was:\n" + queryComplete;
-                                $("#response").empty().append(outputtext2);
+                                var outputtext2 = outputtext1.replace("@@@output@@@", output);
+                                $("#response").empty().append(outputtext2 +  "\nThe query used for this output was:\n" + queryComplete);
                                 if (textInput === 0) {
                                 synth = window.speechSynthesis;
                                 var utterThis = new SpeechSynthesisUtterance(outputtext2);
