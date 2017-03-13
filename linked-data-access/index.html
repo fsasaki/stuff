@@ -125,7 +125,7 @@ String.prototype.replaceAll = function(str1, str2, ignore)
                                 console.log(output);
                                 var outputtext1 = responses[intentNum].replace("@@@placeholder@@@", placeholder);
                                 var outputtext2 = outputtext1.replace("@@@output@@@", output);
-                                $("#response").empty().append(outputtext2 +  "\nThe query used for this output was:\n" + queryComplete);
+                                $("#response").empty().append(outputtext2 +  "\nThe query used for this output was:\n" + queryComplete.replaceAll("<", "&lt;"));
 //                                if (processingType === "speech") {
 //                                synth = window.speechSynthesis;
 //                                var utterThis = new SpeechSynthesisUtterance(outputtext2);
@@ -145,8 +145,8 @@ String.prototype.replaceAll = function(str1, str2, ignore)
 
         </script>
         <style type="text/css">
-            body { width: 500px; margin: 0 auto; text-align: center; margin-top: 20px; }
-            div#inputoutput {  position: absolute; }
+            div#forms { width: 500px; margin: 0 auto; text-align: center; margin-top: 20px; }
+            div#inputoutput {   }
             input { width: 400px; }
             button { width: 150px; }
             textarea { width: 100%; }
@@ -155,9 +155,23 @@ String.prototype.replaceAll = function(str1, str2, ignore)
     <body>
         <h1>Get information from linked data</h1>
         <p>Ask questions to DBpedia. Currently you can ask about the birthday of people and the population of places - more to follow! You will get a response below. The speech input only works with the Chrome browser.</p>
+        <div id="forms">
         <div id="inputoutput">
             <input id="input" type="text"> <br><button id="text" onclick="processingType === 'text'; send();">Submit text</button> OR <button id="rec">Start speech input</button> 
             <br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
         </div>
+            </div>
+        <h2>Background</h2>
+        <p>This demonstration works as follows:</p>
+        <ul>
+            <li>The input (as text or speech) is send to an NLU tool. Here we are using <a href="https://docs.api.ai/v25">API AI</a>.</li>
+            <li>The tool has been prepared to differentiate between uster intents. Currently it just knows two intents: a user wants to look for birthdays of persons or for population of cities.</li>
+            <li>The tool differentiates the intents and then detects slots in the user input, e.g. the name of a person or the name of a city.</li>
+            <li>The intent filled with slots is transformed to a linked data query. As of writing, the tool uses <a href="http://wiki.dbpedia.org/">DBpedia</a>.</li>
+            <li>The output of the linked data query is given as textual output or (if supported by the browser) via audio.</li>
+        </ul>
+        <p>The purpose of this tool is to show how workflows with natural language understanding tooling can ease the access to (open or internal) linked data sources. Feedback is very welcome, please send to 
+            <a href="mailto:felix@sasakiatcf.com">Felix Sasaki</a>.</p>
+        <hr>
     </body>
 </html>
