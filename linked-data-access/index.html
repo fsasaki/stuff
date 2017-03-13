@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script type="text/javascript">
-            var textInput = 0;
+            var processingType = "speech";
             var endpoint = "http://dbpedia.org/sparql?format=application%2Fsparql-results%2Bjson&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on&query=";
             var queries = ["SELECT ?city ?population WHERE { ?city rdfs:label '@@@placeholder@@@'@en. ?city <http://dbpedia.org/ontology/populationTotal> ?population} LIMIT 10" , "SELECT ?birthday WHERE { ?person rdfs:label '@@@placeholder@@@'@en. ?person <http://dbpedia.org/ontology/birthDate> ?birthday } LIMIT 10"];
             var responses = ["The population of @@@placeholder@@@ is @@@output@@@.", "The birthday of @@@placeholder@@@ is @@@output@@@."];
@@ -126,12 +126,13 @@ String.prototype.replaceAll = function(str1, str2, ignore)
                                 var outputtext1 = responses[intentNum].replace("@@@placeholder@@@", placeholder);
                                 var outputtext2 = outputtext1.replace("@@@output@@@", output);
                                 $("#response").empty().append(outputtext2 +  "\nThe query used for this output was:\n" + queryComplete);
-                                if (textInput === 0) {
-                                synth = window.speechSynthesis;
-                                var utterThis = new SpeechSynthesisUtterance(outputtext2);
-                                utterThis.lang = "en-US";
-                                synth.speak(utterThis);
-                                };
+//                                if (processingType === "speech") {
+//                                synth = window.speechSynthesis;
+//                                var utterThis = new SpeechSynthesisUtterance(outputtext2);
+//                                utterThis.lang = "en-US";
+//                                synth.speak(utterThis);
+//                                ("#response").empty().append(processingType);
+//                                };
                             } else
                                 $("#response").empty().append("I don't know the answer to your question.");
                         })
@@ -153,9 +154,9 @@ String.prototype.replaceAll = function(str1, str2, ignore)
     </head>
     <body>
         <h1>Get information from linked data</h1>
-        <p>Ask questions to DBpedia. Currently you can ask about the birthday of people and the population of places - more to follow! You will get a response below. The speech input / speech output only with the Chrome browser.</p>
+        <p>Ask questions to DBpedia. Currently you can ask about the birthday of people and the population of places - more to follow! You will get a response below. The speech input only works with the Chrome browser.</p>
         <div id="inputoutput">
-            <input id="input" type="text"> <br><button id="text" onclick="textInput === 1; send();">Submit text</button> OR <button id="rec">Start speech input</button> 
+            <input id="input" type="text"> <br><button id="text" onclick="processingType === 'text'; send();">Submit text</button> OR <button id="rec">Start speech input</button> 
             <br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
         </div>
     </body>
