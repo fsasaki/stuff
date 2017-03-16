@@ -13,6 +13,9 @@
             var placeholder;
             var accessToken = "845fd3a89eba4ede94d90cd74825d007";
             var baseUrl = "https://api.api.ai/v1/";
+            var myDataBase = {"persons": [{"name": "Franz Schmidt", "department": "general IT", "qualifications": "mysql, php"},
+                    {"name": "Ina Mayer", "department": "general IT", "qualifications": "mysql, php, java"},
+                    {"name": "Sarah Schulz", "department": "IoT", "qualifications": "c++, java, mysql"}]};
 
 //Adding replace all method to String call
             String.prototype.replaceAll = function (str1, str2, ignore)
@@ -113,14 +116,19 @@
                 console.log(val);
                 // if-then-else to decide on the intent. Intents are used to select the relevant entry in the arrays queries, responses and outputVariables.
                 // as of writing there are only two intents: provide population of cities and provide birthdays of persons.
-                if (val.result.parameters.city)
+                if (val.result.action === 'show.population')
                 {
                     intentNum = 0;
                     placeholder = val.result.parameters.city;
-                } else if (val.result.parameters.lastname)
+                } else if (val.result.action === 'show.birthday')
                 {
                     intentNum = 1;
                     placeholder = val.result.parameters.givenname + " " + val.result.parameters.lastname;
+                } else if (val.result.action === 'show.persons') {
+                    console.log(val.result.parameters.programminglanguages);
+                    var output = findPersons(val.result.parameters.programminglanguages);
+                    $("#response").empty().append(output);
+                    return;
                 } else
                 {
                     $("#response").empty().append("I don't know what you are asking for. Can you re-formulate?");
@@ -165,7 +173,33 @@
                             console.log(xhr + statusText);
                         });
             }
-
+            function findPersons(qualification)
+            {
+                var resultMessage;
+                var count = 0;
+                for (i = 0; i < myDataBase.persons.length; i++)
+                {
+                    var currentQualification = myDataBase.persons[i].qualifications;
+                    console.log(myDataBase.persons[i].qualifications);
+                    if (currentQualification.includes(qualification))
+                    {
+                        count = count + 1;
+                    }
+                    ;
+                }
+                ;
+                console.log(count);
+                if (count > 1)
+                {
+                    resultMessage = count + " people know about " + qualification + ". I will give you contact details in a private message.";
+                } else if (count === 1)
+                {
+                    resultMessage = "1 person knows about " + qualification + ". I will give you contact details in a private message.";
+                } else
+                    (resultMessage = "We don't have people who know " + qualification + ". We should hire some!");
+                return resultMessage;
+            }
+            ;
         </script>
         <style type="text/css">
             div#forms { width: 500px; margin: 0 auto; text-align: center; margin-top: 20px; }
@@ -195,6 +229,8 @@
         </ul>
         <p>The purpose of this tool is to show how workflows with natural language understanding tooling can ease the access to (open or internal) linked data sources. Feedback is very welcome, please send to 
             <a href="mailto:felix@sasakiatcf.com">Felix Sasaki</a>.</p>
+        <p>Update: now also allows mockup queries to company internal data bases - aks a question about qualifications and you get counts of 
+            knowledgeable people.</p>
         <hr>
     </body>
 </html>
