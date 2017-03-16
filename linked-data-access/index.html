@@ -7,19 +7,21 @@
         <script type="text/javascript">
             var processingType = "speech";
             var endpoint = "http://dbpedia.org/sparql?format=application%2Fsparql-results%2Bjson&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on&query=";
-            var queries = ["SELECT ?city ?population WHERE { ?city rdfs:label '@@@placeholder@@@'@en. ?city <http://dbpedia.org/ontology/populationTotal> ?population} LIMIT 10" , "SELECT ?birthday WHERE { ?person rdfs:label '@@@placeholder@@@'@en. ?person <http://dbpedia.org/ontology/birthDate> ?birthday } LIMIT 10"];
+            var queries = ["SELECT ?city ?population WHERE { ?city rdfs:label '@@@placeholder@@@'@en. ?city <http://dbpedia.org/ontology/populationTotal> ?population} LIMIT 10", "SELECT ?birthday WHERE { ?person rdfs:label '@@@placeholder@@@'@en. ?person <http://dbpedia.org/ontology/birthDate> ?birthday } LIMIT 10"];
             var responses = ["The population of @@@placeholder@@@ is @@@output@@@.", "The birthday of @@@placeholder@@@ is @@@output@@@."];
             var outputVariables = ["population", "birthday"];
             var placeholder;
             var accessToken = "845fd3a89eba4ede94d90cd74825d007";
             var baseUrl = "https://api.api.ai/v1/";
 
-String.prototype.replaceAll = function(str1, str2, ignore)
-    {
-        return this.replace(new RegExp(str1.replace(/([\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, function(c) {
-            return "\\" + c;
-        }), "g" + (ignore ? "i" : "")), str2);
-    };
+//Adding replace all method to String call
+            String.prototype.replaceAll = function (str1, str2, ignore)
+            {
+                return this.replace(new RegExp(str1.replace(/([\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, function (c) {
+                    return "\\" + c;
+                }), "g" + (ignore ? "i" : "")), str2);
+            };
+//functions for handling speech recognitions
             $(document).ready(function () {
                 $("#input").keypress(function (event) {
                     if (event.which === 13) {
@@ -30,7 +32,7 @@ String.prototype.replaceAll = function(str1, str2, ignore)
                 $("#rec").click(function (event) {
                     switchRecognition();
                 });
-            });            
+            });
 
             var recognition;
             var synth;
@@ -80,8 +82,10 @@ String.prototype.replaceAll = function(str1, str2, ignore)
                 $("#rec").text(recognition ? "Stop" : "Speak");
             }
 
+//the actual main fuction that calls NLU 
             function send() {
                 var text = $("#input").val();
+//Request to API.AI. 
                 $.ajax({
                     type: "POST",
                     url: baseUrl + "query?v=20150910",
@@ -102,14 +106,31 @@ String.prototype.replaceAll = function(str1, str2, ignore)
                 setResponse("Loading...");
             }
 
+//handling the response from API.AI
             function setResponse(val) {
                 var intentNum;
                 var output;
                 console.log(val);
-                if(val.result.parameters.city) {intentNum = 0; placeholder = val.result.parameters.city;} else
-                    {intentNum = 1; placeholder = val.result.parameters.givenname + " " + val.result.parameters.lastname;};
+                // if-then-else to decide on the intent. Intents are used to select the relevant entry in the arrays queries, responses and outputVariables.
+                // as of writing there are only two intents: provide population of cities and provide birthdays of persons.
+                if (val.result.parameters.city)
+                {
+                    intentNum = 0;
+                    placeholder = val.result.parameters.city;
+                } else if (val.result.parameters.lastname)
+                {
+                    intentNum = 1;
+                    placeholder = val.result.parameters.givenname + " " + val.result.parameters.lastname;
+                } else
+                {
+                    $("#response").empty().append("I don't know what you are asking for. Can you re-formulate?");
+                    return;
+                }
+                ;
+                ;
+                // Using the label we got from the NLU output to fill a placeholder slot in the SPARQL query.
                 console.log("placeholder now :" + placeholder);
-                var queryComplete = queries[intentNum].replaceAll("@@@placeholder@@@",placeholder);
+                var queryComplete = queries[intentNum].replaceAll("@@@placeholder@@@", placeholder);
                 console.log(queryComplete);
                 $.ajax({
                     type: 'POST',
@@ -121,11 +142,13 @@ String.prototype.replaceAll = function(str1, str2, ignore)
                         .done(function (result) {
                             if (result.results.bindings[0]) {
                                 var bindings = result.results.bindings;
+                                //Getting the value from the SPARQL query result. The name of the binding variable depends on the intent.
                                 output = bindings[0][outputVariables[intentNum]].value;
                                 console.log(output);
+                                // Integrating the output text template, the placeholder in the template, and the output value.
                                 var outputtext1 = responses[intentNum].replace("@@@placeholder@@@", placeholder);
                                 var outputtext2 = outputtext1.replace("@@@output@@@", output);
-                                $("#response").empty().append(outputtext2 +  "\nThe query used for this output was:\n" + queryComplete.replaceAll("<", "&lt;"));
+                                $("#response").empty().append(outputtext2 + "\nThe query used for this output was:\n" + queryComplete.replaceAll("<", "&lt;"));
 //                                if (processingType === "speech") {
 //                                synth = window.speechSynthesis;
 //                                var utterThis = new SpeechSynthesisUtterance(outputtext2);
@@ -156,11 +179,11 @@ String.prototype.replaceAll = function(str1, str2, ignore)
         <h1>Get information from linked data</h1>
         <p>Ask questions to DBpedia. Currently you can ask about the birthday of people and the population of places - more to follow! You will get a response below. The speech input only works with the Chrome browser.</p>
         <div id="forms">
-        <div id="inputoutput">
-            <input id="input" type="text"> <br><button id="text" onclick="processingType === 'text'; send();">Submit text</button> OR <button id="rec">Start speech input</button> 
-            <br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
-        </div>
+            <div id="inputoutput">
+                <input id="input" type="text"> <br><button id="text" onclick="processingType === 'text'; send();">Submit text</button> OR <button id="rec">Start speech input</button> 
+                <br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
             </div>
+        </div>
         <h2>Background</h2>
         <p>This demonstration works as follows:</p>
         <ul>
