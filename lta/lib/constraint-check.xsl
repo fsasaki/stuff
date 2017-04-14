@@ -256,7 +256,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           appearance of the singleton 'a' is in a private use sequence. -->
     <xsl:param name="abnfCheckedLangtag"/>
     <xsl:variable name="prefix" select="substring-before(.,'-')"/>
-    <xsl:copy>      
+    <lta:extension extension-prefix="{$prefix}"> 
       <lta:subtag><xsl:value-of select="."></xsl:value-of></lta:subtag>
       <xsl:if
          test="
@@ -268,7 +268,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	       ">
         <lta:error type="e003"><lta:errorText>Singleton repetition</lta:errorText><lta:errorAddInfo><lta:singleton><xsl:value-of select="$prefix"/></lta:singleton></lta:errorAddInfo></lta:error>   
       </xsl:if>
-    </xsl:copy>
+    </lta:extension>
   </xsl:template>
   <xsl:template match="lta:privateuse" mode="someConstraintsCheck">
     <xsl:copy>

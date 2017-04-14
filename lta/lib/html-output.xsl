@@ -144,7 +144,7 @@
   			</li>
   			
   		</ul></xsl:if>
-  		<xsl:if test="(not(lta:registryInfo) and not(self::lta:privateuse)) or lta:error[not(@type='e001' or @type='e002')]"><ul><xsl:if test="not(lta:registryInfo)"><li>
+  		<xsl:if test="(not(lta:registryInfo) and not(self::lta:privateuse or self::lta:extension)) or lta:error[not(@type='e001' or @type='e002')]"><ul><xsl:if test="not(lta:registryInfo)"><li>
   			<xsl:apply-templates mode="writeMessage" select="$messages[@id='m9']/lta:unit[@xml:lang=$hl]">
   				<xsl:with-param name="variables">
   					<lta:var no="m9v1"><xsl:value-of select="lta:subtag | lta:tag"/></lta:var>
@@ -154,6 +154,9 @@
   		<xsl:for-each select="lta:error[not(@type='e001' or @type='e002')]"><xsl:apply-templates select="self::*"></xsl:apply-templates></xsl:for-each>
   		</ul></xsl:if>
   		<xsl:if test="self::lta:privateuse">private use subtag</xsl:if>
+  		<xsl:if test="self::lta:extension[@extension-prefix='t']">extension sub tag, 't' extension [RFC6497] </xsl:if>
+  		<xsl:if test="self::lta:extension[@extension-prefix='u']">extension sub tag, 'u' extension [RFC6067] </xsl:if>
+  		<xsl:if test="self::lta:extension[not(@extension-prefix='u' or @extension-prefix='t')]">unknown extension sub tag '<xsl:value-of select="@extension-prefix"/>'</xsl:if>
   	</li>
   	</xsl:template>
       	<xsl:template match="lta:error[@type='e003']">
