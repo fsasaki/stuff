@@ -46,15 +46,13 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 		exclude-result-prefixes="my saxon xs h lta">
   <!-- The subtag registry. Subtags: language, script, region, variant, 
        grandfathered, redundant-->
-  <xsl:variable name="st-language" select="doc('../lsr/lsr.xml')/lta:lsr/lta:lan"/>
-  <xsl:variable name="st-extlang" select="doc('../lsr/lsr.xml')/lta:lsr/lta:ext"/>
-  <xsl:variable name="st-script" select="doc('../lsr/lsr.xml')/lta:lsr/lta:scr"/>
-  <xsl:variable name="st-region" select="doc('../lsr/lsr.xml')/lta:lsr/lta:reg"/>
-  <xsl:variable name="st-variant" select="doc('../lsr/lsr.xml')/lta:lsr/lta:var"/>
-  <xsl:variable name="st-grandfathered" select="
-						doc('../lsr/lsr.xml')/lta:lsr/lta:gra"/>
-  <xsl:variable name="st-redundant" select="
-    doc('../lsr/lsr.xml')/lta:lsr/lta:red"/>
+  <xsl:variable name="lsr" select="doc('../lsr/lsr.xml')"/>
+  <xsl:key name="st-language-key" match="lta:lan" use="lower-case(@su)"/>
+    <xsl:key name="st-extlang-key" match="lta:ext" use="lower-case(@su)"/>
+    <xsl:key name="st-script-key"  match="lta:scr" use="lower-case(@su)"/>
+    <xsl:key name="st-region-key" match="lta:reg" use="lower-case(@su)"/>
+    <xsl:key name="st-variant-key" match="lta:var" use="lower-case(@su)"/>
+    <xsl:key name="st-grandfathered-_and-redundant-key" match="lta:gra | lta:red" use="lower-case(@ta)"/>
   <!-- To copy everything to the output during constraints check -->
   <xsl:template match="node() | @*" mode="someConstraintsCheck">
     <xsl:param name="abnfCheckedLangtag"/>
@@ -70,10 +68,13 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     <xsl:copy>
       <xsl:copy-of select="@type"/>
       <lta:subtag><xsl:value-of select="."/></lta:subtag>
-      <xsl:variable name="st" select="."/>
+      <xsl:variable name="st" select="lower-case(.)"/>
+        <!-- 
       <xsl:variable name="match"
 		    select="
 			    $st-language[@su[matches(.,concat('^',$st,'$'),'i')]]"/>
+			     -->
+      <xsl:variable name="match" select="key('st-language-key',$st,$lsr)"/>
       <xsl:choose>
         <xsl:when test="$match">
           <lta:registryInfo>
@@ -101,10 +102,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           </lta:error>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:variable name="st" select="."/>
+          <xsl:variable name="st" select="lower-case(.)"/>
           <xsl:variable name="match"
-			select="
-				$st-extlang[@su[matches(.,concat('^',$st,'$'),'i')]]"/>
+			select="key('st-extlang-key',$st,$lsr)"/>
           <xsl:choose>
             <xsl:when test="$match">
               <lta:registryInfo>
@@ -128,10 +128,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     <xsl:copy>
       <xsl:copy-of select="@type"/>
       <lta:subtag><xsl:value-of select="."/></lta:subtag>
-      <xsl:variable name="st" select="."/>
+      <xsl:variable name="st" select="lower-case(.)"/>
       <xsl:variable name="match"
-		    select="
-			    $st-script[@su[matches(.,concat('^',$st,'$'),'i')]]"/>
+		    select="key('st-script-key',$st,$lsr)"/>
       <xsl:choose>
         <xsl:when test="$match">
           <lta:registryInfo>
@@ -150,8 +149,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     <xsl:copy>      
       <xsl:copy-of select="@type"/>
       <lta:subtag><xsl:value-of select="."/></lta:subtag>
-      <xsl:variable name="st" select="."/>
-      <xsl:variable name="match" select="$st-region[@su[matches(.,concat('^',$st,'$'),'i')]]"/>
+      <xsl:variable name="st" select="lower-case(.)"/>
+      <xsl:variable name="match" select="key('st-region-key',$st,$lsr)"/>
       <xsl:choose>
         <xsl:when test="$match">
           <lta:registryInfo>
@@ -193,7 +192,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       <xsl:copy-of select="@type"/>
       <lta:subtag><xsl:value-of select="."/></lta:subtag>
       <xsl:variable name="st" select="."/>
-      <xsl:variable name="match" select="$st-variant[@su[matches(.,concat('^',$st,'$'),'i')]]"/>
+      <xsl:variable name="match" select="key('st-variant-key',$st,$lsr)"/>
       <xsl:choose>
         <xsl:when test="$match">
           <lta:registryInfo>
@@ -231,10 +230,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     <xsl:copy>
       <xsl:copy-of select="@type"/>
       <lta:subtag><xsl:value-of select="."/></lta:subtag>
-      <xsl:variable name="st" select="."/>
+      <xsl:variable name="st" select="lower-case(.)"/>
       <xsl:variable name="match"
-		    select="
-			    $st-grandfathered[@ta[matches(.,concat('^',$st,'$'),'i')] | $st-redundant/lta:tag[matches(.,concat('^',$st,'$'),'i')]]"/>
+		    select="key('st-grandfathered-_and-redundant-key',$st,$lsr)"/>
       <xsl:choose>
         <xsl:when test="$match">
           <lta:registryInfo>
