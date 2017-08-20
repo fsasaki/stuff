@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8"></meta>
         <title>Early Parser</title>
-        <script
-        src="lib/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+        <link rel="stylesheet" href="http://jqueryui.com//resources/demos/style.css" />
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script src="http://spin.js.org/spin.min.js"></script>
         <script type="text/javascript" src="lib/Saxon-CE_1.1/Saxonce/Saxonce.nocache.js"></script>
         <script type="text/javascript" src="lib/callSaxon.js"></script>
         <script type="text/javascript">
@@ -23,10 +26,15 @@
                 var grammarInput = "<grammarInput>" + $('#grammar').val() + "</grammarInput>\n";
                 var lexiconInput = "<lexiconInput>" + $('#lexicon').val() + "</lexiconInput>\n";
                 var inputString = "<inputString>" + $('#string').val() + "</inputString>\n";
+                var target = document.getElementById('spinner');
+                var spinner = new Spinner().spin(target);
                 var completeInput = "<inputItems>\n" + grammarInput + lexiconInput + inputString + "</inputItems>";
                 console.log(completeInput);
                 var tempstring = xsltTransform("lib/parse2html.xsl", completeInput, []);
-                $("#output").empty().append(tempstring);
+                spinner.stop();
+                     $("#out").empty().append(tempstring);
+                            $("#out").dialog({autoOpen: false, hide: "fold", show: "blind", width: "90%" , height: "auto"} );
+                            $("#out").dialog("open");
             }
             ;
         </script>
@@ -59,29 +67,47 @@
                 float:left;
             }
         </style>
+        <style>
+            .ui-controlgroup-vertical{
+                width: 150px;
+            }
+            .ui-controlgroup.ui-controlgroup-vertical > button.ui-button,
+            .ui-controlgroup.ui-controlgroup-vertical > .ui-controlgroup-label{
+                text-align: center;
+            }
+            .ui-controlgroup-horizontal .ui-spinner-input{
+                width: 20px;
+            }
+            .ui-dialog-content{
+            
+            }
+            .ui-dialog-title,
+            .ui-dialog-titlebar{
+                color: white;
+                background-color: blue;
+            }</style>
     </head>
     <body>
         <h1>Early Parser</h1>
+        <p><a href="https://en.wikipedia.org/wiki/Earley_parser">Early parser</a> implemented with saxon-cs. Source code is on <a href="https://github.com/fsasaki/stuff/tree/gh-pages/parsing">GitHub</a>.</p>
         <p>(load samples: <span class="example" onclick="loadSample('sample1');">sample 1</span>, 
             <span class="example" onclick="loadSample('sample2');">sample 2</span>, 
             <span class="example" onclick="loadSample('sample3');">sample 3</span>)</p>
         <button onclick="parse();">parse</button>
-        <button onclick="$('#output').empty();">Refresh output</button>
         <div class="allinput">
             <form name="input">
                 <div class="string input">
-                    <p>String<br>input</p>
+                    <p>String<br />input</p>
                     <textarea rows="10" cols="30" name="string"  id="string"></textarea>
                 </div>
                 <div class="grammar input">
-                    <p>Grammar<br>(terminals indexed with "t")</p>
+                    <p>Grammar<br />(terminals indexed with "t")</p>
                     <textarea rows="10" cols="30" name="grammar"  id="grammar"></textarea></div>
                 <div  class="lexicon input">
-                    <p>Lexicon<br>input</p>
+                    <p>Lexicon<br />input</p>
                     <textarea rows="10" cols="30" name="lexicon"  id="lexicon"></textarea></div>
             </form>
         </div>
-        <div id="output"></div>
         <div id="samples" style="display: none;">
             <div id="sample1" >
                 <div class="grammar">S => NP, VP
@@ -116,5 +142,7 @@ PREP:on</div>
                 <div class="string">the woman read the book on the table</div>
             </div>
         </div>
+        <div id="out"></div>
+        <div id="spinner"></div>
     </body>
 </html>
