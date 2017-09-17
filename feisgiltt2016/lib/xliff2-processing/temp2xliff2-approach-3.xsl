@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
  
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:itsm="urn:oasis:names:tc:xliff:itsm:2.1"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:its="http://www.w3.org/2005/11/its"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs h xlf ixsl"
     xmlns:xlf="urn:oasis:names:tc:xliff:document:2.0" version="1.0" xmlns:h="http://www.w3.org/1999/xhtml"
     xmlns="urn:oasis:names:tc:xliff:document:2.0" xmlns:ixsl="http://saxonica.com/ns/interactiveXSLT">
@@ -30,8 +30,8 @@
         </xsl:element>
     </xsl:template>
     <xsl:template mode="writeAnnotation" match="span[@its-ta-ident-ref]">
-        <mrk id="{generate-id()}" type="itsm:generic">
-            <xsl:attribute name="itsm:taIdentRef">
+        <mrk id="{generate-id()}" type="its:generic">
+            <xsl:attribute name="its:taIdentRef">
                 <xsl:value-of select="@its-ta-ident-ref"/>
             </xsl:attribute>
             <xsl:value-of select="."/>

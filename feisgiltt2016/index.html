@@ -2,7 +2,7 @@
 <html>
     <head>
 	<meta charset="utf-8">
-	<title>XLIFF 2.0 and Enrichment Workflows in the Browser</title>
+	<title>XLIFF 2.1 and Enrichment Workflows in the Browser</title>
 	<script
 	src="lib/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/Saxon-CE_1.1/Saxonce/Saxonce.nocache.js"></script>
@@ -56,7 +56,7 @@
 	</style>
     </head>
     <body>
-	<h1>XLIFF 2.0 and Enrichment Workflows in the Browser</h1>
+	<h1>XLIFF 2.1 and Enrichment Workflows in the Browser</h1>
 	<h2 id="background">Background</h2>
 	<p>This demo shows how to call linked data based enrichment services for XML content types from the browser.</p>
 	<p>To run the demo, <a href="https://github.com/fsasaki/stuff/archive/gh-pages.zip">get the source files</a>, switch to the <code>feisgiltt2016</code> directory, and add the following to your HTML page:</p>
@@ -68,7 +68,7 @@
 	<ul>
 	    <li><code>selectedLanguage</code>: one of the languages that can be processed with FREME NER.</li>
 	    <li><code>selectedDataset</code>: one of the data sets that can be used for enrichment.</li>
-	    <li><code>doctype</code>: one of the doctype that <code>callFremeNer</code> can process. Currently the function understands DocBook 5.0, TEI P5 and XLIFF 2.0.</li>
+	    <li><code>doctype</code>: one of the doctype that <code>callFremeNer</code> can process. Currently the function understands DocBook 5.0, TEI P5 and XLIFF 2.1.</li>
 		    <li><code>approach</code>: the approach used to store the enrichment information inside the doctype. Five approaches are supported:<ol>
 			    <li>Convert XML to linked data</li>
 			    <li>Embedd Linked Data into XML via Structured Markup</li>
@@ -91,14 +91,14 @@ function(reject) {console.log("Failed!", reject);}
 	<h2 id="try-it-out">Try it out</h2>
 	<p>In the left form below enter a document of these types: Docbook 5.0 (<span class="loadsample" onclick="var docbooksample = $('#docbooksample').text();
                 $('#content').empty().val(docbooksample.replace(/</g, '&lt;'))">load a sample</span>), TEI P5 (<span class="loadsample" onclick="var teisample = $('#teisample').text();
-                        $('#content').empty().val(teisample.replace(/</g, '&lt;'))">load a sample</span>), XLIFF 2 (<span class="loadsample" onclick="var teisample = $('#xliff2sample').text();
+                        $('#content').empty().val(teisample.replace(/</g, '&lt;'))">load a sample</span>), XLIFF 2.1 (<span class="loadsample" onclick="var teisample = $('#xliff21sample').text();
                                 $('#content').empty().val(teisample.replace(/</g, '&lt;'))">load a sample</span>), or StratML. Then click on the bottom <q>Call FREME e-Entity</q>. Also, adapt the language and the data set used for enrichment to your needs.</p>
 		    <button onclick="runEnrichment();" class="run">Call FREME e-Entity with XML content</button>
 	<button onclick="$('#out').empty().append('Output');
                 $('#output2').empty();
                 $('#output2').addClass('output');">Refresh output</button>
 	<form name="input">
-	    <p>Set the document type of the input: <select name="doctype" id="doctype"><option value="tei">TEI</option><option value="docbook" selected>DocBook</option><option value="xliff2">XLIFF 2</option><option value="stratml">StratML</option></select></p>
+	    <p>Set the document type of the input: <select name="doctype" id="doctype"><option value="tei">TEI</option><option value="docbook" selected>DocBook</option><option value="xliff21">XLIFF 2.1</option><option value="stratml">StratML</option></select></p>
 	    <p>Set the language of the input: <select name="language" id="language"><option value="en" selected>English</option><option value="de">German</option><option value="nl">Dutch</option><option value="fr">French</option><option value="it">Italien</option><option value="es">Spanish</option></select></p>
 	    <p>Set the data set to be used for enrichment: <select name="dataset" id="dataset"><option value="dbpedia" selected>DBpedia</option><option value="onld">ONLD</option><option value="geopolitical">Geopolitical ontology</option><option value="viaf">VIAF</option><option value="orcid">ORCID</option></select></p>
 	    <p>Set the output type: <select name="approach" id="approach"><option value="1">1. Convert XML to linked data</option><option value="2">2. Embedd Linked Data into XML via Structured Markup</option><option value="3">3. Anchor Linked Data in XML Attributes</option><option value="4">4. Embed Linked Data in Metadata Sections of XML Files</option><option value="5">5. Anchor Linked Data via Annotations in XML Content</option></select></p>
@@ -130,8 +130,8 @@ Data&lt;/title>
 &lt;/sourceDesc>&lt;/fileDesc>&lt;/teiHeader>&lt;text>&lt;body>
 &lt;p>We very much welcome you in the city of Prague, a home of XML!&lt;/p>
 &lt;/body>&lt;/text>&lt;/TEI></div>
-	<div id="xliff2sample" style="display: none;">
-&lt;xliff version='2.0'
+	<div id="xliff21sample" style="display: none;">
+&lt;xliff version='2.1'
 xmlns='urn:oasis:names:tc:xliff:document:2.0' srcLang="en" trgLang="fr">
  &lt;file id="f1">
   &lt;unit id="u1">
