@@ -85,10 +85,10 @@
                 $("#rec").text(recognition ? "Stop" : "Speak");
             }
 
-//the actual main fuction that calls NLU 
+//the actual main fuction that calls NLU
             function send() {
                 var text = $("#input").val();
-//Request to API.AI. 
+//Request to API.AI.
                 $.ajax({
                     type: "POST",
                     url: baseUrl + "query?v=20150910",
@@ -211,11 +211,11 @@
     </head>
     <body>
         <h1>Get information from linked data</h1>
-        <p>This demo is also available as a slackbot. See the <a href="https://github.com/fsasaki/stuff/tree/gh-pages/linked-data-access/bot-access/">slack bot source code</a>.</p>
+        <p>This demo is also available as a slackbot. See the <a href="https://github.com/fsasaki/myBot">slack bot source code</a>.</p>
         <p>Ask questions to DBpedia. Currently you can ask about the birthday of people and the population of places - more to follow! You will get a response below. The speech input only works with the Chrome browser.</p>
         <div id="forms">
             <div id="inputoutput">
-                <input id="input" type="text"> <br><button id="text" onclick="processingType === 'text'; send();">Submit text</button> OR <button id="rec">Start speech input</button> 
+                <input id="input" type="text"> <br><button id="text" onclick="processingType === 'text'; send();">Submit text</button> OR <button id="rec">Start speech input</button>
                 <br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
             </div>
         </div>
@@ -228,9 +228,9 @@
             <li>The intent filled with slots is transformed to a linked data query. As of writing, the tool uses <a href="http://wiki.dbpedia.org/">DBpedia</a>.</li>
             <li>The output of the linked data query is given as textual output or (if supported by the browser) via audio.</li>
         </ul>
-        <p>The purpose of this tool is to show how workflows with natural language understanding tooling can ease the access to (open or internal) linked data sources. Feedback is very welcome, please send to 
+        <p>The purpose of this tool is to show how workflows with natural language understanding tooling can ease the access to (open or internal) linked data sources. Feedback is very welcome, please send to
             <a href="mailto:felix@sasakiatcf.com">Felix Sasaki</a>.</p>
-        <p>Update: now also allows mockup queries to company internal data bases - aks a question about qualifications and you get counts of 
+        <p>Update: now also allows mockup queries to company internal data bases - aks a question about qualifications and you get counts of
             knowledgeable people.</p>
         <hr>
     </body>
