@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="http://jqueryui.com//resources/demos/style.css" />
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-            <script src="http://spin.js.org/spin.min.js"></script>
         <script type="text/javascript" src="lib/Saxon-CE_1.1/Saxonce/Saxonce.nocache.js"></script>
         <script type="text/javascript" src="lib/callSaxon.js"></script>
         <script type="text/javascript">
@@ -26,12 +25,9 @@
                 var grammarInput = "<grammarInput>" + $('#grammar').val() + "</grammarInput>\n";
                 var lexiconInput = "<lexiconInput>" + $('#lexicon').val() + "</lexiconInput>\n";
                 var inputString = "<inputString>" + $('#string').val() + "</inputString>\n";
-                var target = document.getElementById('spinner');
-                var spinner = new Spinner().spin(target);
                 var completeInput = "<inputItems>\n" + grammarInput + lexiconInput + inputString + "</inputItems>";
                 console.log(completeInput);
                 var tempstring = xsltTransform("lib/parse2html.xsl", completeInput, []);
-                spinner.stop();
                      $("#out").empty().append(tempstring);
                             $("#out").dialog({autoOpen: false, hide: "fold", show: "blind", width: "90%" , height: "auto"} );
                             $("#out").dialog("open");
@@ -79,7 +75,7 @@
                 width: 20px;
             }
             .ui-dialog-content{
-            
+
             }
             .ui-dialog-title,
             .ui-dialog-titlebar{
@@ -90,8 +86,8 @@
     <body>
         <h1>Early Parser</h1>
         <p><a href="https://en.wikipedia.org/wiki/Earley_parser">Early parser</a> implemented with saxon-cs. Source code is on <a href="https://github.com/fsasaki/stuff/tree/gh-pages/parsing">GitHub</a>.</p>
-        <p>(load samples: <span class="example" onclick="loadSample('sample1');">sample 1</span>, 
-            <span class="example" onclick="loadSample('sample2');">sample 2</span>, 
+        <p>(load samples: <span class="example" onclick="loadSample('sample1');">sample 1</span>,
+            <span class="example" onclick="loadSample('sample2');">sample 2</span>,
             <span class="example" onclick="loadSample('sample3');">sample 3</span>)</p>
         <button onclick="parse();">parse</button>
         <div class="allinput">
@@ -143,6 +139,5 @@ PREP:on</div>
             </div>
         </div>
         <div id="out"></div>
-        <div id="spinner"></div>
     </body>
 </html>

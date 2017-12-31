@@ -7,17 +7,13 @@
         <link rel="stylesheet" href="http://jqueryui.com//resources/demos/style.css" />
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="http://spin.js.org/spin.min.js"></script>
         <script type="text/javascript" src="lib/Saxon-CE_1.1/Saxonce/Saxonce.nocache.js"></script>
         <script type="text/javascript" src="lib/callSaxon.js"></script>
         <script type="text/javascript">
             function analyzeLanguageTag() {
                 var languagetag = $('#content').val();
-                var target = document.getElementById('spinner');
-                var spinner = new Spinner().spin(target);
                 var tempstring = xsltTransform("lib/lta.xsl", "lib/lta.xsl", [{"ns": null, "name": "input", "value": languagetag},
                     {"ns": null, "name": "output", "value": "html"},{"ns": null, "name": "hl", "value": "en"}]);
-                    spinner.stop();
                      $("#out").empty().append(tempstring);
                             $("#out").dialog({autoOpen: false, hide: "fold", show: "blind", width: "90%" , height: "auto"} );
                             $("#out").dialog("open");
@@ -70,7 +66,7 @@
                 width: 20px;
             }
             .ui-dialog-content{
-            
+
             }
             .ui-dialog-title,
             .ui-dialog-titlebar{
@@ -87,19 +83,18 @@
             <textarea rows="1" cols="20" name="content" id="content" class="input"></textarea>
         </form>
         <p>Here are a few examples: <span onclick="$('#content').empty().append('en');" class="example">en</span>;
-            <span onclick="$('#content').empty().append('de-de-1901');" class="example">de-de-1901</span>; 
-        <span onclick="$('#content').empty().append('de-x');" class="example">de-x</span>; 
-        <span onclick="$('#content').empty().append('xa');" class="example">xa</span>; 
-        <span onclick="$('#content').empty().append('en-latn');" class="example">en-latn</span>; 
-        <span onclick="$('#content').empty().append('ja-1901');" class="example">ja-1901</span>; 
-        <span onclick="$('#content').empty().append('fr-cmn');" class="example">fr-cmn</span>; 
-        <span onclick="$('#content').empty().append('zh-cmn-cmn');" class="example">zh-cmn-cmn</span>; 
-        <span onclick="$('#content').empty().append('zh-cmn-a-bbb-a-ccc');" class="example">zh-cmn-a-bbb-a-ccc</span>; 
+            <span onclick="$('#content').empty().append('de-de-1901');" class="example">de-de-1901</span>;
+        <span onclick="$('#content').empty().append('de-x');" class="example">de-x</span>;
+        <span onclick="$('#content').empty().append('xa');" class="example">xa</span>;
+        <span onclick="$('#content').empty().append('en-latn');" class="example">en-latn</span>;
+        <span onclick="$('#content').empty().append('ja-1901');" class="example">ja-1901</span>;
+        <span onclick="$('#content').empty().append('fr-cmn');" class="example">fr-cmn</span>;
+        <span onclick="$('#content').empty().append('zh-cmn-cmn');" class="example">zh-cmn-cmn</span>;
+        <span onclick="$('#content').empty().append('zh-cmn-a-bbb-a-ccc');" class="example">zh-cmn-a-bbb-a-ccc</span>;
         <span onclick="$('#content').empty().append('de-de-1901-1901');" class="example">de-de-1901-1901</span>.</p>
         <!--
         <p>Set the language of the output <select name="language" id="language"><option value="en" selected>English</option>
                <option value="de">German</option></select></p>-->
         <div id="out" title="Output"></div>
-        <div id="spinner"></div>
     </body>
 </html>
