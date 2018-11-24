@@ -123,7 +123,7 @@
                 } else if (val.result.action === 'show.birthday')
                 {
                     intentNum = 1;
-                    placeholder = val.result.parameters.person-first-name + " " + val.result.parameters.person-last-name;
+                    placeholder = val.result.parameters.givenname + " " + val.result.parameters.lastname;
                 } else if (val.result.action === 'show.persons') {
                     console.log(val.result.parameters.programminglanguages);
                     var output = findPersons(val.result.parameters.programminglanguages);
